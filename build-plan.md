@@ -8,7 +8,7 @@ How the system gets built, in what order, and how each stage is checked. Written
 
 | Source | What it supplies |
 |---|---|
-| `discussions.md`, R-8 to R-50 | The decisions taken: what is built, the functions, the tables, the capture list, the answer format, and the changes made while the key was verified |
+| `discussions.md`, R-8 to R-53 | The decisions taken: what is built, the functions, the tables, the capture list, the answer format, and the changes made while the key was verified |
 | `decisions.md` | The 36 confirmed decisions and the 16 rules |
 | `answer-key.md` | What the output is compared against. Verified on 2026-09-29 (Discussion 19) |
 
@@ -137,7 +137,7 @@ Each stage ends with something that can be checked.
 |---|---|---|---|---|
 | 1 | Skeleton | Settings, logs, the store with its eight tables, reading and hashing files | 31 documents are registered. A copy of a file is skipped. A restart finds the same store | 0 |
 | 2 | Read three documents | The reading prompt, the output schema, the model call, the coverage check | D103, D108 and D112 each return the claims the capture list names. The coverage check shows what low effort misses, if anything. The call reports its tokens and cost, or we learn that it does not | About 3 to 10 |
-| 3 | Trial on eight, then read all 31 | The trial set, parallel calls, a saved copy of each result, the quote check, handling of a failed read | The trial set passes the quote check and the coverage check. All 31 are then read once. Every claim has a quote found in its source. A failed document is recorded as not read | About 40 to 55 |
+| 3 | Trial on eleven, then read all 31 | The trial set, parallel calls, a saved copy of each result, the quote check, handling of a failed read | The trial set passes the quote check and the coverage check. All 31 are then read once. Every claim has a quote found in its source. A failed document is recorded as not read | About 40 to 65 |
 | 4 | Reconcile | Contacts, conflicts, findings, plan rules, assessments | Matches sections 2 to 5 of the key: 20 contacts, 3 conflicts, finding F-1, 3 assessments | 0 |
 | 5 | Count | Intervals, minutes, days, weekly status | Matches section 6 of the key: 140, 120, 180, 145 or 155, and the four verdicts | 0 |
 | 6 | Functions | The nine functions and the `call` command | Each function returns rows, the calculation, the sources and the conflicts it depends on | 0 |
@@ -151,7 +151,7 @@ Each stage ends with something that can be checked.
 
 - Stages 4 to 6 cost nothing to repeat, because they run on saved results from stage 3.
 - Stage 2 comes before stage 3 so that a mistake in the prompt costs three calls, not 31.
-- In stage 3 the prompt is adjusted on eight documents only. All 31 are read once, when those eight pass (R-50).
+- In stage 3 the prompt is adjusted on eleven documents only. All 31 are read once, when those eleven pass (R-50, R-53).
 - Stage 5 produces the verdicts early. If the numbers are wrong, that shows before any work on questions.
 
 **How stages 4 and 5 are developed**
@@ -213,24 +213,29 @@ Against two things: the saved results of stage 3, and small hand-written sets of
 
 Examples in the prompt are made up. None is taken from the 31 documents, so the prompt holds no fact about Rowan.
 
-### The trial set (R-50)
+### The trial set (R-50, R-53)
 
-The prompt is adjusted while looking at these eight documents and no others.
+The prompt is adjusted while looking at these eleven documents and no others.
 
 | Document | Kind | Why it is in the set |
 |---|---|---|
 | D003 | Plan | The thresholds and what counts |
-| D005 | Attendance record, desk extract | Two dates in one file, with arrival and departure |
 | D006 | Schedule export | Scheduled times and statuses, which must not be read as attendance |
+| D014 | Import | A questionnaire score in a table, and a received date that is not a completion date |
 | D103 | Correction | Target, field, old value and new value |
+| D104 | Copy | What a copy says about itself, and an attached roster |
 | D106 | Clinical note, with a platform export | Two intervals, and an interruption |
+| D107 | Clinical notes for two dates | A group break with its times, and two dates in one file |
 | D108 | Attendance record, register | Four dates, three signed entries and one desk entry |
 | D111 | Clinical note | An observed arrival, and a second clinician |
 | D112 | Draft note, and a billing extract | Two sections in one file, neither of which is attendance |
+| D113 | Clinical note, family session | An interval with the partner and without the patient |
 
 - D103, D108 and D112 are the three documents of stage 2.
 - The set holds documents from both batches, which write dates and times differently.
-- The other 23 documents are read once, after the set passes. The prompt was not adjusted on them, so they test it fairly.
+- The other 20 documents are read once, after the set passes. The prompt was not adjusted on them, so they test it fairly.
+- The set was eight documents under R-52. A check of the 31 files found no score, no group break, no partner-only interval and no copy in it (Discussion 21). D107, D113, D014 and D104 were added, and D005 was taken out because D006 and D108 cover its shape.
+- Three kinds are in no trial document: the authorization (D001), the scheduling log (D015) and the cancellation notice (D016).
 - If the full read exposes a problem, the prompt changes, the version number rises, and all 31 are read again.
 
 ### When the result fails our checks
@@ -239,7 +244,7 @@ The prompt is adjusted while looking at these eight documents and no others.
 |---|---|
 | The result does not fit the schema | One retry, with the error shown to the model |
 | A quote is not found in the source | The claim is kept and marked unverified. It is not used in a count |
-| A time, date or encounter number in the document appears in no claim | It is listed as not captured for that document. The list is shown at the reviews after stages 2 and 3 |
+| A time, date or encounter number in the document appears in no claim | It is listed as not captured for that document. The list is shown at the reviews after stages 2 and 3. The read is not blocked (R-51) |
 | A time does not parse, or an end is before a start | The claim is marked invalid |
 | The second attempt also fails | The document is recorded as not read, and every answer it affects says so (R-10) |
 
@@ -320,10 +325,10 @@ The problem statement asks for these, with measured figures kept apart from esti
 | Stage | Calls | Note |
 |---|---|---|
 | 2 | 3 to 10 | Three documents, with a few tries at the prompt |
-| 3 | 40 to 55 | The prompt is tried on eight documents, then all 31 are read once |
+| 3 | 40 to 65 | The prompt is tried on eleven documents, then all 31 are read once |
 | 7 | 14 to 25 | Five questions and nine problem questions, one plan call each, with some repeats |
 | 9 | About 5 | Question timings. The rest replay saved results and logs |
-| Total | About 60 to 95 | Was 80 to 175 before R-47, R-48 and R-50 |
+| Total | About 60 to 105 | Was 80 to 175 before R-47, R-48 and R-50 |
 
 These are estimates. I have no reliable cost per call: the only figure on record is $2.70 for 36 calls, from the build that was deleted. Stage 2 gives the first real figure, and I will report it before stage 3 begins.
 
@@ -351,8 +356,8 @@ I stop at each of these and wait for you.
 | One patient in the data | Collection-wide timing shows little, and the cohort function is tested on one patient | Patient is on every row from stage 1. The second patient is on hold (O-1) and should return before stage 9 |
 | No plan change in the data | The plan in effect for a period is untested | Plan rules carry dates from stage 4. On hold (O-13) |
 | The model reads a document differently on a second run | Results could differ between runs | Saved results make re-runs identical. How much the model varies is a candidate for the README's observed limitation |
-| The prompt is adjusted while looking at the documents | It may fit them too well | The prompt is adjusted on eight documents only, so the other 23 test it fairly. Examples in the prompt are made up. The README says so |
-| The trial set lacks a kind of document, such as a copy or an import | The full read exposes a problem the trial did not | The prompt changes and all 31 are read again. The saving is lost for that round |
+| The prompt is adjusted while looking at the documents | It may fit them too well | The prompt is adjusted on eleven documents only, so the other 20 test it fairly. Examples in the prompt are made up. The README says so |
+| The trial set lacks a kind of document. The authorization, the scheduling log and the cancellation notice are not in it | The full read exposes a problem the trial did not | The prompt changes and all 31 are read again. The saving is lost for that round |
 | The key shares the reading that shaped the rules | A shared mistake would pass every check | Checks 1 to 11 do not use the key. The key was verified against the documents on 2026-09-29, and you checked the six rows that decide a verdict |
 | A question needs a second step that depends on the first result | The one plan call cannot express it | The answer says which part it could not do. Described in the README as a limit |
 | Low effort makes the reading less accurate | Claims are missed | The coverage check lists what was missed. Effort is raised if stage 2 shows a loss |

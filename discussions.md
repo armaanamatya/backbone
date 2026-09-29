@@ -94,6 +94,9 @@ A record of what we have discussed on the Backbone take-home, what came out of e
 | R-48 | Is function choice one call that returns a plan? (was O-39) | Yes. One call returns up to five function calls, code runs them, and the plan is saved per question. There is no tool loop. This narrows R-22 | 20 |
 | R-49 | Is the coverage check added, and is reading effort set low? (was O-40) | Yes to both. Effort is confirmed at stage 2 | 20 |
 | R-50 | Is the prompt tried on about eight documents before all 31 are read, with checks and timings replaying saved results? (was O-41) | Yes. The prompt is adjusted on a trial set of eight, all 31 are read once when the set passes, and checks and timings replay saved results and logs | 20 |
+| R-51 | What happens when the coverage check finds a value in no claim? | The value is listed as not captured and shown at the reviews after stages 2 and 3. It does not block the read | 20 |
+| R-52 | Which documents form the trial set? | D003, D005, D006, D103, D106, D108, D111 and D112. Replaced by R-53 | 20 |
+| R-53 | Is the trial set changed to 11 documents? (was O-42) | Yes. D003, D006, D014, D103, D104, D106, D107, D108, D111, D112 and D113. D107, D113 and D014 are added, and D104 takes the place of D005. This replaces R-52 | 21 |
 
 
 ---
@@ -1519,7 +1522,96 @@ List prices per million tokens, from the pricing table dated 2026-09-25: Opus 5.
 - The estimate of calls to build is now about 60 to 95.
 - **One more choice that is mine:** the eight documents in the trial set are D003, D005, D006, D103, D106, D108, D111 and D112. You agreed to a set of about eight, and I chose which. It waits on you.
 
-**Still open from this discussion:** nothing, apart from the two choices of mine above.
+**The two choices, decided 2026-09-29**
+
+- I set both out again: a value the coverage check finds in no claim is listed as not captured, is shown at the reviews after stages 2 and 3, and does not block the read; and the trial set is D003, D005, D006, D103, D106, D108, D111 and D112.
+- **What you said:** "this is fine".
+- Two items resolved: R-51 and R-52.
+- Not checked: whether the eight documents cover every kind of document in the 31. The risk of a missing kind stays in section 13 of `build-plan.md`.
+
+**Still open from this discussion:** nothing.
+
+---
+
+## Discussion 21: Does the trial set cover every kind of document
+
+**What prompted it:** After you agreed the trial set (R-52), I said nobody had checked that the eight documents cover every kind in the 31. You said "do it".
+
+**How I checked**
+
+- Kinds are taken from section 1 of `answer-key.md`.
+- Content was checked by searching the 31 files for words and patterns, then reading the matching lines. No model was called.
+- A search by words is coarse. I read the lines behind each gap below, and did not read every line of every file.
+
+**Kinds of document**
+
+| Kind | In the 31 | In the trial set |
+|---|---|---|
+| Plan | D003 | D003 |
+| Clinical note | 17 files | D106, D111 |
+| Attendance record | D005, D102, D108 | D005, D108 |
+| Schedule export | D006 | D006 |
+| Correction | D103 | D103 |
+| Draft note, and a billing extract | D112 | D112 |
+| Questionnaire review | D013, D115 | None |
+| Import | D014 | None |
+| Copy | D104 | None |
+| Authorization | D001 | None |
+| Scheduling log | D015 | None |
+| Cancellation notice | D016 | None |
+
+Six of the twelve kinds are covered.
+
+**Content the capture list names**
+
+| Content | Where it is in the 31 | In the trial set |
+|---|---|---|
+| A questionnaire score | D002, D013, D014, D115 | None |
+| A break in a group, with its times | D004, D009, D107. D101 describes the break | None. D005, D103 and D108 only mention that breaks are recorded elsewhere |
+| An interval with the partner and without the patient | D113 | None |
+| A file holding notes for two dates | D107 | None |
+| What a copy says about itself | D104 | None |
+| A pipe table | D005, D006, D108 | All three |
+| Both ways of writing dates | 16 files and 17 files | Three and five |
+| A no-show and a cancellation | D006, D015, D016, D108 | D006, D108 |
+| Video | D106 | D106 |
+| A section attached to a file | D104, D106, D112 | D106, D112 |
+
+**What the gaps mean**
+
+- The group break decides the minutes in three of the four weeks (D-01). The prompt would be adjusted without seeing one.
+- The scores are needed for DEV-05 and the assessments function.
+- The copy and the import are the two kinds the risks table in `build-plan.md` already named as possibly missing. Both are missing.
+- The scheduling log, the cancellation notice and the authorization matter less. D006 and D108 carry a no-show and a cancellation, and authorizations are not stored (R-19).
+
+**What I recommended**
+
+| Change | Document | Covers |
+|---|---|---|
+| Add | D107 | A group break with times, and two dates in one file |
+| Add | D113 | The partner-only interval, and a family session |
+| Add | D014 | An import, a score, and a pipe table of results |
+| Swap in for D005 | D104 | A copy, and what it says about itself |
+
+- The set would be 11 documents: D003, D006, D014, D103, D104, D106, D107, D108, D111, D112, D113.
+- D005 leaves because D006 and D108 cover its shape. It then tests the prompt as one of the 20 documents the prompt was not adjusted on.
+- Each added document costs one call for each round of adjusting the prompt. A kind that is missed costs a second read of all 31.
+- Not covered even then: the authorization, the scheduling log and the cancellation notice.
+
+**Outcome**
+
+- Nothing is decided. R-52 stands as you agreed it, and `build-plan.md` is unchanged.
+- One open item added: O-42.
+
+**Decided 2026-09-29**
+
+- **What you said:** you quoted the table of four changes and said "yes accepted". You then said "commit after making changes".
+- One item resolved: R-53 (was O-42). It replaces R-52.
+- `build-plan.md` was changed to match: stage 3, the trial set block, the call estimates, and two rows in the risks.
+- The estimate for stage 3 is now about 40 to 65 calls, and the total is about 60 to 105. These are estimates.
+- The edits for R-51, R-52 and R-53 were committed together.
+
+**Still open from this discussion:** nothing. Three kinds stay outside the trial set: the authorization, the scheduling log and the cancellation notice.
 
 ---
 
