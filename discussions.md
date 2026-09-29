@@ -32,14 +32,9 @@ A record of what we have discussed on the Backbone take-home, what came out of e
 | O-19 | What is built, what is designed only, and what is left out? Part decided in Discussion 12. Still on hold: the time budget, and whether a second patient and a plan change are built and tested | Discussion 8, 12 | You         |
 | O-23 | What happens when the extraction prompt changes, and what does "repeated reviews" require?                                                                                                     | Discussion 8     | Both        |
 | O-27 | How are plan rules stored so that a plan of a different shape fits, and is "whether it counts" stored or worked out at question time?                                                          | Discussion 9     | Both        |
-| O-30 | Are the hand-worked answers in `review-notes.md` section 6 revised to close the gaps found in them?                                                                                            | Discussion 9     | You         |
 | O-31 | For the README: which design decision is tested, which limitation is reported, and what is named as the first bottleneck?                                                                      | Discussion 9     | You         |
 | O-32 | Cleanup: log the remaining interpretations and fix the remaining inconsistencies? (The "40 or 50" wording was settled as R-7)                                                                  | Discussion 9, 11 | You         |
 | O-36 | After the build: compare models on the reading step, confirm that cost is reported per call, and decide how the interviewers read a new document without your setup                            | Discussion 15    | You         |
-| O-38 | Does code write the nine-part answer from the function results, with the model writing only an optional summary for observations? | Discussion 20 | You |
-| O-39 | Is function choice one call that returns a plan, in place of a tool loop, with the plan saved per question? This would narrow R-22 | Discussion 20 | You |
-| O-40 | Is a code check added that every time, date and encounter number in a document appears in a claim, and is effort set low for reading? | Discussion 20 | You |
-| O-41 | Is the reading prompt tried on a fixed set of about eight documents before all 31 are read, with checks and timings replaying saved results? | Discussion 20 | You |
 
 
 
@@ -93,6 +88,12 @@ A record of what we have discussed on the Backbone take-home, what came out of e
 | R-42 | When no function fits and the question has no date, what does the system show? | "Cannot answer", and the documents of a matching kind for that patient, named by ID and file name. No figure and no quote. Where the question has a date, the behaviour in Discussion 18 stands. You first chose "cannot answer" alone, then changed it | 19 |
 | R-43 | Are the three changes of wording to the answer key accepted? (was O-37) | Yes: "at least one per case" in section 8, "on the documented record" in Q-14, and the DEV-03 text copied exactly from `questions.json` | 19 |
 | R-44 | What serves as the answer key, and who confirms it? (was O-2) | `answer-key.md`, confirmed by you on 2026-09-29 after you checked the six rows that decide a verdict. It is fixed from that date | 19 |
+| R-45 | Are the hand-worked answers in `review-notes.md` section 6 revised? (was O-30) | No. Section 6 points to `answer-key.md`, which governs where the two differ. Section 6 is kept as the first version | 19 |
+| R-46 | Who applies the header-time rule, and is "authorization" a document kind? | Code applies D-36; the model reports a time as labelled scheduled, labelled actual, or not labelled. "Authorization" joins the list of document kinds | 19 |
+| R-47 | Does code write the nine-part answer? (was O-38) | Yes. Code writes it from the function results. The model writes only an optional summary for the observations function | 20 |
+| R-48 | Is function choice one call that returns a plan? (was O-39) | Yes. One call returns up to five function calls, code runs them, and the plan is saved per question. There is no tool loop. This narrows R-22 | 20 |
+| R-49 | Is the coverage check added, and is reading effort set low? (was O-40) | Yes to both. Effort is confirmed at stage 2 | 20 |
+| R-50 | Is the prompt tried on about eight documents before all 31 are read, with checks and timings replaying saved results? (was O-41) | Yes. The prompt is adjusted on a trial set of eight, all 31 are read once when the set passes, and checks and timings replay saved results and logs | 20 |
 
 
 ---
@@ -1403,7 +1404,7 @@ You asked me to list them so we could talk them through. I changed my recommenda
 | Section 7, the reading prompt | The instruction on times now has three values: labelled scheduled, labelled actual, not labelled. A new instruction on the speaker of an observation (rule 16) |
 | Section 13, risks | The row on the key now says it was verified |
 
-- **Two choices in those changes that are mine, for you to confirm or reverse:**
+- **Two choices in those changes that were mine. You confirmed both with "ok" (R-46):**
   - The model reports a time as "not labelled", and code applies D-36. The alternative was for the model to apply D-36 itself. I chose code because the model does not decide, and because the rule can then be tested without a model.
   - "Authorization" is added to the list of document kinds. The capture list in Discussion 16 did not name it, and the fallback cannot find D001 without it.
 - **What I changed in `answer-key.md`:** the P-9 row.
@@ -1422,9 +1423,10 @@ You asked me to list them so we could talk them through. I changed my recommenda
 - The three points of wording and the fallback are decided (R-42, R-43) and applied to the key.
 - No point from the verification is open.
 - **O-2, what you said:** "checked and the answer key is fine". The key is fixed from 2026-09-29 (R-44), and its status line says so.
-- You asked for the files to be committed to the pull request. The commit is local. The push is yours to run.
+- You asked for the files to be committed to the pull request. I committed them as `dd70b70`, and you pushed the branch. PR #1 holds the commit.
+- **O-30, what you said:** "ok", to pointing section 6 of `review-notes.md` at the key instead of revising it (R-45). A notice now heads that section. I compared its figures with the key, and they agree.
 
-**Still open:** O-30.
+**Still open from this discussion:** nothing. Open items raised elsewhere, such as O-38 to O-41, are not part of this discussion.
 
 ---
 
@@ -1497,7 +1499,27 @@ List prices per million tokens, from the pricing table dated 2026-09-25: Opus 5.
 - Nothing is decided. `build-plan.md` is unchanged.
 - Four open items added: O-38 to O-41.
 
-**Still open:** O-38, O-39, O-40, O-41.
+**Decided 2026-09-29, in the verify session**
+
+- **What you said:** "o38: yes, oo39 yes, o40 yes, o41 i dont know about this".
+- Three items resolved: R-47 (was O-38), R-48 (was O-39), R-49 (was O-40).
+- `build-plan.md` was changed to match: piece 7, the prompts, the code files, the effort setting, the `ask` command, stages 2 and 7, a block on how stage 7 answers a question, check 16, the call estimates, the review after stage 2, and two new risks.
+- The estimate of calls to build is now about 65 to 140.
+- **One choice in those changes that is mine:** when the coverage check finds a value in no claim, the value is listed as not captured and shown at the reviews after stages 2 and 3. Discussion 20 did not say what happens on a failure. It waits on you.
+
+**O-41**
+
+- You said you did not know about this one, so I set out what it asks.
+  - It is about how the build is carried out, not about what the system does.
+  - The 23 documents outside the trial set become a fair test of the prompt, because the prompt is never adjusted on them.
+  - A risk the entry above did not name: the trial set can lack a kind of document. The full read then exposes a problem, and all 31 are read again.
+- **What you said:** "o41 yes, commit them".
+- One item resolved: R-50 (was O-41).
+- `build-plan.md` was changed to match: stages 3 and 9, a block naming the trial set, the timing of questions, the call estimates, and two rows in the risks.
+- The estimate of calls to build is now about 60 to 95.
+- **One more choice that is mine:** the eight documents in the trial set are D003, D005, D006, D103, D106, D108, D111 and D112. You agreed to a set of about eight, and I chose which. It waits on you.
+
+**Still open from this discussion:** nothing, apart from the two choices of mine above.
 
 ---
 

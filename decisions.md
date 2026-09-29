@@ -530,6 +530,7 @@ These eight were in use in the numbers without being logged. All were confirmed 
 | Jan 9 | HG-E104, family therapy | D007: "14:00–14:45 local" | The interval only. The 45 minutes are stated in the note |
 
 - **What is interpretation:** D012 states no duration, and its interval equals the scheduled slot in D006. D109 has no schedule to compare with.
+- **Who applies it:** code. The model reports each time as labelled scheduled, labelled actual, or not labelled. It does not apply this rule. Confirmed 2026-09-29.
 - **Limit:** The rule covers signed notes of a contact that was held. D015 is a scheduling log for a no-show, and its header interval, 11:00–11:45, is the booked slot.
 - **If reversed:** Jan 16 and Jan 23 have no minutes. No counted session depends on a time of this kind, so no total or verdict changes. The time in contacts that do not count could not be given in full.
 

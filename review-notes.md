@@ -467,6 +467,12 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 
 ## 6. Hand-worked answers to the five development questions
 
+**Replaced by the answer key, 2026-09-29.** The answers the system is compared against are in `answer-key.md`, section 7. This section is kept as the first hand-worked version and is not revised (R-45 in `discussions.md`).
+
+- Every figure below agrees with the key.
+- Where the wording differs, the key governs.
+- The key adds what this section lacks: the goal stated in DEV-03, a dated symptom course in DEV-05, the source line for every contact, and the nine-part answer format.
+
 
 
 ### DEV-01: sessions, types, distinct days, duplicate or ineligible records

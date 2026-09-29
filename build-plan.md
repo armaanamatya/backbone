@@ -8,7 +8,7 @@ How the system gets built, in what order, and how each stage is checked. Written
 
 | Source | What it supplies |
 |---|---|
-| `discussions.md`, R-8 to R-44 | The decisions taken: what is built, the functions, the tables, the capture list, the answer format, and the changes made while the key was verified |
+| `discussions.md`, R-8 to R-50 | The decisions taken: what is built, the functions, the tables, the capture list, the answer format, and the changes made while the key was verified |
 | `decisions.md` | The 36 confirmed decisions and the 16 rules |
 | `answer-key.md` | What the output is compared against. Verified on 2026-09-29 (Discussion 19) |
 
@@ -51,7 +51,7 @@ The 11 pieces accepted in R-11, with the two additions in R-9 and R-10.
 | 4 | Saved store with patient on every row | 1 |
 | 5 | Code matches documents to contacts and applies the conflict rules | 4 |
 | 6 | Code counts minutes, days, weeks and goal verdicts, carrying alternatives | 5 |
-| 7 | Questions: model picks from coded functions, code computes, model writes the answer | 6, 7 |
+| 7 | Questions: the model returns a plan of function calls, code runs them, and code writes the answer (R-47, R-48) | 6, 7 |
 | 8 | The five answers, with sources and calculations | 7 |
 | 9 | Logs and a benchmark script | 1 onward, 9 |
 | 10 | Automated checks | 8, and alongside each stage |
@@ -69,7 +69,7 @@ The 11 pieces accepted in R-11, with the two additions in R-9 and R-10.
 | `documents/` | The 31 source files, unchanged |
 | `questions.json` | The five questions, unchanged |
 | `backbone/` | The code, one file per stage |
-| `prompts/` | The three prompts: reading, choosing a function, writing the answer |
+| `prompts/` | The three prompts: reading, choosing functions, and the optional summary of observations |
 | `tests/` | The checks |
 | `settings.toml` | Model, prompt version, spending cap |
 | `output/abstraction.sqlite` | The saved abstraction |
@@ -86,11 +86,12 @@ The 11 pieces accepted in R-11, with the two additions in R-9 and R-10.
 | `ingest.py` | Reads files as UTF-8, hashes them, skips duplicates |
 | `reader.py` | Calls the model on one document and returns claims |
 | `quotes.py` | Finds each quote in its source and records the line |
+| `coverage.py` | Lists every time, date and encounter number in a document, and checks each appears in a claim |
 | `store.py` | Creates and writes the tables |
 | `reconcile.py` | Matches documents to contacts and applies rules 1 and 7 to 11 |
 | `counting.py` | Intervals, minutes, days, weeks, verdicts: rules 2 to 6 and 12 |
 | `functions.py` | The nine functions |
-| `ask.py` | Chooses functions for a question and writes the answer. Handles a question no function fits |
+| `ask.py` | Gets a plan of function calls from the model, runs it, and writes the nine-part answer in code. Handles a question no function fits |
 | `logs.py` | Writes one line per event |
 | `cli.py` | The commands |
 
@@ -105,7 +106,7 @@ One file, `settings.toml`. Nothing in it is a fact about a patient.
 | Setting | Value at the start | Why it is a setting |
 |---|---|---|
 | Model | Opus (R-17) | Swapping models later is a one-line change (R-23) |
-| Effort | To be set at stage 2 | Affects cost and accuracy |
+| Effort | Low for reading, confirmed at stage 2 (R-49) | Affects cost and accuracy |
 | Prompt version | 1 | Stamped on every claim |
 | Spending cap per call | To be set at stage 2 | A guard against a runaway call |
 | Calls in parallel | 4 | Sets how long reading takes |
@@ -117,7 +118,7 @@ One file, `settings.toml`. Nothing in it is a fact about a patient.
 | Command | Does | Needs a model |
 |---|---|---|
 | `ingest documents/` | Reads new documents and updates the abstraction | Yes, one call per new document |
-| `ask "question"` | Answers a question in the nine-part format | Yes, two calls or more |
+| `ask "question"` | Answers a question in the nine-part format | One call for a new question. None for a repeated one, because its plan is saved |
 | `call goal_status --patient HG-M042` | Runs one function and prints its result | No |
 | `trace` | Follows a figure back to contacts, claims and source lines | No |
 | `export` | Writes the abstraction in readable form | No |
@@ -135,14 +136,14 @@ Each stage ends with something that can be checked.
 | # | Stage | Builds | Done when | Model calls |
 |---|---|---|---|---|
 | 1 | Skeleton | Settings, logs, the store with its eight tables, reading and hashing files | 31 documents are registered. A copy of a file is skipped. A restart finds the same store | 0 |
-| 2 | Read three documents | The reading prompt, the output schema, the model call | D103, D108 and D112 each return the claims the capture list names. The call reports its tokens and cost, or we learn that it does not | About 3 to 10 |
-| 3 | Read all 31 | Parallel calls, a saved copy of each result, the quote check, handling of a failed read | Every claim has a quote found in its source. A failed document is recorded as not read | About 31 to 90 |
+| 2 | Read three documents | The reading prompt, the output schema, the model call, the coverage check | D103, D108 and D112 each return the claims the capture list names. The coverage check shows what low effort misses, if anything. The call reports its tokens and cost, or we learn that it does not | About 3 to 10 |
+| 3 | Trial on eight, then read all 31 | The trial set, parallel calls, a saved copy of each result, the quote check, handling of a failed read | The trial set passes the quote check and the coverage check. All 31 are then read once. Every claim has a quote found in its source. A failed document is recorded as not read | About 40 to 55 |
 | 4 | Reconcile | Contacts, conflicts, findings, plan rules, assessments | Matches sections 2 to 5 of the key: 20 contacts, 3 conflicts, finding F-1, 3 assessments | 0 |
 | 5 | Count | Intervals, minutes, days, weekly status | Matches section 6 of the key: 140, 120, 180, 145 or 155, and the four verdicts | 0 |
 | 6 | Functions | The nine functions and the `call` command | Each function returns rows, the calculation, the sources and the conflicts it depends on | 0 |
-| 7 | Questions | Choosing functions, writing the answer, the nine-part format, the five answers | The five answers match section 7 of the key. The nine problem questions behave as in section 8 | About 30 to 60 |
+| 7 | Questions | The plan call, the saved plans, the nine-part answer written by code, the five answers | The five answers match section 7 of the key. The nine problem questions behave as in section 8 | About 14 to 25 |
 | 8 | Checks | The checks in section 9 of this plan | All pass, or each failure is understood and written down | 0 |
-| 9 | Measure | The benchmark script | The measured figures in section 10 exist, with estimates kept in a separate file | About 15 |
+| 9 | Measure | The benchmark script, which replays saved results and logs | The measured figures in section 10 exist, with estimates kept in a separate file | About 5 |
 | 10 | Write up | The README, the readable export | Every item the problem statement asks for is present | 0 |
 | 11 | After the build | The model comparison (O-36) | On your go-ahead only | About 31 per model |
 
@@ -150,11 +151,22 @@ Each stage ends with something that can be checked.
 
 - Stages 4 to 6 cost nothing to repeat, because they run on saved results from stage 3.
 - Stage 2 comes before stage 3 so that a mistake in the prompt costs three calls, not 31.
+- In stage 3 the prompt is adjusted on eight documents only. All 31 are read once, when those eight pass (R-50).
 - Stage 5 produces the verdicts early. If the numbers are wrong, that shows before any work on questions.
 
 **How stages 4 and 5 are developed**
 
 Against two things: the saved results of stage 3, and small hand-written sets of claims that exercise one rule each. For example: a correction arriving before the roster it corrects, or a copy arriving after the correction. These need no model and no document.
+
+**How stage 7 answers a question** (R-47, R-48)
+
+1. One model call returns a plan of up to five function calls. There is no tool loop.
+2. Code runs the plan.
+3. Code writes the nine-part answer from the function results.
+4. The plan is saved under the question text, stamped with the model and prompt version. A repeated question calls no model.
+
+- The model writes one thing only: an optional summary paragraph for the observations function.
+- Limit: a question whose second step depends on the result of the first is not handled. This narrows R-22.
 
 **How stage 7 handles a question no function fits**
 
@@ -163,7 +175,7 @@ Against two things: the saved results of stage 3, and small hand-written sets of
 | Names a date | "Cannot answer", and the stored passages for that patient and date | R-33 |
 | Names no date | "Cannot answer", and the documents of a matching kind for that patient, by document ID and file name | R-42 |
 
-- The model names the kind of document the question is about, from the list of kinds. Code looks the kind up in the `documents` table. The model does not search the text.
+- In the plan call, the model says that no function fits and names the kind of document the question is about, from the list of kinds. Code looks the kind up in the `documents` table. The model does not search the text.
 - No figure is given, and no passage is quoted.
 - If no document of that kind exists for the patient, the answer is "cannot answer" alone.
 - The list of kinds gains "authorization", which the capture list did not name.
@@ -201,12 +213,33 @@ Against two things: the saved results of stage 3, and small hand-written sets of
 
 Examples in the prompt are made up. None is taken from the 31 documents, so the prompt holds no fact about Rowan.
 
+### The trial set (R-50)
+
+The prompt is adjusted while looking at these eight documents and no others.
+
+| Document | Kind | Why it is in the set |
+|---|---|---|
+| D003 | Plan | The thresholds and what counts |
+| D005 | Attendance record, desk extract | Two dates in one file, with arrival and departure |
+| D006 | Schedule export | Scheduled times and statuses, which must not be read as attendance |
+| D103 | Correction | Target, field, old value and new value |
+| D106 | Clinical note, with a platform export | Two intervals, and an interruption |
+| D108 | Attendance record, register | Four dates, three signed entries and one desk entry |
+| D111 | Clinical note | An observed arrival, and a second clinician |
+| D112 | Draft note, and a billing extract | Two sections in one file, neither of which is attendance |
+
+- D103, D108 and D112 are the three documents of stage 2.
+- The set holds documents from both batches, which write dates and times differently.
+- The other 23 documents are read once, after the set passes. The prompt was not adjusted on them, so they test it fairly.
+- If the full read exposes a problem, the prompt changes, the version number rises, and all 31 are read again.
+
 ### When the result fails our checks
 
 | Failure | Action |
 |---|---|
 | The result does not fit the schema | One retry, with the error shown to the model |
 | A quote is not found in the source | The claim is kept and marked unverified. It is not used in a count |
+| A time, date or encounter number in the document appears in no claim | It is listed as not captured for that document. The list is shown at the reviews after stages 2 and 3 |
 | A time does not parse, or an end is before a start | The claim is marked invalid |
 | The second attempt also fails | The document is recorded as not read, and every answer it affects says so (R-10) |
 
@@ -256,6 +289,7 @@ Step 3 rebuilds from scratch for the patient, so the order in which documents ar
 | 13 | Weekly status | The four weeks match section 6 of the key | Yes |
 | 14 | The five answers | Figures and sources match section 7 of the key | Yes |
 | 15 | Problem questions | The nine behave as in section 8 of the key | Yes |
+| 16 | Coverage of values | Every time, date and encounter number in a document appears in a claim, or is listed as not captured | No |
 
 Check 8 is the one that would catch the 11:30 departure on Jan 19 if the correction were missing.
 
@@ -272,7 +306,7 @@ The problem statement asks for these, with measured figures kept apart from esti
 | Time to read all 31 documents, from empty | Timed, one call at a time and four at a time | Measured |
 | Time to re-run with saved results | Timed | Measured |
 | Time to add one new document | Timed | Measured |
-| Time to answer a question about one patient | Timed over five runs, split into model time and code time | Measured |
+| Time to answer a question about one patient | Code time is timed over five runs. Model time is taken from the logs of calls already made | Measured |
 | Time to answer a question across the collection | Timed | Measured on one patient, which shows little. See section 13 |
 | Tokens and cost per document | From what the tool reports | Measured, if the tool reports them |
 | Size of the saved abstraction | File size and rows per table | Measured |
@@ -286,10 +320,10 @@ The problem statement asks for these, with measured figures kept apart from esti
 | Stage | Calls | Note |
 |---|---|---|
 | 2 | 3 to 10 | Three documents, with a few tries at the prompt |
-| 3 | 31 to 90 | One full read, and up to two more if the prompt changes |
-| 7 | 30 to 60 | Five questions and nine problem questions, two calls or more each, with some repeats |
-| 9 | About 15 | Question timings |
-| Total | About 80 to 175 | |
+| 3 | 40 to 55 | The prompt is tried on eight documents, then all 31 are read once |
+| 7 | 14 to 25 | Five questions and nine problem questions, one plan call each, with some repeats |
+| 9 | About 5 | Question timings. The rest replay saved results and logs |
+| Total | About 60 to 95 | Was 80 to 175 before R-47, R-48 and R-50 |
 
 These are estimates. I have no reliable cost per call: the only figure on record is $2.70 for 36 calls, from the build that was deleted. Stage 2 gives the first real figure, and I will report it before stage 3 begins.
 
@@ -299,7 +333,7 @@ These are estimates. I have no reliable cost per call: the only figure on record
 
 | After stage | What you see | What you decide |
 |---|---|---|
-| 2 | The claims from three documents, and the cost of a call | Whether the capture list is working, and whether to read all 31 |
+| 2 | The claims from three documents, what the coverage check found, and the cost of a call | Whether the capture list is working, whether low effort is accurate enough, and whether to read all 31 |
 | 5 | The contacts and weekly verdicts beside the key | Whether the numbers are right before work on questions begins |
 | 7 | The five answers | Whether they say what you would say in the call |
 | 10 | The whole submission | Whether to send it |
@@ -317,8 +351,11 @@ I stop at each of these and wait for you.
 | One patient in the data | Collection-wide timing shows little, and the cohort function is tested on one patient | Patient is on every row from stage 1. The second patient is on hold (O-1) and should return before stage 9 |
 | No plan change in the data | The plan in effect for a period is untested | Plan rules carry dates from stage 4. On hold (O-13) |
 | The model reads a document differently on a second run | Results could differ between runs | Saved results make re-runs identical. How much the model varies is a candidate for the README's observed limitation |
-| The prompt is adjusted while looking at these 31 documents | It may fit them too well | Examples in the prompt are made up. The README says so |
+| The prompt is adjusted while looking at the documents | It may fit them too well | The prompt is adjusted on eight documents only, so the other 23 test it fairly. Examples in the prompt are made up. The README says so |
+| The trial set lacks a kind of document, such as a copy or an import | The full read exposes a problem the trial did not | The prompt changes and all 31 are read again. The saving is lost for that round |
 | The key shares the reading that shaped the rules | A shared mistake would pass every check | Checks 1 to 11 do not use the key. The key was verified against the documents on 2026-09-29, and you checked the six rows that decide a verdict |
+| A question needs a second step that depends on the first result | The one plan call cannot express it | The answer says which part it could not do. Described in the README as a limit |
+| Low effort makes the reading less accurate | Claims are missed | The coverage check lists what was missed. Effort is raised if stage 2 shows a loss |
 | Windows reads text files in a different encoding by default | The en dashes in times would be garbled and line numbers could shift | Every file is opened as UTF-8 |
 
 ---
