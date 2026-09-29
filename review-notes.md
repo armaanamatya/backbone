@@ -2,6 +2,8 @@
 
 Status of everything in this file: worked out by hand from reading the problem statement, `questions.json`, and all 31 documents. No code produced these numbers. Items marked **(judgment)** are interpretations you should agree or disagree with before we design anything.
 
+**Verification, 2026-09-28:** seven review agents checked this file against the source documents and the problem statement. No weekly verdict or headline number was wrong. The corrections they found have been applied here. The full list is in `verification.md`, section 2.
+
 Contents
 
 1. What Backbone is asking
@@ -41,8 +43,12 @@ Backbone reviews clinical records to establish what care a patient received and 
 | Multiple sources per contact | "A scheduled appointment, a clinician's note, and an attendance entry can each contribute different information"           |
 | Arithmetic in code           | "Calculate numerical answers in code from the abstraction"                                                                 |
 | Traceability                 | "trace a finding across patients to the individual patients, services, calculations, and source passages"                  |
-| Generalization               | works on "related unseen questions and additional documents without manually encoding patient facts or answers"            |
+| Generalization               | "work on the supplied documents and related unseen questions without manually encoding patient facts or answers". The FAQ adds "and additional documents" |
 | Scale                        | assume 500,000+ documents, repeated reviews, new documents daily                                                           |
+| Reuse across runs            | "demonstrate how it reuses work across questions and runs"                                                                  |
+| What the abstraction is      | "An organized representation of the patient's course of care... We should be able to inspect it, understand how it represents the relevant evidence, and trace its contents back to their sources." |
+| What the questions require   | "reconciling evidence across documents, calculating quantities over time, and distinguishing established conclusions from uncertainty" |
+| Easy to extend               | "reliable, auditable, and straightforward to extend"                                                                        |
 
 
 
@@ -51,7 +57,7 @@ Backbone reviews clinical records to establish what care a patient received and 
 
 - Initial processing time
 - Latency for individual-patient questions and collection-wide questions
-- Model usage and cost
+- Model usage and cost, "where available"
 - Size of the saved abstraction
 - Where it becomes slow or expensive at 500K+ documents, which part of the code causes it, and what you would change
 - Measured results kept separate from estimates
@@ -88,8 +94,12 @@ Completeness, accuracy, reproducible calculations, evidence quality, handling of
 - Think beyond vector search plus answer.
 - When documents conflict or information is missing, make it explicit. If you resolve a conflict, explain the basis and keep the evidence. If the record cannot settle something, say what can be established and what documentation would be needed.
 - References must be specific enough to locate the evidence within a document.
-- For calculated answers, show which records contributed and any consequential inclusion or exclusion decisions.
+- For calculated answers, show which records contributed, how the calculation was performed, and any consequential inclusion or exclusion decisions.
 - A command line or notebook is enough. No UI needed.
+- "State any assumptions that materially affect your answer."
+- "Prioritize a working end-to-end implementation, inspectable outputs, and meaningful checks."
+- "Document any incomplete work, tradeoffs, and what you would investigate next."
+- "You do not need to build a universal clinical review system."
 
 ---
 
@@ -130,7 +140,7 @@ Completeness, accuracy, reproducible calculations, evidence quality, handling of
 | Document IDs  | BH-D001 to BH-D016               | BH-D101 to BH-D115                |
 | Service dates | Jan 5–16                         | Jan 19–30                         |
 | File names    | descriptive, no ID               | start with the ID                 |
-| Date style    | 2026-01-05                       | January 19, 2026                  |
+| Date style    | Mixed: 2026-01-05, Jan05, January 5, 2026 | January 19, 2026           |
 | Header        | "SYNTHETIC TRAINING RECORD" line | none                              |
 | Therapists    | Mara Voss, Leena Park            | Mira Patel, Leah Chen, Nora Ellis |
 | Prescriber    | Elias Brenner, NP                | Elena Ortiz, PMHNP                |
@@ -172,7 +182,7 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 | BH-D105 | individual_2026-01-19                      | Added individual session 11:15–11:45           | Jan 19             | Jan 19         |
 | BH-D106 | telehealth_2026-01-21                      | Video session in two calls, plus platform log  | Jan 21             | Jan 21         |
 | BH-D107 | group_activity_records_2026-01-22_and_29   | Group notes for two dates                      | Jan 22, Jan 29     | Jan 22, Jan 29 |
-| BH-D108 | final_attendance_and_cancellation_register | Signed register, 4 appointment rows            | Jan 22, 27, 28, 29 | Jan 30         |
+| BH-D108 | final_attendance_and_cancellation_register | Register extract, 4 rows: 3 signed, 1 unsigned | Jan 22, 27, 28, 29 | Jan 30         |
 | BH-D109 | care_coordination_2026-01-23               | Professional-only call, 20 min                 | Jan 23             | Jan 23         |
 | BH-D110 | individual_primary_record_2026-01-26       | Individual note: 09:00–09:50                   | Jan 26             | Jan 26, 11:16  |
 | BH-D111 | individual_second_record_2026-01-26        | Second clinician's note: 09:10–09:50           | Jan 26             | Jan 26, 12:03  |
@@ -255,7 +265,7 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 | Jan 30 | none      | PHQ-9 completed 12:42; review is not an appointment                    | D115       | no     | 0        |
 
 
-- **Week total: 3 therapy days, 145–155 minutes. Cannot be determined.**
+- **Week total: 3 therapy days, 145 or 155 minutes. Cannot be determined.**
 
 
 
@@ -269,9 +279,9 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 | Group                 | 5 (Jan 6, 12, 19, 22, 29)    |
 | Family                | 2 (Jan 9, 30)                |
 | Distinct therapy days | 11 (Jan 19 has two sessions) |
-| Minutes               | 585–595                      |
-| Hours                 | 9.75–9.92                    |
-| Individual minutes    | 210–220                      |
+| Minutes               | 585 or 595                   |
+| Hours                 | 9.75 or 9.92                 |
+| Individual minutes    | 210 or 220                   |
 | Group minutes         | 300                          |
 | Family minutes        | 75                           |
 
@@ -336,7 +346,7 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 
 - Both are final. No correction exists.
 - D111 is later and more specific: "Rowan entered the treatment room at 09:10, when we began the session."
-- Result **(judgment)**: left open at 40–50 minutes.
+- Result **(judgment)**: left open as two alternatives, 40 minutes (D111) or 50 minutes (D110). No document supports a figure in between.
 
 
 
@@ -413,7 +423,7 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 
 ### 5.10 Authorization is not attendance
 
-- D001 authorizes 8 group sessions. It says "No service attendance record accompanies this letter."
+- D001 authorizes 8 group sessions. The desk entry added to it on Jan 5 says "No service attendance record accompanies this letter."
 - 7 groups were scheduled, 5 attended, 1 cancelled by the clinic, 1 no-show.
 
 
@@ -432,15 +442,23 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 
 | Mistake                                        | Effect                                                    |
 | ---------------------------------------------- | --------------------------------------------------------- |
-| Using scheduled time for Jan 6                 | Week 1 becomes 185 min, wrongly met                       |
+| Using scheduled time for Jan 6                 | Week 1 becomes 170 min, wrongly met (185 if the break is also left in) |
 | Not subtracting the break on Jan 6             | Week 1 becomes 155 min, wrongly met                       |
 | Counting the partner-only contact              | Week 2 becomes 3 days and 160 min, wrongly met            |
-| Counting the medication visit as a therapy day | Week 2 reaches 3 days                                     |
+| Counting the medication visit as a therapy day | Week 2 reaches 3 days; minutes stay at 120, so still not met |
 | Using 11:30 on Jan 19                          | Week 3 becomes 195 min (verdict unchanged, minutes wrong) |
 | Counting two video calls as two sessions       | Session count becomes 13                                  |
-| Counting the Jan 27 draft or charge            | Week 4 wrongly met                                        |
-| Using 45 for the Jan 30 family session         | Week 4 becomes 160–170, wrongly met                       |
+| Counting the Jan 27 draft                      | Week 4 becomes 220 or 230, wrongly met                       |
+| Counting the Jan 27 charge alone               | Week 4 gains a day and no minutes; still cannot determine |
+| Using 45 for the Jan 30 family session         | Week 4 becomes 160 or 170, wrongly met                       |
 | Choosing one Jan 26 note                       | Week 4 looks certain when it is not                       |
+| Counting both Jan 9 notes as two sessions      | Week 1 becomes 185, wrongly met                           |
+| Counting the Jan 8 no-show at its scheduled 45 | Week 1 becomes 4 days and 185, wrongly met                |
+| Counting the cancelled Jan 15 group            | Week 2 becomes 3 days and 195, wrongly met                |
+| Summing both Jan 26 notes                      | 13 sessions; week 4 becomes 195, wrongly met              |
+| Placing Jan 22 by the register's Jan 30 date   | Week 3 becomes 2 days and 135, wrongly not met            |
+| Placing the resent roster on its Jan 26 date   | Week 4 gains a phantom group, wrongly met                 |
+| Treating the video session as not counting     | Week 3 becomes 2 days and 135, wrongly not met            |
 
 
 ---
@@ -487,8 +505,8 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 | Jan 5–11     | 50 + 45 + 45         | 140     | 2.33      |
 | Jan 12–18    | 75 + 45              | 120     | 2.00      |
 | Jan 19–25    | 60 + 30 + 45 + 45    | 180     | 3.00      |
-| Jan 26–Feb 1 | (40 or 50) + 75 + 30 | 145–155 | 2.42–2.58 |
-| Total        |                      | 585–595 | 9.75–9.92 |
+| Jan 26–Feb 1 | (40 or 50) + 75 + 30 | 145 or 155 | 2.42 or 2.58 |
+| Total        |                      | 585 or 595 | 9.75 or 9.92 |
 
 
 - Not settled by the record: the Jan 26 start time.
@@ -503,7 +521,7 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 | Jan 5–11     | 3    | 140     | Not met          | Minutes 10 short                       |
 | Jan 12–18    | 2    | 120     | Not met          | 1 day and 30 minutes short             |
 | Jan 19–25    | 3    | 180     | Met              | Both thresholds reached                |
-| Jan 26–Feb 1 | 3    | 145–155 | Cannot determine | Days reached; minutes depend on Jan 26 |
+| Jan 26–Feb 1 | 3    | 145 or 155 | Cannot determine | Days reached; minutes depend on Jan 26 |
 
 
 
@@ -555,7 +573,7 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 
 - Remission or resolution.
 - Any conclusion about anxiety severity: no anxiety measure exists.
-- Stable sleep: every note describes it as inconsistent.
+- Stable sleep: no note describes it as stable. The Jan 21 note records one improved night followed by a poor one.
 - Return to work: not achieved within the episode.
 - That the improvement was caused by treatment or medication.
 
@@ -607,7 +625,7 @@ The problem statement says "supplied datasets" (plural), which fits two batches.
 | 15  | Rules that come from the record             | Thresholds and definitions from D003                       |
 | 16  | Rules in effect for a period                | Which plan version governs which week                      |
 | 17  | Calendar bucketing                          | Monday–Sunday weeks; weeks that cross the episode boundary |
-| 18  | Carrying ranges through sums and thresholds | 40–50 becomes 145–155 becomes "cannot determine"           |
+| 18  | Carrying alternatives through sums and thresholds | 40 or 50 becomes 145 or 155 becomes "cannot determine" |
 | 19  | Patterns over time                          | Two consecutive weeks below                                |
 | 20  | Before and after comparison                 | Around a plan change, normalized for period length         |
 
@@ -721,10 +739,10 @@ Source key: **DEV** = in `questions.json`. **PS** = named in the problem stateme
 
 | Question                                       | Source | Hand answer for Rowan                                           |
 | ---------------------------------------------- | ------ | --------------------------------------------------------------- |
-| Minutes and hours overall and per week         | DEV-02 | 585–595; 140, 120, 180, 145–155                                 |
-| Minutes by service type                        | Likely | Individual 210–220, group 300, family 75                        |
+| Minutes and hours overall and per week         | DEV-02 | 585 or 595; 140, 120, 180, 145 or 155                                 |
+| Minutes by service type                        | Likely | Individual 210 or 220, group 300, family 75                        |
 | Minutes on a given day                         | Likely | See section 4                                                   |
-| Time in non-therapy contacts                   | Likely | Medication 45, partner-only 40, coordination 20                 |
+| Time in non-therapy contacts                   | Likely | Medication 45, partner-only 55 (40 on Jan 16, 15 on Jan 30), coordination 20 |
 | Scheduled time against delivered time          | Likely | Groups: 450 scheduled across 5 attended, 300 delivered          |
 | Time lost to breaks, lateness, early departure | Likely | Breaks 75; late or early 75 (Jan 6: 30, Jan 19: 15, Jan 22: 30) |
 
@@ -737,9 +755,9 @@ Source key: **DEV** = in `questions.json`. **PS** = named in the problem stateme
 | Question                                       | Source | Hand answer for Rowan                                                         |
 | ---------------------------------------------- | ------ | ----------------------------------------------------------------------------- |
 | Was the goal met each week                     | DEV-03 | Not met, not met, met, cannot determine                                       |
-| By how much did each week miss                 | Likely | Week 1: 10 min. Week 2: 1 day, 30 min. Week 4: between 5 short and 5 over     |
-| Which weeks depend on unresolved documentation | PS     | Week 4                                                                        |
-| What would settle week 4                       | Likely | A signed addendum from either clinician, or an arrival record for Jan 26      |
+| By how much did each week miss                 | Likely | Week 1: 10 min. Week 2: 1 day, 30 min. Week 4: 5 short or 5 over     |
+| Which weeks depend on unresolved documentation | Likely | Week 4                                                                        |
+| What would settle week 4                       | Likely | An arrival or check-in record for Jan 26, or a correction by the author of the note being changed. Who may settle it is open (O-14) |
 | Was the requirement in effect for that period  | PS     | One plan covers Jan 5–30                                                      |
 | Why was a week missed                          | Likely | Week 2: clinic cancelled the group; Rowan could not attend the family session |
 
@@ -757,7 +775,7 @@ Source key: **DEV** = in `questions.json`. **PS** = named in the problem stateme
 | Jan 9  | Likely | 1                | 45      | Two notes; one signed the next day                          |
 | Jan 16 | Likely | 0                | 0       | Partner only; PHQ-9 review is not a visit                   |
 | Jan 22 | Likely | 1                | 45      | Late arrival                                                |
-| Jan 26 | Likely | 1                | 40–50   | Unresolved conflict                                         |
+| Jan 26 | Likely | 1                | 40 or 50 | Unresolved conflict                                         |
 | Jan 27 | Likely | 0                | 0       | Signed no-show against draft and charge                     |
 | Jan 30 | Likely | 1                | 30      | Partial presence; medication visit excluded; PHQ-9 at 12:42 |
 
@@ -775,7 +793,7 @@ Source key: **DEV** = in `questions.json`. **PS** = named in the problem stateme
 | Course of sleep                              | Likely | Disrupted throughout; never described as stable                       |
 | Steps toward return to work                  | Likely | See below                                                             |
 | Safety statements                            | Likely | See below                                                             |
-| Medication changes                           | Likely | None. Jan 30: "No medication change was made." Drug name never stated |
+| Medication changes                           | Likely | None. Jan 30: "No medication change was made today." Drug name never stated |
 | Family involvement                           | Likely | Jan 9 session, Jan 16 partner contact, Jan 30 session                 |
 
 
@@ -785,9 +803,12 @@ Source key: **DEV** = in `questions.json`. **PS** = named in the problem stateme
 | Date   | Document   | Step                                                                          |
 | ------ | ---------- | ----------------------------------------------------------------------------- |
 | Jan 5  | D002       | Chose opening the work inbox for five minutes                                 |
+| Jan 6  | D004       | Chose reading the work message before deciding how to respond as a possible next step |
+| Jan 12 | D009       | Identified looking at one message as a smaller step than replying to all of them |
 | Jan 14 | D011       | Had opened a work message; not yet replied; drafted a response in session     |
 | Jan 19 | D105       | Task narrowed to drafting two sentences to a supervisor                       |
 | Jan 21 | D106       | Had drafted a message; stopped before sending                                 |
+| Jan 23 | D109       | Had asked the outside social worker whom to contact about a gradual return schedule (reported by the social worker, not by Rowan) |
 | Jan 26 | D110       | Had sent the message and received a reply; postponing choosing a time to talk |
 | Jan 29 | D107       | Had opened the work calendar; delaying the follow-up conversation             |
 | Jan 30 | D113, D115 | Still anxious; "continues to delay follow-up"                                 |
@@ -834,9 +855,10 @@ Note on the second row: if Jan 26 were resolved to 40 minutes, week 4 becomes no
 | Leena Park, LPC    | Group facilitator, batch 1 | Groups Jan 6, 12; cofacilitator Jan 9                                                 |
 | Elias Brenner, NP  | Prescriber, batch 1        | Medication Jan 13                                                                     |
 | Mira Patel, LCSW   | Therapist, batch 2         | Individual Jan 19, 21, 26; family Jan 30; coordination Jan 23; PHQ-9 review Jan 30    |
-| Leah Chen, LCSW    | Group facilitator, batch 2 | Groups Jan 19, 22, 29; register entries                                               |
+| Leah Chen, LCSW    | Group facilitator, batch 2 | Groups Jan 19, 22, 29; register entries; attendance correction Jan 20 |
 | Nora Ellis, LCSW   | Participating clinician    | Individual Jan 26                                                                     |
 | Elena Ortiz, PMHNP | Prescriber, batch 2        | Medication Jan 30                                                                     |
+| Daniel Shaw        | Outside social worker      | Coordination call Jan 23                                                              |
 
 
 
@@ -879,14 +901,14 @@ Not testable on the supplied data. There is one plan and no amendment.
 | ------------------------------------------------------------------ | --------------------------------------------------- |
 | Exact duplicate of an existing file                                | Nothing changes                                     |
 | Same document with different whitespace or line endings            | Nothing changes                                     |
-| Signed addendum settling Jan 26 at 09:10                           | Week 4 becomes 145, not met                         |
-| Signed addendum settling Jan 26 at 09:00                           | Week 4 becomes 155, met                             |
+| Signed addendum settling Jan 26 at 09:10                           | Week 4 becomes 145, not met, if the addendum is accepted as settling it (O-14) |
+| Signed addendum settling Jan 26 at 09:00                           | Week 4 becomes 155, met, if the addendum is accepted as settling it (O-14) |
 | Another resend of the Jan 19 original roster                       | Nothing changes                                     |
-| A new signed record, written after the correction, that says 11:30 | A real conflict; Jan 19 becomes unresolved          |
+| A new signed record, written after the correction, that says 11:30 | A real conflict, weighed against D105's 11:15 start as well as the correction. Week 3 is met either way (180 or 195) |
 | Signed note for Jan 27 saying Rowan attended                       | Conflict between two signed records                 |
 | A second patient                                                   | Appears in collection-wide answers; Rowan unchanged |
 | A plan amendment                                                   | Later weeks are judged against the new requirement  |
-| Documents for a session after Jan 30                               | Week 4 totals may rise                              |
+| Documents for a session after Jan 30                               | Undecided (O-12): week 4 runs to Feb 1, but the review period ends Jan 30 |
 | A multi-patient roster                                             | Each patient gets only their own row                |
 | Same documents, different arrival order                            | Identical result                                    |
 
@@ -906,7 +928,7 @@ Not testable on the supplied data. There is one plan and no amendment.
 | Richer plan rules       | "2 groups and 1 individual weekly", tapering schedules                                                  |
 | Extraction errors       | 1% wrong is 5,000 documents; needs validation, sampling, review queue                                   |
 | Re-processing           | A prompt or model change means re-extracting everything                                                 |
-| Extraction cost         | Measured earlier at about $0.07 per document on Opus; about $36K for 500K at list price (extrapolation) |
+| Extraction cost         | No usable figure yet. An earlier run cost about $2.70 for 36 calls, but it came from the deleted build, was per call and not per document, and left no logs. A new figure has to be measured |
 | Throughput              | Rate limits on model calls set the ceiling on initial processing                                        |
 | Format                  | Scans, tables, long documents                                                                           |
 | Time zones              | "All times local" breaks with several facilities                                                        |
@@ -925,7 +947,7 @@ Not testable on the supplied data. There is one plan and no amendment.
 | Unit of abstraction   | Per-document summaries; claims plus a reconciled layer; one merged timeline          | Two layers: what each document says, and what we conclude       |
 | Where the model works | Per document; per patient with the whole chart; none (rules only)                    | Per document; code reconciles                                   |
 | Conflict policy       | Fixed precedence rules; model adjudication; leave open for a human                   | Rules for clear cases; leave the rest open                      |
-| Uncertainty           | Min–max ranges; enumerated scenarios; probabilities                                  | Ranges                                                          |
+| Uncertainty           | Min–max ranges; enumerated scenarios; probabilities                                  | Alternatives, each tied to its source (decided for Jan 26)      |
 | Storage               | SQLite; JSON files per patient; Postgres                                             | SQLite plus a readable export                                   |
 | Answering questions   | Fixed reports; model picks from coded functions; model writes SQL; RAG over raw text | Model plans, code computes, model narrates                      |
 | Plan rules            | Hardcoded; extracted as data with effective dates                                    | Extracted as data                                               |
@@ -968,7 +990,7 @@ Not testable on the supplied data. There is one plan and no amendment.
 | Fixed reports               | Fully reproducible                    | Cannot handle unseen questions                               |
 | Model picks coded functions | Numbers from code; handles variations | Limited to what the functions cover                          |
 | Model writes SQL            | Most flexible                         | Query errors; harder to guarantee correctness                |
-| RAG over raw text           | Simple                                | Re-derives everything per question; the FAQ warns against it |
+| RAG over raw text           | Simple                                | Re-derives everything per question; the FAQ recommends "thinking beyond" it, while saying "Retrieval may be useful" |
 
 ### What motivates each choice
 
@@ -985,7 +1007,7 @@ The leans in the table above came from experience first. This traces each one ba
 | Rebuild only affected patients | Documents arrive daily | Strong |
 | Model plans, code computes, model narrates | Unseen questions need flexibility; numbers must come from code | Medium |
 | Rules for clear conflicts, rest left open | Uncertainty handling is scored | Medium |
-| Uncertainty as ranges | "Cannot be determined" is an explicit answer option | Weak |
+| Uncertainty as alternatives | Each note states one figure, so the record supports two values and not a span; "cannot be determined" is an explicit answer option | Medium |
 | SQLite | Survives restart, inspectable, no setup | Weak |
 | Opus for extraction | None: it was a default | Unmotivated |
 
@@ -1025,7 +1047,7 @@ Working backwards from each question type gives the minimum the abstraction must
 | Reconstructing a date | What each document claimed, its standing, and the reasoning applied |
 | Progress | Distinct assessments; observations tagged with who said them |
 
-That gives five record types. Anything beyond them needs its own justification. Authorizations, for example, are not needed by any question Backbone has named.
+That gives five record types. Anything beyond them needs its own justification. Verification found things the question catalog needs that these five cannot hold, including authorizations, charges, clinicians, and appointments that did not happen. See `verification.md` section 8 and open item O-17.
 
 ### Suggested order of decisions
 
@@ -1047,8 +1069,8 @@ Each constrains the next.
 | --- | ------------------------------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------ |
 | 1   | Does the Jan 5 session count, given the plan was signed at 13:05 that day | Yes; the plan's episode starts Jan 5          | Exclude it; week 1 becomes 2 days, 90 min (still not met)                |
 | 2   | Is week 4 judged in full, although the episode ends Friday Jan 30         | Yes, without prorating                        | Prorate, or mark partial weeks separately                                |
-| 3   | Should Jan 26 be resolved in favour of D111                               | No; leave at 40–50                            | Yes; D111 gives a first-hand arrival time. Week 4 becomes not met at 145 |
-| 4   | Does the group break apply to Rowan                                       | Yes; the notes say the whole group stopped    | None reasonable                                                          |
+| 3   | Should Jan 26 be resolved in favour of D111                               | No; leave open as 40 or 50                    | Yes; D111 gives a first-hand arrival time. Week 4 becomes not met at 145 |
+| 4   | Does the group break apply to Rowan                                       | Yes; every group note says no therapy took place during the break (D-01, Confirmed) | Count the break, as some programs do; weeks 1 and 4 would then be met |
 | 5   | Is the Jan 6 departure time reliable                                      | Yes, though it is when the badge was returned | Treat as approximate                                                     |
 | 6   | Are "N. Ellis" and "Nora Ellis, LCSW" the same person                     | Not assumed                                   | Assume the same                                                          |
 | 7   | Does a no-show use an authorization unit                                  | Not stated in the record                      | D001 defines a unit as "one scheduled group session"                     |

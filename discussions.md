@@ -21,8 +21,8 @@ A record of what we have discussed on the Backbone take-home, what came out of e
 |---|---|---|---|
 | O-1 | Do we write our own test documents for a second patient and a plan amendment? | Discussion 7 | You |
 | O-2 | What serves as the answer key, and who confirms it? | Discussion 6, 7 | You |
-| O-3 | Which of the 25 Proposed decisions in `decisions.md` do you confirm, change, or want to discuss? | Discussion 6 | You |
-| O-4 | Jan 26 conflict: leave open at 40–50, or resolve in favour of the second note? | Discussion 3 | You |
+| O-3 | Which of the 33 Proposed decisions in `decisions.md` do you confirm, change, or want to discuss? (25 original, 8 added in Discussion 8) | Discussion 6, 8 | You |
+| O-4 | Jan 26 conflict: leave open as 40 or 50, or resolve in favour of the second note? | Discussion 3 | You |
 | O-5 | Final week: judge against the full requirement, or prorate? | Discussion 2 | You |
 | O-6 | Where does the model work: per document, or per patient with the whole chart? | Discussion 4, 7 | You |
 | O-7 | Which model for extraction? | Discussion 4, 7 | You, after an experiment |
@@ -34,14 +34,24 @@ A record of what we have discussed on the Backbone take-home, what came out of e
 | O-13 | Which plan governs a week that contains a plan change, and does a plan take effect from its episode start or its signature? | Discussion 8 | You |
 | O-14 | Which evidence can close an open conflict, and who may settle it? | Discussion 8 | Both |
 | O-15 | What happens when a note's stated minutes and its clock times disagree? | Discussion 8 | You |
-| O-16 | Do I apply the proposed corrections to `review-notes.md` and `decisions.md`, and add D-27 to D-34 as Proposed? | Discussion 8 | You |
 | O-17 | Which of the items with no home in the five record types get stored: appointments not held, charges, authorizations, clinicians, intervals, documents, episodes? | Discussion 8 | Both |
 | O-18 | How are patients identified, and how are documents that list several patients handled? | Discussion 8 | Both |
 | O-19 | Within 2–5 hours, what is built, what is designed only, and what is left out? | Discussion 8 | You |
-| O-20 | What format do answers take, and how precise must a citation be? | Discussion 8 | Both |
+| O-20 | What format do answers take, how precise must a citation be, and how are assumptions and unprocessed documents shown in an answer? | Discussion 8, 9 | Both |
 | O-21 | How are logs, benchmarks and measured cost produced, given the $0.07 figure cannot be used? | Discussion 8 | Both |
 | O-22 | How do the interviewers run the code without your API key? | Discussion 8 | You |
 | O-23 | What happens when the extraction prompt changes, and what does "repeated reviews" require? | Discussion 8 | Both |
+| O-24 | How are duplicates detected: by file content only, or also at the level of the facts read from the file? | Discussion 9 | Both |
+| O-25 | What are the general rules for conflicts: how kinds of document rank, what counts as signed, and how retractions, chained corrections and summary documents are handled? | Discussion 9 | Both |
+| O-26 | What does the reading step capture from each document, including whether each time is scheduled or actual, and what standing each claim has? | Discussion 9 | Both |
+| O-27 | How are plan rules stored so that a plan of a different shape fits, and is "whether it counts" stored or worked out at question time? | Discussion 9 | Both |
+| O-28 | How does the system respond to a question with a false premise, an unknown patient, an ambiguous term or a relative date, and how does it tell "did not happen" from "not documented"? | Discussion 9 | Both |
+| O-29 | Where is the line between a general rule and an encoded fact, and how is it checked? | Discussion 9 | You |
+| O-30 | Are the hand-worked answers in `review-notes.md` section 6 revised to close the gaps found in them? | Discussion 9 | You |
+| O-31 | For the README: which design decision is tested, which limitation is reported, and what is named as the first bottleneck? | Discussion 9 | You |
+| O-32 | Cleanup: log the remaining interpretations and fix the remaining inconsistencies? (The "40 or 50" wording was settled as R-7) | Discussion 9, 11 | You |
+| O-33 | Is SQLite the storage choice? | Discussion 9 | You |
+| O-34 | Where does retrieval sit: looking up cited passages by ID only, or also searching observation text for narrative questions such as progress? | Discussion 10 | You |
 
 ## Resolved
 
@@ -52,6 +62,8 @@ A record of what we have discussed on the Backbone take-home, what came out of e
 | R-3 | Are group breaks subtracted from patient minutes? | Yes (D-01, Confirmed) | 6 |
 | R-4 | Are interpretations recorded? | Yes, in `decisions.md`, before they are used | 6 |
 | R-5 | Should the 36 reasoning kinds drive the design? | No; they are a test checklist. The eight kinds drive the design | 7 |
+| R-6 | Apply the proposed corrections and add D-27 to D-34? (was O-16) | Yes, after committing the files first. Applied 2026-09-28 | 8 |
+| R-7 | Is the Jan 26 value written as a range or as alternatives? (part of O-32) | Alternatives: "40 or 50", each tied to its note. Totals follow the same form | 11 |
 
 ---
 
@@ -243,6 +255,7 @@ A record of what we have discussed on the Backbone take-home, what came out of e
 
 - On the modified `Problem Statement.docx`: "it was just hihglighting some sentences".
 - "log all of this in discussions.md once the red team finishes".
+- "commit the files then apply the corrections".
 
 **Summary**
 
@@ -542,19 +555,188 @@ The second note reads: "Rowan entered the treatment room at 09:10, when we began
 | A billing convention that family therapy counts the full session | Agent 7; outside knowledge, and the plan's wording overrides it |
 | Likelihood ratings for unseen questions and documents | Agent 5's judgment |
 
-**What I attempted and did not complete**
+**How the corrections were applied**
 
-- I wrote a script to apply the corrections to `decisions.md`. It was blocked before it ran, because the file is not under version control and the change could not be undone.
-- As a result, `review-notes.md` and `decisions.md` are unchanged. The corrections and the eight new decisions are listed in `verification.md` as proposals.
+- My first attempt to correct `decisions.md` was blocked before it ran, because the file was not under version control and the change could not be undone. I listed the corrections as proposals and asked you (O-16).
+- You said to commit the files and then apply the corrections.
+- I created the branch `notes-verification` and committed the four notes files as they stood (commit `1a60e6d`). Nothing was pushed.
+- I then applied the corrections. They are uncommitted, so `git diff` shows exactly what changed.
+
+| File | What changed |
+|---|---|
+| `decisions.md` | 10 entries corrected, each with a "Corrected" line. 6 more given a missing "if reversed" line or a cross-reference. D-27 to D-34 added as Proposed |
+| `review-notes.md` | 25 corrections: section 1 requirements, the mistakes table, work steps, section 9 rows, the cost figure, and others |
+
+**Not changed, because they are your decisions**
+
+- No decision's status. D-01 is still the only Confirmed decision.
+- The notes still write the Jan 26 value as "40–50" in most places. D-07 now says it is carried as "40 or 50". Changing it everywhere waits on O-4.
+- The hand-worked answers in section 6 of `review-notes.md`. The gaps agent 3 found in them are listed in `verification.md`, section 7.
+- `Problem Statement.docx`, which holds your highlighting, was not committed.
 
 **Outcome**
 
 - This entry holds the findings grouped by agent.
 - `verification.md` holds the same findings grouped by topic, in 16 sections, with each proposed correction set out as "says" and "should say".
 - 12 open items added (O-12 to O-23).
-- No item resolved. No decision's status changed.
+- One resolved: O-16 became R-6.
+- No decision's status changed.
 
-**Still open:** O-12 to O-23. O-16 comes first, since it decides whether the notes are corrected.
+**Still open:** O-12 to O-15 and O-17 to O-23.
+
+---
+
+## Discussion 9: Do the open items cover every gap
+
+**What prompted it:** You asked what the open items are, and whether they address all the gaps in `discussions.md` and `decisions.md`.
+
+**Answer:** No. The 22 open items covered most of the gaps from Discussion 8, but not all. I mapped every finding in Discussion 8 to an open item or a decision and found gaps with nothing tracking them.
+
+**Gaps that were tracked**
+
+| Gap | Tracked by |
+|---|---|
+| Record is assumed complete; nothing covers Jan 17–18 | D-31 |
+| Roster times entered at roster close | D-32 |
+| Video counts as patient-present | D-27 |
+| Partial attendance, two clinicians, the added Jan 19 session | D-28, D-29, D-30 |
+| Jan 16 described three ways | D-33 |
+| Jan 26 conflict | O-4, D-07 |
+| Final week, and days after Jan 30 | O-5, O-12, D-14 |
+| Plan change mid-week; when a plan takes effect | O-13 |
+| Who may settle a conflict | O-14 |
+| Stated minutes against clock times | O-15 |
+| Attended-or-not does not fit a range | O-10 |
+| Things the five record types cannot hold | O-9, O-17 |
+| Patient identity; Casey Mercer; multi-patient rosters | O-18 |
+| Scope against the time budget | O-19 |
+| Answer format and citation precision | O-20 |
+| Logs, benchmarks, the unusable cost figure | O-21 |
+| Running without your API key | O-8, O-22 |
+| Prompt change; repeated reviews | O-23 |
+| No second patient or plan change in the data | O-1 |
+| The answer key was made by the same reading as the rules | O-2 |
+
+**Gaps that nothing tracked, now open items**
+
+| Gap | Found by | Now |
+|---|---|---|
+| Duplicate handling. A copy under a new document ID passes a file check and would double-count. This is a stated requirement | Agent 6 | O-24 |
+| Conflict decisions are written as facts about Rowan. Retractions, chained corrections and summary documents have no rule. "Signed" is undefined for extracts | Agents 4, 5 | O-25 |
+| What the reading step must capture: correction targets, scheduled or actual, author present or not, standing per claim | Agents 5, 6 | O-26 |
+| A plan of a different shape, and an amendment that changes what counts | Agent 5 | O-27 |
+| Questions with a false premise, an unknown patient, an ambiguous term or a relative date | Agent 5 | O-28 |
+| The line between a general rule and an encoded fact | Agent 6 | O-29 |
+| Gaps in the hand-worked answers: DEV-03 never states the goal; DEV-05 has no dated symptom course | Agents 3, 7 | O-30 |
+| README items: the tested decision, the observed limitation, the first bottleneck | Agent 3 | O-31 |
+| Storage choice | Agent 4 | O-33 |
+| Assumptions and unprocessed documents shown in answers | Agents 3, 6 | Added to O-20 |
+
+**Left over from the corrections (O-32)**
+
+| Item | Detail |
+|---|---|
+| D-07 contradicts itself | Its title and decision line still say "40–50" and "carried as a range". The line I added says "40 or 50". I introduced this |
+| "40–50" style ranges | 10 places in `review-notes.md`, 3 in `decisions.md` |
+| Jan 16 wording | `review-notes.md` sections 8.1 and 8.3 still call it a family session. D-33 calls it a collateral contact |
+| "20 scheduled encounters" | Still in sections 2 and 4. It is a count of encounter IDs |
+| "Two equally valid records" | Still in section 7. Both agents said this understates the difference |
+| How assessments are matched | Section 7 says by form ID. D-18 says by completion date |
+| "Opus for extraction" | The motivation table lists it as a lean. The design table says decide by experiment |
+| Caveats not added | D-05: the room-transfer record is missing. D-18: two of the three questionnaires have no form ID |
+
+**Interpretations still not logged**
+
+| Interpretation | Can it change an answer |
+|---|---|
+| In DEV-05, "assessments" means PHQ-9 questionnaires, not clinicians' written assessments | Yes: DEV-05 |
+| Local service names are mapped to the plan's classes ("Skills group" is group therapy) | Yes: DEV-01 counts by type |
+| The Jan 19 minutes from 11:00 to 11:15, when Rowan was distressed, count as group therapy | Minutes only |
+| The authorization's "submitted" plan is not treated as an earlier plan version | Only if an earlier plan exists |
+
+**Small items that need only a build, design or ignore call under O-19:** instructions aimed at the model inside a note, a third document format, time zones, never reading meaning from file names, and services the plan never mentions.
+
+**State of the files**
+
+- The corrections from Discussion 8 are applied but not committed.
+- The work is on the branch `notes-verification`, not `main`. Nothing is pushed.
+- `Problem Statement.docx` is not committed.
+
+**Outcome**
+
+- 10 open items added (O-24 to O-33). O-20 widened.
+- 32 items are now open.
+- Nothing resolved. No decision's status changed. No file other than this one was changed.
+
+**Still open:** O-24 to O-33.
+
+---
+
+## Discussion 10: What the problem statement hints about RAG
+
+**What prompted it:** You asked whether the problem statement is saying RAG is not the best option, and what Backbone is hinting at.
+
+**Key points**
+
+- The FAQ does not reject retrieval. It rejects "a standard vector-search-and-answer pipeline" as the whole design, and says "Retrieval may be useful".
+- The hint is in the phrase "consider what representation of the record would make these answers reliable, auditable, and straightforward to extend". The exercise is about how the record is modelled and stored, not about how text is searched.
+- The three things the FAQ names each need something a search over text chunks does not have:
+
+| FAQ requirement | What it needs | Why search-and-answer falls short |
+|---|---|---|
+| "Reconciling evidence across documents" | Knowing that several documents describe the same contact | Search ranks by similarity. D102, D103 and D104 all match a Jan 19 question and nothing says which is the copy |
+| "Calculating quantities over time" | Every contact in the period, with typed values | Search returns the top few matches. A missed chunk gives a wrong total with no error |
+| "Distinguishing established conclusions from uncertainty" | The status of each fact stored as data | The model's wording varies between runs and cannot be queried across patients |
+
+- Other sentences point the same way: "should not rebuild the abstraction for each question", "Calculate numerical answers in code from the abstraction", "A later document does not automatically override an earlier one", "Duplicate copies of a document should not change clinical results", and the request to report "the size of the saved abstraction".
+- The same sentences also rule out sending a patient's whole chart to the model for each question.
+- Collection-wide questions ("which patients had two consecutive weeks below") need every patient checked. That is a query over stored records, not a search.
+- The statement names where retrieval fits: "you may check relevant source passages".
+- The leans already in `review-notes.md` section 11 match this reading. Nothing in them needs to change.
+
+**Outcome**
+
+- No decision changed. One open item added (O-34).
+
+**Still open:** O-34.
+
+---
+
+## Discussion 11: A range or two alternatives for Jan 26
+
+**What prompted it:** I said D-07 contradicted itself, with "40–50" in its title and "40 or 50" in the line I had added. You asked whether it should stay a range, "since that's what they stated".
+
+**Key points**
+
+- The documents do not state a range of minutes. Each note states one figure.
+
+| Note | What it states |
+|---|---|
+| D110 | "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes." |
+| D111 | "Actual patient psychotherapy contact: 09:10–09:50, 40 minutes." |
+
+- The ranges in those lines are clock times. "40–50 minutes" was my summary of the disagreement.
+- For alternatives: they match the evidence, keep each figure tied to its note, and also work for attended-or-not.
+- For a range: the true figure could lie in between if both clinicians were imprecise, and totals read naturally as bounds.
+- The week 4 verdict is "cannot determine" under both forms.
+
+**What you said:** "ok lets do 40 or 50 alternatives then".
+
+**Outcome**
+
+- Jan 26 is written as "40 or 50" wherever the session is described.
+- Totals that depend on it follow the same form: 145 or 155, 585 or 595, 9.75 or 9.92 hours. With one open conflict, each total has exactly two possible values.
+- `review-notes.md`: 16 places changed. The design lean for uncertainty now reads "Alternatives, each tied to its source", and reasoning item 18 reads "carrying alternatives".
+- `decisions.md`: D-07's title and decision line, and the figures in D-03 and D-22.
+- Earlier discussion entries in this file were left as written, since they record what was said at the time.
+
+**What this does not decide**
+
+- O-4: whether Jan 26 stays open or is resolved toward 40.
+- O-10: how attended-or-not is represented. The same form would fit, but you have not decided it.
+- D-07 is still Proposed.
+
+**Still open:** O-4, O-10, O-32 (the remaining two parts).
 
 ---
 
@@ -562,8 +744,8 @@ The second note reads: "Rowan entered the treatment room at 09:10, when we began
 
 Each constrains the next.
 
-1. Whether to apply the proposed corrections and new decisions (O-16).
-2. Scope for the time budget, and how correctness will be checked (O-19, O-1, O-2).
-3. The Proposed decisions, starting with those that change an answer (O-3, O-4, O-5, O-12, O-15).
-4. The record types and conflict handling (O-9, O-10, O-11, O-13, O-14, O-17, O-18).
-5. Where the model works, which model, and how the code is run and measured (O-6, O-7, O-8, O-20, O-21, O-22, O-23).
+1. Scope for the time budget, and how correctness will be checked (O-19, O-1, O-2, O-29).
+2. The decisions that change an answer (O-3, O-4, O-5, O-12, O-15, O-30, O-32).
+3. What is stored, and how conflicts are handled (O-9, O-10, O-11, O-13, O-14, O-17, O-18, O-24, O-25, O-26, O-27).
+4. How questions are answered (O-20, O-28).
+5. Where the model works, which model, and how the code is run and measured (O-6, O-7, O-8, O-21, O-22, O-23, O-31, O-33).

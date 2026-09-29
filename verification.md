@@ -2,7 +2,7 @@
 
 Produced 2026-09-28. Seven independent review agents (Opus) checked `review-notes.md`, `decisions.md` and `discussions.md` against the 31 source documents, the problem statement and `questions.json`. This file is the merged result.
 
-**Nothing in `review-notes.md` or `decisions.md` has been changed.** Every correction and every new decision below is proposed and waits for your approval.
+**Status:** you approved the corrections on 2026-09-28. The files were committed first (branch `notes-verification`, commit `1a60e6d`), and the corrections in section 2 and the new decisions in section 3 were then applied. No decision's status was changed.
 
 **How to read the "Checked" column**
 
@@ -67,7 +67,7 @@ No weekly verdict and no headline number was wrong.
 
 ## 2. Errors found, and proposed corrections
 
-None of these has been applied. "Says" is the current wording in the file. "Should say" is the proposed correction.
+All of these have been applied. "Says" is the wording before the correction. "Should say" is the wording now.
 
 ### In `decisions.md`
 
@@ -129,9 +129,9 @@ None of these has been applied. "Says" is the current wording in the file. "Shou
 
 ## 3. Interpretations that were never logged
 
-Each is being used in a number without a decision behind it. They are proposed for `decisions.md` with status Proposed, and have not been added.
+Each was being used in a number without a decision behind it. They have been added to `decisions.md` with status Proposed.
 
-| Proposed ID | Interpretation | If reversed | Found by |
+| ID | Interpretation | If reversed | Found by |
 |---|---|---|---|
 | D-27 | A video session counts as patient-present | Week 3 becomes 2 days and 135 minutes, not met | Agents 2, 5, 7 |
 | D-28 | Partial attendance still counts as a session and a therapy day | Under a full-attendance rule, weeks 1, 3 and 4 each fall to 2 days | Agents 4, 7 |
