@@ -1,0 +1,29 @@
+# Settings for the abstraction system.
+# Nothing in this file is a fact about a patient.
+
+[model]
+# Alias or full name accepted by the `claude` command-line tool (R-16, R-17).
+name = "haiku"
+# Effort for the reading step (R-49). Confirmed at stage 2.
+effort = "low"
+# Stamped on every claim. Raise it whenever prompts/reading.md changes.
+prompt_version = 3
+# Stamped on every saved plan. Raise it whenever prompts/plan.md changes.
+plan_prompt_version = 2
+# A guard against a runaway call, in US dollars per call.
+spending_cap_usd = 0.50
+# How many documents are read at the same time.
+parallel_calls = 4
+# Seconds before one call is abandoned.
+timeout_seconds = 300
+# Leave empty to find `claude` on the PATH.
+claude_path = ""
+
+[paths]
+store = "output/comparison/haiku-low.sqlite"
+readings = "output/readings"
+logs = "output/logs"
+answers = "output/answers"
+benchmarks = "output/benchmarks"
+export = "output/comparison/haiku-low.md"
+prompts = "prompts"

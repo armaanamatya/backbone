@@ -1,0 +1,257 @@
+{
+ "doc_hash": "924dee06b05c0a841c3f86d0c394c7af39447db6c9ea7b643cc6eb3a3c40df6b",
+ "file_name": "family_primary_jan09.txt",
+ "model": "sonnet",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:11:43.400+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:11:25.059+00:00",
+   "usage": {
+    "wall_seconds": 17.896,
+    "api_seconds": 11.526,
+    "input_tokens": 2,
+    "output_tokens": 2043,
+    "cache_creation_input_tokens": 1180,
+    "cache_read_input_tokens": 9724,
+    "cost_usd": 0.0270988,
+    "turns": 2,
+    "models": {
+     "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2043,
+      "cacheReadInputTokens": 9724,
+      "cacheCreationInputTokens": 1180,
+      "webSearchRequests": 0,
+      "costUSD": 0.0270988,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "d81d2a4f-d653-415c-a467-22e5b3bd474a",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D007",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042",
+   "organization": "Harbor Grove Behavioral Health"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Family psychotherapy",
+    "first_line": 4,
+    "last_line": 18,
+    "author_name": "Mara Voss",
+    "author_role": "LCSW",
+    "signature": "signed",
+    "signed_by": "Mara Voss",
+    "signed_date": "2026-01-09",
+    "signed_time": "16:24",
+    "signature_line": 10,
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-09",
+      "quote": "Encounter HG-E104 | 2026-01-09, 14:00–14:45 local",
+      "line": 6,
+      "time": "14:00"
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-09",
+      "quote": "Mara Voss signed 2026-01-09, 16:24 local",
+      "line": 10,
+      "time": "16:24"
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E104",
+    "appointment_id": null,
+    "service_date": "2026-01-09",
+    "service_as_written": "Family psychotherapy",
+    "service_class": "family_therapy",
+    "quote": "Harbor Grove Behavioral Health | Family psychotherapy",
+    "line": 4
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "14:00",
+    "end": "14:45",
+    "label": "not_labelled",
+    "position": "header",
+    "quote": "Encounter HG-E104 | 2026-01-09, 14:00–14:45 local",
+    "line": 6
+   }
+  ],
+  "attendance": [],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Present: Rowan and partner, Casey Mercer",
+    "line": 7
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Casey Mercer",
+    "role": "family_or_partner",
+    "presence": "present",
+    "quote": "Present: Rowan and partner, Casey Mercer",
+    "line": 7
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Mara Voss",
+    "role": "clinician",
+    "presence": "not_stated",
+    "quote": "Clinicians: Mara Voss, LCSW; cofacilitator Leena Park, LPC",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Leena Park",
+    "role": "clinician",
+    "presence": "not_stated",
+    "quote": "Clinicians: Mara Voss, LCSW; cofacilitator Leena Park, LPC",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Rowan remained present and engaged throughout the visit.",
+    "line": 16
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "minutes": 45,
+    "of": "patient_present",
+    "quote": "Patient-present family therapy duration: 45 minutes",
+    "line": 9
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "patient",
+    "topic": "mood",
+    "summary": "Rowan felt watched when asked repeatedly about contacting work",
+    "quote": "Rowan described feeling watched when asked repeatedly whether they had contacted work.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "family_or_partner",
+    "speaker_name": "Casey Mercer",
+    "topic": "anxiety",
+    "summary": "Casey worried space might leave Rowan isolated",
+    "quote": "Casey described worry that giving Rowan space might leave them isolated.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Rowan rebuilding a routine",
+    "quote": "as Rowan attempts to rebuild a routine",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Rowan present and engaged throughout",
+    "quote": "Rowan remained present and engaged throughout the visit.",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Casey agreed to a single planned check-in",
+    "quote": "Casey agreed to use a single planned check-in about work preparation instead of repeated reminders.",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Rowan agreed to say when wanting practical help versus quiet company",
+    "quote": "Rowan agreed to say when they wanted practical assistance versus quiet company.",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "Plan to review check-in at next individual visit and continue activity steps",
+    "quote": "Plan: try the planned check-in and review its effect at the next individual visit.",
+    "line": 18
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "Leena Park's accompanying entry is filed under encounter HG-E104.",
+    "line": 18
+   }
+  ]
+ },
+ "reused": false
+}

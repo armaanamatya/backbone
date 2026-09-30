@@ -1,0 +1,224 @@
+{
+ "doc_hash": "300a30dbe42be8dcfdf7ad644f23c583259611467ae32e944e8d7154c78b968e",
+ "file_name": "symptom_measure_review_jan16.txt",
+ "model": "sonnet",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:12:26.065+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:12:11.009+00:00",
+   "usage": {
+    "wall_seconds": 14.192,
+    "api_seconds": 9.318,
+    "input_tokens": 2,
+    "output_tokens": 1763,
+    "cache_creation_input_tokens": 1033,
+    "cache_read_input_tokens": 9724,
+    "cost_usd": 0.0237108,
+    "turns": 2,
+    "models": {
+     "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1763,
+      "cacheReadInputTokens": 9724,
+      "cacheCreationInputTokens": 1033,
+      "webSearchRequests": 0,
+      "costUSD": 0.0237108,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "edd67adb-2049-48fe-baee-941cd9c6f10b",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D013",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042",
+   "organization": "Harbor Grove Behavioral Health"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "questionnaire_review",
+    "kind_as_written": "Measurement review",
+    "first_line": 4,
+    "last_line": 15,
+    "signature": "not_stated",
+    "is_copy": false,
+    "author_name": "Mara Voss",
+    "author_role": "LCSW",
+    "dates": [
+     {
+      "kind": "completed",
+      "date": "2026-01-16",
+      "time": "08:17",
+      "quote": "Completed by patient: 2026-01-16, 08:17 local",
+      "line": 7
+     },
+     {
+      "kind": "reviewed",
+      "date": "2026-01-16",
+      "time": "09:10",
+      "quote": "Reviewed by Mara Voss, LCSW, 2026-01-16, 09:10 local",
+      "line": 9
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-16",
+    "service_as_written": "Measurement review",
+    "service_class": "questionnaire_review",
+    "quote": "Harbor Grove Behavioral Health | Measurement review",
+    "line": 4
+   }
+  ],
+  "modalities": [],
+  "times": [],
+  "attendance": [],
+  "participants": [],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [
+   {
+    "section": 1,
+    "instrument": "PHQ-9",
+    "score": 14,
+    "item_number": null,
+    "completed_date": "2026-01-16",
+    "completed_time": "08:17",
+    "form_id": "HG-Q116",
+    "relation": "completion",
+    "quote": "Total score: 14",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "instrument": "PHQ-9",
+    "score": 18,
+    "item_number": null,
+    "completed_date": "2026-01-05",
+    "relation": "mention",
+    "quote": "The submitted score is lower than the intake score of 18 recorded on January 5.",
+    "line": 11
+   }
+  ],
+  "observations": [
+   {
+    "section": 1,
+    "date": "2026-01-16",
+    "speaker": "patient",
+    "speaker_name": "Rowan",
+    "topic": "functioning",
+    "summary": "getting out of apartment a little easier",
+    "quote": "Rowan wrote that getting out of the apartment had become a little easier",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "date": "2026-01-16",
+    "speaker": "patient",
+    "speaker_name": "Rowan",
+    "topic": "functioning",
+    "summary": "thinking about work makes them want to put things off",
+    "quote": "thinking about work continued to make them want to put things off",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "date": "2026-01-16",
+    "speaker": "patient",
+    "speaker_name": "Rowan",
+    "topic": "sleep",
+    "summary": "sleep inconsistent",
+    "quote": "Rowan also described sleep as inconsistent.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "some improvement in depressive symptoms",
+    "quote": "suggest some improvement in depressive symptoms",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "persistent avoidance and difficulty initiating work communication",
+    "quote": "Persistent avoidance, difficulty initiating work communication, and sleep disruption remain clinically relevant.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "sleep disruption remains relevant",
+    "quote": "Persistent avoidance, difficulty initiating work communication, and sleep disruption remain clinically relevant.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "attempted small activities and communication practice; no reliable routine yet",
+    "quote": "Rowan has attempted small activities and communication practice but has not yet established a reliable routine.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "continue current therapeutic focus",
+    "quote": "Continue the current therapeutic focus",
+    "line": 13
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "says": "no_new_assessment",
+    "quote": "No additional questionnaire was submitted with this update.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "says": "not_a_visit",
+    "quote": "no clinical appointment occurred at the time of review",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "says": "no_clinical_service",
+    "quote": "This entry records review of the portal submission; no clinical appointment occurred at the time of review.",
+    "line": 15
+   }
+  ]
+ },
+ "reused": false
+}

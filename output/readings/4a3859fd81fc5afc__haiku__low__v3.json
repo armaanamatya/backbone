@@ -1,0 +1,251 @@
+{
+ "doc_hash": "4a3859fd81fc5afc5533e9add8718ce4b89492121bf68f812f73db92d319755e",
+ "file_name": "BH-D115_symptom_measure_review_2026-01-30.txt",
+ "model": "haiku",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:26:26.811+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:24:27.101+00:00",
+   "usage": {
+    "wall_seconds": 119.204,
+    "api_seconds": 115.651,
+    "input_tokens": 10,
+    "output_tokens": 12292,
+    "cache_creation_input_tokens": 1305,
+    "cache_read_input_tokens": 7461,
+    "cost_usd": 0.0648261,
+    "turns": 2,
+    "models": {
+     "claude-haiku-4-5-20251001": {
+      "inputTokens": 10,
+      "outputTokens": 12292,
+      "cacheReadInputTokens": 7461,
+      "cacheCreationInputTokens": 1305,
+      "webSearchRequests": 0,
+      "costUSD": 0.0648261,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 10241,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "99ef6f4d-9618-4b29-86bd-d88ce94c090c",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D115",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "questionnaire_review",
+    "kind_as_written": "Symptom questionnaire and chart review",
+    "first_line": 1,
+    "last_line": 16,
+    "author_name": "Mira Patel",
+    "author_role": "LCSW",
+    "signature": "signed",
+    "signed_by": "Mira Patel, LCSW",
+    "signed_date": "2026-01-30",
+    "signed_time": "16:20",
+    "signature_line": 16,
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "completed",
+      "date": "2026-01-30",
+      "time": "12:42",
+      "line": 5,
+      "quote": "Questionnaire completed January 30, 2026, 12:42"
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-30",
+      "time": "16:20",
+      "line": 16,
+      "quote": "Electronically signed: Mira Patel, LCSW | January 30, 2026, 16:20"
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "ref": "c1",
+    "section": 1,
+    "service_date": "2026-01-30",
+    "service_as_written": "afternoon appointment",
+    "service_class": null,
+    "encounter_id": null,
+    "appointment_id": null,
+    "line": 8,
+    "quote": "the afternoon appointment"
+   }
+  ],
+  "modalities": [],
+  "times": [],
+  "attendance": [],
+  "participants": [],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [
+   {
+    "section": 1,
+    "instrument": "PHQ-9",
+    "score": 10,
+    "item_number": null,
+    "completed_date": "2026-01-30",
+    "completed_time": "12:42",
+    "form_id": null,
+    "relation": "completion",
+    "line": 6,
+    "quote": "PHQ-9 total: 10."
+   },
+   {
+    "section": 1,
+    "instrument": "PHQ-9",
+    "score": 0,
+    "item_number": 9,
+    "completed_date": "2026-01-30",
+    "completed_time": "12:42",
+    "form_id": null,
+    "relation": "completion",
+    "line": 6,
+    "quote": "Item 9: 0."
+   }
+  ],
+  "observations": [
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "sleep",
+    "summary": "continued to endorse sleep difficulty",
+    "line": 8,
+    "quote": "The patient continued to endorse sleep difficulty"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "trouble sustaining usual activities",
+    "line": 8,
+    "quote": "trouble sustaining usual activities"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "mood",
+    "summary": "fewer days of pervasive low mood than at intake",
+    "line": 8,
+    "quote": "fewer days of pervasive low mood than reported at intake"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "shows partial improvement",
+    "line": 10,
+    "quote": "Rowan shows partial improvement"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "persistent avoidance",
+    "line": 10,
+    "quote": "persistent avoidance"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "meaningful functional impact around returning to work",
+    "line": 10,
+    "quote": "meaningful functional impact around returning to work"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "has taken some initial steps including drafting and sending a message",
+    "line": 10,
+    "quote": "The patient has taken some initial steps, including drafting and sending a message"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "continues to delay follow-up",
+    "line": 10,
+    "quote": "continues to delay follow-up"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "becomes anxious when task expands beyond narrowly defined action",
+    "line": 10,
+    "quote": "becomes anxious when a task expands beyond a narrowly defined action"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "sleep disruption remains intermittent barrier to establishing steadier daytime routine",
+    "line": 10,
+    "quote": "Sleep disruption remains an intermittent barrier to establishing a steadier daytime routine"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "continued treatment is appropriate",
+    "line": 12,
+    "quote": "Continued treatment is appropriate"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "remaining difficulties with follow-through and work-related functioning",
+    "line": 12,
+    "quote": "remaining difficulties with follow-through and work-related functioning"
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "says": "not_a_visit",
+    "quote": "is not a separate treatment appointment",
+    "line": 14
+   }
+  ]
+ },
+ "reused": false
+}

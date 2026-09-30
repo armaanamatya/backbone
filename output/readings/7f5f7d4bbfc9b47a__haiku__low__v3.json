@@ -1,0 +1,388 @@
+{
+ "doc_hash": "7f5f7d4bbfc9b47a632fb33cca1b261999078d058cbd7601c63f6c6e5be3c747",
+ "file_name": "intake_and_individual_jan05.txt",
+ "model": "haiku",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:33:11.923+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:30:25.292+00:00",
+   "usage": {
+    "wall_seconds": 166.442,
+    "api_seconds": 164.226,
+    "input_tokens": 18,
+    "output_tokens": 17766,
+    "cache_creation_input_tokens": 16035,
+    "cache_read_input_tokens": 16405,
+    "cost_usd": 0.12255849999999999,
+    "turns": 3,
+    "models": {
+     "claude-haiku-4-5-20251001": {
+      "inputTokens": 18,
+      "outputTokens": 17766,
+      "cacheReadInputTokens": 16405,
+      "cacheCreationInputTokens": 16035,
+      "webSearchRequests": 0,
+      "costUSD": 0.12255849999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 11820,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "d3093f2c-146a-4139-82ad-a46d401cb0de",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D002",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "first_line": 1,
+    "last_line": 19,
+    "signature": "signed",
+    "is_copy": false,
+    "signed_by": "Mara Voss, LCSW",
+    "signed_date": "2026-01-05",
+    "signed_time": "12:18",
+    "signature_line": 9,
+    "author_name": "Mara Voss, LCSW",
+    "author_role": "LCSW",
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-05",
+      "quote": "Service date 2026-01-05",
+      "line": 6
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-05",
+      "time": "12:18",
+      "quote": "Signed 2026-01-05, 12:18 local",
+      "line": 9
+     },
+     {
+      "kind": "period_start",
+      "date": "2026-01-05",
+      "quote": "The current outpatient episode is planned for January 5 through January 30",
+      "line": 11
+     },
+     {
+      "kind": "period_end",
+      "date": "2026-01-30",
+      "quote": "The current outpatient episode is planned for January 5 through January 30",
+      "line": 11
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E101",
+    "appointment_id": null,
+    "service_date": "2026-01-05",
+    "service_as_written": "Patient-present individual therapy",
+    "service_class": "individual_therapy",
+    "quote": "Patient-present individual therapy: 09:00–09:50 local",
+    "line": 8
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "modality": "in_person",
+    "quote": "Rowan arrived independently and participated throughout the appointment",
+    "line": 13
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "09:00",
+    "end": "09:50",
+    "label": "not_labelled",
+    "position": "header",
+    "quote": "09:00–09:50 local",
+    "line": 8
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "line": 8,
+    "contact": "c1",
+    "status": "completed",
+    "status_as_written": "completed",
+    "quote": "completed, 50 minutes"
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "line": 13,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Rowan arrived independently and participated throughout the appointment"
+   },
+   {
+    "section": 1,
+    "line": 7,
+    "contact": "c1",
+    "name": "Mara Voss",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "not_stated",
+    "quote": "Clinician: Mara Voss, LCSW"
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "line": 8,
+    "contact": "c1",
+    "minutes": 50,
+    "of": "patient_present",
+    "quote": "50 minutes"
+   }
+  ],
+  "corrections": [],
+  "scores": [
+   {
+    "section": 1,
+    "line": 15,
+    "instrument": "PHQ-9",
+    "score": 18,
+    "item_number": null,
+    "completed_date": "2026-01-05",
+    "completed_time": null,
+    "form_id": null,
+    "relation": "completion",
+    "quote": "PHQ-9 completed by Rowan on 2026-01-05: total score 18"
+   }
+  ],
+  "observations": [
+   {
+    "section": 1,
+    "line": 11,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "patient",
+    "topic": "mood",
+    "summary": "Several weeks of low mood",
+    "quote": "Rowan describes several weeks of low mood"
+   },
+   {
+    "section": 1,
+    "line": 11,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Reduced interest in usual activities",
+    "quote": "reduced interest in usual activities"
+   },
+   {
+    "section": 1,
+    "line": 11,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "patient",
+    "topic": "sleep",
+    "summary": "Fragmented sleep",
+    "quote": "fragmented sleep"
+   },
+   {
+    "section": 1,
+    "line": 11,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Difficulty beginning ordinary tasks",
+    "quote": "difficulty beginning ordinary tasks"
+   },
+   {
+    "section": 1,
+    "line": 11,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "Worry increases when thinking about work return",
+    "quote": "Worry increases when thinking about returning to work after a recent leave"
+   },
+   {
+    "section": 1,
+    "line": 11,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Postponing email replies, avoiding conversations, spending more time alone",
+    "quote": "Rowan has been postponing email replies, avoiding conversations about the return date, and spending more time alone at home"
+   },
+   {
+    "section": 1,
+    "line": 11,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Wants a routine to make work transition feel manageable",
+    "quote": "They want a routine that makes the work transition feel manageable"
+   },
+   {
+    "section": 1,
+    "line": 13,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "other",
+    "summary": "Speech clear and organized",
+    "quote": "Speech was clear and organized"
+   },
+   {
+    "section": 1,
+    "line": 13,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "mood",
+    "summary": "Affect subdued but responsive",
+    "quote": "Affect was subdued but responsive"
+   },
+   {
+    "section": 1,
+    "line": 13,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "patient",
+    "topic": "sleep",
+    "summary": "Wakes in the night and checks the time repeatedly",
+    "quote": "Rowan described waking in the night and then checking the time repeatedly"
+   },
+   {
+    "section": 1,
+    "line": 13,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Daytime fatigue appears to make avoidance more likely",
+    "quote": "Daytime fatigue appears to make avoidance more likely"
+   },
+   {
+    "section": 1,
+    "line": 13,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "safety",
+    "summary": "No immediate safety concern identified",
+    "quote": "No immediate safety concern was identified in today's assessment"
+   },
+   {
+    "section": 1,
+    "line": 13,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Able to discuss support contacts and seeking help if needed",
+    "quote": "Rowan was able to discuss support contacts and ways to seek additional help if needed"
+   },
+   {
+    "section": 1,
+    "line": 15,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "mood",
+    "summary": "Depressive symptoms",
+    "quote": "Clinical impressions are depressive symptoms with anxiety and behavioral avoidance"
+   },
+   {
+    "section": 1,
+    "line": 15,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "Anxiety",
+    "quote": "Clinical impressions are depressive symptoms with anxiety and behavioral avoidance"
+   },
+   {
+    "section": 1,
+    "line": 15,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Behavioral avoidance",
+    "quote": "Clinical impressions are depressive symptoms with anxiety and behavioral avoidance"
+   },
+   {
+    "section": 1,
+    "line": 17,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Selected opening work inbox for five minutes without requiring immediate reply",
+    "quote": "Rowan selected opening their work inbox for five minutes without requiring an immediate reply"
+   },
+   {
+    "section": 1,
+    "line": 19,
+    "contact": "c1",
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Consented to involving partner in family visit focused on practical support",
+    "quote": "Rowan consented to involving their partner in a family visit focused on practical support"
+   }
+  ],
+  "plan_rules": [
+   {
+    "section": 1,
+    "line": 11,
+    "rule": "episode_period",
+    "start_date": "2026-01-05",
+    "end_date": "2026-01-30",
+    "quote": "The current outpatient episode is planned for January 5 through January 30"
+   }
+  ],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "line": 2,
+    "says": "other",
+    "quote": "SYNTHETIC TRAINING RECORD — Entirely fictional patient and organization"
+   }
+  ]
+ },
+ "reused": false
+}

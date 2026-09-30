@@ -1,0 +1,1675 @@
+{
+ "baseline": "opus at low",
+ "runs": [
+  {
+   "settings": "settings.toml",
+   "model": "opus",
+   "effort": "low",
+   "prompt_version": 3,
+   "usage": {
+    "calls": 31,
+    "rejected": 0,
+    "cost_usd": 1.619478,
+    "seconds": 486.08700000000005,
+    "tokens_out": 60078,
+    "served_by": [
+     "claude-opus-5-5"
+    ]
+   },
+   "described": {
+    "documents": 31,
+    "claims": 474,
+    "quotes": {
+     "verified": 474
+    },
+    "by_type": {
+     "attendance": 41,
+     "charge": 1,
+     "contact": 50,
+     "correction": 1,
+     "modality": 14,
+     "observation": 140,
+     "participant": 59,
+     "plan_rule": 15,
+     "score": 6,
+     "stated_minutes": 12,
+     "statement": 59,
+     "time": 76
+    },
+    "coverage": {
+     "captured": 411,
+     "captured_on_another_line": 34,
+     "not_captured": 3,
+     "quoted_only": 0
+    },
+    "conclusions": {
+     "HG-M042": {
+      "encounters": 20,
+      "administrative": 6,
+      "statuses": {
+       "HG-E101": [
+        "held",
+        [
+         50
+        ]
+       ],
+       "HG-E102": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E103": [
+        "no_show",
+        []
+       ],
+       "HG-E104": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E105": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E106": [
+        "held",
+        [
+         25
+        ]
+       ],
+       "HG-E107": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E108": [
+        "cancelled_by_clinic",
+        []
+       ],
+       "HG-E109": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E110": [
+        "held",
+        [
+         60
+        ]
+       ],
+       "HG-E111": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E112": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E113": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E114": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E115": [
+        "held",
+        [
+         40,
+         50
+        ]
+       ],
+       "HG-E116": [
+        "no_show",
+        []
+       ],
+       "HG-E117": [
+        "cancelled_by_patient",
+        []
+       ],
+       "HG-E118": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E119": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E120": [
+        "held",
+        [
+         20
+        ]
+       ]
+      },
+      "weeks": [
+       [
+        "2026-01-05",
+        "not_met",
+        [
+         140
+        ]
+       ],
+       [
+        "2026-01-12",
+        "not_met",
+        [
+         120
+        ]
+       ],
+       [
+        "2026-01-19",
+        "met",
+        [
+         180
+        ]
+       ],
+       [
+        "2026-01-26",
+        "cannot_determine",
+        [
+         145,
+         155
+        ]
+       ]
+      ],
+      "conflicts": [
+       [
+        "HG-M042/HG-E110:departure",
+        "settled",
+        "8, then 9"
+       ],
+       [
+        "HG-M042/HG-E115:start",
+        "open",
+        "11"
+       ],
+       [
+        "HG-M042/HG-E116:attendance",
+        "settled",
+        "10"
+       ]
+      ],
+      "findings": [
+       "charge_without_attendance",
+       "draft_made_before_the_service",
+       "note_signed_after_the_service_date"
+      ],
+      "assessments": [
+       [
+        "2026-01-05",
+        [
+         18
+        ]
+       ],
+       [
+        "2026-01-16",
+        [
+         14
+        ]
+       ],
+       [
+        "2026-01-30",
+        [
+         10
+        ]
+       ]
+      ],
+      "totals": [
+       [
+        12,
+        11,
+        585
+       ],
+       [
+        12,
+        11,
+        595
+       ]
+      ]
+     }
+    }
+   },
+   "same_facts": 31,
+   "differing_documents": [],
+   "same_conclusions": {
+    "contacts": true,
+    "conflicts": true,
+    "findings": true,
+    "plan_rules": true,
+    "assessments": true,
+    "weekly_status": true
+   },
+   "same_figures": {
+    "HG-M042": {
+     "encounters": true,
+     "statuses": true,
+     "weeks": true,
+     "conflicts": true,
+     "findings": true,
+     "assessments": true,
+     "totals": true
+    }
+   }
+  },
+  {
+   "settings": "output/comparison/settings-medium.toml",
+   "model": "opus",
+   "effort": "medium",
+   "prompt_version": 3,
+   "usage": {
+    "calls": 31,
+    "rejected": 0,
+    "cost_usd": 1.9820900000000004,
+    "seconds": 957.0350000000002,
+    "tokens_out": 78177,
+    "served_by": [
+     "claude-opus-5-5"
+    ]
+   },
+   "described": {
+    "documents": 31,
+    "claims": 535,
+    "quotes": {
+     "verified": 535
+    },
+    "by_type": {
+     "attendance": 46,
+     "charge": 1,
+     "contact": 53,
+     "correction": 1,
+     "modality": 14,
+     "observation": 175,
+     "participant": 63,
+     "plan_rule": 18,
+     "score": 6,
+     "stated_minutes": 12,
+     "statement": 69,
+     "time": 77
+    },
+    "coverage": {
+     "captured": 415,
+     "captured_on_another_line": 31,
+     "not_captured": 2,
+     "quoted_only": 0
+    },
+    "conclusions": {
+     "HG-M042": {
+      "encounters": 20,
+      "administrative": 7,
+      "statuses": {
+       "HG-E101": [
+        "held",
+        [
+         50
+        ]
+       ],
+       "HG-E102": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E103": [
+        "no_show",
+        []
+       ],
+       "HG-E104": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E105": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E106": [
+        "held",
+        [
+         25
+        ]
+       ],
+       "HG-E107": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E108": [
+        "cancelled_by_clinic",
+        []
+       ],
+       "HG-E109": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E110": [
+        "held",
+        [
+         60
+        ]
+       ],
+       "HG-E111": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E112": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E113": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E114": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E115": [
+        "held",
+        [
+         40,
+         50
+        ]
+       ],
+       "HG-E116": [
+        "no_show",
+        []
+       ],
+       "HG-E117": [
+        "cancelled_by_patient",
+        []
+       ],
+       "HG-E118": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E119": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E120": [
+        "held",
+        [
+         20
+        ]
+       ]
+      },
+      "weeks": [
+       [
+        "2026-01-05",
+        "not_met",
+        [
+         140
+        ]
+       ],
+       [
+        "2026-01-12",
+        "not_met",
+        [
+         120
+        ]
+       ],
+       [
+        "2026-01-19",
+        "met",
+        [
+         180
+        ]
+       ],
+       [
+        "2026-01-26",
+        "cannot_determine",
+        [
+         145,
+         155
+        ]
+       ]
+      ],
+      "conflicts": [
+       [
+        "HG-M042/HG-E110:departure",
+        "settled",
+        "8, then 9"
+       ],
+       [
+        "HG-M042/HG-E115:start",
+        "open",
+        "11"
+       ],
+       [
+        "HG-M042/HG-E116:attendance",
+        "settled",
+        "10"
+       ]
+      ],
+      "findings": [
+       "charge_without_attendance",
+       "draft_made_before_the_service",
+       "note_signed_after_the_service_date"
+      ],
+      "assessments": [
+       [
+        "2026-01-05",
+        [
+         18
+        ]
+       ],
+       [
+        "2026-01-16",
+        [
+         14
+        ]
+       ],
+       [
+        "2026-01-30",
+        [
+         10
+        ]
+       ]
+      ],
+      "totals": [
+       [
+        12,
+        11,
+        585
+       ],
+       [
+        12,
+        11,
+        595
+       ]
+      ]
+     }
+    }
+   },
+   "same_facts": 21,
+   "differing_documents": [
+    "BH-D006",
+    "BH-D011",
+    "BH-D012",
+    "BH-D016",
+    "BH-D104",
+    "BH-D105",
+    "BH-D107",
+    "BH-D108",
+    "BH-D109",
+    "BH-D115"
+   ],
+   "same_conclusions": {
+    "contacts": false,
+    "conflicts": false,
+    "findings": false,
+    "plan_rules": false,
+    "assessments": false,
+    "weekly_status": false
+   },
+   "same_figures": {
+    "HG-M042": {
+     "encounters": true,
+     "statuses": true,
+     "weeks": true,
+     "conflicts": true,
+     "findings": true,
+     "assessments": true,
+     "totals": true
+    }
+   }
+  },
+  {
+   "settings": "output/comparison/settings-opus-high.toml",
+   "model": "opus",
+   "effort": "high",
+   "prompt_version": 3,
+   "usage": {
+    "calls": 31,
+    "rejected": 0,
+    "cost_usd": 2.2501054,
+    "seconds": 852.511,
+    "tokens_out": 95408,
+    "served_by": [
+     "claude-opus-5-5"
+    ]
+   },
+   "described": {
+    "documents": 31,
+    "claims": 563,
+    "quotes": {
+     "verified": 563
+    },
+    "by_type": {
+     "attendance": 48,
+     "charge": 1,
+     "contact": 54,
+     "correction": 1,
+     "modality": 16,
+     "observation": 182,
+     "participant": 66,
+     "plan_rule": 19,
+     "score": 6,
+     "stated_minutes": 12,
+     "statement": 81,
+     "time": 77
+    },
+    "coverage": {
+     "captured": 417,
+     "captured_on_another_line": 29,
+     "not_captured": 2,
+     "quoted_only": 0
+    },
+    "conclusions": {
+     "HG-M042": {
+      "encounters": 20,
+      "administrative": 7,
+      "statuses": {
+       "HG-E101": [
+        "held",
+        [
+         50
+        ]
+       ],
+       "HG-E102": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E103": [
+        "no_show",
+        []
+       ],
+       "HG-E104": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E105": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E106": [
+        "held",
+        [
+         25
+        ]
+       ],
+       "HG-E107": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E108": [
+        "cancelled_by_clinic",
+        []
+       ],
+       "HG-E109": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E110": [
+        "held",
+        [
+         60
+        ]
+       ],
+       "HG-E111": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E112": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E113": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E114": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E115": [
+        "held",
+        [
+         40,
+         50
+        ]
+       ],
+       "HG-E116": [
+        "no_show",
+        []
+       ],
+       "HG-E117": [
+        "cancelled_by_patient",
+        []
+       ],
+       "HG-E118": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E119": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E120": [
+        "held",
+        [
+         20
+        ]
+       ]
+      },
+      "weeks": [
+       [
+        "2026-01-05",
+        "not_met",
+        [
+         140
+        ]
+       ],
+       [
+        "2026-01-12",
+        "not_met",
+        [
+         120
+        ]
+       ],
+       [
+        "2026-01-19",
+        "met",
+        [
+         180
+        ]
+       ],
+       [
+        "2026-01-26",
+        "cannot_determine",
+        [
+         145,
+         155
+        ]
+       ]
+      ],
+      "conflicts": [
+       [
+        "HG-M042/HG-E110:departure",
+        "settled",
+        "8, then 9"
+       ],
+       [
+        "HG-M042/HG-E115:start",
+        "open",
+        "11"
+       ],
+       [
+        "HG-M042/HG-E116:attendance",
+        "settled",
+        "10"
+       ]
+      ],
+      "findings": [
+       "charge_without_attendance",
+       "draft_made_before_the_service",
+       "note_signed_after_the_service_date"
+      ],
+      "assessments": [
+       [
+        "2026-01-05",
+        [
+         18
+        ]
+       ],
+       [
+        "2026-01-16",
+        [
+         14
+        ]
+       ],
+       [
+        "2026-01-30",
+        [
+         10
+        ]
+       ]
+      ],
+      "totals": [
+       [
+        12,
+        11,
+        585
+       ],
+       [
+        12,
+        11,
+        595
+       ]
+      ]
+     }
+    }
+   },
+   "same_facts": 20,
+   "differing_documents": [
+    "BH-D001",
+    "BH-D006",
+    "BH-D011",
+    "BH-D012",
+    "BH-D015",
+    "BH-D016",
+    "BH-D104",
+    "BH-D105",
+    "BH-D108",
+    "BH-D111",
+    "BH-D115"
+   ],
+   "same_conclusions": {
+    "contacts": false,
+    "conflicts": false,
+    "findings": false,
+    "plan_rules": false,
+    "assessments": false,
+    "weekly_status": false
+   },
+   "same_figures": {
+    "HG-M042": {
+     "encounters": true,
+     "statuses": true,
+     "weeks": true,
+     "conflicts": true,
+     "findings": true,
+     "assessments": true,
+     "totals": true
+    }
+   }
+  },
+  {
+   "settings": "output/comparison/settings-sonnet-low.toml",
+   "model": "sonnet",
+   "effort": "low",
+   "prompt_version": 3,
+   "usage": {
+    "calls": 31,
+    "rejected": 0,
+    "cost_usd": 0.9343114000000002,
+    "seconds": 546.339,
+    "tokens_out": 66117,
+    "served_by": [
+     "claude-sonnet-5-5"
+    ]
+   },
+   "described": {
+    "documents": 31,
+    "claims": 450,
+    "quotes": {
+     "verified": 450
+    },
+    "by_type": {
+     "attendance": 31,
+     "charge": 1,
+     "contact": 47,
+     "correction": 1,
+     "modality": 8,
+     "observation": 148,
+     "participant": 56,
+     "plan_rule": 10,
+     "score": 7,
+     "stated_minutes": 12,
+     "statement": 57,
+     "time": 72
+    },
+    "coverage": {
+     "captured": 399,
+     "captured_on_another_line": 45,
+     "not_captured": 4,
+     "quoted_only": 0
+    },
+    "conclusions": {
+     "HG-M042": {
+      "encounters": 20,
+      "administrative": 3,
+      "statuses": {
+       "HG-E101": [
+        "held",
+        [
+         50
+        ]
+       ],
+       "HG-E102": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E103": [
+        "no_show",
+        []
+       ],
+       "HG-E104": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E105": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E106": [
+        "held",
+        [
+         25
+        ]
+       ],
+       "HG-E107": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E108": [
+        "cancelled_by_clinic",
+        []
+       ],
+       "HG-E109": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E110": [
+        "held",
+        [
+         60
+        ]
+       ],
+       "HG-E111": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E112": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E113": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E114": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E115": [
+        "held",
+        [
+         40,
+         50
+        ]
+       ],
+       "HG-E116": [
+        "no_show",
+        []
+       ],
+       "HG-E117": [
+        "cancelled_by_patient",
+        []
+       ],
+       "HG-E118": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E119": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E120": [
+        "held",
+        [
+         20
+        ]
+       ]
+      },
+      "weeks": [
+       [
+        "2026-01-05",
+        "not_met",
+        [
+         140
+        ]
+       ],
+       [
+        "2026-01-12",
+        "not_met",
+        [
+         120
+        ]
+       ],
+       [
+        "2026-01-19",
+        "met",
+        [
+         180
+        ]
+       ],
+       [
+        "2026-01-26",
+        "cannot_determine",
+        [
+         145,
+         155
+        ]
+       ]
+      ],
+      "conflicts": [
+       [
+        "HG-M042/HG-E110:departure",
+        "settled",
+        "8, then 9"
+       ],
+       [
+        "HG-M042/HG-E115:start",
+        "open",
+        "11"
+       ],
+       [
+        "HG-M042/HG-E116:attendance",
+        "settled",
+        "10"
+       ]
+      ],
+      "findings": [
+       "charge_without_attendance",
+       "draft_made_before_the_service",
+       "note_signed_after_the_service_date"
+      ],
+      "assessments": [
+       [
+        "2026-01-05",
+        [
+         18
+        ]
+       ],
+       [
+        "2026-01-16",
+        [
+         14
+        ]
+       ],
+       [
+        "2026-01-30",
+        [
+         10
+        ]
+       ]
+      ],
+      "totals": [
+       [
+        12,
+        11,
+        585
+       ],
+       [
+        12,
+        11,
+        595
+       ]
+      ]
+     }
+    }
+   },
+   "same_facts": 15,
+   "differing_documents": [
+    "BH-D002",
+    "BH-D006",
+    "BH-D007",
+    "BH-D008",
+    "BH-D009",
+    "BH-D012",
+    "BH-D014",
+    "BH-D015",
+    "BH-D101",
+    "BH-D103",
+    "BH-D104",
+    "BH-D105",
+    "BH-D107",
+    "BH-D108",
+    "BH-D109",
+    "BH-D111"
+   ],
+   "same_conclusions": {
+    "contacts": false,
+    "conflicts": false,
+    "findings": false,
+    "plan_rules": true,
+    "assessments": false,
+    "weekly_status": false
+   },
+   "same_figures": {
+    "HG-M042": {
+     "encounters": true,
+     "statuses": true,
+     "weeks": true,
+     "conflicts": true,
+     "findings": true,
+     "assessments": true,
+     "totals": true
+    }
+   }
+  },
+  {
+   "settings": "output/comparison/settings-haiku-low.toml",
+   "model": "haiku",
+   "effort": "low",
+   "prompt_version": 3,
+   "usage": {
+    "calls": 60,
+    "rejected": 29,
+    "cost_usd": 2.4638577,
+    "seconds": 4205.233,
+    "tokens_out": 438600,
+    "served_by": [
+     "claude-haiku-4-5-20251001"
+    ]
+   },
+   "described": {
+    "documents": 31,
+    "claims": 474,
+    "quotes": {
+     "unverified": 2,
+     "verified": 469,
+     "verified_line_corrected": 3
+    },
+    "by_type": {
+     "attendance": 34,
+     "charge": 1,
+     "contact": 44,
+     "correction": 1,
+     "modality": 20,
+     "observation": 172,
+     "participant": 65,
+     "plan_rule": 16,
+     "score": 6,
+     "stated_minutes": 13,
+     "statement": 31,
+     "time": 71
+    },
+    "coverage": {
+     "captured": 387,
+     "captured_on_another_line": 54,
+     "not_captured": 7,
+     "quoted_only": 0
+    },
+    "conclusions": {
+     "HG-M042": {
+      "encounters": 20,
+      "administrative": 4,
+      "statuses": {
+       "HG-E101": [
+        "held",
+        [
+         50
+        ]
+       ],
+       "HG-E102": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E103": [
+        "no_show",
+        []
+       ],
+       "HG-E104": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E105": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E106": [
+        "held",
+        [
+         25
+        ]
+       ],
+       "HG-E107": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E108": [
+        "cancelled_by_clinic",
+        []
+       ],
+       "HG-E109": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E110": [
+        "held",
+        [
+         60
+        ]
+       ],
+       "HG-E111": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E112": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E113": [
+        "held",
+        []
+       ],
+       "HG-E114": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E115": [
+        "held",
+        [
+         40,
+         50
+        ]
+       ],
+       "HG-E116": [
+        "no_show",
+        []
+       ],
+       "HG-E117": [
+        "cancelled_by_patient",
+        []
+       ],
+       "HG-E118": [
+        "held",
+        []
+       ],
+       "HG-E119": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E120": [
+        "held",
+        []
+       ]
+      },
+      "weeks": [
+       [
+        "2026-01-05",
+        "not_met",
+        [
+         140
+        ]
+       ],
+       [
+        "2026-01-12",
+        "not_met",
+        [
+         120
+        ]
+       ],
+       [
+        "2026-01-19",
+        "cannot_determine",
+        [
+         135
+        ]
+       ],
+       [
+        "2026-01-26",
+        "cannot_determine",
+        [
+         70,
+         80
+        ]
+       ]
+      ],
+      "conflicts": [
+       [
+        "HG-M042/HG-E110:departure",
+        "settled",
+        "8, then 9"
+       ],
+       [
+        "HG-M042/HG-E115:start",
+        "open",
+        "11"
+       ]
+      ],
+      "findings": [
+       "charge_without_attendance",
+       "note_signed_after_the_service_date"
+      ],
+      "assessments": [
+       [
+        "2026-01-05",
+        [
+         18
+        ]
+       ],
+       [
+        "2026-01-16",
+        [
+         14
+        ]
+       ],
+       [
+        "2026-01-30",
+        [
+         10
+        ]
+       ]
+      ],
+      "totals": [
+       [
+        12,
+        11,
+        465
+       ],
+       [
+        12,
+        11,
+        475
+       ]
+      ]
+     }
+    }
+   },
+   "same_facts": 7,
+   "differing_documents": [
+    "BH-D001",
+    "BH-D002",
+    "BH-D003",
+    "BH-D005",
+    "BH-D006",
+    "BH-D008",
+    "BH-D010",
+    "BH-D011",
+    "BH-D012",
+    "BH-D013",
+    "BH-D014",
+    "BH-D015",
+    "BH-D016",
+    "BH-D101",
+    "BH-D103",
+    "BH-D104",
+    "BH-D105",
+    "BH-D106",
+    "BH-D107",
+    "BH-D108",
+    "BH-D111",
+    "BH-D113",
+    "BH-D114",
+    "BH-D115"
+   ],
+   "same_conclusions": {
+    "contacts": false,
+    "conflicts": false,
+    "findings": false,
+    "plan_rules": false,
+    "assessments": false,
+    "weekly_status": false
+   },
+   "same_figures": {
+    "HG-M042": {
+     "encounters": true,
+     "statuses": false,
+     "weeks": false,
+     "conflicts": false,
+     "findings": false,
+     "assessments": true,
+     "totals": false
+    }
+   }
+  },
+  {
+   "settings": "output/comparison/settings-fable-low.toml",
+   "model": "fable",
+   "effort": "low",
+   "prompt_version": 3,
+   "usage": {
+    "calls": 31,
+    "rejected": 0,
+    "cost_usd": 5.0644075,
+    "seconds": 984.5730000000001,
+    "tokens_out": 81836,
+    "served_by": [
+     "claude-fable-5-1"
+    ]
+   },
+   "described": {
+    "documents": 31,
+    "claims": 626,
+    "quotes": {
+     "verified": 626
+    },
+    "by_type": {
+     "attendance": 50,
+     "charge": 1,
+     "contact": 62,
+     "correction": 1,
+     "modality": 16,
+     "observation": 198,
+     "participant": 71,
+     "plan_rule": 20,
+     "score": 6,
+     "stated_minutes": 12,
+     "statement": 112,
+     "time": 77
+    },
+    "coverage": {
+     "captured": 423,
+     "captured_on_another_line": 23,
+     "not_captured": 2,
+     "quoted_only": 0
+    },
+    "conclusions": {
+     "HG-M042": {
+      "encounters": 20,
+      "administrative": 7,
+      "statuses": {
+       "HG-E101": [
+        "held",
+        [
+         50
+        ]
+       ],
+       "HG-E102": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E103": [
+        "no_show",
+        []
+       ],
+       "HG-E104": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E105": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E106": [
+        "held",
+        [
+         25
+        ]
+       ],
+       "HG-E107": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E108": [
+        "cancelled_by_clinic",
+        []
+       ],
+       "HG-E109": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E110": [
+        "held",
+        [
+         60
+        ]
+       ],
+       "HG-E111": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E112": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E113": [
+        "held",
+        [
+         45
+        ]
+       ],
+       "HG-E114": [
+        "held_without_patient",
+        []
+       ],
+       "HG-E115": [
+        "held",
+        [
+         40,
+         50
+        ]
+       ],
+       "HG-E116": [
+        "no_show",
+        []
+       ],
+       "HG-E117": [
+        "cancelled_by_patient",
+        []
+       ],
+       "HG-E118": [
+        "held",
+        [
+         75
+        ]
+       ],
+       "HG-E119": [
+        "held",
+        [
+         30
+        ]
+       ],
+       "HG-E120": [
+        "held",
+        [
+         20
+        ]
+       ]
+      },
+      "weeks": [
+       [
+        "2026-01-05",
+        "not_met",
+        [
+         140
+        ]
+       ],
+       [
+        "2026-01-12",
+        "not_met",
+        [
+         120
+        ]
+       ],
+       [
+        "2026-01-19",
+        "met",
+        [
+         180
+        ]
+       ],
+       [
+        "2026-01-26",
+        "cannot_determine",
+        [
+         145,
+         155
+        ]
+       ]
+      ],
+      "conflicts": [
+       [
+        "HG-M042/HG-E110:departure",
+        "settled",
+        "8, then 9"
+       ],
+       [
+        "HG-M042/HG-E115:start",
+        "open",
+        "11"
+       ],
+       [
+        "HG-M042/HG-E116:attendance",
+        "settled",
+        "10"
+       ]
+      ],
+      "findings": [
+       "charge_without_attendance",
+       "draft_made_before_the_service",
+       "note_signed_after_the_service_date"
+      ],
+      "assessments": [
+       [
+        "2026-01-05",
+        [
+         18
+        ]
+       ],
+       [
+        "2026-01-16",
+        [
+         14
+        ]
+       ],
+       [
+        "2026-01-30",
+        [
+         10
+        ]
+       ]
+      ],
+      "totals": [
+       [
+        12,
+        11,
+        585
+       ],
+       [
+        12,
+        11,
+        595
+       ]
+      ]
+     }
+    }
+   },
+   "same_facts": 13,
+   "differing_documents": [
+    "BH-D001",
+    "BH-D002",
+    "BH-D007",
+    "BH-D009",
+    "BH-D011",
+    "BH-D012",
+    "BH-D013",
+    "BH-D014",
+    "BH-D015",
+    "BH-D016",
+    "BH-D103",
+    "BH-D104",
+    "BH-D105",
+    "BH-D107",
+    "BH-D108",
+    "BH-D111",
+    "BH-D112",
+    "BH-D115"
+   ],
+   "same_conclusions": {
+    "contacts": false,
+    "conflicts": false,
+    "findings": false,
+    "plan_rules": false,
+    "assessments": false,
+    "weekly_status": false
+   },
+   "same_figures": {
+    "HG-M042": {
+     "encounters": true,
+     "statuses": true,
+     "weeks": true,
+     "conflicts": true,
+     "findings": true,
+     "assessments": true,
+     "totals": true
+    }
+   }
+  }
+ ]
+}

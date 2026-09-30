@@ -1,0 +1,262 @@
+{
+ "doc_hash": "300a30dbe42be8dcfdf7ad644f23c583259611467ae32e944e8d7154c78b968e",
+ "file_name": "symptom_measure_review_jan16.txt",
+ "model": "fable",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:21:29.509+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:20:55.309+00:00",
+   "usage": {
+    "wall_seconds": 33.911,
+    "api_seconds": 30.762,
+    "input_tokens": 2,
+    "output_tokens": 2843,
+    "cache_creation_input_tokens": 1029,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.16520425,
+    "turns": 2,
+    "models": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 2843,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1029,
+      "webSearchRequests": 0,
+      "costUSD": 0.16520425,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 652,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "7c073c9c-95e4-47f9-93c7-885b9d46c0bf",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D013",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "questionnaire_review",
+    "kind_as_written": "Measurement review",
+    "first_line": 1,
+    "last_line": 16,
+    "author_name": "Mara Voss, LCSW",
+    "author_role": "LCSW",
+    "signature": "not_stated",
+    "is_copy": false,
+    "heading": "Harbor Grove Behavioral Health | Measurement review",
+    "dates": [
+     {
+      "kind": "completed",
+      "date": "2026-01-16",
+      "time": "08:17",
+      "quote": "Completed by patient: 2026-01-16, 08:17 local",
+      "line": 7
+     },
+     {
+      "kind": "reviewed",
+      "date": "2026-01-16",
+      "time": "09:10",
+      "quote": "Reviewed by Mara Voss, LCSW, 2026-01-16, 09:10 local",
+      "line": 9
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-16",
+    "service_as_written": "Measurement review",
+    "service_class": "questionnaire_review",
+    "quote": "Harbor Grove Behavioral Health | Measurement review",
+    "line": 4
+   },
+   {
+    "section": 1,
+    "ref": "c2",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-05",
+    "service_as_written": "intake",
+    "service_class": "other",
+    "quote": "the intake score of 18 recorded on January 5",
+    "line": 11
+   }
+  ],
+  "modalities": [],
+  "times": [],
+  "attendance": [],
+  "participants": [],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [
+   {
+    "section": 1,
+    "instrument": "PHQ-9",
+    "score": 14,
+    "item_number": null,
+    "completed_date": "2026-01-16",
+    "completed_time": "08:17",
+    "form_id": "HG-Q116",
+    "relation": "completion",
+    "quote": "Total score: 14",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "instrument": "PHQ-9",
+    "score": 18,
+    "item_number": null,
+    "completed_date": "2026-01-05",
+    "form_id": null,
+    "relation": "mention",
+    "quote": "the intake score of 18 recorded on January 5",
+    "line": 11
+   }
+  ],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "Score lower than intake score",
+    "quote": "The submitted score is lower than the intake score of 18 recorded on January 5.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Getting out of apartment a little easier",
+    "quote": "Rowan wrote that getting out of the apartment had become a little easier",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Thinking about work leads to procrastination",
+    "quote": "thinking about work continued to make them want to put things off",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "patient",
+    "topic": "sleep",
+    "summary": "Sleep inconsistent",
+    "quote": "Rowan also described sleep as inconsistent.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "Some improvement in depressive symptoms",
+    "quote": "the score and recent individual-session material suggest some improvement in depressive symptoms",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Persistent avoidance and difficulty initiating work communication",
+    "quote": "Persistent avoidance, difficulty initiating work communication",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "Sleep disruption remains clinically relevant",
+    "quote": "and sleep disruption remain clinically relevant",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Attempted small activities and communication practice; no reliable routine yet",
+    "quote": "Rowan has attempted small activities and communication practice but has not yet established a reliable routine.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "Continue current therapeutic focus",
+    "quote": "Continue the current therapeutic focus and review functioning alongside symptom change during the next direct appointment.",
+    "line": 13
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_new_assessment",
+    "quote": "No additional questionnaire was submitted with this update.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "not_a_visit",
+    "quote": "no clinical appointment occurred at the time of review",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "This entry records review of the portal submission",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "The form remains attached to the measurement tab with its original completion date.",
+    "line": 15
+   }
+  ]
+ },
+ "reused": false
+}

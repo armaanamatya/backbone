@@ -1,0 +1,293 @@
+{
+ "doc_hash": "3b3f50db40b348bdd9e3baeb64b67a11d5edaf12699954762bec9633ad79ad12",
+ "file_name": "signed_treatment_plan_jan05.txt",
+ "model": "fable",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:21:15.849+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:20:51.269+00:00",
+   "usage": {
+    "wall_seconds": 24.371,
+    "api_seconds": 21.193,
+    "input_tokens": 2,
+    "output_tokens": 2459,
+    "cache_creation_input_tokens": 1326,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.15194424999999998,
+    "turns": 2,
+    "models": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 2459,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1326,
+      "webSearchRequests": 0,
+      "costUSD": 0.15194424999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "75ab53bf-c9a0-4dc3-96d3-e9057c877807",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D003",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "plan",
+    "kind_as_written": "Outpatient treatment plan",
+    "first_line": 1,
+    "last_line": 21,
+    "author_name": "Mara Voss",
+    "author_role": "LCSW",
+    "signature": "signed",
+    "signed_by": "Mara Voss",
+    "signed_date": "2026-01-05",
+    "signed_time": "13:05",
+    "signature_line": 7,
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "signed",
+      "date": "2026-01-05",
+      "time": "13:05",
+      "quote": "signed 2026-01-05, 13:05 local",
+      "line": 7
+     },
+     {
+      "kind": "other",
+      "date": "2026-01-05",
+      "time": "13:12",
+      "quote": "Patient agreement recorded 2026-01-05, 13:12 local",
+      "line": 8
+     },
+     {
+      "kind": "period_start",
+      "date": "2026-01-05",
+      "quote": "Episode dates: 2026-01-05 through 2026-01-30",
+      "line": 6
+     },
+     {
+      "kind": "period_end",
+      "date": "2026-01-30",
+      "quote": "Episode dates: 2026-01-05 through 2026-01-30",
+      "line": 6
+     }
+    ]
+   }
+  ],
+  "contacts": [],
+  "modalities": [],
+  "times": [],
+  "attendance": [],
+  "participants": [],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "mood",
+    "summary": "depressed mood",
+    "quote": "Presenting needs: depressed mood, sleep disruption, anxiety about resuming work responsibilities, and avoidance of tasks and communication.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "sleep disruption",
+    "quote": "Presenting needs: depressed mood, sleep disruption, anxiety about resuming work responsibilities, and avoidance of tasks and communication.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "anxiety about resuming work",
+    "quote": "Presenting needs: depressed mood, sleep disruption, anxiety about resuming work responsibilities, and avoidance of tasks and communication.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "avoidance of tasks and communication",
+    "quote": "Presenting needs: depressed mood, sleep disruption, anxiety about resuming work responsibilities, and avoidance of tasks and communication.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "date": "2026-01-05",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "wishes to improve follow-through despite anxiety",
+    "quote": "Rowan wishes to improve follow-through without waiting for anxiety to disappear.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "date": "2026-01-05",
+    "speaker": "clinician",
+    "topic": "other",
+    "summary": "partner support available; reminders may increase tension",
+    "quote": "Partner support is available but repeated reminders sometimes increase tension.",
+    "line": 10
+   }
+  ],
+  "plan_rules": [
+   {
+    "section": 1,
+    "rule": "episode_period",
+    "start_date": "2026-01-05",
+    "end_date": "2026-01-30",
+    "quote": "Episode dates: 2026-01-05 through 2026-01-30",
+    "line": 6
+   },
+   {
+    "section": 1,
+    "rule": "requirement",
+    "measure": "therapy_days",
+    "minimum": 3,
+    "period": "week",
+    "quote": "at least 3 therapy days and at least 150 minutes of patient-present therapy in each Monday–Sunday week",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "rule": "requirement",
+    "measure": "minutes",
+    "minimum": 150,
+    "period": "week",
+    "patient_must_be_present": true,
+    "quote": "at least 3 therapy days and at least 150 minutes of patient-present therapy in each Monday–Sunday week",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "rule": "week_definition",
+    "week_starts_on": "monday",
+    "quote": "in each Monday–Sunday week",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "rule": "therapy_day_definition",
+    "service_classes": [
+     "individual_therapy",
+     "group_therapy",
+     "family_therapy"
+    ],
+    "patient_must_be_present": true,
+    "quote": "A therapy day is a calendar day on which Rowan participates in individual, group, or family psychotherapy.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "rule": "counted_service",
+    "service_classes": [
+     "individual_therapy",
+     "group_therapy",
+     "family_therapy"
+    ],
+    "patient_must_be_present": true,
+    "quote": "Patient-present individual, group, and family therapy contribute to the minute goal.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "rule": "excluded_service",
+    "service_classes": [
+     "medication_management",
+     "collateral_contact",
+     "care_coordination"
+    ],
+    "quote": "Medication management, contacts with collateral informants only, and care coordination do not contribute.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "rule": "other",
+    "text": "This is the program's individualized treatment-plan goal for Rowan.",
+    "quote": "This is the program's individualized treatment-plan goal for Rowan.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "rule": "clinical_goal",
+    "goal_number": 1,
+    "text": "improve daily activity and task initiation",
+    "quote": "Goal 1: improve daily activity and task initiation.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "rule": "clinical_goal",
+    "goal_number": 2,
+    "text": "improve coping with anxiety and disrupted sleep",
+    "quote": "Goal 2: improve coping with anxiety and disrupted sleep.",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "rule": "clinical_goal",
+    "goal_number": 3,
+    "text": "support a workable return to employment",
+    "quote": "Goal 3: support a workable return to employment.",
+    "line": 18
+   },
+   {
+    "section": 1,
+    "rule": "other",
+    "text": "Family work counted when Rowan is present",
+    "quote": "The treatment team will combine individual practice, therapeutic group activities, and family work when Rowan is present.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "rule": "other",
+    "text": "Review participation, symptoms, functioning; adjust schedule when indicated",
+    "quote": "Review: assess participation, symptoms, and practical functioning during the episode.",
+    "line": 20
+   }
+  ],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "SYNTHETIC TRAINING RECORD — Entirely fictional patient and organization.",
+    "line": 2
+   },
+   {
+    "section": 1,
+    "says": "not_a_visit",
+    "quote": "Harbor Grove Behavioral Health | Outpatient treatment plan",
+    "line": 4
+   }
+  ]
+ },
+ "reused": false
+}

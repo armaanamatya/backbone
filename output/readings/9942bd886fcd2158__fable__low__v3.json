@@ -1,0 +1,286 @@
+{
+ "doc_hash": "9942bd886fcd2158bbd56914551519397d70eef7103b6d33ba2fa90cc424093c",
+ "file_name": "BH-D114_medication_management_2026-01-30.txt",
+ "model": "fable",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:19:14.947+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:18:51.847+00:00",
+   "usage": {
+    "wall_seconds": 22.99,
+    "api_seconds": 19.618,
+    "input_tokens": 2,
+    "output_tokens": 2297,
+    "cache_creation_input_tokens": 1120,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.13972425,
+    "turns": 2,
+    "models": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 2297,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1120,
+      "webSearchRequests": 0,
+      "costUSD": 0.13972425,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "1e66db74-1f10-4d0c-ae19-e98ad0556dd9",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D114",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Medication management",
+    "first_line": 1,
+    "last_line": 16,
+    "author_name": "Elena Ortiz",
+    "author_role": "PMHNP",
+    "signature": "signed",
+    "signed_by": "Elena Ortiz, PMHNP",
+    "signed_date": "2026-01-30",
+    "signed_time": "16:02",
+    "signature_line": 14,
+    "status_as_written": "Final",
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-30",
+      "quote": "January 30, 2026 | 15:00–15:20 | Completed, 20 minutes",
+      "line": 5
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-30",
+      "time": "16:02",
+      "quote": "Electronically signed: Elena Ortiz, PMHNP | January 30, 2026, 16:02",
+      "line": 14
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E120",
+    "appointment_id": null,
+    "service_date": "2026-01-30",
+    "service_as_written": "Medication management",
+    "service_class": "medication_management",
+    "quote": "Medication management | Encounter HG-E120",
+    "line": 3
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "15:00",
+    "end": "15:20",
+    "label": "not_labelled",
+    "position": "header",
+    "quote": "January 30, 2026 | 15:00–15:20 | Completed, 20 minutes",
+    "line": 5
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "completed",
+    "status_as_written": "Completed",
+    "quote": "Completed, 20 minutes",
+    "line": 5
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Elena Ortiz",
+    "role": "clinician",
+    "role_as_written": "Prescriber",
+    "presence": "not_stated",
+    "quote": "Prescriber: Elena Ortiz, PMHNP",
+    "line": 6
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "not_stated",
+    "quote": "Rowan reported taking the medication as prescribed and did not describe a new adverse effect.",
+    "line": 8
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "minutes": 20,
+    "of": "contact_total",
+    "quote": "Completed, 20 minutes",
+    "line": 5
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "medication",
+    "summary": "Taking medication as prescribed, no new adverse effect",
+    "quote": "Rowan reported taking the medication as prescribed and did not describe a new adverse effect.",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "mood",
+    "summary": "Mood less persistently low than earlier in month",
+    "quote": "Mood felt less persistently low than earlier in the month",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "Anxiety noticeable when anticipating contact with work",
+    "quote": "although anxiety remained noticeable when anticipating contact with work",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "Sleep still variable",
+    "quote": "Sleep was still variable.",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Alert, organized, able to describe follow-up plan",
+    "quote": "Rowan was alert, organized in conversation, and able to describe the follow-up plan.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "safety",
+    "summary": "Denied current suicidal thoughts",
+    "quote": "The patient denied current suicidal thoughts.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "safety",
+    "summary": "No new acute safety issue",
+    "quote": "No new acute safety issue emerged in this visit.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "medication",
+    "summary": "Continue current regimen, monitor sleep and tolerability",
+    "quote": "Discussed continuing the current medication regimen, monitoring sleep and tolerability, and contacting the clinic if a concerning change occurred before the next prescriber appointment.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "medication",
+    "summary": "No medication change made",
+    "quote": "No medication change was made today.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "Psychotherapy goals remain with treating therapist",
+    "quote": "Ongoing psychotherapy goals and behavioral assignments remain with the treating therapist.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Agreed to continue attending follow-up and bring medication questions",
+    "quote": "Rowan agreed to continue attending scheduled outpatient follow-up and to bring questions about the medication regimen to the next medication appointment.",
+    "line": 12
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_therapy_provided",
+    "quote": "No separately documented psychotherapy was provided.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "The service consisted of medication evaluation and management, including symptom review and medication counseling.",
+    "line": 12
+   }
+  ]
+ },
+ "reused": false
+}

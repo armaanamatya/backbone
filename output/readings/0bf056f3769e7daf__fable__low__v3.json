@@ -1,0 +1,446 @@
+{
+ "doc_hash": "0bf056f3769e7daf39941514e6f3e1c40c99cbc00dbb4228ee0fac07d9f75f96",
+ "file_name": "early_appointment_status_export.txt",
+ "model": "fable",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:19:45.206+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:19:09.558+00:00",
+   "usage": {
+    "wall_seconds": 35.314,
+    "api_seconds": 32.027,
+    "input_tokens": 2,
+    "output_tokens": 3872,
+    "cache_creation_input_tokens": 1166,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.21939424999999999,
+    "turns": 2,
+    "models": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 3872,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1166,
+      "webSearchRequests": 0,
+      "costUSD": 0.21939424999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "51986dcf-b349-47b1-88e2-d091213ebe45",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D006",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "schedule_export",
+    "kind_as_written": "Appointment desk",
+    "author_name": null,
+    "author_role": "Appointment desk",
+    "first_line": 1,
+    "last_line": 20,
+    "signature": "not_stated",
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "exported_or_prepared",
+      "date": "2026-01-16",
+      "time": "16:50",
+      "quote": "Export run 2026-01-16, 16:50 local",
+      "line": 6
+     },
+     {
+      "kind": "period_start",
+      "date": "2026-01-05",
+      "quote": "View: appointments January 5–16, 2026; times local",
+      "line": 7
+     },
+     {
+      "kind": "period_end",
+      "date": "2026-01-16",
+      "quote": "View: appointments January 5–16, 2026; times local",
+      "line": 7
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E101",
+    "appointment_id": null,
+    "service_date": "2026-01-05",
+    "service_as_written": "Individual therapy",
+    "service_class": "individual_therapy",
+    "quote": "HG-E101   | Jan05 | Individual therapy     | 09:00–09:50    | Completed",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "ref": "c2",
+    "encounter_id": "HG-E102",
+    "appointment_id": null,
+    "service_date": "2026-01-06",
+    "service_as_written": "Coping skills group",
+    "service_class": "group_therapy",
+    "quote": "HG-E102   | Jan06 | Coping skills group    | 10:00–11:30    | Attended part",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "ref": "c3",
+    "encounter_id": "HG-E103",
+    "appointment_id": null,
+    "service_date": "2026-01-08",
+    "service_as_written": "Individual therapy",
+    "service_class": "individual_therapy",
+    "quote": "HG-E103   | Jan08 | Individual therapy     | 11:00–11:45    | No show",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "ref": "c4",
+    "encounter_id": "HG-E104",
+    "appointment_id": null,
+    "service_date": "2026-01-09",
+    "service_as_written": "Family therapy",
+    "service_class": "family_therapy",
+    "quote": "HG-E104   | Jan09 | Family therapy         | 14:00–14:45    | Completed",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "ref": "c5",
+    "encounter_id": "HG-E105",
+    "appointment_id": null,
+    "service_date": "2026-01-12",
+    "service_as_written": "Coping skills group",
+    "service_class": "group_therapy",
+    "quote": "HG-E105   | Jan12 | Coping skills group    | 10:00–11:30    | Completed",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "ref": "c6",
+    "encounter_id": "HG-E106",
+    "appointment_id": null,
+    "service_date": "2026-01-13",
+    "service_as_written": "Medication management",
+    "service_class": "medication_management",
+    "quote": "HG-E106   | Jan13 | Medication management  | 09:00–09:25    | Completed",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "ref": "c7",
+    "encounter_id": "HG-E107",
+    "appointment_id": null,
+    "service_date": "2026-01-14",
+    "service_as_written": "Individual therapy",
+    "service_class": "individual_therapy",
+    "quote": "HG-E107   | Jan14 | Individual therapy     | 11:00–11:45    | Completed",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "ref": "c8",
+    "encounter_id": "HG-E108",
+    "appointment_id": null,
+    "service_date": "2026-01-15",
+    "service_as_written": "Coping skills group",
+    "service_class": "group_therapy",
+    "quote": "HG-E108   | Jan15 | Coping skills group    | 10:00–11:30    | Clinic cancelled",
+    "line": 17
+   },
+   {
+    "section": 1,
+    "ref": "c9",
+    "encounter_id": "HG-E109",
+    "appointment_id": null,
+    "service_date": "2026-01-16",
+    "service_as_written": "Family collateral",
+    "service_class": "collateral_contact",
+    "quote": "HG-E109   | Jan16 | Family collateral      | 14:00–14:40    | Completed",
+    "line": 18
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "09:00",
+    "end": "09:50",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "HG-E101   | Jan05 | Individual therapy     | 09:00–09:50    | Completed",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "HG-E102   | Jan06 | Coping skills group    | 10:00–11:30    | Attended part",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "what": "contact_interval",
+    "start": "11:00",
+    "end": "11:45",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "HG-E103   | Jan08 | Individual therapy     | 11:00–11:45    | No show",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "what": "contact_interval",
+    "start": "14:00",
+    "end": "14:45",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "HG-E104   | Jan09 | Family therapy         | 14:00–14:45    | Completed",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c5",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "HG-E105   | Jan12 | Coping skills group    | 10:00–11:30    | Completed",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c6",
+    "what": "contact_interval",
+    "start": "09:00",
+    "end": "09:25",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "HG-E106   | Jan13 | Medication management  | 09:00–09:25    | Completed",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c7",
+    "what": "contact_interval",
+    "start": "11:00",
+    "end": "11:45",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "HG-E107   | Jan14 | Individual therapy     | 11:00–11:45    | Completed",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "contact": "c8",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "HG-E108   | Jan15 | Coping skills group    | 10:00–11:30    | Clinic cancelled",
+    "line": 17
+   },
+   {
+    "section": 1,
+    "contact": "c9",
+    "what": "contact_interval",
+    "start": "14:00",
+    "end": "14:40",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "HG-E109   | Jan16 | Family collateral      | 14:00–14:40    | Completed",
+    "line": 18
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "completed",
+    "status_as_written": "Completed",
+    "quote": "HG-E101   | Jan05 | Individual therapy     | 09:00–09:50    | Completed",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "status": "attended_part",
+    "status_as_written": "Attended part",
+    "quote": "HG-E102   | Jan06 | Coping skills group    | 10:00–11:30    | Attended part",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "status": "no_show",
+    "status_as_written": "No show",
+    "quote": "HG-E103   | Jan08 | Individual therapy     | 11:00–11:45    | No show",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "status": "no_show",
+    "status_as_written": "remained unarrived at close of its appointment slot",
+    "quote": "HG-E103 remained unarrived at close of its appointment slot on January 8.",
+    "line": 20
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "status": "completed",
+    "status_as_written": "Completed",
+    "quote": "HG-E104   | Jan09 | Family therapy         | 14:00–14:45    | Completed",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c5",
+    "status": "completed",
+    "status_as_written": "Completed",
+    "quote": "HG-E105   | Jan12 | Coping skills group    | 10:00–11:30    | Completed",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c6",
+    "status": "completed",
+    "status_as_written": "Completed",
+    "quote": "HG-E106   | Jan13 | Medication management  | 09:00–09:25    | Completed",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c7",
+    "status": "completed",
+    "status_as_written": "Completed",
+    "quote": "HG-E107   | Jan14 | Individual therapy     | 11:00–11:45    | Completed",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "contact": "c8",
+    "status": "cancelled_by_clinic",
+    "status_as_written": "Clinic cancelled",
+    "quote": "HG-E108   | Jan15 | Coping skills group    | 10:00–11:30    | Clinic cancelled",
+    "line": 17
+   },
+   {
+    "section": 1,
+    "contact": "c8",
+    "status": "cancelled_by_clinic",
+    "status_as_written": "removed from the active room schedule",
+    "reason": "staff illness was reported",
+    "quote": "HG-E108 was removed from the active room schedule after staff illness was reported.",
+    "line": 20
+   },
+   {
+    "section": 1,
+    "contact": "c9",
+    "status": "completed",
+    "status_as_written": "Completed",
+    "quote": "HG-E109   | Jan16 | Family collateral      | 14:00–14:40    | Completed",
+    "line": 18
+   },
+   {
+    "section": 1,
+    "contact": "c9",
+    "status": "absent",
+    "status_as_written": "Rowan could not attend",
+    "quote": "Appointment HG-E109 was retained as a partner collateral contact after Rowan could not attend.",
+    "line": 20
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c9",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "role_as_written": null,
+    "presence": "absent",
+    "quote": "Appointment HG-E109 was retained as a partner collateral contact after Rowan could not attend.",
+    "line": 20
+   },
+   {
+    "section": 1,
+    "contact": "c9",
+    "name": null,
+    "role": "family_or_partner",
+    "role_as_written": "partner",
+    "presence": "not_stated",
+    "quote": "Appointment HG-E109 was retained as a partner collateral contact after Rowan could not attend.",
+    "line": 20
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c3",
+    "says": "other",
+    "quote": "Outreach was assigned to the individual therapist's support queue.",
+    "line": 20
+   },
+   {
+    "section": 1,
+    "contact": "c8",
+    "says": "other",
+    "quote": "A cancellation message was released to all registered members.",
+    "line": 20
+   },
+   {
+    "section": 1,
+    "contact": "c9",
+    "says": "no_patient_contact",
+    "quote": "Appointment HG-E109 was retained as a partner collateral contact after Rowan could not attend.",
+    "line": 20
+   },
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "SYNTHETIC TRAINING RECORD — Entirely fictional patient and organization.",
+    "line": 2
+   }
+  ]
+ },
+ "reused": false
+}

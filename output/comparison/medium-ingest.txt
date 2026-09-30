@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\armaa\OneDrive\Desktop\backbone\backbone\__main__.py", line 5, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\armaa\OneDrive\Desktop\backbone\backbone\cli.py", line 200, in main
+    return arguments.run(arguments)
+           ~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\armaa\OneDrive\Desktop\backbone\backbone\cli.py", line 48, in run_ingest
+    summaries = ingest.read_waiting(connection, settings, log, arguments.only)
+  File "C:\Users\armaa\OneDrive\Desktop\backbone\backbone\ingest.py", line 146, in read_waiting
+    conclude(connection, patient_key, log)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\armaa\OneDrive\Desktop\backbone\backbone\ingest.py", line 158, in conclude
+    store.replace_conclusions(connection, patient_key, rows)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\armaa\OneDrive\Desktop\backbone\backbone\store.py", line 332, in replace_conclusions
+    connection.execute(
+    ~~~~~~~~~~~~~~~~~~^
+        f"INSERT INTO {table} ({', '.join(names)}) VALUES ({', '.join('?' * len(names))})",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        values,
+        ^^^^^^^
+    )
+    ^
+sqlite3.IntegrityError: UNIQUE constraint failed: contacts.contact_id
+Files: 31 new, 0 already in the store, 0 not readable as UTF-8.

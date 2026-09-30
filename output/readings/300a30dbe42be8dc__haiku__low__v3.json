@@ -1,0 +1,235 @@
+{
+ "doc_hash": "300a30dbe42be8dcfdf7ad644f23c583259611467ae32e944e8d7154c78b968e",
+ "file_name": "symptom_measure_review_jan16.txt",
+ "model": "haiku",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:09:50.165+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:07:39.311+00:00",
+   "usage": {
+    "wall_seconds": 130.422,
+    "api_seconds": 126.29,
+    "input_tokens": 10,
+    "output_tokens": 13351,
+    "cache_creation_input_tokens": 1256,
+    "cache_read_input_tokens": 7461,
+    "cost_usd": 0.07002309999999999,
+    "turns": 2,
+    "models": {
+     "claude-haiku-4-5-20251001": {
+      "inputTokens": 10,
+      "outputTokens": 13351,
+      "cacheReadInputTokens": 7461,
+      "cacheCreationInputTokens": 1256,
+      "webSearchRequests": 0,
+      "costUSD": 0.07002309999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 9714,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "cb4b753e-6295-4320-9e80-89ceae7cabc3",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D013",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "questionnaire_review",
+    "kind_as_written": "Measurement review",
+    "first_line": 1,
+    "last_line": 16,
+    "signature": "unsigned",
+    "is_copy": false,
+    "author_name": "Mara Voss",
+    "author_role": "LCSW",
+    "dates": [
+     {
+      "kind": "completed",
+      "date": "2026-01-16",
+      "time": "08:17",
+      "quote": "Completed by patient: 2026-01-16, 08:17 local",
+      "line": 7
+     },
+     {
+      "kind": "reviewed",
+      "date": "2026-01-16",
+      "time": "09:10",
+      "quote": "Reviewed by Mara Voss, LCSW, 2026-01-16, 09:10 local",
+      "line": 9
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": null,
+    "appointment_id": "HG-Q116",
+    "service_date": "2026-01-16",
+    "service_as_written": "Measurement review",
+    "service_class": "questionnaire_review",
+    "quote": "Measurement review",
+    "line": 4
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "modality": "other",
+    "contact": "c1",
+    "quote": "patient portal form HG-Q116",
+    "line": 6
+   }
+  ],
+  "times": [],
+  "attendance": [],
+  "participants": [],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [
+   {
+    "section": 1,
+    "instrument": "PHQ-9",
+    "score": 14,
+    "item_number": null,
+    "completed_date": "2026-01-16",
+    "completed_time": "08:17",
+    "form_id": "HG-Q116",
+    "relation": "completion",
+    "quote": "Total score: 14",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "instrument": "PHQ-9",
+    "score": 18,
+    "item_number": null,
+    "completed_date": "2026-01-05",
+    "completed_time": null,
+    "form_id": null,
+    "relation": "mention",
+    "quote": "The submitted score is lower than the intake score of 18 recorded on January 5.",
+    "line": 11
+   }
+  ],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "patient",
+    "speaker_name": "Rowan",
+    "topic": "functioning",
+    "summary": "Getting out of the apartment had become easier",
+    "quote": "getting out of the apartment had become a little easier",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "patient",
+    "speaker_name": "Rowan",
+    "topic": "functioning",
+    "summary": "Thinking about work made them want to put things off",
+    "quote": "thinking about work continued to make them want to put things off",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "patient",
+    "speaker_name": "Rowan",
+    "topic": "sleep",
+    "summary": "Sleep is inconsistent",
+    "quote": "Rowan also described sleep as inconsistent",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "speaker_name": "Mara Voss",
+    "topic": "progress",
+    "summary": "Some improvement in depressive symptoms",
+    "quote": "some improvement in depressive symptoms",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "speaker_name": "Mara Voss",
+    "topic": "functioning",
+    "summary": "Persistent avoidance remains clinically relevant",
+    "quote": "Persistent avoidance",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "speaker_name": "Mara Voss",
+    "topic": "functioning",
+    "summary": "Difficulty initiating work communication remains clinically relevant",
+    "quote": "difficulty initiating work communication",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "speaker_name": "Mara Voss",
+    "topic": "sleep",
+    "summary": "Sleep disruption remains clinically relevant",
+    "quote": "sleep disruption remain clinically relevant",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "speaker_name": "Mara Voss",
+    "topic": "functioning",
+    "summary": "Has attempted small activities and communication practice but has not yet established a reliable routine",
+    "quote": "Rowan has attempted small activities and communication practice but has not yet established a reliable routine",
+    "line": 13
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "says": "not_a_visit",
+    "quote": "no clinical appointment occurred at the time of review",
+    "line": 15
+   }
+  ]
+ },
+ "reused": false
+}

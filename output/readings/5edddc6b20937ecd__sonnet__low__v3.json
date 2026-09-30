@@ -1,0 +1,208 @@
+{
+ "doc_hash": "5edddc6b20937ecdadf834b331c399375d0889d12a8595eb4084f1da2d4f4a11",
+ "file_name": "group_facilitator_jan06.txt",
+ "model": "sonnet",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:11:58.561+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:11:32.828+00:00",
+   "usage": {
+    "wall_seconds": 25.417,
+    "api_seconds": 8.195,
+    "input_tokens": 2,
+    "output_tokens": 1617,
+    "cache_creation_input_tokens": 1065,
+    "cache_read_input_tokens": 9724,
+    "cost_usd": 0.0223788,
+    "turns": 2,
+    "models": {
+     "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1617,
+      "cacheReadInputTokens": 9724,
+      "cacheCreationInputTokens": 1065,
+      "webSearchRequests": 0,
+      "costUSD": 0.0223788,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "65c0b217-18a2-4ae3-9996-eed500d70be3",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D004",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042",
+   "organization": "Harbor Grove Behavioral Health"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "first_line": 1,
+    "last_line": 14,
+    "signature": "signed",
+    "is_copy": false,
+    "author_name": "Leena Park",
+    "author_role": "LPC",
+    "signed_by": "Leena Park",
+    "signed_date": "2026-01-06",
+    "signed_time": "12:02",
+    "signature_line": 8,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-06",
+      "quote": "Service date 2026-01-06 | Group scheduled 10:00–11:30 local",
+      "line": 5
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-06",
+      "time": "12:02",
+      "quote": "Signed 2026-01-06, 12:02 local",
+      "line": 8
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E102",
+    "appointment_id": null,
+    "service_date": "2026-01-06",
+    "service_as_written": "Coping skills group",
+    "service_class": "group_therapy",
+    "quote": "Harbor Grove Behavioral Health | Coping skills group",
+    "line": 4
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "header",
+    "quote": "Service date 2026-01-06 | Group scheduled 10:00–11:30 local",
+    "line": 5
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "no_therapy_interval",
+    "start": "10:45",
+    "end": "11:00",
+    "label": "actual",
+    "position": "body",
+    "quote": "The whole group took a break from 10:45 to 11:00.",
+    "line": 12,
+    "detail": "break, whole group"
+   }
+  ],
+  "attendance": [],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Leena Park",
+    "role": "clinician",
+    "role_as_written": "Facilitator",
+    "presence": "not_stated",
+    "quote": "Facilitator: Leena Park, LPC",
+    "line": 7
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "not_stated",
+    "quote": "Rowan was quiet initially and responded when invited to identify a situation involving avoidance.",
+    "line": 14
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-06",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Rowan delayed replying to work message, fearing firm return date question",
+    "quote": "They described delaying a reply to a work message because they feared being asked for a firm return date.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-06",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Rowan chose reading the message before deciding response as next step",
+    "quote": "Rowan practiced a breathing exercise and selected reading the message before deciding how to respond as a possible next step.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-06",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "Participation relevant, receptive to peers",
+    "quote": "Their participation was relevant to the topic, and they appeared receptive to peer suggestions.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-06",
+    "speaker": "clinician",
+    "topic": "reason_for_contact",
+    "summary": "Group focus on early physical anxiety signs and coping response",
+    "quote": "Group focus: recognizing early physical signs of anxiety and choosing a coping response before withdrawing from a task.",
+    "line": 10
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_therapy_provided",
+    "quote": "No therapy was conducted during that interval.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "not_an_attendance_record",
+    "quote": "The patient attendance roster is maintained by the group desk.",
+    "line": 14
+   }
+  ]
+ },
+ "reused": false
+}
