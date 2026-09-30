@@ -2,7 +2,7 @@
 
 How the system gets built, in what order, and how each stage is checked. Written 2026-09-29, while `answer-key.md` was being verified.
 
-**Status:** a plan. No code has been written and no model has been called. Building starts on your go-ahead.
+**Status:** built. You gave the go-ahead on 2026-09-29, and for stages 8 to 10 on 2026-09-30. All ten stages are built, and stage 11, the model comparison, was run early. All 31 documents are read at prompt version 3, the contacts and weekly verdicts match the key, the five answers and nine problem questions are answered, 155 checks pass, the benchmark is measured, and the README is written. The build is stopped at the last review point, after stage 10: whether to send it. What was built and measured is in Discussions 22, 24 to 26, 29, 31, 33 and 34 of `discussions.md`.
 
 **What this plan rests on**
 
@@ -107,8 +107,8 @@ One file, `settings.toml`. Nothing in it is a fact about a patient.
 |---|---|---|
 | Model | Opus (R-17) | Swapping models later is a one-line change (R-23) |
 | Effort | Low for reading, confirmed at stage 2 (R-49) | Affects cost and accuracy |
-| Prompt version | 1 | Stamped on every claim |
-| Spending cap per call | To be set at stage 2 | A guard against a runaway call |
+| Prompt version | 1 at the start, 2 after stage 2, 3 after stage 3 | Stamped on every claim |
+| Spending cap per call | $0.50, set at stage 2 | A guard against a runaway call |
 | Calls in parallel | 4 | Sets how long reading takes |
 
 ---
@@ -122,10 +122,10 @@ One file, `settings.toml`. Nothing in it is a fact about a patient.
 | `call goal_status --patient HG-M042` | Runs one function and prints its result | No |
 | `trace` | Follows a figure back to contacts, claims and source lines | No |
 | `export` | Writes the abstraction in readable form | No |
-| `check` | Runs the checks | No |
-| `benchmark` | Measures times and sizes | Only for the question timings |
+| `check` | Runs the checks on the store and the answers, then the tests | No |
+| `benchmark` | Measures times and sizes | Only with `--live`, for new questions end to end |
 
-Four of the seven commands run with no model. That is how the interviewers can inspect the abstraction and follow a conclusion to its source without your setup (R-9).
+Five of the eight commands run with no model, and `benchmark` calls one only with `--live`. That is how the interviewers can inspect the abstraction and follow a conclusion to its source without your setup (R-9).
 
 ---
 
@@ -142,10 +142,10 @@ Each stage ends with something that can be checked.
 | 5 | Count | Intervals, minutes, days, weekly status | Matches section 6 of the key: 140, 120, 180, 145 or 155, and the four verdicts | 0 |
 | 6 | Functions | The nine functions and the `call` command | Each function returns rows, the calculation, the sources and the conflicts it depends on | 0 |
 | 7 | Questions | The plan call, the saved plans, the nine-part answer written by code, the five answers | The five answers match section 7 of the key. The nine problem questions behave as in section 8 | About 14 to 25 |
-| 8 | Checks | The checks in section 9 of this plan | All pass, or each failure is understood and written down | 0 |
-| 9 | Measure | The benchmark script, which replays saved results and logs | The measured figures in section 10 exist, with estimates kept in a separate file | About 5 |
-| 10 | Write up | The README, the readable export | Every item the problem statement asks for is present | 0 |
-| 11 | After the build | The model comparison (O-36) | On your go-ahead only | About 31 per model |
+| 8 | Checks | The checks in section 9 of this plan | All pass, or each failure is understood and written down. Built: 155 pass (Discussion 34) | 0 |
+| 9 | Measure | The benchmark script, which replays saved results and logs | The measured figures in section 10 exist, with estimates kept in a separate file. Built: 5 calls (Discussion 34) | About 5 |
+| 10 | Write up | The README, the readable export | Every item the problem statement asks for is present. Built (Discussion 34) | 0 |
+| 11 | After the build | The model comparison (O-36) | On your go-ahead only. Run early, on your ask: 153 calls (Discussion 33) | About 31 per model |
 
 **Why this order**
 
