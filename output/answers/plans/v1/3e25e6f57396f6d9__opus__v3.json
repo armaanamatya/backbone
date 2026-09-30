@@ -1,0 +1,64 @@
+{
+ "question": "How many minutes was Rowan in the Jan 27 group?",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:13:36.844+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:13:30.397+00:00",
+   "usage": {
+    "wall_seconds": 6.405,
+    "api_seconds": 4.567,
+    "input_tokens": 2,
+    "output_tokens": 432,
+    "cache_creation_input_tokens": 1346,
+    "cache_read_input_tokens": 2883,
+    "cost_usd": 0.0199926,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 432,
+      "cacheReadInputTokens": 2883,
+      "cacheCreationInputTokens": 1346,
+      "webSearchRequests": 0,
+      "costUSD": 0.0199926,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-27",
+   "end": "2026-01-27",
+   "basis": "as asked"
+  },
+  "reading": "The question presumes a group contact on 2026-01-27 (year from the plan period) and asks its minutes; date_detail shows whether a group contact is documented that day, its status and minutes.",
+  "other_readings": [
+   "Minutes attended by Rowan may differ from the scheduled group length if documents disagree or the patient left early."
+  ],
+  "calls": [
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "Rowan",
+     "date": "2026-01-27"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "\"Rowan\" is taken to be Rowan Mercer (HG-M042). If no group contact is documented on Jan 27, the answer should say so and not give a number."
+ }
+}

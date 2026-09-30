@@ -1,0 +1,92 @@
+{
+ "question": "How did Rowan's care change after the treatment plan was changed?",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:13:54.073+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:13:44.682+00:00",
+   "usage": {
+    "wall_seconds": 9.349,
+    "api_seconds": 7.656,
+    "input_tokens": 2,
+    "output_tokens": 795,
+    "cache_creation_input_tokens": 1346,
+    "cache_read_input_tokens": 2883,
+    "cost_usd": 0.027252600000000002,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 795,
+      "cacheReadInputTokens": 2883,
+      "cacheCreationInputTokens": 1346,
+      "webSearchRequests": 0,
+      "costUSD": 0.027252600000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 84,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "the episode"
+  },
+  "reading": "The question assumes the plan was changed during the episode. It asks how care differed before and after that change. Care means the therapy sessions the plan counts, meaning contacts that were held with the patient present, with their minutes and types.",
+  "other_readings": [
+   "'Care' could mean all encounters, including contacts without the patient present, not just counted sessions.",
+   "'Change in care' could mean a change in the goal or targets rather than in the care actually delivered."
+  ],
+  "calls": [
+   {
+    "function": "goal_status",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "week"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "class"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": "plan",
+  "notes": "The question assumes there was a plan change. goal_status shows whether one exists and its date. If there is none, the answer should say so and not compare periods. If there is one, compare_periods should be run: from the episode start to the day before the change, then from the change date to 2026-01-30. The change date is not in the question, so it was not guessed. The weekly counts above give an approximate before-and-after picture in the meantime."
+ }
+}

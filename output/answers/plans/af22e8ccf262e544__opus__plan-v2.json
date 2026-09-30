@@ -1,0 +1,63 @@
+{
+ "question": "How many sessions did Jordan Blake attend?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T07:18:43.435+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:18:37.216+00:00",
+   "usage": {
+    "wall_seconds": 6.199,
+    "api_seconds": 4.414,
+    "input_tokens": 2,
+    "output_tokens": 437,
+    "cache_creation_input_tokens": 1387,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.0204348,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 437,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1387,
+      "webSearchRequests": 0,
+      "costUSD": 0.0204348,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Jordan Blake",
+  "period": {
+   "start": null,
+   "end": null,
+   "basis": "the episode"
+  },
+  "reading": "Sessions means the attended contacts the plan counts, with the patient present, over the whole episode.",
+  "other_readings": [
+   "Sessions as all contacts held, including those without the patient present"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Jordan Blake"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "Jordan Blake is not among the patients in the collection. The only patient is HG-M042, Rowan Mercer. The answer should say there is no record for Jordan Blake and should not swap in another patient. No plan period is known, so no dates are given."
+ }
+}

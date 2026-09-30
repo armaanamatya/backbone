@@ -1,0 +1,88 @@
+{
+ "question": "For each week, did the delivered therapy meet the goal documented in Rowan’s treatment plan? State the goal, the relevant therapy-day and minute totals, and whether it was met, not met, or cannot be determined from the current record.",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:12:56.260+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:12:48.864+00:00",
+   "usage": {
+    "wall_seconds": 7.361,
+    "api_seconds": 5.518,
+    "input_tokens": 2,
+    "output_tokens": 601,
+    "cache_creation_input_tokens": 1401,
+    "cache_read_input_tokens": 2883,
+    "cost_usd": 0.023812599999999996,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 601,
+      "cacheReadInputTokens": 2883,
+      "cacheCreationInputTokens": 1401,
+      "webSearchRequests": 0,
+      "costUSD": 0.023812599999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "the episode"
+  },
+  "reading": "Weekly goal check over the plan period: therapy means the contact classes the plan counts, with therapy days and minutes per week compared to the plan's goal. A week is 'cannot be determined' when its totals depend on an unresolved conflict.",
+  "other_readings": [
+   "Therapy could include every contact held, including classes the plan excludes, which would give higher weekly totals."
+  ],
+  "calls": [
+   {
+    "function": "goal_status",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "week"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "Rowan"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": "plan",
+  "notes": "The question names only \"Rowan\", which matches HG-M042 Rowan Mercer. For any week whose verdict rests on an open conflict, report it as cannot be determined and say what would settle it."
+ }
+}

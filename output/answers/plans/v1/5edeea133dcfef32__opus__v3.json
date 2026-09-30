@@ -1,0 +1,64 @@
+{
+ "question": "What care did Rowan receive on Jan 24?",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:14:00.696+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:13:54.305+00:00",
+   "usage": {
+    "wall_seconds": 6.316,
+    "api_seconds": 4.125,
+    "input_tokens": 2,
+    "output_tokens": 440,
+    "cache_creation_input_tokens": 1341,
+    "cache_read_input_tokens": 2883,
+    "cost_usd": 0.0201126,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 440,
+      "cacheReadInputTokens": 2883,
+      "cacheCreationInputTokens": 1341,
+      "webSearchRequests": 0,
+      "costUSD": 0.0201126,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-24",
+   "end": "2026-01-24",
+   "basis": "as asked"
+  },
+  "reading": "Care on Jan 24 means every contact documented for 2026-01-24 (the year comes from the plan period), whatever its class, with its status and minutes.",
+  "other_readings": [
+   "Only the therapy classes the plan counts toward the goal"
+  ],
+  "calls": [
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "Rowan",
+     "date": "2026-01-24"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "2026-01-24 is a Saturday. If no care is documented for that date, the answer should say so and not assume any care took place. The question gives only 'Rowan', which matches Rowan Mercer (HG-M042)."
+ }
+}

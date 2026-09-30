@@ -1,0 +1,74 @@
+{
+ "question": "How many sessions did Rowan attend last week?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T07:19:38.474+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:19:31.361+00:00",
+   "usage": {
+    "wall_seconds": 7.076,
+    "api_seconds": 5.462,
+    "input_tokens": 2,
+    "output_tokens": 589,
+    "cache_creation_input_tokens": 1388,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.023482799999999998,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 589,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1388,
+      "webSearchRequests": 0,
+      "costUSD": 0.023482799999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-26",
+   "end": "2026-01-30",
+   "basis": "last week of the episode"
+  },
+  "reading": "\"Last week\" is taken as the final week of the plan period (Mon 2026-01-26 to Fri 2026-01-30), not the week before today. \"Sessions attended\" means therapy contacts in the classes the plan counts, held with the patient present.",
+  "other_readings": [
+   "Sessions as all contacts held with the patient present, including classes the plan does not count",
+   "Sessions as all encounters recorded, whatever their status"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-26",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-26",
+     "end": "2026-01-30"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question gives only the first name \"Rowan\". It is taken to mean Rowan Mercer (HG-M042), the only Rowan in the collection. \"Last week\" is read against the record's own dates, not today's date (2026-09-30)."
+ }
+}

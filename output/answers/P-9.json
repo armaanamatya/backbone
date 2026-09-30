@@ -1,0 +1,86 @@
+{
+ "question_id": "P-9",
+ "question": "How many group authorization units does Rowan have left?",
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "the episode"
+  },
+  "reading": "The question asks how many group therapy units are still left on an authorization. That means the authorized total minus the units used. No function returns authorized unit totals or balances.",
+  "other_readings": [
+   "It could be read as the number of group-class sessions delivered in the episode (care_delivered grouped by class). That count still doesn't give the units remaining without the authorization's total."
+  ],
+  "calls": [],
+  "no_function_fits": true,
+  "document_kind": "authorization",
+  "notes": "The question gives only the first name \"Rowan\". It most likely means Rowan Mercer (HG-M042). An authorization document would be needed to find the units authorized and the units still left."
+ },
+ "plan_source": "saved",
+ "plan_attempts": 1,
+ "results": [],
+ "parts": {
+  "1. the question as understood": [
+   "Patient: Rowan Mercer (HG-M042).",
+   "Period: 2026-01-05 to 2026-01-30 (the episode).",
+   "Reading: The question asks how many group therapy units are still left on an authorization. That means the authorized total minus the units used. No function returns authorized unit totals or balances.",
+   "Another reading: It could be read as the number of group-class sessions delivered in the episode (care_delivered grouped by class). That count still doesn't give the units remaining without the authorization's total.",
+   "Note: The question gives only the first name \"Rowan\". It most likely means Rowan Mercer (HG-M042). An authorization document would be needed to find the units authorized and the units still left."
+  ],
+  "2. the answer": [
+   "Cannot answer. No function reads what the question asks for, so the abstraction holds no figure for it.",
+   "Documents of the kind the question is about (authorization), for this patient:",
+   "- BH-D001: group_authorization_letter.txt"
+  ],
+  "3. figures": [
+   "None. No figure is given."
+  ],
+  "4. what contributed": [
+   "Nothing. The documents above are named, not read."
+  ],
+  "5. what was excluded": [
+   "Nothing."
+  ],
+  "6. not settled": [
+   "Nothing."
+  ],
+  "7. assumptions": [
+   "None."
+  ],
+  "8. documents not read": [
+   "None."
+  ],
+  "in short": [
+   "Cannot answer. No function reads what the question asks for, so the abstraction holds no figure for it."
+  ],
+  "9. version": [
+   "Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.",
+   "Reading: model opus, effort low, prompt version 3.",
+   "Plan: model opus, plan prompt version 2, made 2026-09-30T07:19:45.339+00:00 (saved plan reused).",
+   "Answered: 2026-09-30T17:41:45+00:00."
+  ]
+ },
+ "patient": {
+  "status": "found",
+  "patient": "HG-M042",
+  "name": "Rowan Mercer",
+  "dob": "1991-04-12",
+  "documents": 31,
+  "episodes": [
+   {
+    "start": "2026-01-05",
+    "end": "2026-01-30",
+    "plan": "BH-D003"
+   }
+  ]
+ },
+ "lookup": [
+  {
+   "declared_id": "BH-D001",
+   "file_name": "group_authorization_letter.txt",
+   "kinds": "[\"authorization\"]"
+  }
+ ],
+ "text": "# P-9\n\n> How many group authorization units does Rowan have left?\n\n**In short.** Cannot answer. No function reads what the question asks for, so the abstraction holds no figure for it.\n\n## 1. The question as understood\n\nPatient: Rowan Mercer (HG-M042).\nPeriod: 2026-01-05 to 2026-01-30 (the episode).\nReading: The question asks how many group therapy units are still left on an authorization. That means the authorized total minus the units used. No function returns authorized unit totals or balances.\nAnother reading: It could be read as the number of group-class sessions delivered in the episode (care_delivered grouped by class). That count still doesn't give the units remaining without the authorization's total.\nNote: The question gives only the first name \"Rowan\". It most likely means Rowan Mercer (HG-M042). An authorization document would be needed to find the units authorized and the units still left.\n\n## 2. The answer\n\nCannot answer. No function reads what the question asks for, so the abstraction holds no figure for it.\nDocuments of the kind the question is about (authorization), for this patient:\n- BH-D001: group_authorization_letter.txt\n\n## 3. Figures\n\nNone. No figure is given.\n\n## 4. What contributed\n\nNothing. The documents above are named, not read.\n\n## 5. What was excluded\n\nNothing.\n\n## 6. Not settled\n\nNothing.\n\n## 7. Assumptions\n\nNone.\n\n## 8. Documents not read\n\nNone.\n\n## 9. Version\n\nAbstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.\nReading: model opus, effort low, prompt version 3.\nPlan: model opus, plan prompt version 2, made 2026-09-30T07:19:45.339+00:00 (saved plan reused).\nAnswered: 2026-09-30T17:41:45+00:00.\n"
+}
