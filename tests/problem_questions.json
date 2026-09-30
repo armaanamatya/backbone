@@ -1,0 +1,11 @@
+[
+  {"id": "P-1", "case": "unknown patient", "question": "How many sessions did Jordan Blake attend?"},
+  {"id": "P-2", "case": "a participant, not a patient", "question": "How many sessions did Casey Mercer attend?"},
+  {"id": "P-3", "case": "false premise", "question": "How many minutes was Rowan in the Jan 27 group?"},
+  {"id": "P-4", "case": "false premise", "question": "What was Rowan's PHQ-9 score on Jan 26?"},
+  {"id": "P-5", "case": "false premise", "question": "How did Rowan's care change after the treatment plan was changed?"},
+  {"id": "P-6", "case": "a date with no document", "question": "What care did Rowan receive on Jan 24?"},
+  {"id": "P-7", "case": "an ambiguous term", "question": "How many visits did Rowan have?"},
+  {"id": "P-8", "case": "a relative date", "question": "How many sessions did Rowan attend last week?"},
+  {"id": "P-9", "case": "no function fits", "question": "How many group authorization units does Rowan have left?"}
+]

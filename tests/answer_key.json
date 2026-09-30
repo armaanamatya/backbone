@@ -1,0 +1,122 @@
+{
+  "about": "Copied by hand from answer-key.md, sections 2 to 6, so that code can compare against it. This file is read only by the checks. Nothing in backbone/ reads it.",
+  "patient": "HG-M042",
+  "period": {"start": "2026-01-05", "end": "2026-01-30"},
+  "plan": {
+    "document": "BH-D003",
+    "episode": {"start": "2026-01-05", "end": "2026-01-30"},
+    "signed": "2026-01-05T13:05",
+    "days_required": 3,
+    "minutes_required": 150,
+    "week_starts_on": "monday",
+    "counted_classes": ["family_therapy", "group_therapy", "individual_therapy"],
+    "excluded_classes": ["care_coordination", "collateral_contact", "medication_management"],
+    "goals": 3
+  },
+  "contacts": [
+    {"encounter": "HG-E101", "date": "2026-01-05", "class": "individual_therapy", "status": "held", "partial": false, "present": [["09:00", "09:50"]], "removed": [], "minutes": [50], "counts": true},
+    {"encounter": "HG-E102", "date": "2026-01-06", "class": "group_therapy", "status": "held", "partial": true, "present": [["10:15", "11:15"]], "removed": [["10:45", "11:00"]], "minutes": [45], "counts": true},
+    {"encounter": "HG-E103", "date": "2026-01-08", "class": "individual_therapy", "status": "no_show", "partial": false, "present": [], "removed": [], "minutes": [], "counts": false},
+    {"encounter": "HG-E104", "date": "2026-01-09", "class": "family_therapy", "status": "held", "partial": false, "present": [["14:00", "14:45"]], "removed": [], "minutes": [45], "counts": true},
+    {"encounter": "HG-E105", "date": "2026-01-12", "class": "group_therapy", "status": "held", "partial": false, "present": [["10:00", "11:30"]], "removed": [["10:40", "10:55"]], "minutes": [75], "counts": true},
+    {"encounter": "HG-E106", "date": "2026-01-13", "class": "medication_management", "status": "held", "partial": false, "present": [["09:00", "09:25"]], "removed": [], "minutes": [25], "counts": false},
+    {"encounter": "HG-E107", "date": "2026-01-14", "class": "individual_therapy", "status": "held", "partial": false, "present": [["11:00", "11:45"]], "removed": [], "minutes": [45], "counts": true},
+    {"encounter": "HG-E108", "date": "2026-01-15", "class": "group_therapy", "status": "cancelled_by_clinic", "partial": false, "present": [], "removed": [], "minutes": [], "counts": false},
+    {"encounter": "HG-E109", "date": "2026-01-16", "class": "collateral_contact", "status": "held_without_patient", "partial": false, "present": [], "removed": [], "minutes": [], "counts": false, "minutes_without_patient": 40},
+    {"encounter": "HG-E110", "date": "2026-01-19", "class": "group_therapy", "status": "held", "partial": true, "present": [["10:00", "11:15"]], "removed": [["10:45", "11:00"]], "minutes": [60], "counts": true},
+    {"encounter": "HG-E111", "date": "2026-01-19", "class": "individual_therapy", "status": "held", "partial": false, "present": [["11:15", "11:45"]], "removed": [], "minutes": [30], "counts": true},
+    {"encounter": "HG-E112", "date": "2026-01-21", "class": "individual_therapy", "status": "held", "partial": false, "present": [["13:00", "13:55"]], "removed": [["13:20", "13:30"]], "minutes": [45], "counts": true, "modality": "video"},
+    {"encounter": "HG-E113", "date": "2026-01-22", "class": "group_therapy", "status": "held", "partial": true, "present": [["10:30", "11:30"]], "removed": [["10:45", "11:00"]], "minutes": [45], "counts": true},
+    {"encounter": "HG-E114", "date": "2026-01-23", "class": "care_coordination", "status": "held_without_patient", "partial": false, "present": [], "removed": [], "minutes": [], "counts": false, "minutes_without_patient": 20},
+    {"encounter": "HG-E115", "date": "2026-01-26", "class": "individual_therapy", "status": "held", "partial": false, "present": [["09:00", "09:50"], ["09:10", "09:50"]], "removed": [], "minutes": [40, 50], "counts": true},
+    {"encounter": "HG-E116", "date": "2026-01-27", "class": "group_therapy", "status": "no_show", "partial": false, "present": [], "removed": [], "minutes": [], "counts": false},
+    {"encounter": "HG-E117", "date": "2026-01-28", "class": "individual_therapy", "status": "cancelled_by_patient", "partial": false, "present": [], "removed": [], "minutes": [], "counts": false},
+    {"encounter": "HG-E118", "date": "2026-01-29", "class": "group_therapy", "status": "held", "partial": false, "present": [["10:00", "11:30"]], "removed": [["10:45", "11:00"]], "minutes": [75], "counts": true},
+    {"encounter": "HG-E119", "date": "2026-01-30", "class": "family_therapy", "status": "held", "partial": true, "present": [["13:15", "13:45"]], "removed": [], "minutes": [30], "counts": true, "minutes_without_patient": 15},
+    {"encounter": "HG-E120", "date": "2026-01-30", "class": "medication_management", "status": "held", "partial": false, "present": [["15:00", "15:20"]], "removed": [], "minutes": [20], "counts": false}
+  ],
+  "counts_of_contacts": {"encounters": 20, "held": 16, "with_patient_present": 14, "therapy_sessions": 12},
+  "clinicians": {
+    "HG-E104": ["Leena Park", "Mara Voss"],
+    "HG-E115": ["Mira Patel", "Nora Ellis"]
+  },
+  "conflicts": [
+    {"id": "C-1", "encounter": "HG-E110", "field": "departure", "values": {"11:30": ["BH-D102", "BH-D104"], "11:15": ["BH-D103"]}, "status": "settled", "outcome": "11:15", "rule": "8, then 9"},
+    {"id": "C-2", "encounter": "HG-E115", "field": "start", "values": {"09:00": ["BH-D110"], "09:10": ["BH-D111"]}, "status": "open", "outcome": null, "rule": "11"},
+    {"id": "C-3", "encounter": "HG-E116", "field": "attendance", "values": {"did not attend": ["BH-D108"], "attended": ["BH-D112"]}, "status": "settled", "outcome": "did not attend", "rule": "10"}
+  ],
+  "findings": [
+    {"id": "F-1", "kind": "charge_without_attendance", "encounter": "HG-E116", "required": true},
+    {"id": "F-2", "kind": "draft_made_before_the_service", "encounter": "HG-E116", "required": false},
+    {"id": "F-3", "kind": "note_signed_after_the_service_date", "encounter": "HG-E104", "required": false}
+  ],
+  "assessments": [
+    {"id": "A-1", "instrument": "PHQ-9", "completed_date": "2026-01-05", "completed_time": null, "score": 18, "form_id": null},
+    {"id": "A-2", "instrument": "PHQ-9", "completed_date": "2026-01-16", "completed_time": "08:17", "score": 14, "form_id": "HG-Q116"},
+    {"id": "A-3", "instrument": "PHQ-9", "completed_date": "2026-01-30", "completed_time": "12:42", "score": 10, "form_id": null, "items": {"9": 0}}
+  ],
+  "weeks": [
+    {"start": "2026-01-05", "end": "2026-01-11", "days": 3, "dates": ["2026-01-05", "2026-01-06", "2026-01-09"], "minutes": [140], "verdict": "not_met", "margin_minutes": [-10], "margin_days": 0, "partial": false, "undocumented": []},
+    {"start": "2026-01-12", "end": "2026-01-18", "days": 2, "dates": ["2026-01-12", "2026-01-14"], "minutes": [120], "verdict": "not_met", "margin_minutes": [-30], "margin_days": -1, "partial": false, "undocumented": ["2026-01-17", "2026-01-18"]},
+    {"start": "2026-01-19", "end": "2026-01-25", "days": 3, "dates": ["2026-01-19", "2026-01-21", "2026-01-22"], "minutes": [180], "verdict": "met", "margin_minutes": [30], "margin_days": 0, "partial": false, "undocumented": ["2026-01-24", "2026-01-25"]},
+    {"start": "2026-01-26", "end": "2026-02-01", "days": 3, "dates": ["2026-01-26", "2026-01-29", "2026-01-30"], "minutes": [145, 155], "verdict": "cannot_determine", "margin_minutes": [-5, 5], "margin_days": 0, "partial": true, "undocumented": ["2026-01-31", "2026-02-01"], "depends_on": "HG-E115"}
+  ],
+  "totals": {
+    "sessions": 12,
+    "days": 11,
+    "minutes": [585, 595],
+    "hours": [9.75, 9.92],
+    "by_class": {
+      "individual_therapy": {"sessions": 5, "minutes": [210, 220]},
+      "group_therapy": {"sessions": 5, "minutes": [300]},
+      "family_therapy": {"sessions": 2, "minutes": [75]}
+    }
+  },
+  "hours_by_week": [[2.33], [2.0], [3.0], [2.42, 2.58]],
+  "answers": {
+    "about": "Section 7 of the key, by figure and by source. Wording is not compared. The reading rests on the results behind each answer, not on the text.",
+    "DEV-01": {
+      "patient": "HG-M042", "period": ["2026-01-05", "2026-01-30"],
+      "sessions": 12, "days": 11, "by_class": {"individual_therapy": 5, "group_therapy": 5, "family_therapy": 2},
+      "contributed": ["HG-E101", "HG-E102", "HG-E104", "HG-E105", "HG-E107", "HG-E110", "HG-E111", "HG-E112", "HG-E113", "HG-E115", "HG-E118", "HG-E119"],
+      "excluded": ["HG-E103", "HG-E106", "HG-E108", "HG-E109", "HG-E114", "HG-E116", "HG-E117", "HG-E120"],
+      "duplicate_risk": {"HG-E104": ["BH-D007", "BH-D008"], "HG-E115": ["BH-D110", "BH-D111"], "HG-E110": ["BH-D101", "BH-D102", "BH-D103", "BH-D104"], "HG-E112": ["BH-D106"]},
+      "copy": "BH-D104",
+      "ineligible_documents": ["BH-D112", "BH-D006", "BH-D108", "BH-D010", "BH-D114", "BH-D012", "BH-D109", "BH-D015", "BH-D016", "BH-D013", "BH-D115", "BH-D001"],
+      "open_conflict_changes_a_count": false,
+      "not_read": []
+    },
+    "DEV-02": {
+      "minutes": [585, 595], "hours": [9.75, 9.92],
+      "weeks": {"2026-01-05": [140], "2026-01-12": [120], "2026-01-19": [180], "2026-01-26": [145, 155]},
+      "removed": {"HG-E102": [["10:45", "11:00"]], "HG-E105": [["10:40", "10:55"]], "HG-E110": [["10:45", "11:00"]], "HG-E112": [["13:20", "13:30"]], "HG-E113": [["10:45", "11:00"]], "HG-E118": [["10:45", "11:00"]]},
+      "without_patient": {"HG-E119": 15},
+      "not_settled": ["HG-M042/HG-E115:start"],
+      "not_read": []
+    },
+    "DEV-03": {
+      "verdicts": {"2026-01-05": "not_met", "2026-01-12": "not_met", "2026-01-19": "met", "2026-01-26": "cannot_determine"},
+      "goal": {"therapy_days": 3, "minutes": 150}, "goal_source": {"document": "BH-D003", "line": 12},
+      "plans": 1, "plan_changes": 0,
+      "week_4_depends_on": "HG-M042/HG-E115:start", "week_4_partial": true,
+      "not_read": []
+    },
+    "DEV-04": {
+      "2026-01-19": {"therapy_contacts": 2, "minutes": [90], "per_contact": {"HG-E110": [60], "HG-E111": [30]}, "documents": ["BH-D101", "BH-D102", "BH-D103", "BH-D104", "BH-D105"]},
+      "2026-01-21": {"therapy_contacts": 1, "minutes": [45], "present": [["13:00", "13:55"]], "removed": [["13:20", "13:30"]], "documents": ["BH-D106"], "modality": "video"},
+      "correction": {"conflict": "HG-M042/HG-E110:departure", "outcome": "11:15", "replaced": "11:30", "replaced_in": ["BH-D102", "BH-D104"]},
+      "not_settled": [],
+      "not_read": []
+    },
+    "DEV-05": {
+      "scores": [[18, "2026-01-05"], [14, "2026-01-16"], [10, "2026-01-30"]],
+      "changes": [-4, -4], "overall": -8,
+      "copies": {"BH-D014": "2026-01-16"}, "mentions": {"BH-D013": "2026-01-05"},
+      "reason_sources": [["BH-D105", 9], ["BH-D101", 10], ["BH-D102", 14]],
+      "not_settled": [],
+      "not_read": [],
+      "cited_lines_not_in_the_answer": ["BH-D010 line 13"],
+      "why_not_cited": {"BH-D010 line 13": "The medication sentence the key leaves out of its safety table (R-40). The plan for DEV-05 asks for six topics and not medication, so the answer does not cite it. The key does not fail the system either way."}
+    }
+  }
+}

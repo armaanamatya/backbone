@@ -1,0 +1,225 @@
+{
+ "doc_hash": "4a3859fd81fc5afc5533e9add8718ce4b89492121bf68f812f73db92d319755e",
+ "file_name": "BH-D115_symptom_measure_review_2026-01-30.txt",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-29T13:15:46.657+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-29T13:15:32.087+00:00",
+   "usage": {
+    "wall_seconds": 14.515,
+    "api_seconds": 12.577,
+    "input_tokens": 2,
+    "output_tokens": 1815,
+    "cache_creation_input_tokens": 1114,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.0471834,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1815,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1114,
+      "webSearchRequests": 0,
+      "costUSD": 0.0471834,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "0eac30d4-4ce0-4baa-b97e-2ba64c6fc62d",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D115",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "questionnaire_review",
+    "kind_as_written": "Symptom questionnaire and chart review",
+    "first_line": 1,
+    "last_line": 16,
+    "author_name": "Mira Patel",
+    "author_role": "LCSW",
+    "signature": "signed",
+    "signed_by": "Mira Patel, LCSW",
+    "signed_date": "2026-01-30",
+    "signed_time": "16:20",
+    "signature_line": 16,
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "completed",
+      "date": "2026-01-30",
+      "time": "12:42",
+      "quote": "Questionnaire completed January 30, 2026, 12:42",
+      "line": 5
+     },
+     {
+      "kind": "reviewed",
+      "date": "2026-01-30",
+      "quote": "Clinician review, January 30:",
+      "line": 10
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-30",
+      "time": "16:20",
+      "quote": "Electronically signed: Mira Patel, LCSW | January 30, 2026, 16:20",
+      "line": 16
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "ref": "c1",
+    "section": 1,
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-30",
+    "service_as_written": "questionnaire review",
+    "service_class": "questionnaire_review",
+    "quote": "This entry records questionnaire review within ongoing care and is not a separate treatment appointment.",
+    "line": 14
+   }
+  ],
+  "modalities": [],
+  "times": [],
+  "attendance": [],
+  "participants": [],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [
+   {
+    "section": 1,
+    "instrument": "PHQ-9",
+    "score": 10,
+    "item_number": null,
+    "completed_date": "2026-01-30",
+    "completed_time": "12:42",
+    "relation": "completion",
+    "quote": "PHQ-9 total: 10. Item 9: 0.",
+    "line": 6
+   },
+   {
+    "section": 1,
+    "instrument": "PHQ-9",
+    "score": 0,
+    "item_number": 9,
+    "completed_date": "2026-01-30",
+    "completed_time": "12:42",
+    "relation": "completion",
+    "quote": "PHQ-9 total: 10. Item 9: 0.",
+    "line": 6
+   }
+  ],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "sleep",
+    "summary": "Endorsed sleep difficulty",
+    "quote": "The patient continued to endorse sleep difficulty and trouble sustaining usual activities",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "mood",
+    "summary": "Fewer days of low mood than intake",
+    "quote": "with fewer days of pervasive low mood than reported at intake",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "Partial improvement, persistent avoidance",
+    "quote": "Rowan shows partial improvement, with persistent avoidance and meaningful functional impact around returning to work.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Initial steps taken but delays follow-up",
+    "quote": "The patient has taken some initial steps, including drafting and sending a message, but continues to delay follow-up",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "Anxious when tasks expand",
+    "quote": "becomes anxious when a task expands beyond a narrowly defined action",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "Intermittent sleep disruption",
+    "quote": "Sleep disruption remains an intermittent barrier to establishing a steadier daytime routine.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "Continued treatment appropriate",
+    "quote": "Continued treatment is appropriate given the remaining difficulties with follow-through and work-related functioning.",
+    "line": 12
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "not_a_visit",
+    "quote": "This entry records questionnaire review within ongoing care and is not a separate treatment appointment.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "No additional patient-contact interval is claimed in this entry.",
+    "line": 14
+   }
+  ]
+ },
+ "reused": false
+}

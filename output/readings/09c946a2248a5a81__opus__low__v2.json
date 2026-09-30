@@ -1,0 +1,289 @@
+{
+ "doc_hash": "09c946a2248a5a81b2c1dc85b7620babe57b72f1bd4bed3d49eba574be5ccd46",
+ "file_name": "BH-D106_telehealth_2026-01-21.txt",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 2,
+ "read_at": "2026-09-29T12:45:26.936+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-29T12:45:08.718+00:00",
+   "usage": {
+    "wall_seconds": 18.143,
+    "api_seconds": 15.508,
+    "input_tokens": 2,
+    "output_tokens": 2255,
+    "cache_creation_input_tokens": 1220,
+    "cache_read_input_tokens": 9541,
+    "cost_usd": 0.0567762,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2255,
+      "cacheReadInputTokens": 9541,
+      "cacheCreationInputTokens": 1220,
+      "webSearchRequests": 0,
+      "costUSD": 0.0567762,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "2949b2f0-4681-449b-af53-0232152c0df9",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D106",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Individual psychotherapy",
+    "first_line": 1,
+    "last_line": 13,
+    "author_name": "Mira Patel",
+    "author_role": "LCSW",
+    "signature": "signed",
+    "signed_by": "Mira Patel, LCSW",
+    "signed_date": "2026-01-21",
+    "signed_time": "15:04",
+    "signature_line": 13,
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-21",
+      "quote": "January 21, 2026 | Video | Clinician: Mira Patel, LCSW",
+      "line": 5
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-21",
+      "time": "15:04",
+      "quote": "Electronically signed: Mira Patel, LCSW | January 21, 2026, 15:04",
+      "line": 13
+     }
+    ]
+   },
+   {
+    "id": 2,
+    "kind": "platform_export",
+    "kind_as_written": "ATTACHED PLATFORM CONNECTION EXPORT",
+    "first_line": 15,
+    "last_line": 20,
+    "signature": "not_stated",
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "exported_or_prepared",
+      "date": "2026-01-21",
+      "time": "14:06",
+      "quote": "Exported January 21, 2026, 14:06; all times local.",
+      "line": 20
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E112",
+    "appointment_id": "HG-A112",
+    "service_date": "2026-01-21",
+    "service_as_written": "Individual psychotherapy",
+    "service_class": "individual_therapy",
+    "quote": "Individual psychotherapy | Encounter HG-E112 | Appointment HG-A112",
+    "line": 3
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "modality": "video",
+    "quote": "January 21, 2026 | Video | Clinician: Mira Patel, LCSW",
+    "line": 5
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_present",
+    "start": "13:00",
+    "end": "13:20",
+    "label": "actual",
+    "position": "body",
+    "quote": "Patient contact occurred 13:00–13:20 and 13:30–13:55.",
+    "line": 7
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_present",
+    "start": "13:30",
+    "end": "13:55",
+    "label": "actual",
+    "position": "body",
+    "quote": "Patient contact occurred 13:00–13:20 and 13:30–13:55.",
+    "line": 7
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "no_therapy_interval",
+    "start": "13:20",
+    "end": "13:30",
+    "label": "actual",
+    "position": "body",
+    "detail": "Connection was lost",
+    "quote": "Connection was lost from 13:20–13:30; there was no therapeutic contact during that interval.",
+    "line": 7
+   },
+   {
+    "section": 2,
+    "contact": "c1",
+    "what": "connection",
+    "start": "13:00",
+    "end": "13:20",
+    "label": "actual",
+    "position": "table",
+    "detail": "VC-112A",
+    "quote": "HG-A112 | VC-112A | January 21 13:00 | January 21 13:20",
+    "line": 17
+   },
+   {
+    "section": 2,
+    "contact": "c1",
+    "what": "connection",
+    "start": "13:30",
+    "end": "13:55",
+    "label": "actual",
+    "position": "table",
+    "detail": "VC-112B",
+    "quote": "HG-A112 | VC-112B | January 21 13:30 | January 21 13:55",
+    "line": 18
+   }
+  ],
+  "attendance": [],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Mira Patel",
+    "role": "clinician",
+    "role_as_written": "Clinician",
+    "presence": "not_stated",
+    "quote": "Clinician: Mira Patel, LCSW",
+    "line": 5
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present_part",
+    "quote": "Patient contact occurred 13:00–13:20 and 13:30–13:55.",
+    "line": 7
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "minutes": 45,
+    "of": "patient_present",
+    "quote": "Total patient psychotherapy contact: 45 minutes.",
+    "line": 7
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-21",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Drafted return-to-work message but did not send",
+    "quote": "Rowan reported drafting a short message about a possible gradual return to work but stopping before sending it.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-21",
+    "speaker": "patient",
+    "topic": "anxiety",
+    "summary": "Repeated checking delays task",
+    "quote": "The patient identified checking the draft repeatedly as another way the task was being delayed.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-21",
+    "speaker": "patient",
+    "topic": "sleep",
+    "summary": "One improved night, one of prolonged wakefulness",
+    "quote": "Rowan described one night of improved sleep followed by a night of prolonged wakefulness.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-21",
+    "speaker": "clinician",
+    "topic": "other",
+    "summary": "Engaged, able to restate task",
+    "quote": "Rowan was engaged and able to restate the agreed task.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-21",
+    "speaker": "clinician",
+    "topic": "safety",
+    "summary": "No urgent safety concern",
+    "quote": "No urgent safety concern was reported.",
+    "line": 11
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "same_contact_continued",
+    "quote": "The reconnection continued the same clinical encounter under original appointment HG-A112.",
+    "line": 7
+   },
+   {
+    "section": 2,
+    "contact": "c1",
+    "says": "same_contact_continued",
+    "quote": "Second call reason: Rejoin original appointment after network disconnect.",
+    "line": 19
+   }
+  ]
+ },
+ "reused": false
+}

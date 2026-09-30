@@ -1,0 +1,261 @@
+{
+ "doc_hash": "432c973d1a4d505b49ba85c3c92dead5c2a70faca6b6dd66e87db92b95329fea",
+ "file_name": "partner_collateral_jan16.txt",
+ "model": "opus",
+ "effort": "medium",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T08:39:28.318+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T08:39:05.429+00:00",
+   "usage": {
+    "wall_seconds": 22.229,
+    "api_seconds": 15.216,
+    "input_tokens": 2,
+    "output_tokens": 2102,
+    "cache_creation_input_tokens": 1165,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.0533314,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2102,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1165,
+      "webSearchRequests": 0,
+      "costUSD": 0.0533314,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "7036a0f7-d041-481d-b5eb-c27cb4ff14f9",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D012",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Family collateral",
+    "first_line": 1,
+    "last_line": 18,
+    "author_name": "Mara Voss",
+    "author_role": "LCSW",
+    "signature": "signed",
+    "signed_by": "Mara Voss",
+    "signed_date": "2026-01-16",
+    "signed_time": "16:08",
+    "signature_line": 9,
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-16",
+      "quote": "Encounter HG-E109 | Date 2026-01-16 | 14:00–14:40 local",
+      "line": 6
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-16",
+      "time": "16:08",
+      "quote": "Signed 2026-01-16, 16:08 local",
+      "line": 9
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E109",
+    "appointment_id": null,
+    "service_date": "2026-01-16",
+    "service_as_written": "Family collateral",
+    "service_class": "collateral_contact",
+    "quote": "Harbor Grove Behavioral Health | Family collateral",
+    "line": 4
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "14:00",
+    "end": "14:40",
+    "label": "not_labelled",
+    "position": "header",
+    "quote": "Encounter HG-E109 | Date 2026-01-16 | 14:00–14:40 local",
+    "line": 6
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "absent",
+    "status_as_written": "Rowan was absent for the entire contact.",
+    "quote": "Rowan was absent for the entire contact.",
+    "line": 8,
+    "reason": "Rowan advised the office that they could not participate"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "absent",
+    "status_as_written": "Rowan did not join in person, by telephone, or by video.",
+    "quote": "Rowan did not join in person, by telephone, or by video.",
+    "line": 17
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Casey Mercer",
+    "role": "family_or_partner",
+    "role_as_written": "partner",
+    "presence": "present",
+    "quote": "Participant: Casey Mercer, partner.",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "absent",
+    "quote": "Rowan was absent for the entire contact.",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Mara Voss",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "not_stated",
+    "quote": "Clinician: Mara Voss, LCSW",
+    "line": 7
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "family_or_partner",
+    "speaker_name": "Casey Mercer",
+    "topic": "functioning",
+    "summary": "Patient taking short walks, more willing to discuss coming week",
+    "quote": "Casey reported that Rowan had been getting out for short walks and seemed more willing to discuss the coming week.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "mood",
+    "summary": "Mornings remain difficult",
+    "quote": "Mornings remain difficult",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "family_or_partner",
+    "speaker_name": "Casey Mercer",
+    "topic": "mood",
+    "summary": "Patient becomes quiet when work discussed",
+    "quote": "Casey described Rowan becoming quiet when the conversation turns to work.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Evening check-in reduced unplanned reminders",
+    "quote": "The scheduled evening check-in has reduced unplanned reminders.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "family_or_partner",
+    "speaker_name": "Casey Mercer",
+    "topic": "other",
+    "summary": "Less argument when asking what help Rowan wants",
+    "quote": "Casey said it takes effort to resist offering multiple solutions but has noticed less argument when asking what kind of help Rowan wants.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-16",
+    "speaker": "clinician",
+    "topic": "reason_for_contact",
+    "summary": "Collateral discussion with partner about home observations and supporting treatment plan",
+    "quote": "This was a collateral discussion with Casey only, focused on observations at home and ways to support the treatment plan.",
+    "line": 11
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_therapy_provided",
+    "quote": "No patient-present psychotherapy occurred during this contact.",
+    "line": 17
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_patient_contact",
+    "quote": "Rowan did not join in person, by telephone, or by video.",
+    "line": 17
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "No new treatment decision was made with Rowan during this appointment.",
+    "line": 17
+   },
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "SYNTHETIC TRAINING RECORD — Entirely fictional patient and organization.",
+    "line": 2
+   }
+  ]
+ },
+ "reused": false
+}
