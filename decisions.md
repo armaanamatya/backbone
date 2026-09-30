@@ -11,6 +11,10 @@ Every interpretation made in order to count or calculate something. A decision i
 
 **Added 2026-09-29:** D-35 and D-36 were added while the answer key was being verified, and you confirmed both the same day. There are now 36 decisions and 16 rules.
 
+**Added 2026-09-29, during the build:** D-37 to D-42 were added while stages 4 and 5 were built. You confirmed all six the same day (was O-48). There are now 42 decisions, all confirmed.
+
+**Added 2026-09-30, during stage 8:** D-43, a reporting convention for one sentence of DEV-05. Proposed, waiting for your review. There are now 43 decisions.
+
 **Rule for this file:** any new interpretation made while calculating gets added here before it is used.
 
 **Verification, 2026-09-28:** seven review agents checked this file against the source documents. Entries whose content was wrong carry a "Corrected" line. Six others gained a missing "if reversed" line or a cross-reference. D-27 to D-34 were added because they were in use without being logged. No status was changed. Details are in `verification.md`.
@@ -55,6 +59,13 @@ Every interpretation made in order to count or calculate something. A decision i
 | D-34 | Intervals exclude their end minute; breaks are subtracted only where they overlap presence | No, on this data | Confirmed | Rule 6 |
 | D-35 | The speaker of an observation is the patient only when the sentence names the patient as its source | No figure or verdict. Six speaker labels in DEV-05 | Confirmed | Rule 16 |
 | D-36 | A time in the header of a signed note is taken as actual, unless the note labels it scheduled | No verdict. The minutes of two contacts that do not count | Confirmed | Rule 3 |
+| D-37 | Plan rules are taken only from a plan | Yes: a second requirement of 8 sessions would appear | Confirmed | Plan value |
+| D-38 | In a signed note or an attendance record, a time not labelled scheduled is taken as actual, wherever it appears | No, on this read. It guards against a label that changes between reads | Confirmed | Rule 3 |
+| D-39 | Where no document gives the patient's own times, the patient's presence is the interval of the contact | No counted figure. Two medication visits lose their minutes, and one has no patient | Confirmed | Rule 4 |
+| D-40 | A scheduling contact or a questionnaire review is kept as an administrative record, not as an encounter | Yes: the count of encounters and of contacts with Rowan present | Confirmed | Rule 1 |
+| D-41 | A reference to a contact that gives no number and no time joins a contact of the same date and class. One that fits none, and that no claim describes, makes no contact | Yes: phantom contacts would appear | Confirmed | Rule 1 |
+| D-42 | A no-show or a cancellation is taken from any record, where no attendance record or signed note says the patient attended | Yes: Jan 8 and Jan 15 would have no status | Confirmed | Rule 10 |
+| D-43 | In the count of contacts the patient missed, a contact between professionals is not one the patient missed | No figure or verdict. One sentence of DEV-05 | Proposed | Convention |
 
 ---
 
@@ -536,6 +547,104 @@ These eight were in use in the numbers without being logged. All were confirmed 
 
 ---
 
+## Added while building stages 4 and 5
+
+These six came up when the rules were written as code and run on what the model returned. All six were confirmed on 2026-09-29 (was O-48). Your words were given in the second session, which relayed them to the building session.
+
+### D-37: Plan rules are taken only from a plan
+
+- **Status:** Confirmed 2026-09-29. You said "ya this is fine, tell @building" in the second session, which relayed it
+- **Decision:** Thresholds, counted classes, the week definition and the episode dates are read only from a document whose kind is "plan".
+- **Basis:** The model returned plan rules from two documents that are not plans.
+  - D001, the authorization: "Authorized quantity: 8 group sessions", returned as a requirement of at least 8 sessions.
+  - D002, the intake note, which repeats the episode dates.
+- **What is interpretation:** An authorization sets what may be scheduled. It does not set what the patient must receive.
+- **If reversed:** The goal would gain a requirement of 8 sessions in the episode, and group therapy alone would be listed as counted.
+
+### D-38: In a signed note or an attendance record, a time not labelled scheduled is taken as actual
+
+- **Status:** Confirmed 2026-09-29. You said "ya this is fine, tell @building" in the second session, which relayed it
+- **Decision:** D-36 covers a time in the header of a signed note. This extends it to a time anywhere in a signed note, and to an arrival or departure in an attendance record.
+- **Basis:** The same as D-36: notes in this record label a scheduled time when they give one. D-02 already takes arrival and departure fields of an attendance record as actual.
+- **Why it is needed:** Between two reads, the model gave the same time different labels. A rule that rests on "header" against "body" would change its result with the read.
+- **Limit:** It does not cover a scheduling log, a schedule export, a draft or a charge.
+- **If reversed:** No figure changes on the current read. D111 line 10 and D009 line 12 are the only times it touches, and both repeat or sit beside a labelled time.
+
+### D-39: Where no document gives the patient's own times, the patient's presence is the interval of the contact
+
+- **Status:** Confirmed 2026-09-29. You said "ya this is fine, tell @building" in the second session, which relayed it
+- **Decision:**
+  - Where a signed note gives the interval of a contact and no separate interval for the patient, the patient's presence is that interval, less any part the note says was held without the patient.
+  - This holds only where no document says the patient was absent.
+- **Applies to:**
+
+| Date | Contact | Interval | What the note says of the patient |
+|---|---|---|---|
+| Jan 9 | HG-E104, family therapy | D007 and D008: 14:00–14:45 | "both present for the full 45 minutes" |
+| Jan 13 | HG-E106, medication | D010: 09:00–09:25 | The patient attended |
+| Jan 30 | HG-E120, medication | D114: 15:00–15:20 | Nothing on presence. The note reports what Rowan said |
+
+- **What is interpretation:** For Jan 30 no sentence says Rowan was present. The note is in Rowan's chart and records Rowan's report.
+- **If reversed:** Jan 9 stays 45, from the minutes its notes state. The medication visits on Jan 13 and Jan 30 lose their minutes, and the plan excludes both. Jan 30 would be a contact with no patient, and contacts with Rowan present would be 13. No counted figure and no verdict changes.
+- **Corrected 2026-09-29:** the earlier entry did not name Jan 13. The second session removed this rule in a copy of the code and rebuilt the store.
+
+### D-40: A scheduling contact or a questionnaire review is an administrative record, not an encounter
+
+- **Status:** Confirmed 2026-09-29. You said "ya this is fine, tell @building" in the second session, which relayed it
+- **Decision:** A contact whose class is "scheduling contact" or "questionnaire review" is stored and can be listed, but is not counted among encounters, contacts held, or contacts with the patient present.
+- **Basis:** D-16 and D-17, which say these are not sessions. The key counts 20 encounters and lists calls, messages and reviews as "records that are not contacts".
+- **What is interpretation:** Rowan took part in the callback on Jan 8. It is still not counted as a contact with Rowan present.
+- **If reversed:** Encounters would be 26, and contacts with Rowan present would rise.
+- **Corrected 2026-09-29:** the earlier entry said 27. The store holds 20 encounters and 6 administrative records. Found by the second session.
+
+### D-41: A reference with no number and no time
+
+- **Status:** Confirmed 2026-09-29. You said "ya this is fine, tell @building" in the second session, which relayed it
+- **Decision:**
+  - Rule 1 matches on number, and failing that on patient, date, class and overlapping time.
+  - A reference that gives no number and no time joins a contact of the same patient, date and class, if exactly one fits.
+  - A reference that fits none, and that no claim describes, is a mention. It makes no contact.
+- **Applies to:**
+
+| Document | Reference | Outcome |
+|---|---|---|
+| D101 | "same-day individual meeting", Jan 19 | Joins HG-E111 |
+| D015 | "family visit", Jan 9 | Joins HG-E104 |
+| D016 | "family-related appointment", Jan 16 | A mention. HG-E109 on that date is a collateral contact, so the class does not fit |
+
+- **If reversed:** Three contacts with no status and no times would appear.
+
+### D-42: A no-show or a cancellation is taken from any record
+
+- **Status:** Confirmed 2026-09-29. You said "ya this is fine, tell @building" in the second session, which relayed it
+- **Decision:** Rule 10 says what can establish attendance. Non-attendance needs no such record. Where no attendance record or signed note says the patient attended, a no-show or cancellation is taken from whatever record states it.
+- **Applies to:**
+
+| Date | Contact | Status | From |
+|---|---|---|---|
+| Jan 8 | HG-E103 | No-show | D015, a scheduling log, and D006, a schedule export |
+| Jan 15 | HG-E108 | Cancelled by the clinic | D016, a cancellation notice, and D006 |
+
+- **If reversed:** Both would have no status. Minutes and verdicts do not change, because neither has an established attendance.
+
+---
+
+## Added while building stage 8
+
+### D-43: A contact between professionals is not one the patient missed
+
+**Status:** Proposed, 2026-09-30.
+
+**What was decided:** DEV-05 lists, under "what the record does not settle", the reasons the record cannot show unbroken engagement: the no-shows, the cancellations by the patient, and the contacts held without the patient. A care coordination contact is between professionals by its nature, so the patient's absence from it says nothing about engagement, and it is left out of that count. A collateral contact, where the patient was expected and could not attend, stays in.
+
+**Why:** The second session found the sentence counting "2 contacts held without the patient", one of which was the Jan 23 call between the clinician and an outside social worker (Discussion 32). The rule is on the class of service, not on the contact.
+
+**If reversed:** The sentence reads "2 contacts held without the patient". No figure, verdict or count changes.
+
+**Goes in code as:** a reporting convention, in `functions.assessments` (`absent_from`) and `writing.progress_block`.
+
+---
+
 ## How the decisions go into code
 
 The problem statement forbids "manually encoding patient facts or answers". Each decision is therefore sorted into one of four bins. Confirmed 2026-09-29.
@@ -544,7 +653,7 @@ The problem statement forbids "manually encoding patient facts or answers". Each
 |---|---|---|
 | General rule | 24 decisions, which reduce to 16 rules | Yes |
 | Value read from a document | 6 | Yes, as data read from the plan |
-| Reporting convention | 5 | Yes |
+| Reporting convention | 6 | Yes |
 | Left out | 1 | No |
 
 Facts about Rowan are in none of these bins. "The Jan 19 departure is 11:15" is never typed into code. It is what the rules produce when they run on the documents.
@@ -596,6 +705,7 @@ D-16 and D-17 are not separate rules. A scheduling call and a questionnaire revi
 | The reason a week fell short is given as context and does not change the verdict | D-25 |
 | Every answer says its totals cover the documented record, and names any period with no document | D-31 |
 | A week that runs past the end of the episode is labelled partial | D-14 |
+| A contact between professionals is not counted as one the patient missed | D-43 |
 
 ### Left out
 

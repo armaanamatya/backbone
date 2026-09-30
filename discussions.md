@@ -34,7 +34,14 @@ A record of what we have discussed on the Backbone take-home, what came out of e
 | O-27 | How are plan rules stored so that a plan of a different shape fits, and is "whether it counts" stored or worked out at question time?                                                          | Discussion 9     | Both        |
 | O-31 | For the README: which design decision is tested, which limitation is reported, and what is named as the first bottleneck?                                                                      | Discussion 9     | You         |
 | O-32 | Cleanup: log the remaining interpretations and fix the remaining inconsistencies? (The "40 or 50" wording was settled as R-7)                                                                  | Discussion 9, 11 | You         |
-| O-36 | After the build: compare models on the reading step, confirm that cost is reported per call, and decide how the interviewers read a new document without your setup                            | Discussion 15    | You         |
+| O-36 | Which model reads the documents, and how do the interviewers read a new document without your setup? The comparison of Haiku, Sonnet, Opus and Fable is in Discussion 33 | Discussion 15, 33 | You         |
+| O-43 | Are the 13 build choices of stages 1 and 2 accepted? They are listed in Discussion 22                                                                                                          | Discussion 22    | You         |
+| O-44 | Is low effort confirmed? Low, medium and high on Opus reach the same figures; medium and high hold one more row of the key at 22% and 39% more cost (Discussions 31, 33) | Discussion 23, 31, 33 | You         |
+| O-51 | Are the 16 build choices of stages 6 and 7 accepted? Twelve are listed in Discussion 29 and four in Discussion 31 | Discussion 29, 31 | You         |
+| O-52 | Should each answer open with a short lead of two to four sentences built by code from the figures, and should part 2 drop the counts the question did not ask for? This reverses choice 7 of O-51 (Discussion 30) | Discussion 30    | You         |
+| O-53 | DEV-05: how are the conclusions the question asks for, what the record supports and does not support, to be written? Code has no rule for them, and the model's summary paragraph (R-47) was not built (Discussion 30) | Discussion 30    | You         |
+| O-55 | Are the 12 build choices of stages 8 to 10 accepted? They are listed in Discussion 34 | Discussion 34    | You         |
+| O-56 | Is D-43 confirmed: a contact between professionals is not counted as one the patient missed? One sentence of DEV-05 (Discussion 34) | Discussion 34    | You         |
 
 
 
@@ -97,6 +104,18 @@ A record of what we have discussed on the Backbone take-home, what came out of e
 | R-51 | What happens when the coverage check finds a value in no claim? | The value is listed as not captured and shown at the reviews after stages 2 and 3. It does not block the read | 20 |
 | R-52 | Which documents form the trial set? | D003, D005, D006, D103, D106, D108, D111 and D112. Replaced by R-53 | 20 |
 | R-53 | Is the trial set changed to 11 documents? (was O-42) | Yes. D003, D006, D014, D103, D104, D106, D107, D108, D111, D112 and D113. D107, D113 and D014 are added, and D104 takes the place of D005. This replaces R-52 | 21 |
+| R-54 | Is the capture list working? | Yes. Confirmed by you before stage 3 | 24 |
+| R-55 | Is low effort kept for reading? | Yes. Confirmed by you before stage 3. Whether the stage 3 evidence closes O-44 is for you to say | 24 |
+| R-56 | Are all 31 documents read? | Yes. The trial of eleven first, then the other 20. Done on 2026-09-29 at prompt version 2 | 24 |
+| R-57 | Is the prompt widened and all 31 read again? (was O-47) | Yes. Planned steps and conclusions about treatment are captured. All 31 were read on 2026-09-29 at prompt version 3. The speaker of D105 line 9 stays a recorded difference | 25 |
+| R-58 | Does an attendance entry keep "entered by" apart from "signed by"? (was O-45) | Yes. The schema has a set of fields for each | 25 |
+| R-59 | Does a participant's presence follow the same rule as attendance? (was O-46) | Yes. It is given only where the document says it in words, never worked out from times | 25 |
+| R-60 | Are D-37 to D-42 confirmed? (was O-48) | Yes, all six. Your words, given in the second session and relayed: "ya this is fine, tell @building". The count under D-40 was corrected from 27 to 26 | 28 |
+| R-61 | Are the 7 build choices of stages 4 and 5 accepted? (was O-49) | Yes, all seven. The same words, relayed the same way | 28 |
+| R-62 | Are the numbers right at the review after stage 5? | Yes. You said "yes they are good". Stages 6 and 7 may begin | 29 |
+| R-63 | Is the presence note dropped where a document states presence in words? (was O-50) | Yes. You said "ok sounds good". It stays on a contact where nothing says in words that the patient was there | 29 |
+| R-64 | Was the go-ahead for the model comparison given? (was O-54) | Yes. Discussion 33 opens with your ask for Haiku, the other models on your account, and other effort levels. The comparison ran on that ask | 33, 34 |
+| R-65 | Do stages 8 to 10 go ahead? | Yes. You said "ok do the remaining stages then" on 2026-09-30, with the second session's list of what was left. Built in Discussion 34 | 34 |
 
 
 ---
@@ -1612,6 +1631,967 @@ Six of the twelve kinds are covered.
 - The edits for R-51, R-52 and R-53 were committed together.
 
 **Still open from this discussion:** nothing. Three kinds stay outside the trial set: the authorization, the scheduling log and the cancellation notice.
+
+---
+
+## Discussion 22: The build begins, stages 1 and 2
+
+**What prompted it:** You said "lets go ahead and start building then", with `build-plan.md` attached. I took this as the go-ahead to write code and to spend model usage as the plan sets out, stopping at the four review points in section 12 of the plan.
+
+**What was built**
+
+| Stage | Built | Done when | Result |
+|---|---|---|---|
+| 1 | Settings, logs, the store with its eight tables, reading and hashing files | 31 documents are registered. A copy is skipped. A restart finds the same store | All three hold |
+| 2 | The reading prompt, the output schema, the model call, the quote check, the coverage check, a first `export` | D103, D108 and D112 return the claims the capture list names. The call reports tokens and cost | Both hold |
+
+- 20 automated checks pass. None calls a model. They use a made-up document, not the supplied ones.
+- Nothing was committed.
+
+**What stage 2 measured**
+
+Seven model calls, $0.54 in total as the tool reports it. Opus, effort low.
+
+| Call | Document | Prompt | Seconds | Tokens out | Cost | Accepted |
+|---|---|---|---|---|---|---|
+| 1 | D103 | 1 | 14.3 | 1,831 | $0.120 | Yes |
+| 2 | D112 | 1 | 13.9 | 1,694 | $0.045 | No |
+| 3 | D112 | 1 | 15.1 | 1,733 | $0.046 | Yes, on the retry |
+| 4 | D108 | 1 | 21.5 | 2,929 | $0.071 | Yes |
+| 5 | D112 | 2 | 13.1 | 1,603 | $0.077 | Yes |
+| 6 | D103 | 2 | 13.8 | 1,576 | $0.076 | Yes |
+| 7 | D108 | 2 | 27.1 | 2,912 | $0.105 | Yes |
+
+- The `claude` tool reports tokens, time and cost for every call. The first risk in section 13 of the plan is closed.
+- Each call sends about 10,500 tokens in. The document is about 500 to 700 of them. The rest is the prompt, the schema and the tool's own overhead, and it is the same in every call.
+- The service keeps that fixed part ready after one call has sent it, and then charges less for it. Calls 2 to 4 cost $0.045 to $0.071 for that reason. Calls 5 to 7 ran at the same moment, so none could reuse another's, and each cost more.
+- The cost of reading one document was between $0.045 and $0.12.
+
+**What the three documents returned** (prompt version 2)
+
+| Document | Claims | Quotes not found | Invalid | Values not captured |
+|---|---|---|---|---|
+| D103 | 10 | 0 | 0 | 0 of 15 |
+| D108 | 30 | 0 | 0 | 0 of 41 |
+| D112 | 8 | 0 | 0 | 0 of 19 |
+
+- D103: the correction carries its target (HG-E110), the field (departure), the old value (11:30), the new value (11:15) and the reason. The arrival it confirms, 10:00, is a separate claim. The signature is Leah Chen, Jan 20, 08:42.
+- D108: four contacts, each with its scheduled interval, its actual arrival and departure where the row has them, the status from the table, and the status from the signed entry with who signed it and when. The cancellation carries its reason. The outreach message is its own contact, with "no clinical discussion occurred".
+- D112: two sections, a draft note marked unsigned and a billing extract. The template attendance text is a claim in the draft section. The charge is CH-116, 1 group session, posted Jan 27 at 18:06.
+
+**What the coverage check found**
+
+- No value was missed at low effort. Of 75 times, dates and record numbers in the three documents, 69 sit in a claim on the same line and 5 in a claim on another line.
+- One value is in a quote and in no field: 08:12 in D108 line 18, the time the cancellation was received. The schema has no field for when a cancellation was received. No function uses it.
+
+**Why the prompt changed from version 1 to version 2**
+
+| Seen in version 1 | Change |
+|---|---|
+| D112: the contact was listed once per section under the same reference, and the result was rejected. The retry corrected it | The prompt says a contact is listed once for the whole document |
+| D103: an attendance status of "attended part" was worked out from the corrected departure time. The document states no status | The prompt says attendance is reported only where the document gives a status or says it in words |
+| D108: the reason for a cancellation was also returned as an observation | The prompt says that reason belongs to the attendance claim |
+
+**Choices in the build that are mine.** None changes a figure. They wait on you (O-43).
+
+| # | Choice | Why |
+|---|---|---|
+| 1 | Two classes of service are added to the seven in R-21: "collateral contact" and "other" | The plan excludes "contacts with collateral informants only", and D006 names an appointment "Family collateral". With seven classes the model would have to call it family therapy. "Other" is for a service that fits none |
+| 2 | "Copy" and "import" are not kinds of document. A section has the kind of its content, and a flag saying it is a copy, with the signature of the original | Rule 9 needs the original's signature and date. A copy of an attendance record is still an attendance record |
+| 3 | Six kinds are added to the list: questionnaire review, scheduling log, cancellation notice, platform export, cover sheet, other | They are in section 1 of the key, or are parts of files that hold several records |
+| 4 | Three claim types differ from the capture list. "Contact" is the document's own reference to a contact. "Modality" is how it was held. "Stated negative" and "what the document says about itself" are one type, "statement". An interruption is a time claim | Every claim then has a quote, and code reads one list for each rule |
+| 5 | The model is shown line numbers and returns a line with each quote. Code confirms the quote is on that line, and finds the line where it is not | The same words can appear on two lines. D107 has the same sentence for two dates |
+| 6 | The file name is not shown to the model | The record is what the document says. A file name can be wrong |
+| 7 | A saved result is kept under the effort as well as the hash, the model and the prompt version | A change of effort would otherwise reuse the old result |
+| 8 | The text of each document is kept in the store | `trace` and the quote check then work without the documents folder |
+| 9 | A patient is known by the record number. Where a document prints none, by name and date of birth | Patient must be on every row. How patients are identified beyond this stays open (O-18) |
+| 10 | The coverage check covers every record number, not only encounter numbers, and gives one of four results: in a claim on the same line, in a claim on another line, in a quote only, not captured | "In a quote only" would otherwise count as captured |
+| 11 | The spending cap is $0.50 for a call | About four times the dearest call seen |
+| 12 | The first document that needs a call is read alone, and the rest four at a time | So the later calls reuse the fixed part of the prompt |
+| 13 | Three code files are added to the list in the plan: `settings.py`, `reading_schema.py`, `export.py` | The plan named no file for them |
+
+**Not done, and why**
+
+- The other 28 documents were not read. Stage 3 waits on your review.
+- The prompt was adjusted on D103, D108 and D112 only. I looked at the text of the eleven trial documents to write the schema, and did not open the other 20 in this session.
+- Effort was not compared with a higher setting. The coverage check showed no loss at low, so the plan's condition for raising it was not met.
+
+**Outcome**
+
+- Stages 1 and 2 are built. The build is stopped at the first review point.
+- One open item added: O-43.
+
+**Still open from this discussion:** O-43, and your three decisions at the review: whether the capture list is working, whether low effort is accurate enough, and whether to read all 31.
+
+---
+
+## Discussion 23: A second session checks the stage 2 output
+
+**What prompted it:** You pasted the two recommendations from the building session (the capture list is working; keep low effort) and asked a second session to verify the output. No code or prompt was changed, and no model was called.
+
+**What was reproduced**
+
+| Reported in Discussion 22 | Checked how | Result |
+|---|---|---|
+| 20 automated checks pass | Ran them | 20 pass |
+| 31 documents registered, 3 read at prompt version 2 | Read the store | Holds |
+| Claims: D103 10, D108 30, D112 8 | Counted in the saved results and in the store | Holds |
+| No quote missing | A separate plain search for each quote on its stated line | 0 missing, 0 moved to another line |
+| 75 values: 69 on the same line, 5 on another line, 1 in a quote only, 0 not captured | Re-ran the coverage check on the saved results | Holds |
+| Seven calls, $0.54, all at low effort | Read the logs | $0.539. Every call was sent with effort low and answered by claude-opus-5-5 |
+| The facts the answer key cites from D103, D108 and D112 | Compared each cited line with the claims | All are present with the right values |
+
+**What the coverage check cannot see**
+
+- It lists times, dates and record numbers. It does not look at a status, a statement, a label such as scheduled or actual, who was present, or which contact a claim is attached to.
+- So "nothing missed" means no time, date or record number was missed. It is not a measure of accuracy in general.
+
+**What reading the three results by eye found**
+
+| # | Document | Finding | Changes a figure |
+|---|---|---|---|
+| 1 | D103 | The patient's presence is returned as "present part". The document does not say this in words; it is worked out from the 11:15 departure. Version 2 stopped this under attendance, and it now appears under participants | No. The key also has "left early" |
+| 2 | D103 | Line 11 says the correction applies only to the departure field and does not change the break. Only "the separate individual appointment" was captured from it | No |
+| 3 | D108 | "Entered by Ana Reed" is stored in the same field as a signature. The key separates three signed entries from one entered by desk staff | Not in these three. It could where a rule prefers a signed entry |
+| 4 | D108 | HG-E116 has the status "no show" from the table and "absent" from the signed entry. Both are correct readings. Code must treat them as agreeing | No |
+| 5 | D112 | The first section runs from line 1, so the extract's own header (produced Jan 30, 17:25) is held as a date of the draft. The template plan text on line 12 is not captured | No |
+
+**What the three documents do not test**
+
+- Claim types with no item in any of the three: stated minutes, score, observation, plan rule, a break, an interval without the patient.
+- These are the contents Discussion 21 named as deciding the minutes and the assessments. They are in the trial set of eleven (D107, D113, D014).
+- The prompt was adjusted on these same three documents, so they are not an independent test of it.
+
+**What I recommended**
+
+| Decision | Recommendation |
+|---|---|
+| Is the capture list working? | Yes for the claim types these documents hold. Not yet shown for the six types above |
+| Is low effort accurate enough? | Keep low for the trial of eleven, and confirm it after that trial and not now. Version 1 at low effort had a fault in each of the three documents. No higher setting was run, so low has not been compared with anything |
+| Read all 31? | Go on to stage 3. Its trial of eleven comes before the 31 in the plan |
+
+**Outcome**
+
+- Nothing is decided. Three open items added: O-44, O-45, O-46.
+- `build-plan.md` says effort is confirmed at stage 2. It is unchanged until you decide O-44.
+
+**Still open from this discussion:** O-44, O-45, O-46.
+
+---
+
+## Discussion 24: Stage 3, the trial of eleven and the full read
+
+**What prompted it:** You said "ok go ahead with stage 3, i confirmed 1 and 2 from above".
+
+**How I read it**
+
+| Your words | Read as |
+|---|---|
+| "confirmed 1 and 2" | The capture list is working, and low effort is kept (R-54, R-55) |
+| "go ahead with stage 3" | The trial of eleven, then all 31 (R-56). Stage 4 was not asked for, and was not started |
+
+- O-43, the 13 build choices, was point 4 of that list. You did not mention it, so it stays open.
+- O-44 asks whether low effort is confirmed now or after the trial. The trial has now run, and its evidence is below. I left O-44 open for you to close.
+
+**What was done**
+
+| Step | Documents | Calls | Rejected | Cost | Time |
+|---|---|---|---|---|---|
+| The other eight of the trial set | D003, D006, D014, D104, D106, D107, D111, D113 | 8 | 0 | $0.50 | 54 seconds |
+| The prompt was looked at against the eleven | | 0 | | | |
+| The other 20 | All remaining | 20 | 0 | $0.92 | 101 seconds |
+| Stage 3 in all | | 28 | 0 | $1.42 | |
+
+- The prompt was not changed. It is version 2, as it stood after stage 2.
+- The 20 documents outside the trial set were read once, by a prompt that was never adjusted on them.
+- Calls since the build began: 35, at $1.96 as the tool reports it.
+- With the fixed part of the prompt ready, a document cost $0.033 to $0.075. The first call of a run cost $0.12.
+- Six more automated checks were added, 26 in all. They replay the saved results into an empty store and call no model.
+
+**What the full read returned**
+
+| Measure | Result |
+|---|---|
+| Documents read | 31 of 31, each on the first attempt |
+| Claims | 455 |
+| Quotes found in their source, at the stated line | 455 of 455 claims, and 74 of 74 dates of documents |
+| Invalid claims | 0 |
+| Patient on every claim | Yes. One patient, HG-M042 |
+| Kind and signature of each document | All 31 agree with section 1 of the key |
+| The 20 encounters in section 3 of the key | All 20 are present, each with the times, stated minutes and status the key cites |
+| Scores | Three completions (18, 14, 10), one copy, one mention, and item 9 |
+
+Claims by type: observation 118, time 75, statement 60, participant 58, contact 51, attendance 43, plan rule 15, modality 15, stated minutes 12, score 6, correction 1, charge 1.
+
+**What the coverage check found** (R-51)
+
+448 times, dates and record numbers in the 31 documents.
+
+| Result | Count |
+|---|---|
+| In a claim on the same line | 414 |
+| In a claim on another line | 31 |
+| In a quote only | 1 |
+| Not captured | 2 |
+
+| Document | Line | Value | Result | Why |
+|---|---|---|---|---|
+| D001 | 7 | HG-A260104-88 | Not captured | The authorization number. Authorizations are not stored (R-19) |
+| D014 | 7 | HG-MEAS-0126 | Not captured | The number of an import batch. The schema has no field for it |
+| D108 | 18 | 08:12 | In a quote only | The time a cancellation was received. The schema has no field for it |
+
+No time, date or encounter number that a count depends on was missed.
+
+**What the comparison with the key found**
+
+Section 7 of the key cites 42 quotes. Each was looked for among the claims on its cited line.
+
+| Result | Count |
+|---|---|
+| A claim holds it, with the same speaker where the key gives one | 38 |
+| No claim holds it | 3 |
+| A claim holds it with a different speaker | 1 |
+
+| Document | Line | The key cites | What the model returned |
+|---|---|---|---|
+| D009 | 14 | "They identified looking at one message as a lower step" | Three other observations from that line. Not this one |
+| D105 | 11 | "drafting two sentences to a supervisor" | One observation from that line, on anxiety easing. Not this one |
+| D115 | 12 | "Continued treatment is appropriate" | Nothing from that line |
+| D105 | 9 | "muscle tension, rapid breathing, and an urge to leave", speaker Patient | The same sentence, speaker Clinician |
+
+- All four are in the 20 documents the prompt was not adjusted on.
+- None changes a figure or a verdict. All four are rows in the answer to DEV-05.
+- The first three are a step planned, a task agreed, and a clinician's conclusion about treatment. The prompt asks for "a step the patient took", which covers none of the three.
+- The fourth is the row Discussion 19 called close to the line. The sentence is "Rowan was able to identify...". The key reads Rowan as the source. The model read the clinician as the one stating it.
+
+**Evidence on the open items from Discussion 23**
+
+| Item | What the full read shows |
+|---|---|
+| O-44, low effort | No call was rejected in 28. No quote was missed. No time, date or encounter number behind a count was missed. Four of 42 rows of the key differ, all observations. No higher setting was run, so low is still not compared with anything |
+| O-45, "entered by" apart from "signed by" | One entry in 31 documents is affected: D108 line 18, entered by Ana Reed. The other three entries with a signer are signed |
+| O-46, a participant's presence | The patient's presence is returned as "present part" six times. Four rest on words in the document. Two are worked out from times: D103 line 9 and D106 line 7 |
+
+**What I recommended**
+
+| # | Question | Recommendation |
+|---|---|---|
+| 1 | The four rows | Widen the prompt to cover a step the patient planned or agreed to, and a clinician's conclusion about treatment. Leave the speaker row as a recorded difference, because the sentence can be read both ways |
+| 2 | O-45 and O-46 | Yes to both. Each is a small change to the prompt or the schema |
+| 3 | When to read again | Once, as prompt version 3, with 1 and 2 together. About 31 calls and about $1.50, which is an estimate |
+| 4 | What the README says | The 38 of 42 is the measured result of the prompt on documents it was not adjusted on. After a second read the 20 are no longer an independent test, and the README says so |
+
+- The alternative to 3 is to keep version 2 and report the four rows as the observed limitation.
+- Stages 4 and 5 call no model and run on the saved results. They can be built before or after a second read, and are run again at no cost if the claims change.
+
+**Outcome**
+
+- Stage 3 is built and its "done when" holds: the trial set passed the quote check and the coverage check, all 31 were read once, every claim has a quote found in its source, and no document failed.
+- Three items resolved: R-54, R-55, R-56.
+- One open item added: O-47.
+
+**Still open from this discussion:** O-43, O-44, O-45, O-46, O-47.
+
+---
+
+## Discussion 25: The second read, at prompt version 3
+
+**What prompted it:** You quoted my recommendation to widen the prompt and read all 31 once more as version 3, and said "i agree". You quoted the recommendation of yes to O-45 and O-46, folded into the same read, and said "i agree". You also asked what the 13 choices of O-43 are. I listed them in the session; they are the table in Discussion 22.
+
+**What changed from version 2 to version 3**
+
+| Item | Change |
+|---|---|
+| O-47 | "Functioning" now covers a step the patient took, planned, chose or agreed to take. "Progress" now covers a conclusion about treatment, such as whether it should continue |
+| O-45 | An attendance entry has two sets of fields: signed by, and entered by. The prompt says that being entered is not being signed |
+| O-46 | A participant's presence is given only where the document says it in words, and is never worked out from times |
+
+The speaker of D105 line 9 was left as it is, as a recorded difference from the key.
+
+**What the read cost** (measured)
+
+| Measure | Value |
+|---|---|
+| Calls | 31, none rejected |
+| Cost, as the tool reports it | $1.62, about $0.052 a document |
+| Time from start to finish, four at a time | 2 minutes 18 seconds |
+| Time summed over the calls | 486 seconds, about 15.7 a document |
+| Tokens out | 60,078 |
+
+Calls since the build began: 66, at $3.58. The plan's estimate for stages 2 and 3 was 43 to 75 calls.
+
+**What the read returned**
+
+| Measure | Version 2 | Version 3 |
+|---|---|---|
+| Claims | 455 | 474 |
+| Quotes found at the stated line | 455 of 455 | 474 of 474 |
+| Invalid claims | 0 | 0 |
+| Observations | 118 | 140 |
+| Values not captured, of 448 | 2, and 1 in a quote only | 3 |
+
+The three values not captured are the ones listed in Discussion 24. In version 3 the 08:12 in D108 is no longer inside a quote, because the claim quotes another sentence of the same line.
+
+**The key's citations, against version 3**
+
+Every quote the key cites was looked for among the claims on its cited line.
+
+| Section of the key | Citations | A claim holds it | No claim holds it | Speaker differs |
+|---|---|---|---|---|
+| 2, plan rules | 10 | 10 | 0 | 0 |
+| 3, contacts | 68 | 64 | 4 | 0 |
+| 4, conflicts and findings | 9 | 6 | 3 | 0 |
+| 5, assessments | 7 | 6 | 1 | 0 |
+| 7, the five answers | 42 | 40 | 1 | 1 |
+
+Section 7 was 38 of 42 at version 2. D105 line 11 and D115 line 12 are now captured.
+
+**The ten citations that differ**
+
+| Document | Line | The key cites | In version 3 | Matters for |
+|---|---|---|---|---|
+| D009 | 14 | "They identified looking at one message as a lower step" | Not captured. Three other observations come from that line | A row of DEV-05 |
+| D105 | 9 | "muscle tension, rapid breathing, and an urge to leave", speaker Patient | Captured, speaker Clinician | A row of DEV-05 |
+| D105 | 9 | "Rowan came directly from the group room." | Not captured | DEV-04 names it as support for 11:15. The 11:15 itself rests on the correction |
+| D005 | 13 | "Departure was marked when Rowan returned their visitor badge." | Not captured | The basis of D-21. The times are captured from line 10 |
+| D005 | 15 | "Rowan checked in before the group began and remained until the group was released." | Not captured | The basis of D-32 for Jan 12. "Attended full" is captured from line 11 |
+| D108 | 18 | "Cancellation received from patient January 28, 08:12." | The cancellation is captured, quoting another sentence of the line | Nothing |
+| D108 | 18 | "Entered by Ana Reed, January 28, 08:18." | Held in the "entered by" fields of that claim | Nothing |
+| D103 | 9 | The reason for the correction | Held in the reason of the correction, which quotes line 7 | Nothing |
+| D112 | 22 | "Quantity charged: 1 group session" | Held in the charge, which quotes line 19 | The source line of finding F-1 |
+| D114 | 8 | "the symptom questionnaire available in the chart" | Not captured. It gives no score | Nothing. The key lists it as not an assessment |
+
+- The first five are gaps. The last five are held, or are not needed.
+- None changes a figure or a verdict.
+- A claim carries one quote. A record that runs over several lines, such as a charge, is cited at one of them. The comparison with the key in stage 8 must allow for that.
+
+**What differs between the two reads**
+
+I compared the facts that counts rest on: contacts, times, stated minutes, attendance, scores, corrections, charges, plan rules, and the kind and signature of each section.
+
+| Result | Documents |
+|---|---|
+| The same in both versions | 22 of 31 |
+| Different | 9 |
+
+- No difference removes a fact that the key's 20 encounters rest on.
+- The differences are of three kinds: a detail returned in one read and not the other, the same time given a different label, and a status worded differently.
+- Examples: D111 gives 09:50 as a departure in version 2 and as "other" in version 3. D104 gives the copy as "unsigned" in version 2 and "not stated" in version 3. D109 gives the patient's status as "other" in version 2 and "absent" in version 3.
+- The prompt changed between the two reads, but none of the changes was aimed at these fields. So this is mostly the model reading the same document differently on a second run, which the plan lists as a risk.
+- Saved results make a re-run identical. The variation shows only when a document is read again.
+
+**Evidence on O-45 and O-46**
+
+| Item | Version 3 |
+|---|---|
+| O-45 | Four entries are signed and three are entered: D108 line 18 by Ana Reed, and D015 and D016 by N. Ellis. Version 2 held only the first of the three, and held it as a signature |
+| O-46 | The patient's presence is "present part" five times. Four rest on words. One does not: D103 line 9, which quotes "The group continued for other members until its scheduled close." D106 is now "not stated" |
+
+**Two things stage 4 must handle**
+
+| # | Finding | What code must do |
+|---|---|---|
+| 1 | Plan rules are returned from two documents that are not plans. D001, the authorization, gives "at least 8 sessions" and a list of counted services. D002 gives the episode dates. Both versions do this | Take plan rules only from a section whose kind is plan. This is an interpretation, and goes into `decisions.md` as proposed before stage 4 uses it |
+| 2 | The same fact comes back with different labels between reads | Rules must rest on the fact and the kind of section, and not on a fine label. For example "no show" and "absent" must both count as not attended |
+
+**Outcome**
+
+- All 31 documents are read at prompt version 3. 26 automated checks pass.
+- Three items resolved: R-57 (was O-47), R-58 (was O-45), R-59 (was O-46).
+- The prompt was adjusted after looking at results from the 20 documents outside the trial set, so they are no longer an independent test of it. The independent result is the version 2 figure: 38 of 42.
+- Nothing was committed.
+
+**Still open from this discussion:** O-43 and O-44. Whether the five gaps above are accepted is part of the review after stage 5, when the answers show what they cost.
+
+---
+
+## Discussion 26: Stages 4 and 5, reconciling and counting
+
+**What prompted it:** You quoted "Go-ahead for stages 4 and 5" and said "go ahead".
+
+**What was built**
+
+| Stage | Built | Done when | Result |
+|---|---|---|---|
+| 4 | `reconcile.py`: contacts, conflicts, findings, plan rules, assessments | Matches sections 2 to 5 of the key: 20 contacts, 3 conflicts, finding F-1, 3 assessments | Holds |
+| 5 | `counting.py`: minutes, days, weekly status, totals | Matches section 6 of the key: 140, 120, 180, 145 or 155, and the four verdicts | Holds |
+
+- No model was called. Calls since the build began are still 66, at $3.58.
+- 106 automated checks pass.
+- Nothing was committed.
+
+**The result beside the key**
+
+| What | Key | System |
+|---|---|---|
+| Encounters | 20 | 20 |
+| Held | 16 | 16 |
+| With Rowan present | 14 | 14 |
+| Therapy sessions | 12, on 11 days | 12, on 11 days |
+| By type | 5 individual, 5 group, 2 family | The same |
+| Conflicts | 3: two settled, one open | The same, with the same rule on each |
+| Findings | F-1 required, F-2 and F-3 optional | All three |
+| Assessments | 18, 14, 10 | The same. One copy and one mention are attached and add none |
+| Minutes | 585 or 595 | 585 or 595 |
+| Hours | 9.75 or 9.92 | 9.75 or 9.92 |
+
+| Week | Days | Minutes | Verdict | Margin |
+|---|---|---|---|---|
+| Jan 5–11 | 3 | 140 | Not met | 10 minutes short |
+| Jan 12–18 | 2 | 120 | Not met | 1 day and 30 minutes short |
+| Jan 19–25 | 3 | 180 | Met | 30 minutes over |
+| Jan 26–Feb 1 | 3 | 145 or 155 | Cannot determine | 5 short or 5 over |
+
+Every row of the four weeks agrees with the key. Every one of the 20 encounters agrees with the key on date, class, status, presence, removed intervals, minutes, and whether it counts.
+
+**How it was checked**
+
+| Check | What it does | Result |
+|---|---|---|
+| Against the key | `tests/answer_key.json` is sections 2 to 6 of the key, copied by hand. 37 checks compare the store with it | Pass |
+| One rule at a time | 35 checks on made-up claims: an invented patient, invented numbers and times | Pass |
+| Order of arrival | The 31 documents in five random orders, in two batches, and with the correction arriving before its roster | The identical store each time |
+| The earlier read | The same rules on the version 2 results, where the model gave some times and statuses other labels | The same 20 statuses, minutes, verdicts and scores |
+| Two patients | Two made-up patients with the same encounter number in one store | Neither reaches the other's rows |
+| A quote not found | A claim whose quote was not found in its source | It stays in the store and reaches no count |
+
+Only `tests/` reads `answer_key.json`. No file in `backbone/` holds a date, a time, a name or a number from the documents.
+
+**Six interpretations, logged before use**
+
+All are in `decisions.md` as Proposed (O-48).
+
+| # | Decision | Why it came up |
+|---|---|---|
+| D-37 | Plan rules are taken only from a plan | The authorization came back as a requirement of 8 sessions |
+| D-38 | In a signed note or attendance record, a time not labelled scheduled is actual, wherever it appears | D-36 covers the header only, and the model's label for the same time differs between reads |
+| D-39 | Where no document gives the patient's own times, the patient's presence is the interval of the contact | Jan 9, Jan 13 and Jan 30 give an interval for the contact and none for the patient |
+| D-40 | A scheduling contact or questionnaire review is an administrative record, not an encounter | Without it the record holds 26 contacts and not 20 |
+| D-41 | A reference with no number and no time joins the one contact of its date and class. One that fits none is a mention | Three references of this kind are in the record |
+| D-42 | A no-show or cancellation is taken from any record, where nothing says the patient attended | Jan 8 and Jan 15 rest on a scheduling log, a cancellation notice and the schedule export |
+
+- D-39 is the one to look at first. For Jan 30, HG-E120, no sentence says Rowan was present. It decides whether contacts with Rowan present are 14 or 13. It changes no verdict.
+
+**Choices in the build that are mine** (O-49)
+
+| # | Choice | Why |
+|---|---|---|
+| 1 | A new command, `rebuild`, works out the conclusions again from the stored claims | Stages 4 and 5 can be run again without reading anything |
+| 2 | The store has a version number. An older store is emptied of claims and conclusions and filled again from the saved results | The claims table gained a column, the contact reference |
+| 3 | The two optional findings of the key, F-2 and F-3, are reported | Both follow from general rules: a draft made before its service, and a note signed after the service date |
+| 4 | A date counts as documented when a contact falls on it, a document is dated on it, or the view of a schedule export covers it | It reproduces the key's list: Jan 17–18, Jan 24–25, Jan 31–Feb 1. It is a reporting convention under D-31 |
+| 5 | "What would settle it" is a fixed sentence for each kind of field | The key's wording for C-2 is general, and the same sentence serves any patient |
+| 6 | The readable export gained a part, "What the record establishes" | It is what you review now |
+| 7 | One code file added: `export_conclusions.py` | The plan named no file for it |
+
+**Limits**
+
+| Limit | Effect |
+|---|---|
+| One patient and one plan in the data | The plan in effect for a week that holds a plan change is untested (O-13). Two patients are tested on made-up claims only |
+| The key shares the reading that shaped the rules | The checks against made-up claims and the order checks do not use the key |
+| A session that runs past midnight | Not handled. An end before a start marks the claim invalid |
+| Retractions, chained corrections, summary documents | Not recognized. They stay open under rule 11, as planned |
+| A correction of a field other than a time | Stays open under rule 11 |
+
+**Outcome**
+
+- Stages 4 and 5 are built and match the key. The build is stopped at the review after stage 5.
+- Two open items added: O-48 and O-49.
+
+**Still open from this discussion:** O-48, O-49, and your decision at the review: whether the numbers are right before work on questions begins.
+
+---
+
+## Discussion 27: A second session checks the numbers at the review after stage 5
+
+**What prompted it:** You quoted the plan's question at this review, "Are the numbers right?", and asked a second session to verify the tables in `output/abstraction.md` under "What the record establishes". No code, prompt or store in the project was changed, and no model was called. The replays ran on copies in a temporary folder.
+
+**How it was checked**
+
+| Check | What it does | Result |
+|---|---|---|
+| From the sources | I read all 31 documents, entered the times, breaks and statuses by hand, and worked out the minutes, days and verdicts without the key and without the system's code | Every figure agrees with the export |
+| The automated checks | Ran them | 106 pass |
+| A fresh store | The saved version 3 results were loaded into an empty store with the model switched off, and exported | The conclusions are identical to `output/abstraction.md`. 0 model calls |
+| The earlier read | The same, on the saved version 2 results | The same 20 encounters, minutes, weeks and totals |
+| Quotes | Every claim in the store | 474 claims, 0 quotes not found, 0 invalid |
+| Values in the code | Searched `backbone/` for encounter numbers, names, dates and the weekly figures | None found. Only `tests/` reads the key |
+| D-39 switched off | The fallback was removed in a copy of the code, and the store rebuilt | No counted figure changes. HG-E104 is still 45. Only HG-E106 and HG-E120 lose their minutes, and the plan excludes both |
+
+**The figures, worked out from the sources**
+
+| Week | Contacts that count | Minutes | Days | Verdict |
+|---|---|---|---|---|
+| Jan 5–11 | HG-E101 50, HG-E102 45, HG-E104 45 | 140 | 3 | Not met, 10 short |
+| Jan 12–18 | HG-E105 75, HG-E107 45 | 120 | 2 | Not met, 1 day and 30 minutes short |
+| Jan 19–25 | HG-E110 60, HG-E111 30, HG-E112 45, HG-E113 45 | 180 | 3 | Met, 30 over |
+| Jan 26–Feb 1 | HG-E115 40 or 50, HG-E118 75, HG-E119 30 | 145 or 155 | 3 | Cannot determine |
+
+- Totals: 12 sessions on 11 days, 585 or 595 minutes. Family 75, group 300, individual 210 or 220.
+- The three conflicts, the three findings and the three scores (18, 14, 10) agree with the documents.
+
+**What the figures rest on**
+
+- Breaks are subtracted from the patient's minutes (D-01). Without that, week 1 is 155 and not 140. This is a decision and not arithmetic, so a check of the arithmetic cannot confirm it.
+- D-37 to D-42 are still Proposed (O-48). D-39 changes no counted figure.
+
+**What differs in wording, and changes no figure**
+
+| # | Where | What |
+|---|---|---|
+| 1 | HG-E104, HG-E106 | The note says presence is taken from the interval of the contact. The documents state it in words: D008 line 8, "both present for the full 45 minutes", and D010 line 11, "Rowan attended for medication management" |
+| 2 | HG-E112 | Presence shows as 13:00–13:55 with 13:20–13:30 removed. The document gives two intervals, 13:00–13:20 and 13:30–13:55. The minutes are the same, 45 |
+| 3 | Administrative records, Jan 16 | The questionnaire review is shown as held by "message". D013 records a form sent through the portal and says no appointment took place |
+| 4 | Administrative records | The key lists eight records that are not contacts. The export lists six. The import, the correction and the authorization are not rows of their own |
+
+**What this check cannot show**
+
+- One patient and one plan. The rules are tested on other patients with made-up claims only.
+- Both reads were at low effort. They agree with each other and with the sources, and no higher setting has been run (O-44).
+
+**Outcome**
+
+- The numbers are right against the source documents. Nothing is decided.
+- One open item added: O-50.
+
+**Still open from this discussion:** O-50. Your decision at the review stays with you.
+
+---
+
+## Discussion 28: O-48 and O-49, accepted through the second session
+
+**What prompted it:** The second session sent this session a message. It said you had accepted O-48 and O-49 and had asked it to tell the building session.
+
+**What the message reported**
+
+| Point | Reported |
+|---|---|
+| What the second session recommended to you | "Accept all six interpretations and all seven build choices, with the D-40 count corrected to 26." |
+| Your reply, word for word | "ya this is fine, tell @building" |
+| What it covers | O-48, which is D-37 to D-42, and O-49, the seven build choices in Discussion 26 |
+| What it does not cover | A go-ahead for stage 6 or later. A decision on "are the numbers right". O-44 and O-50 |
+
+**How I treated it**
+
+- The words reached me through another session and not from you directly. I recorded them as relayed, with their source, in every place a status changed.
+- If the words or their scope are not what you meant, say so and I will put the statuses back.
+- I did not take the message as a go-ahead for stage 6. Nothing was built.
+
+**What I changed**
+
+| File | Change |
+|---|---|
+| `decisions.md` | D-37 to D-42 are Confirmed, each with the basis. 42 decisions, all confirmed |
+| `decisions.md`, D-40 | "If reversed" said encounters would be 27. It is 26: the store holds 20 encounters and 6 administrative records |
+| `decisions.md`, D-39 | "If reversed" now names both medication visits and says Jan 9 stays 45. The second session removed the rule in a copy of the code and found this |
+| `discussions.md` | O-48 and O-49 moved to Resolved as R-60 and R-61 |
+
+**The two corrections were mine to make**
+
+- The 27 was my miscount.
+- My entry for D-39 said Jan 9 "would have no clock times", which is true, and left out that its stated minutes keep it at 45.
+
+**Outcome**
+
+- Two items resolved: R-60 (was O-48) and R-61 (was O-49).
+- No code, prompt, store or export was changed. No model was called.
+
+**Still open from this discussion:** nothing. Still open at the review after stage 5: whether the numbers are right, O-43, O-44, O-50, and the go-ahead for stages 6 and 7.
+
+---
+
+## Discussion 29: Stages 6 and 7, the functions and the answers
+
+**What prompted it:** You said the numbers are right ("yes they are good", R-62), gave the go-ahead for stages 6 and 7 ("go ahead"), and accepted dropping the presence note where a document states presence in words ("ok sounds good", R-63, was O-50).
+
+**What was built**
+
+| Stage | Built | Done when | Result |
+|---|---|---|---|
+| 6 | `functions.py`: the nine functions. `call` and `trace` commands | Each function returns rows, the calculation, the sources and the conflicts it depends on | Holds. All nine run with no model |
+| 7 | `ask.py` and `prompts/plan.md`: the plan call, the saved plans, the nine-part answer written by code. `ask` command | The five answers match section 7 of the key. The nine problem questions behave as in section 8 | Holds, by inspection and by 18 automated checks. Check 14 in full is stage 8 |
+
+- 124 automated checks pass. The 18 new ones replay the saved plans with the model switched off.
+- Nothing was committed.
+
+**How a question is answered** (R-47, R-48)
+
+1. One model call returns a plan: the patient as written, the period and how it was found, how the terms are read, other readings, up to five function calls, or "no function fits" with the kind of document.
+2. Code resolves the patient, never falling through to another. Code runs the calls.
+3. Code writes the nine parts from the results. Every number in the text is a value from a result. Every citation is checked again against the source line before it is shown.
+4. The plan is saved under the question, the model and the plan prompt version. A repeated question calls no model.
+
+**The model calls** (measured)
+
+| Round | Calls | Rejected | Cost | Seconds a call |
+|---|---|---|---|---|
+| Plan prompt version 1: the five questions and the nine problem questions | 14 | 0 | $0.35 | 6 to 10 |
+| Plan prompt version 2: the same 14 again | 14 | 0 | $0.34 | 6 to 10 |
+
+- A plan call costs $0.019 to $0.027, with 380 to 800 tokens out.
+- Calls since the build began: 94, at $4.27. The plan's estimate for stages 2, 3 and 7 together was 57 to 100.
+- Why version 2: the model split a wide question over several observation calls and ran out of its five, so DEV-05 lacked anxiety, sleep and safety. Version 2 lets one observations call carry several topics, and lets `conflicts_and_findings` take a period, so a question about two dates no longer drags in the Jan 26 conflict. Both prompts are kept; the plans from version 1 are in `output/answers/plans/v1`.
+
+**The five answers beside the key**
+
+| Question | The key expects | The answer says |
+|---|---|---|
+| DEV-01 | 12 sessions on 11 days: 5 individual, 5 group, 2 family | The same, and the other counts beside it: 20 encounters, 16 held, 14 with Rowan present. Each counted contact names the documents that describe it, "counted once", and marks D104 as a copy |
+| DEV-02 | 585 or 595 minutes, 9.75 or 9.92 hours; by week 140, 120, 180, 145 or 155 | The same, with the sum written out for each alternative. Part 6 names the Jan 26 start |
+| DEV-03 | Not met, not met, met, cannot determine, with the goal stated | The same, with the goal quoted from the plan, the margin of each week, the partial label on week 4, and one plan with no change |
+| DEV-04 | Jan 19: 2 contacts, 90 minutes. Jan 21: 1 contact, 45 minutes. Part 6 nothing | The same. The old departure 11:30 and how it was replaced are in part 5. Part 6 is "Nothing" |
+| DEV-05 | 18, 14, 10 across three distinct assessments; the reason for the Jan 19 contact; what is and is not supported | The three assessments, the copy and the mention set aside, the statements on mood, anxiety, sleep, safety, functioning and progress in date order with speakers, and the two sentences on why the Jan 19 contact was added. The "supported" and "not supported" tables of the key are not written: code has no rule for them, and the answer gives the statements and scores they rest on |
+
+**The nine problem questions beside the key**
+
+| # | The key expects | Result |
+|---|---|---|
+| P-1 | No patient by that name; no figures for another patient | As expected. No function ran |
+| P-2 | Casey Mercer is a participant; contacts on Jan 9, 16 and 30; not 0 | As expected |
+| P-3 | 0 minutes; the signed entry cited; the draft and the charge reported | As expected |
+| P-4 | No questionnaire on Jan 26; the result received that day is a copy of the Jan 16 score of 14 | As expected |
+| P-5 | One plan and no change to it | As expected: "1 plan and 0 changes" |
+| P-6 | Not documented; not "no care took place" | As expected |
+| P-7 | The reading used, with the other counts beside it | As expected |
+| P-8 | The last week of the episode, said so, 3 sessions; never today's date | As expected |
+| P-9 | Cannot answer; no figure; D001 named | As expected |
+
+**Choices in the build that are mine** (O-51)
+
+| # | Choice | Why |
+|---|---|---|
+| 1 | The plan prompt has its own version number, `plan_prompt_version`, and saved plans are keyed by it | A change to the plan prompt must not reuse plans made under the old one |
+| 2 | `observations` takes several topics in one call, and `conflicts_and_findings` takes a period | The five-call limit, and a question about two dates |
+| 3 | Statements in a copy and in a draft are left out of the observations, and the answer says how many | A copy carries its original's statements (rule 9). Template text says nothing about the patient |
+| 4 | Where the question names no patient and the collection holds one, that patient is used and part 1 says so | DEV-04 and DEV-05 name no patient. With two patients the answer would ask which |
+| 5 | A first name matches a patient when it matches exactly one | The questions say "Rowan". A name that matches two patients lists both |
+| 6 | Part 6 lists only the open conflicts the figures depend on. The list from `conflicts_and_findings` stays in part 2 | DEV-04 must have nothing in part 6 |
+| 7 | The optional summary paragraph from the model (R-47) is not built | The answers are lists and short sentences, which R-47 accepted as the risk |
+| 8 | The plan call is retried once on a schema failure, with the error shown, like the reading | The same guard in both places |
+| 9 | `call` prints the result as JSON; `trace` follows a contact, week, conflict, claim, assessment or finding | Inspection without a model (R-9) |
+| 10 | The nine problem questions are in `tests/problem_questions.json` and answered with `ask --file` | They are data for check 15 |
+| 11 | Part 7 is built from what the figures used, such as video or a break, plus the standing conventions | Fixed assumptions would be wrong for a patient with none |
+| 12 | The assessments answer says that response, remission and severity bands are thresholds outside the record | D-23 |
+
+**Limits**
+
+| Limit | Effect |
+|---|---|
+| A question whose second step depends on the first result | Not handled. One plan, no loop (R-48) |
+| The plan varies between runs | The version 1 and version 2 plans for the same question differ in which functions they add. The figures do not change, because code computes them. The wording and length of an answer can |
+| The "supported" and "not supported" conclusions of DEV-05 | Not written by code. The answer gives the statements and scores |
+| Answers are long | DEV-05 is 355 lines, most of it quotes. Parts 4 and 5 hold a citation for every figure |
+
+**Outcome**
+
+- Stages 6 and 7 are built. The build is stopped at the review after stage 7.
+- Three items resolved: R-62, R-63 and the go-ahead. One open item added: O-51.
+
+**Still open from this discussion:** O-51, and your decision at the review: whether the five answers say what you would say in the call.
+
+---
+
+## Discussion 30: A second session reads the five answers at the review after stage 7
+
+**What prompted it:** You quoted the plan's question at this review, "Do the five answers say what you would say in the call?", and asked a second session to look into it. I read the five answers in `output/answers/`, the key's section 7, and the sources behind the points I doubted. No file in the project was changed except this one, and no model was called. 124 automated checks pass.
+
+**The short answer**
+
+- The figures in all five are right, and every figure has a citation that holds.
+- DEV-01 to DEV-04 contain what you would say, but you would have to find it. Part 2 of each is a list of every count the functions returned, and the sentence that answers the question is one line among twenty.
+- DEV-05 does not say what you would say. It lists 122 quoted statements and the three scores, and stops. The question asks for a summary and for what can and cannot be concluded about progress, and neither is written.
+
+**Answer by answer**
+
+| Question | Right | What you would say is there | What is missing or in the way |
+|---|---|---|---|
+| DEV-01 | Yes: 12 sessions, 11 days, 5 individual, 5 group, 2 family | Line 1 of part 2. "Described by N documents, counted once" covers the duplicates. The copy, the draft and the charge are named | The duplicate and ineligible records are not explained as such, only listed. Four of the eight excluded encounters appear twice in part 5 and four once. Part 5 lists five administrative records where part 2 counts six. The finding on BH-D008 cites line 11, not the signature on line 9 |
+| DEV-02 | Yes: 585 or 595 minutes; 140, 120, 180, 145 or 155 | Lines 2 to 7 of part 2 | Hours are given for the total only; the question asks for hours for each week. Part 5 does not name the breaks, the lost connection and the partner-only interval as what was excluded; they appear only as "removed" inside part 4. Part 2 opens with the DEV-01 answer |
+| DEV-03 | Yes: not met, not met, met, cannot determine, with the goal quoted | The first six lines of part 2, and part 3's sums by week | Part 2 then repeats the whole of DEV-01 and DEV-02 |
+| DEV-04 | Yes: Jan 19 two contacts and 90 minutes; Jan 21 one contact and 45 minutes | The first five lines of part 2 | The second half of the question, how each kind of record affects the answer, is not answered in words. The correction is shown as a settled conflict and D104 as a copy, but nothing says that without the correction Rowan would be in two sessions at once from 11:15 to 11:30, that Jan 21 rests on the note and the export alone, or that the room-transfer record was not supplied. Part 4 uses internal labels ("Leah Chen not_stated line 4", "(not_labelled)"). Only the first of the two platform connection lines is cited. A three-day total of 135 minutes is given that nobody asked for |
+| DEV-05 | The scores and the reason for the Jan 19 contact are right | The three assessments, the change of 8 points, the two sentences on why the Jan 19 contact was added | No summary sentence. No "supports" and "does not support". The Jan 26 conflict and the three findings are listed, and have nothing to do with the question. Seven statements are tagged as the patient's where the sentence has no reporting verb: "Rowan selected", "Rowan requested", "Rowan agreed", "Rowan consented", "confirmed that they", "Rowan discussed", "The patient anticipated". "Mornings remain difficult" (D012 line 13) is tagged clinician, though the sentence names Casey as its source. "1 statement in a draft were left out" |
+
+**Where the gap comes from**
+
+- Choice 7 of O-51: the optional summary paragraph from the model (R-47) was not built, and no lead was built by code in its place. So no answer has an opening that a reader could say aloud.
+- Part 2 is assembled from every function the plan called. A wide plan gives a wide part 2. DEV-03's plan called the same functions as DEV-01 and DEV-02, so their answers are repeated inside it.
+- The reading step tags a speaker per sentence (rule 16). The seven mis-tags are reading errors at low effort, and bear on O-44.
+
+**What I recommended**
+
+| # | Change | Needs a model |
+|---|---|---|
+| 1 | Each answer opens with a lead of two to four sentences that code builds from the figures: the answer, the one open point if any, and the one thing excluded that matters most | No |
+| 2 | Part 2 keeps only what the question asked. The other counts move to part 3 or go | No |
+| 3 | DEV-02: hours beside minutes for each week. Part 5 names the removed intervals | No |
+| 4 | DEV-04: one sentence per kind of record, built from what the figures used: a correction replaced a value; a copy added nothing; the export agrees with the note. Internal labels replaced with words. Both connection lines cited | No |
+| 5 | DEV-05: a lead from the scores and the record's own words on progress (D013 line 13, D115 line 10). A "does not support" list needs either general rules (no questionnaire for anxiety, so no measured anxiety; the last score is not zero and the clinician writes "partial", so no remission) or the model's summary paragraph. This is O-53 | Depends |
+| 6 | The seven speaker tags: either the reading prompt says that an action verb is not an attribution, or the effort is raised and compared. Either way it is one more reason to close O-44 with a comparison rather than by inspection | Yes, if re-read |
+| 7 | Small fixes: the duplicated rows in part 5, the five-against-six administrative records, the D008 citation, "were left out" | No |
+
+**Outcome**
+
+- Nothing is decided. Two open items added: O-52 and O-53.
+
+**Still open from this discussion:** O-52, O-53, and your decision at the review.
+
+---
+
+## Discussion 31: The answers reworked, and the effort comparison
+
+**What prompted it:** You pasted six recommendations on the answers and said "do this".
+
+**The six, and what was done**
+
+| # | Recommendation | Done |
+|---|---|---|
+| 1 | A code-built lead of two to four sentences at the top of each answer: the answer, the one open point, the one exclusion that matters | Every answer opens with "In short". Code picks the sentences: the headline of the main function, the first open disagreement the figures depend on with its effect, and the excluded contact that matters most |
+| 2 | Part 2 keeps only what was asked; other counts move to part 3 or go | Each result has a role. The function the question asked for writes part 2. A second cut of the same figures goes to part 3. Exclusions and disagreements go to parts 5 and 6. The other counts are in part 3, and in part 2 only when the plan lists another reading of the question, as for "visits" |
+| 3 | DEV-02: hours per week; the removed intervals named in part 5 | Every weekly line carries hours. Part 5 names each removed interval with its length and reason, and the time without the patient |
+| 4 | DEV-04: one sentence per kind of record, built from what the figures used; internal labels replaced with words | Under each contact, one sentence per document: what it gives, and its effect ("its departure 11:30 was replaced by the correction", "a copy carries the date and authority of its original", "cannot establish attendance"). No field name appears in an answer |
+| 5 | DEV-05: a lead from the scores and the record's own words on progress; the "does not support" list needs general rules or the model's paragraph | The lead is the scores and the latest statement on progress. A block "What the record supports / What the record does not settle" is built from general rules; see below |
+| 6 | Close O-44 with a comparison run, not by inspection | Done: all 31 read at medium effort. The report is `output/comparison/effort-comparison.md`; the figures are below |
+
+**How the lead chooses its exclusion.** Among the contacts that did not count, code prefers one with a charge posted for it, then one held without the patient, then the one with the most minutes. The rule is general; on this record it picks the Jan 27 no-show with its charge.
+
+**The "supports / does not settle" block, from general rules.** Written only when an answer holds both scores and statements.
+
+| Line | Rule behind it |
+|---|---|
+| A fall (or rise) in the scores, by how much, across how many assessments | The scores |
+| The latest statement on each topic, with speaker and quote | The statements, by date |
+| A measured level of anything the instrument does not cover | The record names one instrument, and does not say what it measures |
+| A response, a remission or a change of severity band | D-23 |
+| Which care produced the change | More than one class of care ran in the period |
+| Unbroken engagement | The no-shows and cancellations in the period |
+
+- This is the choice you called "the real decision", made in the direction that needs no model: general rules that name what the record holds, and never judge. The key's tables say "stable sleep: not supported"; the block instead quotes the latest statement on sleep and leaves the reader to read it. The alternative, the model's summary paragraph (R-47), is not built. If you want it, it is one call per answer.
+
+**The effort comparison** (measured)
+
+| Measure | Low | Medium |
+|---|---|---|
+| Cost | $1.62 | $1.98 |
+| Time summed over the calls | 486 s | 957 s |
+| Claims | 474 | 535 |
+| Statuses, minutes, verdicts, conflicts, findings, scores | As the key | The same |
+| Key citations in section 7 held by a claim | 40 of 42 | 41 of 42 |
+| Speaker of D105 line 9 | Clinician | Clinician |
+
+- Medium costs 22% more and takes twice as long, and reaches the same figures. It captures one more row of the key. The speaker tag the key differs on is the same at both efforts, so it is a reading of the sentence, not a matter of effort.
+- The comparison found two faults in the code, both from a document the model read differently at medium: a number printed in the appointment field made two contacts share one id, and a dated-less mention became an encounter. Both are fixed, and both are in the checks. Neither changed a figure at low.
+- My recommendation on O-44: keep low. The decision is yours.
+
+**Calls and cost.** The comparison was 31 calls. Calls since the build began: 125, at $6.25.
+
+**Checks.** 125 pass. The stage 7 checks were rewritten to the new wording.
+
+**Choices in the build that are mine** (added to O-51)
+
+| # | Choice | Why |
+|---|---|---|
+| 13 | The lead orders its sentences by function: assessments, goal, care, observations, dates | So DEV-05 leads with the scores and DEV-02 with the minutes. Within a care answer, minutes come first when the question's reading mentions them first |
+| 14 | A `care_delivered` result is a breakdown when `goal_status` or `date_detail` is also in the plan | Those two already carry the same figures |
+| 15 | Dates in answers are written as "Jan 19" and periods as "Jan 5 to Jan 30" | Shorter to read. The ISO form stays in the store and the JSON |
+| 16 | The "supports / does not settle" block, from the six rules above | Item 5 |
+
+**Outcome**
+
+- Items 1 to 6 done. Nothing was committed.
+- O-44 has its comparison. It stays open for you to close.
+
+**Still open from this discussion:** O-44, O-51, and your decision at the review after stage 7.
+
+---
+
+## Discussion 32: A second session reads the reworked answers, O-51 and the effort comparison
+
+**What prompted it:** You asked the second session to look into O-51 (now 16 choices), the "supports / does not settle" block, whether the five answers now say what you would say, and the go-ahead for stages 8 to 10. No file in the project was changed except this one, and no model was called. 125 checks pass.
+
+**Numbering.** Two entries in this file were headed "Discussion 30": mine, on the answers as first written, and the building session's, on the rework. This entry is numbered 32 so that the building session could take 31 by renaming its second 30. That was done in Discussion 34: the rework is Discussion 31, and the model comparison that had taken 31 is now 33. O-51 and choices 13 to 16 refer to Discussion 31.
+
+**Do the five answers now say what you would say?**
+
+| Question | The "In short" | Verdict |
+|---|---|---|
+| DEV-01 | 12 sessions on 11 days, 5/5/2; the open start on Jan 26; the Jan 27 no-show with its charge and draft | Yes |
+| DEV-02 | 585 or 595 minutes, 9.75 or 9.92 hours; the same open point and exclusion. Hours now stand beside every weekly line, and part 5 names each removed interval with its length | Yes |
+| DEV-03 | 1 met, 2 not met, 1 cannot be determined, week by week, with the goal quoted in part 2 | Yes |
+| DEV-04 | Jan 19 two contacts and 90 minutes; Jan 21 one contact and 45. Part 2 now has one sentence per document with its effect, and no internal labels | Yes |
+| DEV-05 | 18 to 14 to 10 across 3 distinct assessments, 8 points lower; the record's latest word on progress | Mostly. The lead does not give the reason for the Jan 19 contact, which the question asks for. The sentence is in part 2 (BH-D105 line 9) |
+
+**The "supports / does not settle" block.** It is the right direction. It names what the record holds and never judges, so it stays inside D-23 and needs no model. Two things to change in wording, not in rule:
+
+- The instrument line says the record "does not say which of them the instrument measures". True under D-23, but in the call you would say: the record holds one instrument, the PHQ-9, and no other measure, so anxiety, sleep and functioning are described in notes only.
+- "Unbroken engagement" counts "2 contacts held without the patient". One is the care coordination call of Jan 23, held between professionals by design. Only the Jan 16 absence is the patient's.
+
+**Defects still in the answers.** None changes a figure. All are for stage 8, whose job is checks.
+
+| # | Where | Defect |
+|---|---|---|
+| 1 | DEV-01, DEV-02, DEV-05, part 5 | "Open elsewhere in the record, not behind these figures: HG-E115, start". In DEV-02 the figures are 585 or 595 because of that start, part 6 lists it as not settled, and the lead says so. Part 5 contradicts them. Choice 14, which makes `care_delivered` a breakdown when another function is in the plan, is the likely cause: the breakdown's conflict is labelled "elsewhere" |
+| 2 | DEV-01, DEV-02, DEV-03, part 5 | HG-E103, HG-E108, HG-E109 and HG-E117 appear twice, once plain and once with a reason. The other four excluded encounters appear once. Unchanged since Discussion 30 |
+| 3 | DEV-01, DEV-02, DEV-03, part 5 | Five administrative records are listed where part 3 counts six: the two calls of Jan 8 share one line. Unchanged since Discussion 30 |
+| 4 | DEV-04 and DEV-05, part 2 | "The clinical note, signed, BH-D101 ... says no therapy was provided." The claim behind it is the break sentence on line 8, "there was no facilitated discussion ... during that interval". Rendered without the interval, it reads as if the group note says no therapy took place in the group |
+| 5 | DEV-05, part 2 and 5 | The Jan 26 conflict and the three findings are still listed. None bears on the symptom course |
+| 6 | DEV-01 and DEV-04, part 2 and 3 | Dates are "Jan 19" in some lines and "2026-01-19" in others. Choice 15 says the short form |
+
+A check for stage 8: no conflict that part 6 lists is called "not behind these figures" in part 5. Check 11 in the plan would not catch it, because it compares numbers and not words.
+
+**O-51, the 16 choices.** Choices 1 to 12 are as in Discussion 29. Of 13 to 16: 13 (the lead's order) and 15 (short dates) are reasonable and change no figure. 16 is the block above. 14 is the likely cause of defect 1, and should be looked at when it is fixed.
+
+**O-44, the effort comparison.** Medium gives the same 20 statuses, minutes, verdicts, conflicts, findings and scores as low, at 22% more cost and twice the time. It holds one more of the key's 42 citations. The speaker the key differs on, D105 line 9, is the same at both. I read the report and checked the logs: 31 calls at medium, $1.98. The comparison also found two faults in the code, both fixed and both in the checks. My recommendation is the same as the building session's: keep low and close O-44.
+
+**What I noticed in the logs.** `output/comparison/` holds settings for four more models (Haiku low, Sonnet low, Fable low, Opus high), written 2026-09-30 04:54, and the logs hold one reading call to Haiku at low effort, $0.08, at 04:56, with one Haiku result saved. That is the model comparison of stage 11 (O-36), which the plan runs on your go-ahead only. I have not seen that go-ahead in this file. It may have been given in the building session after its Discussion 30 was written. O-54 asks.
+
+**Stages 8 to 10.** My recommendation is to give the go-ahead, with defects 1 and 4 fixed inside stage 8. Stage 8 is checks and costs no calls; stage 9 is the benchmark, about 5 calls; stage 10 is the README, no calls.
+
+**Outcome**
+
+- Nothing is decided. One open item added: O-54.
+
+**Still open from this discussion:** O-54, and your three decisions: O-51, whether the answers say what you would say, and the go-ahead for stages 8 to 10.
+
+---
+
+## Discussion 33: Models and efforts compared on the reading step
+
+**What prompted it:** You asked what models had been tried, and asked for Haiku, the other models on your account, and other effort levels, to see whether they converge on the same answers. Before this, one model had been tried: Opus, at low and at medium effort.
+
+**What was run.** All 31 documents, prompt version 3, each run into its own store. The rules then ran on each run's saved results with no model. The report is `output/comparison/models-and-efforts.md`, written by the new `compare` command; `tests/key_citations.py` scores each store against the key.
+
+| Run | Served by | Calls | Cost | Seconds over the calls | Thinking tokens | Claims |
+|---|---|---|---|---|---|---|
+| Opus, low | claude-opus-5-5 | 31 | $1.62 | 486 | 0 | 474 |
+| Opus, medium | claude-opus-5-5 | 31 | $1.98 | 957 | 11,627 | 535 |
+| Opus, high | claude-opus-5-5 | 31 | $2.25 | 853 | 26,585 | 563 |
+| Sonnet, low | claude-sonnet-5-5 | 31 | $0.93 | 546 | 0 | 450 |
+| Haiku, low | claude-haiku-4-5-20251001 | 31 | $2.46 | 4,205 | 353,436 | 474 |
+| Fable, low | claude-fable-5-1 | 31 | $5.06 | 985 | 4,785 | 626 |
+
+- No call was rejected by the schema in any run. Every quote was found in its source in every run but Haiku's, which had 2 not found.
+- Haiku ignores the effort setting: it thinks about 11,000 tokens on every document, so it is slower than Opus and dearer than Sonnet.
+- Haiku's run also met the `claude` tool updating itself (2.1.284 to 2.1.285) in the middle. 29 calls failed with a launcher error, the 14 documents were recorded as not read, and a rerun read them from where it stopped. The failed calls cost nothing.
+
+**Do they converge?**
+
+| Run | 20 encounters | Statuses and minutes | Weekly verdicts | Conflicts, findings, assessments | Totals | Key rows held (of 42) |
+|---|---|---|---|---|---|---|
+| Opus, low (baseline) | Yes | | | | 585 or 595 | 40 |
+| Opus, medium | Yes | Same | Same | Same | Same | 41 |
+| Opus, high | Yes | Same | Same | Same | Same | 41 |
+| Sonnet, low | Yes | Same | Same | Same | Same | 37 |
+| Fable, low | Yes | Same | Same | Same | Same | 41 |
+| Haiku, low | Yes | 3 contacts lose their minutes | Week 3 cannot be determined | The Jan 27 draft finding is missing | 465 or 475 | 40 |
+
+- Five of the six runs reach identical conclusions: the same 20 encounters with the same statuses and minutes, the same four verdicts, the same three conflicts settled the same way, the same findings, the same three scores, the same totals. This holds although the readings themselves differ: only 7 to 21 of 31 documents return the same count-bearing facts as the baseline. The rules absorb the differences.
+- Haiku does not converge. It called the attendance register D108 a schedule export, so the Jan 22 and Jan 29 groups have no minutes, and it labelled the medication visit's time on Jan 30 scheduled. Those are its readings of the documents, and the code does not override a model's reading.
+- The speaker of D105 line 9 is "clinician" in all six runs. The key has "patient". Six models and efforts read the sentence the same way.
+- Sonnet holds the fewest rows of the key's observations (37) and Fable, Opus at medium and Opus at high the most (41), at three to five times the price of Sonnet.
+
+**Two changes to the code, found by the comparison.** Both make the rules rest on the fact and not on the model's label. Neither changes a figure at Opus low.
+
+| Found in | Change |
+|---|---|
+| Sonnet labelled the group break in D101 "scheduled", because it sits next to "Scheduled group", and the code dropped a no-therapy interval with that label. The Jan 19 group came out at 75 minutes | A no-therapy interval is removed whatever its label (rule 5). Sonnet now converges |
+| Haiku returned the correction in D103 without attaching it to the contact, in a document that refers to one contact. The correction was lost | A claim about a contact that names none, in a document that refers to exactly one contact, is taken to be about that contact. Haiku's Jan 19 departure is now corrected too |
+
+**Calls and cost.** The comparison was 153 calls at $10.70. Calls since the build began: 278, at $16.96.
+
+**What this gives the README.** The tested design decision: which model reads the documents, with the finding that the rules make Sonnet, Opus and Fable interchangeable on this record, at $0.93, $1.62 and $5.06 a read. The observed limitation: a model can misname the kind of a document, and the rules then have nothing to work with; Haiku shows it.
+
+**Outcome**
+
+- Nothing is decided. O-44 (effort) and O-36 (model) now have their comparisons.
+- My recommendation: Opus at low for the reading, or Sonnet at low where cost matters, since both reach the same figures. Haiku is not fit for the reading step on this record.
+- Nothing was committed.
+
+**Still open from this discussion:** O-36, O-44, O-51, and your decision at the review after stage 7.
+
+---
+
+## Discussion 34: Stages 8 to 10, the checks, the benchmark and the README
+
+**What prompted it:** You pasted the second session's list of the stages left and said "ok do the remaining stages then" (R-65). You also asked that this session look at what the past sessions had done first. Discussions 29 to 33 were read before anything was written; the six defects and the extra check that Discussion 32 left for stage 8 are the first thing below.
+
+**Numbering.** The rework entry is now Discussion 31 and the model comparison is Discussion 33, as Discussion 32 proposed. O-36, O-44 and O-51 point to the new numbers.
+
+**What was built**
+
+| Stage | Built | Done when | Result |
+|---|---|---|---|
+| 8 | `checks.py`, `tests/test_checks.py`, `tests/test_key_answers.py`, the `check` command, and the fixes to the answers | All 16 checks pass, or each failure is understood and written down | 155 checks pass. The `check` command runs the store and answer checks on the files on disk, then the tests |
+| 9 | `benchmark.py` and the `benchmark` command | The measured figures exist, with the estimates in a separate file | `output/benchmarks/benchmark.md` and `estimates.md`, with a JSON beside each. Five plan calls, $0.14 |
+| 10 | `README.md`; the export rewritten | Every item the problem statement asks for is present | Written. Read it before anything else |
+
+**The six defects of Discussion 32, and the extra check**
+
+| # | Defect | Fix |
+|---|---|---|
+| 1 | Part 5 called the Jan 26 start "not behind these figures" while part 6 listed it | The open conflicts a supporting `conflicts_and_findings` call returns are split: one the figures depend on goes to part 6, with its effect and what would settle it; the rest are marked as open elsewhere. Choice 14 stands; it was not the cause |
+| 2 | Four excluded contacts listed twice in part 5 | When `not_counted` is in the plan, it alone writes the excluded contacts, with the reason a document gives. `care_delivered` and `goal_status` write theirs only when it is not |
+| 3 | Five administrative records where six were counted | An administrative record carries its clock time, so the two calls of Jan 8 are two lines |
+| 4 | "Says no therapy was provided", of the group break | Said beside a no-therapy interval, the statement is rendered with the interval: "says no therapy was provided during 10:45–11:00" |
+| 5 | DEV-05 listed the Jan 26 conflict and the three findings | A supporting `conflicts_and_findings` call is cut to the contacts the other results used. DEV-05 uses none, so it gets none, and part 6 is "Nothing" |
+| 6 | Dates in two forms | Every code-written date is "Jan 19". Quotes are never touched. A check enforces it |
+| + | The check: no conflict part 6 lists is called "not behind these figures" in part 5 | In `checks.py` and the tests |
+
+Also from Discussion 32: the instrument sentence of the "does not settle" block now says the record holds one instrument and no other measure, so what the notes say on the other topics is description; the engagement sentence leaves out contacts between professionals (D-43, proposed, O-56); and the lead of DEV-05 gives the reason for the Jan 19 contact, from the date the plan asked about. Part 4 of every answer now names the clinicians of each contact, which the live question Q-7 needed.
+
+**The checks added**
+
+| Check | How |
+|---|---|
+| 8, overlap | Two contacts of one patient on one date whose presence overlaps under any way the open conflicts could be settled. Replaying the 30 documents without BH-D103 finds exactly the overlap the plan names: HG-E110 10:00–11:30 against HG-E111 11:15–11:45 |
+| 7, stated minutes | Every stated patient-present figure is one of the contact's alternatives, or a conflict on its minutes exists. Tampering with a conclusion is caught |
+| 11, numbers | Every number in parts 2 to 8 and the lead is a value in a result, a number inside a result's string, the length of a list in a result, or the length of a removed interval. Part 1 is the model's plan and part 9 the version, so they are exempt. A planted 999 is caught |
+| 14 in full | The results behind each answer, not its text, against section 7 copied into `tests/answer_key.json`: figures, contributed and excluded contacts, the documents named as duplicate and ineligible risks, the correction and the copy, the scores, copies and mentions, and the not-settled and not-read parts. The key's cited lines for DEV-05 are read from `answer-key.md`; every one is among the answer's sources except D010 line 13, the medication sentence the key itself leaves out (R-40), which is recorded as the one exception |
+
+The `check` command was run once on the answers as they stood before the fixes, and it flagged the defects of Discussion 32 by itself: three contradictions between parts 5 and 6, 108 long dates, and 17 repeated contacts. On the rewritten answers it flags nothing.
+
+**The benchmark** (measured; the estimates are in their own file)
+
+| Measure | Figure |
+|---|---|
+| Reading all 31 from empty, four at a time | 138 s, $1.62. One at a time: 486 s, the sum of the measured calls |
+| One reading call | Median 15.2 s, $0.048, 10,935 tokens in and 1,818 out |
+| Fill from saved results, no model | 0.29 s. `ingest` again on a filled store: 0.04 s. Add one document: 0.06 s of code plus one call |
+| A question with a saved plan | 3 to 156 ms of code. A new question: 6.0 to 9.3 s end to end, $0.020 to $0.045 |
+| The store | 492 KB, 16 KB a document |
+| Whole build | 278 calls before this discussion, $16.96; 283 after, $17.10 |
+
+The five related questions Q-1, Q-2, Q-7, Q-9 and Q-13 of the key's section 8 were asked live for the timings, and their answers are in `output/answers/related/`. Q-1, Q-2, Q-9 and Q-13 give the key's figures. Q-7 gives the sessions grouped by clinician and by day, and part 4 names the clinicians of each contact, from which the two joint sessions can be read; no function lists them directly, and the plan said so.
+
+**The scale run.** The store was copied to 10, 100 and 1,000 patients (31,000 documents), in a temporary file, and the same queries timed. Three faults were found and fixed: the copies check scanned the documents table once per contact; the `documents` table had no index on the patient; and once it had one, SQLite chose a status index over it and scanned every read document. What remains and grows with the collection is `functions.patients_in`, which lists every patient into the plan call's prompt, one query each: 1.3 seconds and 70,000 characters at 1,000 patients, while a question about one patient stays at 44 ms. It is named in the README as the first bottleneck, with the change: a patients table, and the patient resolved by lookup before the plan call.
+
+**Choices in the build that are mine** (O-55)
+
+| # | Choice | Why |
+|---|---|---|
+| 1 | `check` runs the store and answer checks on the files on disk first, then the tests, and fails on either | The interviewers get one command, and the checks on disk need no `pytest` |
+| 2 | Check 11 counts the length of a list in a result as a sourced number | "Described by 2 documents" and "Of 4 weeks" are lengths of lists the results hold |
+| 3 | Check 14 reads the results data and not the text | The plan says by figure and source, not by wording. Wording is checked by the stage 7 tests |
+| 4 | Check 8 tests every way the open conflicts could be settled | An overlap under one alternative is still an overlap |
+| 5 | The conflicts a supporting call returns are cut to the contacts behind the figures | Defects 1 and 5 had one cause: the whole record's conflicts were written whatever the question |
+| 6 | `not_counted` writes the excluded contacts when it is in the plan | It has the reason a document gives; the others do not |
+| 7 | An administrative record carries its clock time | Two calls on one day are two records |
+| 8 | Dates are short everywhere code writes them; quotes are never changed | Choice 15 of O-51, now enforced by a check |
+| 9 | The reason for a contact goes in the lead only for a date the plan asked `date_detail` about | The first statement in the record on why a contact was arranged was about Jan 8, not Jan 19 |
+| 10 | The benchmark takes the model's time and cost from the logs, and measures the code here; `--live` is the only part that calls a model, and a rerun with the plans saved says so in its rows | R-50: timings replay saved results and logs |
+| 11 | The scale run copies the patient under new record numbers, in a temporary store, and says so | It measures the code's growth with the collection without inventing documents |
+| 12 | The README names Opus at low as the reading setting, because `settings.toml` says so, and gives the comparison beside it | O-36 and O-44 are yours to close. Whichever you choose is a one-line change to the README and to `settings.toml` |
+
+**Calls and cost.** Five plan calls, $0.14. Calls since the build began: 283, at $17.10.
+
+**Checks.** 155 pass: 125 before, 30 added.
+
+**Outcome**
+
+- Stages 8, 9 and 10 are built. The build is stopped at the last review point: whether to send it.
+- Two items resolved: R-64, R-65. Two open items added: O-55, O-56. Nothing was committed.
+
+**Still open from this discussion:** O-55, O-56, and the ones that were open before: O-36 and O-44 (the model and effort the README states), O-51, O-52 and O-53 (answered by the rework, waiting for your word), O-1 and O-13 (the second patient and the plan change), O-31 (the README's three items are now written, for your review), and whether to send it.
 
 ---
 
