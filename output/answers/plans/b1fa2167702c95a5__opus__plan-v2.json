@@ -1,0 +1,81 @@
+{
+ "question": "Was Rowan's treatment plan goal met in the week of January 19, 2026, and by how much?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T17:40:30.429+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T17:40:23.858+00:00",
+   "usage": {
+    "wall_seconds": 6.535,
+    "api_seconds": 4.93,
+    "input_tokens": 2,
+    "output_tokens": 600,
+    "cache_creation_input_tokens": 1406,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.023846799999999998,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 600,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1406,
+      "webSearchRequests": 0,
+      "costUSD": 0.023846799999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-19",
+   "end": "2026-01-25",
+   "basis": "as asked"
+  },
+  "reading": "The week of January 19, 2026 is taken as Monday 2026-01-19 through Sunday 2026-01-25. The goal, verdict and margin are those in the plan. Sessions are the contact classes the plan counts, held with the patient present.",
+  "other_readings": [
+   "The week could be read as the working week only, 2026-01-19 to 2026-01-23."
+  ],
+  "calls": [
+   {
+    "function": "goal_status",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-19",
+     "end": "2026-01-25"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-19",
+     "end": "2026-01-25"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-19",
+     "end": "2026-01-25"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "\"Rowan\" is taken to mean HG-M042, Rowan Mercer, the only patient with that name. The margin may depend on an open conflict between documents; if so, the answer should say so."
+ }
+}

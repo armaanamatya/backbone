@@ -1,0 +1,15 @@
+{
+ "basis": {
+  "cost_per_document_usd": 0.0522,
+  "seconds_per_call": 15.6802,
+  "store_bytes_per_document": 16252,
+  "saved_result_bytes_per_document": 6617
+ },
+ "at_500k": {
+  "reading_cost_usd": 26100,
+  "reading_hours_at_4_parallel": 544,
+  "reading_hours_at_64_parallel": 34,
+  "store_gb": 8.1,
+  "saved_results_gb": 3.3
+ }
+}

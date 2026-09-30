@@ -1,0 +1,61 @@
+{
+ "question": "Which patients had two consecutive weeks below their treatment plan goal, and does any of them depend on unresolved documentation?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T17:40:36.488+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T17:40:30.492+00:00",
+   "usage": {
+    "wall_seconds": 5.954,
+    "api_seconds": 4.256,
+    "input_tokens": 2,
+    "output_tokens": 396,
+    "cache_creation_input_tokens": 1412,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.0198148,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 396,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1412,
+      "webSearchRequests": 0,
+      "costUSD": 0.0198148,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": null,
+  "period": {
+   "start": null,
+   "end": null,
+   "basis": "the episode"
+  },
+  "reading": "A search across the whole collection for patients with 2 consecutive plan weeks below the goal, using the contact classes the plan counts. 'Unresolved documentation' means an open conflict between documents that the below-goal verdict depends on.",
+  "other_readings": [],
+  "calls": [
+   {
+    "function": "patients_below_goal",
+    "arguments": {
+     "weeks": 2
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The collection holds one patient, HG-M042 Rowan Mercer (2026-01-05 to 2026-01-30). Each week at risk should be reported with the open conflict it depends on."
+ }
+}

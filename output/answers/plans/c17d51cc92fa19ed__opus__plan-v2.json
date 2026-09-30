@@ -1,0 +1,76 @@
+{
+ "question": "How many sessions did Rowan attend from January 12 to January 25, 2026, by type, and on how many days?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T17:40:06.853+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T17:39:58.523+00:00",
+   "usage": {
+    "wall_seconds": 8.286,
+    "api_seconds": 4.496,
+    "input_tokens": 2,
+    "output_tokens": 507,
+    "cache_creation_input_tokens": 4362,
+    "cache_read_input_tokens": 0,
+    "cost_usd": 0.045044,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 507,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 4362,
+      "webSearchRequests": 0,
+      "costUSD": 0.045044,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-12",
+   "end": "2026-01-25",
+   "basis": "as asked"
+  },
+  "reading": "Sessions are taken to mean attended contacts in the classes the plan counts, with the patient present. They are grouped by class. Days means distinct calendar days with at least one attended session.",
+  "other_readings": [
+   "Sessions as all contacts held, including classes the plan does not count",
+   "Sessions as all encounters on record, including no-shows and cancellations"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-12",
+     "end": "2026-01-25",
+     "group_by": "class"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-12",
+     "end": "2026-01-25",
+     "group_by": "day"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question gives only the first name \"Rowan\", which matches Rowan Mercer (HG-M042). The period is plan weeks 2 and 3."
+ }
+}

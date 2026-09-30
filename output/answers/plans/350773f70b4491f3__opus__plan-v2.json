@@ -1,0 +1,84 @@
+{
+ "question": "Which of Rowan's therapy sessions had more than one clinician?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T17:40:23.707+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T17:40:14.550+00:00",
+   "usage": {
+    "wall_seconds": 9.105,
+    "api_seconds": 7.576,
+    "input_tokens": 2,
+    "output_tokens": 792,
+    "cache_creation_input_tokens": 1395,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.0275988,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 792,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1395,
+      "webSearchRequests": 0,
+      "costUSD": 0.0275988,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 116,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "the episode"
+  },
+  "reading": "\"Therapy sessions\" means the therapy contacts the plan counts, held with the patient present. \"More than one clinician\" means a single session that two or more clinicians attended or documented, for example co-led or joint sessions.",
+  "other_readings": [
+   "More than one clinician could also mean sessions where the documents disagree about which clinician delivered the session, rather than sessions two clinicians attended together.",
+   "Sessions could be read as all contacts held, including classes the plan does not count."
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "clinician"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "day"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "No function lists the clinicians for each session. Grouping by clinician and by day, and checking the conflicts, can together show sessions with two or more clinicians. If that still leaves it unclear, a date_detail call is needed for each date the results point to. If the documents disagree about who delivered a session, the answer should say so and not count it as a joint session."
+ }
+}

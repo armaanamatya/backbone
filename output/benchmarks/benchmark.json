@@ -1,0 +1,978 @@
+{
+ "measured_at": "2026-09-30T18:00:07.703+00:00",
+ "settings": {
+  "model": "opus",
+  "effort": "low",
+  "prompt_version": 3,
+  "plan_prompt_version": 2,
+  "parallel_calls": 4
+ },
+ "reading_runs": [
+  {
+   "log": "20260929T131430978736Z_ingest.jsonl",
+   "started": "2026-09-29T13:14:30.978+00:00",
+   "calls": 31,
+   "accepted": 31,
+   "documents_read": 31,
+   "run_wall_seconds": 137.5,
+   "sum_of_call_seconds": 486.1,
+   "cost_usd": 1.6195,
+   "input_tokens": 339418,
+   "output_tokens": 60078,
+   "per_call": [
+    {
+     "file": "BH-D101_group_content_2026-01-19.txt",
+     "wall_seconds": 14.464,
+     "cost_usd": 0.123052,
+     "input_tokens": 10930,
+     "output_tokens": 1781,
+     "cache_read_input_tokens": 0
+    },
+    {
+     "file": "BH-D102_original_attendance_2026-01-19.txt",
+     "wall_seconds": 13.369,
+     "cost_usd": 0.0412874,
+     "input_tokens": 10891,
+     "output_tokens": 1537,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D103_attendance_correction_2026-01-20.txt",
+     "wall_seconds": 13.892,
+     "cost_usd": 0.04203939999999999,
+     "input_tokens": 10855,
+     "output_tokens": 1589,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D104_resent_roster_received_2026-01-26.txt",
+     "wall_seconds": 16.089,
+     "cost_usd": 0.04704339999999999,
+     "input_tokens": 10908,
+     "output_tokens": 1818,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D105_individual_2026-01-19.txt",
+     "wall_seconds": 17.48,
+     "cost_usd": 0.0548994,
+     "input_tokens": 10935,
+     "output_tokens": 2200,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D106_telehealth_2026-01-21.txt",
+     "wall_seconds": 17.155,
+     "cost_usd": 0.05726339999999999,
+     "input_tokens": 11038,
+     "output_tokens": 2277,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D109_care_coordination_2026-01-23.txt",
+     "wall_seconds": 13.932,
+     "cost_usd": 0.0425674,
+     "input_tokens": 10876,
+     "output_tokens": 1607,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D107_group_activity_records_2026-01-22_and_29.txt",
+     "wall_seconds": 17.867,
+     "cost_usd": 0.058955400000000005,
+     "input_tokens": 11017,
+     "output_tokens": 2370,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+     "wall_seconds": 20.608,
+     "cost_usd": 0.0685114,
+     "input_tokens": 11094,
+     "output_tokens": 2817,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+     "wall_seconds": 14.323,
+     "cost_usd": 0.046679399999999996,
+     "input_tokens": 10955,
+     "output_tokens": 1781,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D110_individual_primary_record_2026-01-26.txt",
+     "wall_seconds": 15.71,
+     "cost_usd": 0.0500594,
+     "input_tokens": 10955,
+     "output_tokens": 1950,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D111_individual_second_record_2026-01-26.txt",
+     "wall_seconds": 18.093,
+     "cost_usd": 0.05874739999999999,
+     "input_tokens": 11011,
+     "output_tokens": 2362,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D113_family_therapy_2026-01-30.txt",
+     "wall_seconds": 17.424,
+     "cost_usd": 0.0551434,
+     "input_tokens": 10958,
+     "output_tokens": 2203,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D115_symptom_measure_review_2026-01-30.txt",
+     "wall_seconds": 14.515,
+     "cost_usd": 0.0471834,
+     "input_tokens": 10933,
+     "output_tokens": 1815,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "BH-D114_medication_management_2026-01-30.txt",
+     "wall_seconds": 16.144,
+     "cost_usd": 0.0493594,
+     "input_tokens": 10935,
+     "output_tokens": 1923,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "early_group_attendance_roster.txt",
+     "wall_seconds": 14.038,
+     "cost_usd": 0.0448674,
+     "input_tokens": 10901,
+     "output_tokens": 1712,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "early_appointment_status_export.txt",
+     "wall_seconds": 23.702,
+     "cost_usd": 0.07862340000000001,
+     "input_tokens": 10983,
+     "output_tokens": 3367,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "family_cofacilitator_jan09.txt",
+     "wall_seconds": 16.704,
+     "cost_usd": 0.0491234,
+     "input_tokens": 10923,
+     "output_tokens": 1916,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "family_primary_jan09.txt",
+     "wall_seconds": 14.868,
+     "cost_usd": 0.0482714,
+     "input_tokens": 10994,
+     "output_tokens": 1845,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "group_authorization_letter.txt",
+     "wall_seconds": 10.684,
+     "cost_usd": 0.031875400000000005,
+     "input_tokens": 10837,
+     "output_tokens": 1088,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "group_cancellation_notice_jan15.txt",
+     "wall_seconds": 13.754,
+     "cost_usd": 0.0430034,
+     "input_tokens": 10833,
+     "output_tokens": 1646,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "group_facilitator_jan06.txt",
+     "wall_seconds": 12.883,
+     "cost_usd": 0.041343399999999995,
+     "input_tokens": 10878,
+     "output_tokens": 1545,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "group_facilitator_jan12.txt",
+     "wall_seconds": 13.062,
+     "cost_usd": 0.0427674,
+     "input_tokens": 10926,
+     "output_tokens": 1597,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "imported_measure_summary_received_jan26.txt",
+     "wall_seconds": 13.154,
+     "cost_usd": 0.0396194,
+     "input_tokens": 10865,
+     "output_tokens": 1464,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "individual_therapy_jan14.txt",
+     "wall_seconds": 16.553,
+     "cost_usd": 0.054287400000000006,
+     "input_tokens": 10996,
+     "output_tokens": 2145,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "medication_review_jan13.txt",
+     "wall_seconds": 14.034,
+     "cost_usd": 0.0470354,
+     "input_tokens": 10962,
+     "output_tokens": 1796,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "intake_and_individual_jan05.txt",
+     "wall_seconds": 17.302,
+     "cost_usd": 0.0574034,
+     "input_tokens": 11198,
+     "output_tokens": 2220,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "missed_visit_outreach_jan08.txt",
+     "wall_seconds": 18.685,
+     "cost_usd": 0.058015399999999995,
+     "input_tokens": 10862,
+     "output_tokens": 2385,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "partner_collateral_jan16.txt",
+     "wall_seconds": 15.25,
+     "cost_usd": 0.0494114,
+     "input_tokens": 10984,
+     "output_tokens": 1906,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "symptom_measure_review_jan16.txt",
+     "wall_seconds": 13.289,
+     "cost_usd": 0.0429914,
+     "input_tokens": 10844,
+     "output_tokens": 1641,
+     "cache_read_input_tokens": 9817
+    },
+    {
+     "file": "signed_treatment_plan_jan05.txt",
+     "wall_seconds": 17.06,
+     "cost_usd": 0.048047400000000004,
+     "input_tokens": 11141,
+     "output_tokens": 1775,
+     "cache_read_input_tokens": 9817
+    }
+   ]
+  }
+ ],
+ "per_document": {
+  "calls": 31,
+  "wall_seconds": {
+   "mean": 15.6802,
+   "median": 15.25,
+   "min": 10.684,
+   "max": 23.702
+  },
+  "cost_usd": {
+   "mean": 0.0522,
+   "median": 0.0483,
+   "min": 0.031875400000000005,
+   "max": 0.123052
+  },
+  "input_tokens": {
+   "mean": 10948.9677,
+   "median": 10935,
+   "min": 10833,
+   "max": 11198
+  },
+  "output_tokens": {
+   "mean": 1938,
+   "median": 1818,
+   "min": 1088,
+   "max": 3367
+  },
+  "cache_read_input_tokens": {
+   "mean": 9500.3226,
+   "median": 9817,
+   "min": 0,
+   "max": 9817
+  }
+ },
+ "plan_calls": [
+  {
+   "log": "20260930T071753632877Z_ask.jsonl",
+   "question": "For January 5–30, 2026, how many therapy sessions did Rowan attend, by service type and in total, and on how many distinct days? Provide a reviewable abstraction with source support and explain records that could lead to duplicate or ineligible counts.",
+   "wall_seconds": 9.562,
+   "cost_usd": 0.0370522,
+   "output_tokens": 683,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071753632877Z_ask.jsonl",
+   "question": "How many therapy minutes and hours did Rowan actually receive during the review period, overall and for each Monday–Sunday week? Show calculations or supporting detail, and report any conclusion the available documents do not settle.",
+   "wall_seconds": 7.594,
+   "cost_usd": 0.0255668,
+   "output_tokens": 672,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071753632877Z_ask.jsonl",
+   "question": "For each week, did the delivered therapy meet the goal documented in Rowan’s treatment plan? State the goal, the relevant therapy-day and minute totals, and whether it was met, not met, or cannot be determined from the current record.",
+   "wall_seconds": 7.381,
+   "cost_usd": 0.023826800000000002,
+   "output_tokens": 583,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071753632877Z_ask.jsonl",
+   "question": "Reconstruct the care on January 19 and January 21. How many therapy contacts and patient therapy minutes occurred on each date, and how do the attendance records, clinical notes, later documents, and telehealth records affect your answer?",
+   "wall_seconds": 8.401,
+   "cost_usd": 0.0274388,
+   "output_tokens": 764,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071753632877Z_ask.jsonl",
+   "question": "Summarize the documented symptom course during the episode and the reason for the additional individual contact on January 19. Which symptom assessments are distinct, and what conclusions about progress can and cannot be supported?",
+   "wall_seconds": 9.286,
+   "cost_usd": 0.0276268,
+   "output_tokens": 777,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071837190946Z_ask.jsonl",
+   "question": "How many sessions did Jordan Blake attend?",
+   "wall_seconds": 6.199,
+   "cost_usd": 0.0204348,
+   "output_tokens": 437,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071837190946Z_ask.jsonl",
+   "question": "How many sessions did Casey Mercer attend?",
+   "wall_seconds": 7.861,
+   "cost_usd": 0.0234028,
+   "output_tokens": 585,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071837190946Z_ask.jsonl",
+   "question": "How many minutes was Rowan in the Jan 27 group?",
+   "wall_seconds": 7.372,
+   "cost_usd": 0.0213988,
+   "output_tokens": 484,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071837190946Z_ask.jsonl",
+   "question": "What was Rowan's PHQ-9 score on Jan 26?",
+   "wall_seconds": 6.393,
+   "cost_usd": 0.0208108,
+   "output_tokens": 453,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071837190946Z_ask.jsonl",
+   "question": "How did Rowan's care change after the treatment plan was changed?",
+   "wall_seconds": 12.747,
+   "cost_usd": 0.0259228,
+   "output_tokens": 709,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071837190946Z_ask.jsonl",
+   "question": "What care did Rowan receive on Jan 24?",
+   "wall_seconds": 6.455,
+   "cost_usd": 0.0201828,
+   "output_tokens": 424,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071837190946Z_ask.jsonl",
+   "question": "How many visits did Rowan have?",
+   "wall_seconds": 6.436,
+   "cost_usd": 0.0213828,
+   "output_tokens": 486,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071837190946Z_ask.jsonl",
+   "question": "How many sessions did Rowan attend last week?",
+   "wall_seconds": 7.076,
+   "cost_usd": 0.023482799999999998,
+   "output_tokens": 589,
+   "accepted": true
+  },
+  {
+   "log": "20260930T071837190946Z_ask.jsonl",
+   "question": "How many group authorization units does Rowan have left?",
+   "wall_seconds": 6.778,
+   "cost_usd": 0.0210548,
+   "output_tokens": 468,
+   "accepted": true
+  },
+  {
+   "log": "20260930T173949779718Z_benchmark.jsonl",
+   "question": "How many sessions did Rowan attend from January 12 to January 25, 2026, by type, and on how many days?",
+   "wall_seconds": 8.286,
+   "cost_usd": 0.045044,
+   "output_tokens": 507,
+   "accepted": true
+  },
+  {
+   "log": "20260930T173949779718Z_benchmark.jsonl",
+   "question": "How many therapy sessions did Rowan attend in each week of the episode?",
+   "wall_seconds": 7.304,
+   "cost_usd": 0.0203548,
+   "output_tokens": 429,
+   "accepted": true
+  },
+  {
+   "log": "20260930T173949779718Z_benchmark.jsonl",
+   "question": "Which of Rowan's therapy sessions had more than one clinician?",
+   "wall_seconds": 9.105,
+   "cost_usd": 0.0275988,
+   "output_tokens": 792,
+   "accepted": true
+  },
+  {
+   "log": "20260930T173949779718Z_benchmark.jsonl",
+   "question": "Was Rowan's treatment plan goal met in the week of January 19, 2026, and by how much?",
+   "wall_seconds": 6.535,
+   "cost_usd": 0.023846799999999998,
+   "output_tokens": 600,
+   "accepted": true
+  },
+  {
+   "log": "20260930T173949779718Z_benchmark.jsonl",
+   "question": "Which patients had two consecutive weeks below their treatment plan goal, and does any of them depend on unresolved documentation?",
+   "wall_seconds": 5.954,
+   "cost_usd": 0.0198148,
+   "output_tokens": 396,
+   "accepted": true
+  }
+ ],
+ "all_calls": {
+  "calls": 283,
+  "cost_usd": 17.1,
+  "by_purpose": {
+   "reading": {
+    "calls": 250,
+    "cost_usd": 16.27
+   },
+   "plan": {
+    "calls": 33,
+    "cost_usd": 0.82
+   }
+  }
+ },
+ "replay": {
+  "documents": 31,
+  "fill_from_saved_results_seconds": {
+   "median": 0.309,
+   "min": 0.286,
+   "max": 0.35,
+   "runs": 5
+  },
+  "counts": {
+   "registered": 31,
+   "read_from_saved_results": 31,
+   "not_read": 0
+  },
+  "add_one_document_code_seconds": {
+   "median": 0.079,
+   "min": 0.047,
+   "max": 0.139,
+   "runs": 5,
+   "file": "symptom_measure_review_jan16.txt"
+  }
+ },
+ "rerun": {
+  "seconds": {
+   "median": 0.055,
+   "min": 0.047,
+   "max": 0.176,
+   "runs": 5
+  },
+  "skipped_as_known": 31,
+  "waiting_to_be_read": 0
+ },
+ "questions": [
+  {
+   "id": "DEV-01",
+   "question": "For January 5–30, 2026, how many therapy sessions did Rowan attend, by service type and in total, and on how many distinct days? Provide a reviewable abstraction with source support and explain records that could lead to duplicate or ineligible counts.",
+   "saved_plan": true,
+   "functions": [
+    "care_delivered",
+    "care_delivered",
+    "not_counted",
+    "conflicts_and_findings"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.157,
+    "min": 0.1303,
+    "max": 0.2265,
+    "runs": 5
+   },
+   "answer_lines": 250
+  },
+  {
+   "id": "DEV-02",
+   "question": "How many therapy minutes and hours did Rowan actually receive during the review period, overall and for each Monday–Sunday week? Show calculations or supporting detail, and report any conclusion the available documents do not settle.",
+   "saved_plan": true,
+   "functions": [
+    "care_delivered",
+    "care_delivered",
+    "not_counted",
+    "conflicts_and_findings"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.1475,
+    "min": 0.1194,
+    "max": 0.1659,
+    "runs": 5
+   },
+   "answer_lines": 240
+  },
+  {
+   "id": "DEV-03",
+   "question": "For each week, did the delivered therapy meet the goal documented in Rowan’s treatment plan? State the goal, the relevant therapy-day and minute totals, and whether it was met, not met, or cannot be determined from the current record.",
+   "saved_plan": true,
+   "functions": [
+    "goal_status",
+    "care_delivered",
+    "conflicts_and_findings",
+    "not_counted"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.1524,
+    "min": 0.1406,
+    "max": 0.2162,
+    "runs": 5
+   },
+   "answer_lines": 264
+  },
+  {
+   "id": "DEV-04",
+   "question": "Reconstruct the care on January 19 and January 21. How many therapy contacts and patient therapy minutes occurred on each date, and how do the attendance records, clinical notes, later documents, and telehealth records affect your answer?",
+   "saved_plan": true,
+   "functions": [
+    "date_detail",
+    "date_detail",
+    "care_delivered",
+    "not_counted",
+    "conflicts_and_findings"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.0705,
+    "min": 0.0625,
+    "max": 0.0787,
+    "runs": 5
+   },
+   "answer_lines": 96
+  },
+  {
+   "id": "DEV-05",
+   "question": "Summarize the documented symptom course during the episode and the reason for the additional individual contact on January 19. Which symptom assessments are distinct, and what conclusions about progress can and cannot be supported?",
+   "saved_plan": true,
+   "functions": [
+    "observations",
+    "date_detail",
+    "assessments",
+    "conflicts_and_findings"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.1051,
+    "min": 0.0807,
+    "max": 0.1219,
+    "runs": 5
+   },
+   "answer_lines": 357
+  },
+  {
+   "id": "P-1",
+   "question": "How many sessions did Jordan Blake attend?",
+   "saved_plan": true,
+   "functions": [],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.0047,
+    "min": 0.004,
+    "max": 0.0054,
+    "runs": 5
+   },
+   "answer_lines": 48
+  },
+  {
+   "id": "P-2",
+   "question": "How many sessions did Casey Mercer attend?",
+   "saved_plan": true,
+   "functions": [],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.0061,
+    "min": 0.0032,
+    "max": 0.0065,
+    "runs": 5
+   },
+   "answer_lines": 49
+  },
+  {
+   "id": "P-3",
+   "question": "How many minutes was Rowan in the Jan 27 group?",
+   "saved_plan": true,
+   "functions": [
+    "date_detail",
+    "conflicts_and_findings"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.0284,
+    "min": 0.0255,
+    "max": 0.0445,
+    "runs": 5
+   },
+   "answer_lines": 72
+  },
+  {
+   "id": "P-4",
+   "question": "What was Rowan's PHQ-9 score on Jan 26?",
+   "saved_plan": true,
+   "functions": [
+    "assessments",
+    "date_detail"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.025,
+    "min": 0.0196,
+    "max": 0.0277,
+    "runs": 5
+   },
+   "answer_lines": 61
+  },
+  {
+   "id": "P-5",
+   "question": "How did Rowan's care change after the treatment plan was changed?",
+   "saved_plan": true,
+   "functions": [
+    "goal_status",
+    "care_delivered",
+    "care_delivered"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.1407,
+    "min": 0.1355,
+    "max": 0.1893,
+    "runs": 5
+   },
+   "answer_lines": 196
+  },
+  {
+   "id": "P-6",
+   "question": "What care did Rowan receive on Jan 24?",
+   "saved_plan": true,
+   "functions": [
+    "date_detail"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.011,
+    "min": 0.0088,
+    "max": 0.0118,
+    "runs": 5
+   },
+   "answer_lines": 49
+  },
+  {
+   "id": "P-7",
+   "question": "How many visits did Rowan have?",
+   "saved_plan": true,
+   "functions": [
+    "care_delivered",
+    "not_counted"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.0822,
+    "min": 0.0644,
+    "max": 0.113,
+    "runs": 5
+   },
+   "answer_lines": 212
+  },
+  {
+   "id": "P-8",
+   "question": "How many sessions did Rowan attend last week?",
+   "saved_plan": true,
+   "functions": [
+    "care_delivered",
+    "not_counted"
+   ],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.0367,
+    "min": 0.0317,
+    "max": 0.1109,
+    "runs": 5
+   },
+   "answer_lines": 103
+  },
+  {
+   "id": "P-9",
+   "question": "How many group authorization units does Rowan have left?",
+   "saved_plan": true,
+   "functions": [],
+   "collection_wide": false,
+   "code_seconds": {
+    "median": 0.0036,
+    "min": 0.0035,
+    "max": 0.0039,
+    "runs": 5
+   },
+   "answer_lines": 50
+  }
+ ],
+ "live": [
+  {
+   "id": "Q-1",
+   "question": "How many sessions did Rowan attend from January 12 to January 25, 2026, by type, and on how many days?",
+   "plan_source": "saved",
+   "plan_attempts": 1,
+   "functions": [
+    "care_delivered",
+    "care_delivered"
+   ],
+   "collection_wide": false,
+   "wall_seconds": 8.35,
+   "code_seconds": 0.064,
+   "plan_call_seconds": 8.286,
+   "plan_call_cost_usd": 0.045044,
+   "plan_call_output_tokens": 507,
+   "lead": [
+    "6 therapy sessions on 5 distinct days, Jan 12 to Jan 25: 3 group therapy, 3 individual therapy.",
+    "300 minutes of therapy, which is 5.00 hours, Jan 12 to Jan 25."
+   ]
+  },
+  {
+   "id": "Q-2",
+   "question": "How many therapy sessions did Rowan attend in each week of the episode?",
+   "plan_source": "saved",
+   "plan_attempts": 1,
+   "functions": [
+    "care_delivered"
+   ],
+   "collection_wide": false,
+   "wall_seconds": 7.36,
+   "code_seconds": 0.06,
+   "plan_call_seconds": 7.304,
+   "plan_call_cost_usd": 0.0203548,
+   "plan_call_output_tokens": 429,
+   "lead": [
+    "12 therapy sessions on 11 distinct days, Jan 5 to Jan 30: 2 family therapy, 5 group therapy, 5 individual therapy.",
+    "585 or 595 minutes of therapy, which is 9.75 or 9.92 hours, Jan 5 to Jan 30."
+   ]
+  },
+  {
+   "id": "Q-7",
+   "question": "Which of Rowan's therapy sessions had more than one clinician?",
+   "plan_source": "saved",
+   "plan_attempts": 1,
+   "functions": [
+    "care_delivered",
+    "care_delivered",
+    "conflicts_and_findings"
+   ],
+   "collection_wide": false,
+   "wall_seconds": 9.21,
+   "code_seconds": 0.108,
+   "plan_call_seconds": 9.105,
+   "plan_call_cost_usd": 0.0275988,
+   "plan_call_output_tokens": 792,
+   "lead": [
+    "12 therapy sessions on 11 distinct days, Jan 5 to Jan 30: 2 family therapy, 5 group therapy, 5 individual therapy.",
+    "585 or 595 minutes of therapy, which is 9.75 or 9.92 hours, Jan 5 to Jan 30."
+   ]
+  },
+  {
+   "id": "Q-9",
+   "question": "Was Rowan's treatment plan goal met in the week of January 19, 2026, and by how much?",
+   "plan_source": "saved",
+   "plan_attempts": 1,
+   "functions": [
+    "goal_status",
+    "not_counted",
+    "conflicts_and_findings"
+   ],
+   "collection_wide": false,
+   "wall_seconds": 6.59,
+   "code_seconds": 0.055,
+   "plan_call_seconds": 6.535,
+   "plan_call_cost_usd": 0.023846799999999998,
+   "plan_call_output_tokens": 600,
+   "lead": [
+    "Of 1 week, 1 met the goal, 0 did not, and 0 cannot be determined: Jan 19 to Jan 25 met.",
+    "Not counted: HG-E114 on Jan 23, care coordination, held with the patient absent; its 20 minutes were without the patient."
+   ]
+  },
+  {
+   "id": "Q-13",
+   "question": "Which patients had two consecutive weeks below their treatment plan goal, and does any of them depend on unresolved documentation?",
+   "plan_source": "saved",
+   "plan_attempts": 1,
+   "functions": [
+    "patients_below_goal"
+   ],
+   "collection_wide": true,
+   "wall_seconds": 5.96,
+   "code_seconds": 0.008,
+   "plan_call_seconds": 5.954,
+   "plan_call_cost_usd": 0.0198148,
+   "plan_call_output_tokens": 396,
+   "lead": [
+    "1 of 1 patient with 2 consecutive weeks below the goal."
+   ]
+  }
+ ],
+ "size": {
+  "store_file": "output\\abstraction.sqlite",
+  "store_bytes": 503808,
+  "rows": {
+   "documents": 31,
+   "claims": 474,
+   "contacts": 26,
+   "conflicts": 3,
+   "findings": 3,
+   "plan_rules": 10,
+   "assessments": 3,
+   "weekly_status": 4
+  },
+  "source_text_bytes": 50106,
+  "store_bytes_per_document": 16252,
+  "saved_results_for_current_settings": {
+   "files": 31,
+   "bytes": 205136
+  },
+  "saved_results_folder_bytes": 1547890,
+  "logs_bytes": 792438,
+  "answers_bytes": 1997816
+ },
+ "scale": [
+  {
+   "patients": 1,
+   "documents": 31,
+   "store_bytes": 503808,
+   "timings": {
+    "care_delivered, one patient": {
+     "median_seconds": 0.0497
+    },
+    "resolve_patient, by record number": {
+     "median_seconds": 0.001
+    },
+    "patients_in, the list every plan call is given": {
+     "median_seconds": 0.0008
+    },
+    "build_message, the plan call's input": {
+     "median_seconds": 0.0007,
+     "characters": 2671
+    },
+    "patients_below_goal, across the collection": {
+     "median_seconds": 0.0039
+    },
+    "known_hashes, the duplicate check at ingest": {
+     "median_seconds": 0.0002
+    }
+   }
+  },
+  {
+   "patients": 10,
+   "documents": 310,
+   "store_bytes": 4202496,
+   "timings": {
+    "care_delivered, one patient": {
+     "median_seconds": 0.0629
+    },
+    "resolve_patient, by record number": {
+     "median_seconds": 0.0088
+    },
+    "patients_in, the list every plan call is given": {
+     "median_seconds": 0.0088
+    },
+    "build_message, the plan call's input": {
+     "median_seconds": 0.0107,
+     "characters": 3283
+    },
+    "patients_below_goal, across the collection": {
+     "median_seconds": 0.0545
+    },
+    "known_hashes, the duplicate check at ingest": {
+     "median_seconds": 0.0009
+    }
+   }
+  },
+  {
+   "patients": 100,
+   "documents": 3100,
+   "store_bytes": 41029632,
+   "timings": {
+    "care_delivered, one patient": {
+     "median_seconds": 0.0853
+    },
+    "resolve_patient, by record number": {
+     "median_seconds": 0.0957
+    },
+    "patients_in, the list every plan call is given": {
+     "median_seconds": 0.1515
+    },
+    "build_message, the plan call's input": {
+     "median_seconds": 0.1621,
+     "characters": 9403
+    },
+    "patients_below_goal, across the collection": {
+     "median_seconds": 0.4962
+    },
+    "known_hashes, the duplicate check at ingest": {
+     "median_seconds": 0.0167
+    }
+   }
+  },
+  {
+   "patients": 1000,
+   "documents": 31000,
+   "store_bytes": 410320896,
+   "timings": {
+    "care_delivered, one patient": {
+     "median_seconds": 0.0441
+    },
+    "resolve_patient, by record number": {
+     "median_seconds": 1.8658
+    },
+    "patients_in, the list every plan call is given": {
+     "median_seconds": 1.9166
+    },
+    "build_message, the plan call's input": {
+     "median_seconds": 1.2716,
+     "characters": 70603
+    },
+    "patients_below_goal, across the collection": {
+     "median_seconds": 6.2521
+    },
+    "known_hashes, the duplicate check at ingest": {
+     "median_seconds": 0.0764
+    }
+   }
+  }
+ ]
+}
