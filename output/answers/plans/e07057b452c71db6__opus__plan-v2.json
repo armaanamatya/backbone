@@ -1,0 +1,67 @@
+{
+ "question": "How many therapy sessions did Rowan attend in each week of the episode?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T17:40:14.464+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T17:40:07.051+00:00",
+   "usage": {
+    "wall_seconds": 7.304,
+    "api_seconds": 5.501,
+    "input_tokens": 2,
+    "output_tokens": 429,
+    "cache_creation_input_tokens": 1397,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.0203548,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 429,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1397,
+      "webSearchRequests": 0,
+      "costUSD": 0.0203548,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "the episode"
+  },
+  "reading": "\"Therapy sessions attended\" means contacts in the classes the plan counts where the patient was present. The count is grouped by week of the plan period.",
+  "other_readings": [
+   "All encounters held, whatever their class",
+   "Contacts with the patient present, including classes the plan does not count"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "week"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question gives only the first name \"Rowan\". It is taken to mean Rowan Mercer (HG-M042), the only patient in the collection with that name."
+ }
+}

@@ -1,0 +1,11 @@
+{"at": "2026-09-30T17:47:52.079+00:00", "event": "run_started", "command": "benchmark"}
+{"at": "2026-09-30T17:48:03.280+00:00", "event": "plan_reused", "question": "How many sessions did Rowan attend from January 12 to January 25, 2026, by type, and on how many days?", "saved": "c17d51cc92fa19ed__opus__plan-v2.json"}
+{"at": "2026-09-30T17:48:03.371+00:00", "event": "question_answered", "question": "How many sessions did Rowan attend from January 12 to January 25, 2026, by type, and on how many days?", "question_id": "Q-1", "plan_source": "saved", "calls": 2}
+{"at": "2026-09-30T17:48:03.383+00:00", "event": "plan_reused", "question": "How many therapy sessions did Rowan attend in each week of the episode?", "saved": "e07057b452c71db6__opus__plan-v2.json"}
+{"at": "2026-09-30T17:48:03.456+00:00", "event": "question_answered", "question": "How many therapy sessions did Rowan attend in each week of the episode?", "question_id": "Q-2", "plan_source": "saved", "calls": 1}
+{"at": "2026-09-30T17:48:03.468+00:00", "event": "plan_reused", "question": "Which of Rowan's therapy sessions had more than one clinician?", "saved": "350773f70b4491f3__opus__plan-v2.json"}
+{"at": "2026-09-30T17:48:03.572+00:00", "event": "question_answered", "question": "Which of Rowan's therapy sessions had more than one clinician?", "question_id": "Q-7", "plan_source": "saved", "calls": 3}
+{"at": "2026-09-30T17:48:03.595+00:00", "event": "plan_reused", "question": "Was Rowan's treatment plan goal met in the week of January 19, 2026, and by how much?", "saved": "b1fa2167702c95a5__opus__plan-v2.json"}
+{"at": "2026-09-30T17:48:03.658+00:00", "event": "question_answered", "question": "Was Rowan's treatment plan goal met in the week of January 19, 2026, and by how much?", "question_id": "Q-9", "plan_source": "saved", "calls": 3}
+{"at": "2026-09-30T17:48:03.686+00:00", "event": "plan_reused", "question": "Which patients had two consecutive weeks below their treatment plan goal, and does any of them depend on unresolved documentation?", "saved": "37b5b2067c4bb89c__opus__plan-v2.json"}
+{"at": "2026-09-30T17:48:03.743+00:00", "event": "question_answered", "question": "Which patients had two consecutive weeks below their treatment plan goal, and does any of them depend on unresolved documentation?", "question_id": "Q-13", "plan_source": "saved", "calls": 1}
