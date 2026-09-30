@@ -1,0 +1,75 @@
+{
+ "question": "How many visits did Rowan have?",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:14:07.651+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:14:00.712+00:00",
+   "usage": {
+    "wall_seconds": 6.902,
+    "api_seconds": 5.033,
+    "input_tokens": 2,
+    "output_tokens": 495,
+    "cache_creation_input_tokens": 1336,
+    "cache_read_input_tokens": 2883,
+    "cost_usd": 0.0211726,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 495,
+      "cacheReadInputTokens": 2883,
+      "cacheCreationInputTokens": 1336,
+      "webSearchRequests": 0,
+      "costUSD": 0.0211726,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "the episode"
+  },
+  "reading": "\"Visits\" is read as the contacts held with the patient present, counted in the classes the plan counts, over the plan period, because the question gives no period.",
+  "other_readings": [
+   "All encounters on record, including no-shows and cancellations",
+   "Contacts held, whether or not the patient was present",
+   "Counted therapy sessions only"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question gives only the first name \"Rowan\". The only match in the collection is Rowan Mercer (HG-M042). Show the counts under each reading side by side, since \"visits\" is ambiguous."
+ }
+}

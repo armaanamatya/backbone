@@ -1,0 +1,2 @@
+{"at": "2026-09-30T07:03:15.467+00:00", "event": "run_started", "command": "rebuild"}
+{"at": "2026-09-30T07:03:15.514+00:00", "event": "conclusions_rebuilt", "patient": "HG-M042", "claims": 474, "contacts": 26, "conflicts": 3, "findings": 3, "plan_rules": 10, "assessments": 3, "weekly_status": 4}

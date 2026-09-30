@@ -1,0 +1,246 @@
+{
+ "doc_hash": "95debafd3a72e32fd806d7aa4b420b1984f9c565d2af3c0d807269ee71aa8482",
+ "file_name": "medication_review_jan13.txt",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 2,
+ "read_at": "2026-09-29T12:47:58.562+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-29T12:47:42.073+00:00",
+   "usage": {
+    "wall_seconds": 16.092,
+    "api_seconds": 13.345,
+    "input_tokens": 2,
+    "output_tokens": 1852,
+    "cache_creation_input_tokens": 1142,
+    "cache_read_input_tokens": 9541,
+    "cost_usd": 0.048092199999999995,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1852,
+      "cacheReadInputTokens": 9541,
+      "cacheCreationInputTokens": 1142,
+      "webSearchRequests": 0,
+      "costUSD": 0.048092199999999995,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "8a044176-1d12-409d-bbea-166696f05953",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D010",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Prescriber visit",
+    "first_line": 1,
+    "last_line": 17,
+    "author_name": "Elias Brenner",
+    "author_role": "NP",
+    "signature": "signed",
+    "signed_by": "Elias Brenner, NP",
+    "signed_date": "2026-01-13",
+    "signed_time": "10:04",
+    "signature_line": 9,
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-13",
+      "quote": "Encounter HG-E106 | Date 2026-01-13",
+      "line": 6
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-13",
+      "time": "10:04",
+      "quote": "Signed 2026-01-13, 10:04 local",
+      "line": 9
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E106",
+    "appointment_id": null,
+    "service_date": "2026-01-13",
+    "service_as_written": "Prescriber visit",
+    "service_class": "medication_management",
+    "quote": "Harbor Grove Behavioral Health | Prescriber visit",
+    "line": 4
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "09:00",
+    "end": "09:25",
+    "label": "actual",
+    "position": "header",
+    "quote": "Actual visit 09:00–09:25 local; completed, 25 minutes",
+    "line": 7
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "completed",
+    "status_as_written": "completed",
+    "quote": "Actual visit 09:00–09:25 local; completed, 25 minutes",
+    "line": 7
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "attended",
+    "status_as_written": "attended",
+    "quote": "Rowan attended for medication management.",
+    "line": 11
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Rowan attended for medication management.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Elias Brenner",
+    "role": "clinician",
+    "role_as_written": "NP",
+    "presence": "not_stated",
+    "quote": "Clinician: Elias Brenner, NP",
+    "line": 8
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "minutes": 25,
+    "of": "contact_total",
+    "quote": "Actual visit 09:00–09:25 local; completed, 25 minutes",
+    "line": 7
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-13",
+    "speaker": "patient",
+    "topic": "sleep",
+    "summary": "continuing sleep interruption and daytime tiredness",
+    "quote": "Rowan reported continuing sleep interruption and daytime tiredness.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-13",
+    "speaker": "patient",
+    "topic": "mood",
+    "summary": "mood somewhat less heavy on activity days",
+    "quote": "They described mood as somewhat less heavy on days with a planned activity",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-13",
+    "speaker": "patient",
+    "topic": "anxiety",
+    "summary": "concerned about work communication",
+    "quote": "remained concerned about work communication",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-13",
+    "speaker": "patient",
+    "topic": "medication",
+    "summary": "denied urgent medication concern",
+    "quote": "Rowan denied a new medication-related concern requiring urgent intervention.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-13",
+    "speaker": "clinician",
+    "topic": "other",
+    "summary": "attentive, engaged in plan",
+    "quote": "Rowan was attentive, asked questions about the monitoring plan, and could restate the next steps.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-13",
+    "speaker": "clinician",
+    "topic": "mood",
+    "summary": "ongoing depressive and anxiety symptoms with sleep disruption",
+    "quote": "Assessment: ongoing depressive and anxiety symptoms with sleep disruption.",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-13",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "engaged with therapy program",
+    "quote": "Rowan is engaged with the therapy program and intends to continue the scheduled appointments.",
+    "line": 15
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_therapy_provided",
+    "quote": "No separate psychotherapy component was provided or documented.",
+    "line": 17
+   }
+  ]
+ },
+ "reused": false
+}

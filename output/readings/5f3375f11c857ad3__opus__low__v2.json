@@ -1,0 +1,228 @@
+{
+ "doc_hash": "5f3375f11c857ad3e9917ad2eefffffd5ee0412e6ab56885901c1b5d5b2115f9",
+ "file_name": "group_cancellation_notice_jan15.txt",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 2,
+ "read_at": "2026-09-29T12:47:41.720+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-29T12:47:27.120+00:00",
+   "usage": {
+    "wall_seconds": 14.531,
+    "api_seconds": 12.607,
+    "input_tokens": 2,
+    "output_tokens": 1742,
+    "cache_creation_input_tokens": 1016,
+    "cache_read_input_tokens": 9541,
+    "cost_usd": 0.0448842,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1742,
+      "cacheReadInputTokens": 9541,
+      "cacheCreationInputTokens": 1016,
+      "webSearchRequests": 0,
+      "costUSD": 0.0448842,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "8ef25565-9efb-46d5-8a0f-e2da1b1d757d",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D016",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "cancellation_notice",
+    "first_line": 1,
+    "last_line": 16,
+    "signature": "not_stated",
+    "is_copy": false,
+    "author_name": "N. Ellis",
+    "dates": [
+     {
+      "kind": "entered",
+      "date": "2026-01-15",
+      "time": "08:12",
+      "quote": "Notice entered 2026-01-15, 08:12 local by N. Ellis",
+      "line": 7
+     },
+     {
+      "kind": "other",
+      "date": "2026-01-15",
+      "time": "11:35",
+      "quote": "11:35: Cancellation record closed.",
+      "line": 15
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E108",
+    "appointment_id": null,
+    "service_date": "2026-01-15",
+    "service_as_written": "coping skills group",
+    "service_class": "group_therapy",
+    "quote": "The coping skills group scheduled for January 15 from 10:00 to 11:30 is cancelled by the clinic because of staff illness.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "ref": "c2",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-15",
+    "service_as_written": "called the desk",
+    "service_class": "scheduling_contact",
+    "quote": "08:37: Rowan called the desk and acknowledged receiving the notice.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "ref": "c3",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-16",
+    "service_as_written": "family-related appointment",
+    "service_class": "family_therapy",
+    "quote": "Staff confirmed that the family-related appointment on January 16 remained on the schedule",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "ref": "c4",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-15",
+    "service_as_written": "Portal notice",
+    "service_class": "scheduling_contact",
+    "quote": "08:15: Portal notice delivered to Rowan's account.",
+    "line": 11
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c2",
+    "modality": "telephone",
+    "quote": "The telephone contact was limited to confirming the cancellation and upcoming appointment information.",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "modality": "message",
+    "quote": "08:15: Portal notice delivered to Rowan's account.",
+    "line": 11
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "body",
+    "quote": "The coping skills group scheduled for January 15 from 10:00 to 11:30 is cancelled by the clinic because of staff illness.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "what": "other",
+    "start": "08:15",
+    "end": null,
+    "label": "actual",
+    "position": "body",
+    "quote": "08:15: Portal notice delivered to Rowan's account.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "what": "other",
+    "start": "08:37",
+    "end": null,
+    "label": "actual",
+    "position": "body",
+    "quote": "08:37: Rowan called the desk and acknowledged receiving the notice.",
+    "line": 13
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "cancelled_by_clinic",
+    "status_as_written": "cancelled by the clinic",
+    "reason": "staff illness",
+    "quote": "The coping skills group scheduled for January 15 from 10:00 to 11:30 is cancelled by the clinic because of staff illness.",
+    "line": 9
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c2",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "08:37: Rowan called the desk and acknowledged receiving the notice.",
+    "line": 13
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_therapy_provided",
+    "quote": "No group was held and no participants were seen for HG-E108.",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "No replacement group was conducted in the January 15 slot.",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "says": "no_clinical_service",
+    "quote": "The telephone contact was limited to confirming the cancellation and upcoming appointment information.",
+    "line": 15
+   }
+  ]
+ },
+ "reused": false
+}

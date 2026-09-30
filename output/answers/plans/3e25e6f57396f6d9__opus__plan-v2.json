@@ -1,0 +1,72 @@
+{
+ "question": "How many minutes was Rowan in the Jan 27 group?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T07:18:58.806+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:18:51.368+00:00",
+   "usage": {
+    "wall_seconds": 7.372,
+    "api_seconds": 4.764,
+    "input_tokens": 2,
+    "output_tokens": 484,
+    "cache_creation_input_tokens": 1390,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.0213988,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 484,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1390,
+      "webSearchRequests": 0,
+      "costUSD": 0.0213988,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-27",
+   "end": "2026-01-27",
+   "basis": "as asked"
+  },
+  "reading": "The question assumes there was a group contact on 2026-01-27 and asks for its minutes. The date detail shows whether a group session was documented that day, its status, and the minutes each document gives.",
+  "other_readings": [
+   "Minutes attended by the patient versus minutes scheduled or billed, if the documents differ"
+  ],
+  "calls": [
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "Rowan",
+     "date": "2026-01-27"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-27",
+     "end": "2026-01-27"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question gives only the first name \"Rowan\", which matches Rowan Mercer (HG-M042). If the record has no group contact on Jan 27, say so. Don't supply a number."
+ }
+}

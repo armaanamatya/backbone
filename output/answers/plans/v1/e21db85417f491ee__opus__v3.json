@@ -1,0 +1,74 @@
+{
+ "question": "How many sessions did Rowan attend last week?",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:14:14.836+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:14:07.750+00:00",
+   "usage": {
+    "wall_seconds": 7.05,
+    "api_seconds": 4.91,
+    "input_tokens": 2,
+    "output_tokens": 535,
+    "cache_creation_input_tokens": 1339,
+    "cache_read_input_tokens": 2883,
+    "cost_usd": 0.021996599999999998,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 535,
+      "cacheReadInputTokens": 2883,
+      "cacheCreationInputTokens": 1339,
+      "webSearchRequests": 0,
+      "costUSD": 0.021996599999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-26",
+   "end": "2026-01-30",
+   "basis": "last week of the episode"
+  },
+  "reading": "\"Last week\" is taken as the final week of the plan period, not the week before today. \"Sessions attended\" means the therapy contacts the plan counts, held with the patient present.",
+  "other_readings": [
+   "All contacts held with the patient present, including classes the plan does not count",
+   "All encounters documented in the week"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-26",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-26",
+     "end": "2026-01-30"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question names only \"Rowan\". I matched this to Rowan Mercer (HG-M042), the only patient in the collection. \"Last week\" is read against the record's own dates, not today's date."
+ }
+}

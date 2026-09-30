@@ -1,0 +1,87 @@
+{
+ "question": "Summarize the documented symptom course during the episode and the reason for the additional individual contact on January 19. Which symptom assessments are distinct, and what conclusions about progress can and cannot be supported?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T07:18:36.716+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:18:27.392+00:00",
+   "usage": {
+    "wall_seconds": 9.286,
+    "api_seconds": 7.566,
+    "input_tokens": 2,
+    "output_tokens": 777,
+    "cache_creation_input_tokens": 1436,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.0276268,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 777,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1436,
+      "webSearchRequests": 0,
+      "costUSD": 0.0276268,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": null,
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "the episode"
+  },
+  "reading": "The question names no patient. The only patient in the collection is HG-M042, Rowan Mercer, so the calls use that record, but the name is not given as the question's patient. \"Symptom course\" means the mood, anxiety, sleep, safety, functioning and progress topics across the episode. The \"additional individual contact on January 19\" is taken to mean an individual contact on 2026-01-19, and its reason comes from the notes and that date's detail. \"Distinct\" assessments are the unique questionnaire results, leaving out copies and mentions.",
+  "other_readings": [],
+  "calls": [
+   {
+    "function": "observations",
+    "arguments": {
+     "patient": "HG-M042",
+     "topic": "mood,anxiety,sleep,safety,functioning,progress,reason_for_contact",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "HG-M042",
+     "date": "2026-01-19"
+    }
+   },
+   {
+    "function": "assessments",
+    "arguments": {
+     "patient": "HG-M042",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "HG-M042",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question names no patient. The answer should say it assumes the only patient in the collection, HG-M042 (Rowan Mercer). The date_detail call checks whether an additional individual contact on January 19 is actually documented, since the question takes that for granted. On progress, the answer should keep what the distinct scores and quoted notes support apart from what they cannot, such as whether the change is significant or caused by treatment, when there are few distinct scores or duplicates."
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "question": "How many group authorization units does Rowan have left?",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:14:22.177+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:14:14.879+00:00",
+   "usage": {
+    "wall_seconds": 7.262,
+    "api_seconds": 5.34,
+    "input_tokens": 2,
+    "output_tokens": 381,
+    "cache_creation_input_tokens": 1341,
+    "cache_read_input_tokens": 2883,
+    "cost_usd": 0.0189326,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 381,
+      "cacheReadInputTokens": 2883,
+      "cacheCreationInputTokens": 1341,
+      "webSearchRequests": 0,
+      "costUSD": 0.0189326,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": null,
+   "end": null,
+   "basis": "not stated"
+  },
+  "reading": "The question asks for the group authorization units still left, which is a balance kept in an authorization document. None of the functions reports authorized units or what remains of them.",
+  "other_readings": [
+   "Group sessions delivered could be counted with care_delivered grouped by class, but that count would not give the remaining authorized units."
+  ],
+  "calls": [],
+  "no_function_fits": true,
+  "document_kind": "authorization",
+  "notes": "The question gives only the first name Rowan. The collection has one Rowan, Rowan Mercer (HG-M042). The authorization balance is not part of the saved abstraction."
+ }
+}

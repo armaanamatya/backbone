@@ -1,0 +1,19 @@
+{"at": "2026-09-30T07:16:34.978+00:00", "event": "run_started", "command": "ask"}
+{"at": "2026-09-30T07:16:34.992+00:00", "event": "plan_reused", "question": "How many sessions did Jordan Blake attend?", "saved": "af22e8ccf262e544__opus__v3.json"}
+{"at": "2026-09-30T07:16:34.994+00:00", "event": "question_answered", "question": "How many sessions did Jordan Blake attend?", "question_id": "P-1", "plan_source": "saved", "calls": 0}
+{"at": "2026-09-30T07:16:35.001+00:00", "event": "plan_reused", "question": "How many sessions did Casey Mercer attend?", "saved": "37b8aec34060061a__opus__v3.json"}
+{"at": "2026-09-30T07:16:35.006+00:00", "event": "question_answered", "question": "How many sessions did Casey Mercer attend?", "question_id": "P-2", "plan_source": "saved", "calls": 0}
+{"at": "2026-09-30T07:16:35.008+00:00", "event": "plan_reused", "question": "How many minutes was Rowan in the Jan 27 group?", "saved": "3e25e6f57396f6d9__opus__v3.json"}
+{"at": "2026-09-30T07:16:35.016+00:00", "event": "question_answered", "question": "How many minutes was Rowan in the Jan 27 group?", "question_id": "P-3", "plan_source": "saved", "calls": 1}
+{"at": "2026-09-30T07:16:35.021+00:00", "event": "plan_reused", "question": "What was Rowan's PHQ-9 score on Jan 26?", "saved": "5d14317f192088cb__opus__v3.json"}
+{"at": "2026-09-30T07:16:35.042+00:00", "event": "question_answered", "question": "What was Rowan's PHQ-9 score on Jan 26?", "question_id": "P-4", "plan_source": "saved", "calls": 3}
+{"at": "2026-09-30T07:16:35.046+00:00", "event": "plan_reused", "question": "How did Rowan's care change after the treatment plan was changed?", "saved": "c69cb9f7a0463762__opus__v3.json"}
+{"at": "2026-09-30T07:16:35.168+00:00", "event": "question_answered", "question": "How did Rowan's care change after the treatment plan was changed?", "question_id": "P-5", "plan_source": "saved", "calls": 4}
+{"at": "2026-09-30T07:16:35.174+00:00", "event": "plan_reused", "question": "What care did Rowan receive on Jan 24?", "saved": "5edeea133dcfef32__opus__v3.json"}
+{"at": "2026-09-30T07:16:35.187+00:00", "event": "question_answered", "question": "What care did Rowan receive on Jan 24?", "question_id": "P-6", "plan_source": "saved", "calls": 1}
+{"at": "2026-09-30T07:16:35.190+00:00", "event": "plan_reused", "question": "How many visits did Rowan have?", "saved": "f7d9dfb715a52a04__opus__v3.json"}
+{"at": "2026-09-30T07:16:35.237+00:00", "event": "question_answered", "question": "How many visits did Rowan have?", "question_id": "P-7", "plan_source": "saved", "calls": 2}
+{"at": "2026-09-30T07:16:35.240+00:00", "event": "plan_reused", "question": "How many sessions did Rowan attend last week?", "saved": "e21db85417f491ee__opus__v3.json"}
+{"at": "2026-09-30T07:16:35.254+00:00", "event": "question_answered", "question": "How many sessions did Rowan attend last week?", "question_id": "P-8", "plan_source": "saved", "calls": 2}
+{"at": "2026-09-30T07:16:35.257+00:00", "event": "plan_reused", "question": "How many group authorization units does Rowan have left?", "saved": "59762435c5bdebbd__opus__v3.json"}
+{"at": "2026-09-30T07:16:35.259+00:00", "event": "question_answered", "question": "How many group authorization units does Rowan have left?", "question_id": "P-9", "plan_source": "saved", "calls": 0}

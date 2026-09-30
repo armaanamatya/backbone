@@ -1,0 +1,210 @@
+{
+ "doc_hash": "514ca20809f682607e91b924c6cef0bb22f43a3d12cedbd23ea5fa362910cce5",
+ "file_name": "BH-D102_original_attendance_2026-01-19.txt",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-29T13:14:58.991+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-29T13:14:45.524+00:00",
+   "usage": {
+    "wall_seconds": 13.369,
+    "api_seconds": 10.885,
+    "input_tokens": 2,
+    "output_tokens": 1537,
+    "cache_creation_input_tokens": 1072,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.0412874,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1537,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1072,
+      "webSearchRequests": 0,
+      "costUSD": 0.0412874,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "d2565e73-a7c7-4d65-88f7-ccaf95cfdd83",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D102",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "attendance_record",
+    "kind_as_written": "Patient-specific attendance roster extract",
+    "first_line": 1,
+    "last_line": 19,
+    "author_name": "Leah Chen",
+    "author_role": "LCSW",
+    "signature": "signed",
+    "signed_by": "Leah Chen, LCSW",
+    "signed_date": "2026-01-19",
+    "signed_time": "12:14",
+    "signature_line": 18,
+    "status_as_written": "Final",
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-19",
+      "quote": "Service date: January 19, 2026 | Group encounter: HG-E110",
+      "line": 4
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-19",
+      "time": "12:14",
+      "quote": "Electronically signed: Leah Chen, LCSW | January 19, 2026, 12:14",
+      "line": 18
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E110",
+    "appointment_id": null,
+    "service_date": "2026-01-19",
+    "service_as_written": "Group encounter",
+    "service_class": "group_therapy",
+    "quote": "Service date: January 19, 2026 | Group encounter: HG-E110",
+    "line": 4
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "modality": "in_person",
+    "quote": "Location: Outpatient skills room B",
+    "line": 6
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "header",
+    "quote": "Scheduled opening: 10:00 | Scheduled closing: 11:30",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_arrival",
+    "start": "10:00",
+    "end": null,
+    "label": "actual",
+    "position": "header",
+    "quote": "Patient arrival: 10:00",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_departure",
+    "start": null,
+    "end": "11:30",
+    "label": "actual",
+    "position": "header",
+    "quote": "Patient departure: 11:30",
+    "line": 9
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "attended",
+    "status_as_written": "Attended",
+    "quote": "Status: Attended",
+    "line": 9,
+    "entry_signed_by": "Leah Chen, LCSW",
+    "entry_signed_date": "2026-01-19",
+    "entry_signed_time": "12:14"
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Rowan was present for the opening check-in.",
+    "line": 14
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "patient",
+    "topic": "anxiety",
+    "summary": "anxiety about reconnecting with work",
+    "quote": "The patient identified anxiety about reconnecting with work and accepted an exercise handout.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "staff",
+    "topic": "functioning",
+    "summary": "requested additional help; access to individual clinician arranged",
+    "quote": "Staff arranged access to the individual clinician after Rowan requested additional help.",
+    "line": 14
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "This roster is the original signed attendance entry for the listed service date.",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "Group topics, exercises, and the scheduled break are recorded in the separate group clinical record.",
+    "line": 12
+   }
+  ]
+ },
+ "reused": false
+}

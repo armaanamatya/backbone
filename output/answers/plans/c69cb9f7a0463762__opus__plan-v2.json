@@ -1,0 +1,84 @@
+{
+ "question": "How did Rowan's care change after the treatment plan was changed?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T07:19:18.096+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:19:05.308+00:00",
+   "usage": {
+    "wall_seconds": 12.747,
+    "api_seconds": 11.066,
+    "input_tokens": 2,
+    "output_tokens": 709,
+    "cache_creation_input_tokens": 1393,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.0259228,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 709,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1393,
+      "webSearchRequests": 0,
+      "costUSD": 0.0259228,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 61,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "the episode"
+  },
+  "reading": "The question assumes the treatment plan was changed at some point during the episode. It asks how the care delivered differed before and after that change. \"Care\" means the therapy sessions, minutes and days the plan counts, shown week by week.",
+  "other_readings": [
+   "Care could also mean every contact held, including classes the plan does not count, broken down by class.",
+   "Change in care could mean the change in the patient's condition, as shown by clinical observations and questionnaire scores."
+  ],
+  "calls": [
+   {
+    "function": "goal_status",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "week"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "class"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": "plan",
+  "notes": "The question assumes a plan change, and the record may not hold one. goal_status shows whether a change exists and on what date. If there is no change, the answer should say so. If there is one, the weekly breakdown should be split at the change date to compare before and after. No change date was invented, so compare_periods was not called."
+ }
+}

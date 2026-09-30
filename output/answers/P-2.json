@@ -1,0 +1,99 @@
+{
+ "question_id": "P-2",
+ "question": "How many sessions did Casey Mercer attend?",
+ "plan": {
+  "patient_named": "Casey Mercer",
+  "period": {
+   "start": null,
+   "end": null,
+   "basis": "not stated"
+  },
+  "reading": "\"Sessions attended\" is read as contacts held with the patient present, in the classes the plan counts. No period is given, which would normally mean the whole episode. Casey Mercer is not in the collection, so there is no plan period to use.",
+  "other_readings": [
+   "All encounters held, including those without the patient present",
+   "The question may mean Rowan Mercer (HG-M042), the only Mercer in the collection, over the plan period 2026-01-05 to 2026-01-30"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Casey Mercer"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "Casey Mercer is not in the patient collection. The only Mercer is Rowan Mercer (HG-M042). The answer should say no record was found for Casey Mercer and should not swap in Rowan Mercer's data without the user confirming that is who they meant."
+ },
+ "plan_source": "saved",
+ "plan_attempts": 1,
+ "results": [],
+ "parts": {
+  "1. the question as understood": [
+   "Patient as asked: Casey Mercer.",
+   "Reading: \"Sessions attended\" is read as contacts held with the patient present, in the classes the plan counts. No period is given, which would normally mean the whole episode. Casey Mercer is not in the collection, so there is no plan period to use.",
+   "Another reading: All encounters held, including those without the patient present",
+   "Another reading: The question may mean Rowan Mercer (HG-M042), the only Mercer in the collection, over the plan period 2026-01-05 to 2026-01-30",
+   "Note: Casey Mercer is not in the patient collection. The only Mercer is Rowan Mercer (HG-M042). The answer should say no record was found for Casey Mercer and should not swap in Rowan Mercer's data without the user confirming that is who they meant."
+  ],
+  "2. the answer": [
+   "Casey Mercer appears in the record as a participant, not as a patient, and has no record of their own here.",
+   "They took part in contacts on: Jan 9 (family therapy, as family or partner), Jan 16 (collateral contact, as family or partner), Jan 30 (family therapy, as family or partner)."
+  ],
+  "3. figures": [
+   "None."
+  ],
+  "4. what contributed": [
+   "Nothing."
+  ],
+  "5. what was excluded": [
+   "Nothing."
+  ],
+  "6. not settled": [
+   "Nothing."
+  ],
+  "7. assumptions": [
+   "A patient is matched by name or record number as written. No near match is used."
+  ],
+  "8. documents not read": [
+   "Not checked, because no figure was worked out."
+  ],
+  "in short": [
+   "Casey Mercer appears in the record as a participant, not as a patient, and has no record of their own here."
+  ],
+  "9. version": [
+   "Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.",
+   "Reading: model opus, effort low, prompt version 3.",
+   "Plan: model opus, plan prompt version 2, made 2026-09-30T07:18:51.354+00:00 (saved plan reused).",
+   "Answered: 2026-09-30T17:41:45+00:00."
+  ]
+ },
+ "patient": {
+  "status": "participant",
+  "name": "Casey Mercer",
+  "appearances": [
+   {
+    "contact_id": "HG-M042/HG-E104",
+    "patient": "HG-M042",
+    "date": "2026-01-09",
+    "class": "family_therapy",
+    "role": "family_or_partner"
+   },
+   {
+    "contact_id": "HG-M042/HG-E109",
+    "patient": "HG-M042",
+    "date": "2026-01-16",
+    "class": "collateral_contact",
+    "role": "family_or_partner"
+   },
+   {
+    "contact_id": "HG-M042/HG-E119",
+    "patient": "HG-M042",
+    "date": "2026-01-30",
+    "class": "family_therapy",
+    "role": "family_or_partner"
+   }
+  ]
+ },
+ "text": "# P-2\n\n> How many sessions did Casey Mercer attend?\n\n**In short.** Casey Mercer appears in the record as a participant, not as a patient, and has no record of their own here.\n\n## 1. The question as understood\n\nPatient as asked: Casey Mercer.\nReading: \"Sessions attended\" is read as contacts held with the patient present, in the classes the plan counts. No period is given, which would normally mean the whole episode. Casey Mercer is not in the collection, so there is no plan period to use.\nAnother reading: All encounters held, including those without the patient present\nAnother reading: The question may mean Rowan Mercer (HG-M042), the only Mercer in the collection, over the plan period 2026-01-05 to 2026-01-30\nNote: Casey Mercer is not in the patient collection. The only Mercer is Rowan Mercer (HG-M042). The answer should say no record was found for Casey Mercer and should not swap in Rowan Mercer's data without the user confirming that is who they meant.\n\n## 2. The answer\n\nCasey Mercer appears in the record as a participant, not as a patient, and has no record of their own here.\nThey took part in contacts on: Jan 9 (family therapy, as family or partner), Jan 16 (collateral contact, as family or partner), Jan 30 (family therapy, as family or partner).\n\n## 3. Figures\n\nNone.\n\n## 4. What contributed\n\nNothing.\n\n## 5. What was excluded\n\nNothing.\n\n## 6. Not settled\n\nNothing.\n\n## 7. Assumptions\n\nA patient is matched by name or record number as written. No near match is used.\n\n## 8. Documents not read\n\nNot checked, because no figure was worked out.\n\n## 9. Version\n\nAbstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.\nReading: model opus, effort low, prompt version 3.\nPlan: model opus, plan prompt version 2, made 2026-09-30T07:18:51.354+00:00 (saved plan reused).\nAnswered: 2026-09-30T17:41:45+00:00.\n"
+}

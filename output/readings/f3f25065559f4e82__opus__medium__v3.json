@@ -1,0 +1,263 @@
+{
+ "doc_hash": "f3f25065559f4e82b110b5c284df5c2c4f81c55c950721e7bd6a9c23a91241d5",
+ "file_name": "BH-D104_resent_roster_received_2026-01-26.txt",
+ "model": "opus",
+ "effort": "medium",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T08:36:09.865+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T08:35:43.225+00:00",
+   "usage": {
+    "wall_seconds": 26.002,
+    "api_seconds": 19.818,
+    "input_tokens": 2,
+    "output_tokens": 2503,
+    "cache_creation_input_tokens": 1093,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.0607754,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2503,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1093,
+      "webSearchRequests": 0,
+      "costUSD": 0.0607754,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 670,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "ca65582e-f06d-4e03-9244-14aaafb36cc5",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D104",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "cover_sheet",
+    "kind_as_written": "Records inbox cover sheet",
+    "first_line": 1,
+    "last_line": 9,
+    "author_name": "Outpatient group records queue",
+    "signature": "not_stated",
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "received",
+      "date": "2026-01-26",
+      "time": "16:22",
+      "quote": "Received: January 26, 2026, 16:22",
+      "line": 4
+     }
+    ]
+   },
+   {
+    "id": 2,
+    "kind": "attendance_record",
+    "kind_as_written": "ATTACHED ROSTER COPY",
+    "first_line": 10,
+    "last_line": 20,
+    "signature": "unsigned",
+    "is_copy": true,
+    "status_as_written": "Final, signed",
+    "original_signed_by": "Leah Chen, LCSW",
+    "original_signed_date": "2026-01-19",
+    "original_signed_time": "12:14",
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-19",
+      "quote": "Service date: January 19, 2026",
+      "line": 11
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-19",
+      "time": "12:14",
+      "quote": "Original signature: Leah Chen, LCSW | January 19, 2026, 12:14",
+      "line": 15
+     },
+     {
+      "kind": "entered",
+      "date": "2026-01-26",
+      "time": "16:31",
+      "quote": "indexed by Ana Reed, records assistant, January 26, 2026, 16:31",
+      "line": 20
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "ref": "c1",
+    "section": 2,
+    "encounter_id": "HG-E110",
+    "appointment_id": null,
+    "service_date": "2026-01-19",
+    "service_as_written": "Group encounter",
+    "service_class": "group_therapy",
+    "quote": "Service date: January 19, 2026 | Group encounter: HG-E110",
+    "line": 11
+   }
+  ],
+  "modalities": [
+   {
+    "section": 2,
+    "contact": "c1",
+    "modality": "in_person",
+    "quote": "Location: Outpatient skills room B",
+    "line": 12
+   }
+  ],
+  "times": [
+   {
+    "section": 2,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "header",
+    "quote": "Scheduled opening: 10:00 | Scheduled closing: 11:30",
+    "line": 13
+   },
+   {
+    "section": 2,
+    "contact": "c1",
+    "what": "patient_arrival",
+    "start": "10:00",
+    "end": null,
+    "label": "actual",
+    "position": "header",
+    "quote": "Patient arrival: 10:00",
+    "line": 14
+   },
+   {
+    "section": 2,
+    "contact": "c1",
+    "what": "patient_departure",
+    "start": null,
+    "end": "11:30",
+    "label": "actual",
+    "position": "header",
+    "quote": "Patient departure: 11:30",
+    "line": 14
+   }
+  ],
+  "attendance": [
+   {
+    "section": 2,
+    "contact": "c1",
+    "status": "attended",
+    "status_as_written": "Attended",
+    "quote": "Status: Attended",
+    "line": 14
+   }
+  ],
+  "participants": [
+   {
+    "section": 2,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Rowan attended the opening check-in",
+    "line": 18
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 2,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Attended opening check-in",
+    "quote": "Rowan attended the opening check-in",
+    "line": 18
+   },
+   {
+    "section": 2,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Accepted exercise handout",
+    "quote": "accepted the exercise handout",
+    "line": 18
+   },
+   {
+    "section": 2,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Requested additional help from individual clinician",
+    "quote": "requested additional help from the individual clinician",
+    "line": 18
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "says": "is_copy_or_resend",
+    "quote": "The attached attendance sheet was resent following a request for the original group roster.",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "No correction sheet was included in this transmission.",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "The receipt date is the inbox processing date.",
+    "line": 8
+   },
+   {
+    "section": 2,
+    "contact": "c1",
+    "says": "is_copy_or_resend",
+    "quote": "This is a retransmission of the January 19 roster for HG-E110.",
+    "line": 20
+   },
+   {
+    "section": 2,
+    "says": "no_new_signature",
+    "quote": "The received copy contains no new clinician signature",
+    "line": 20
+   },
+   {
+    "section": 2,
+    "says": "not_a_visit",
+    "quote": "records no additional visit",
+    "line": 20
+   }
+  ]
+ },
+ "reused": false
+}

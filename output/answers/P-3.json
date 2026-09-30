@@ -1,0 +1,805 @@
+{
+ "question_id": "P-3",
+ "question": "How many minutes was Rowan in the Jan 27 group?",
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-27",
+   "end": "2026-01-27",
+   "basis": "as asked"
+  },
+  "reading": "The question assumes there was a group contact on 2026-01-27 and asks for its minutes. The date detail shows whether a group session was documented that day, its status, and the minutes each document gives.",
+  "other_readings": [
+   "Minutes attended by the patient versus minutes scheduled or billed, if the documents differ"
+  ],
+  "calls": [
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "Rowan",
+     "date": "2026-01-27"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-27",
+     "end": "2026-01-27"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question gives only the first name \"Rowan\", which matches Rowan Mercer (HG-M042). If the record has no group contact on Jan 27, say so. Don't supply a number."
+ },
+ "plan_source": "saved",
+ "plan_attempts": 1,
+ "results": [
+  {
+   "function": "date_detail",
+   "arguments": {
+    "patient": "HG-M042",
+    "date": "2026-01-27"
+   },
+   "date": "2026-01-27",
+   "coverage": "documented",
+   "covered_by_schedule": [],
+   "documents_dated": [
+    {
+     "document": "BH-D112",
+     "kind": "created",
+     "quote": "Creation time: January 27, 2026, 09:45",
+     "line": 8
+    },
+    {
+     "document": "BH-D112",
+     "kind": "posted",
+     "quote": "Service date: January 27, 2026 | Posting date: January 27, 2026, 18:06",
+     "line": 20
+    }
+   ],
+   "contacts": [
+    {
+     "sources": [
+      "805b2c69c7fa:005"
+     ],
+     "copies": [],
+     "removed_rows": [],
+     "contact_id": "HG-M042/2026-01-27/scheduling_contact",
+     "encounter": null,
+     "date": "2026-01-27",
+     "class": "scheduling_contact",
+     "status": "recorded",
+     "partial": false,
+     "present": [],
+     "removed": [],
+     "minutes": [],
+     "minutes_without_patient": null,
+     "clinicians": [],
+     "modality": "message",
+     "counts": false,
+     "why_not": "an administrative record, not an encounter",
+     "notes": [],
+     "documents": [
+      "BH-D108"
+     ],
+     "documents_say": [
+      {
+       "document": "BH-D108",
+       "claims": [
+        {
+         "claim": "805b2c69c7fa:005",
+         "type": "contact",
+         "value": {
+          "ref": "c5"
+         },
+         "label": null,
+         "line": 16,
+         "quote": "An outreach message inviting the patient to contact scheduling was left after the group",
+         "kind": "attendance_record",
+         "signed": "not_stated",
+         "copy": false
+        },
+        {
+         "claim": "805b2c69c7fa:006",
+         "type": "modality",
+         "value": {
+          "modality": "message"
+         },
+         "label": null,
+         "line": 16,
+         "quote": "An outreach message inviting the patient to contact scheduling was left after the group",
+         "kind": "attendance_record",
+         "signed": "not_stated",
+         "copy": false
+        },
+        {
+         "claim": "805b2c69c7fa:028",
+         "type": "statement",
+         "value": {
+          "says": "no_clinical_service"
+         },
+         "label": null,
+         "line": 16,
+         "quote": "no clinical discussion occurred",
+         "kind": "attendance_record",
+         "signed": "not_stated",
+         "copy": false
+        }
+       ]
+      }
+     ],
+     "conflicts": [],
+     "findings": [],
+     "record_kind": "administrative"
+    },
+    {
+     "sources": [
+      "805b2c69c7fa:002",
+      "805b2c69c7fa:018",
+      "805b2c69c7fa:019",
+      "b4390ed6b672:001",
+      "b4390ed6b672:003",
+      "b4390ed6b672:006"
+     ],
+     "copies": [],
+     "removed_rows": [],
+     "contact_id": "HG-M042/HG-E116",
+     "encounter": "HG-E116",
+     "date": "2026-01-27",
+     "class": "group_therapy",
+     "status": "no_show",
+     "partial": false,
+     "present": [],
+     "removed": [],
+     "minutes": [],
+     "minutes_without_patient": null,
+     "clinicians": [],
+     "modality": null,
+     "counts": false,
+     "why_not": "no-show",
+     "notes": [],
+     "documents": [
+      "BH-D108",
+      "BH-D112"
+     ],
+     "documents_say": [
+      {
+       "document": "BH-D108",
+       "claims": [
+        {
+         "claim": "805b2c69c7fa:002",
+         "type": "contact",
+         "value": {
+          "ref": "c2"
+         },
+         "label": null,
+         "line": 10,
+         "quote": "January 27 | HG-E116 | Skills group",
+         "kind": "attendance_record",
+         "signed": "not_stated",
+         "copy": false
+        },
+        {
+         "claim": "805b2c69c7fa:011",
+         "type": "time",
+         "value": {
+          "end": "11:30",
+          "label": "scheduled",
+          "position": "table",
+          "start": "10:00",
+          "what": "contact_interval"
+         },
+         "label": "scheduled",
+         "line": 10,
+         "quote": "10:00–11:30",
+         "kind": "attendance_record",
+         "signed": "not_stated",
+         "copy": false
+        },
+        {
+         "claim": "805b2c69c7fa:018",
+         "type": "attendance",
+         "value": {
+          "status": "no_show",
+          "status_as_written": "No show; patient did not attend"
+         },
+         "label": null,
+         "line": 10,
+         "quote": "No show; patient did not attend",
+         "kind": "attendance_record",
+         "signed": "not_stated",
+         "copy": false
+        },
+        {
+         "claim": "805b2c69c7fa:019",
+         "type": "attendance",
+         "value": {
+          "entry_signed_by": "Leah Chen, LCSW",
+          "entry_signed_date": "2026-01-27",
+          "entry_signed_time": "11:54",
+          "status": "absent",
+          "status_as_written": "absent for the entire group"
+         },
+         "label": null,
+         "line": 16,
+         "quote": "Final roster confirms Rowan was absent for the entire group.",
+         "kind": "attendance_record",
+         "signed": "not_stated",
+         "copy": false
+        },
+        {
+         "claim": "805b2c69c7fa:025",
+         "type": "participant",
+         "value": {
+          "name": "Rowan Mercer",
+          "presence": "absent",
+          "role": "patient"
+         },
+         "label": null,
+         "line": 16,
+         "quote": "Final roster confirms Rowan was absent for the entire group.",
+         "kind": "attendance_record",
+         "signed": "not_stated",
+         "copy": false
+        },
+        {
+         "claim": "805b2c69c7fa:027",
+         "type": "statement",
+         "value": {
+          "says": "no_patient_contact"
+         },
+         "label": null,
+         "line": 16,
+         "quote": "No patient treatment contact occurred.",
+         "kind": "attendance_record",
+         "signed": "not_stated",
+         "copy": false
+        }
+       ]
+      },
+      {
+       "document": "BH-D112",
+       "claims": [
+        {
+         "claim": "b4390ed6b672:001",
+         "type": "contact",
+         "value": {
+          "ref": "c1"
+         },
+         "label": null,
+         "line": 10,
+         "quote": "Scheduled service: Skills group, 10:00–11:30",
+         "kind": "draft_note",
+         "signed": "unsigned",
+         "copy": false
+        },
+        {
+         "claim": "b4390ed6b672:002",
+         "type": "time",
+         "value": {
+          "end": "11:30",
+          "label": "scheduled",
+          "position": "header",
+          "start": "10:00",
+          "what": "contact_interval"
+         },
+         "label": "scheduled",
+         "line": 10,
+         "quote": "Scheduled service: Skills group, 10:00–11:30",
+         "kind": "draft_note",
+         "signed": "unsigned",
+         "copy": false
+        },
+        {
+         "claim": "b4390ed6b672:003",
+         "type": "attendance",
+         "value": {
+          "status": "attended",
+          "status_as_written": "Patient attended the full session"
+         },
+         "label": null,
+         "line": 11,
+         "quote": "Template attendance text: Patient attended the full session and participated in the skills discussion.",
+         "kind": "draft_note",
+         "signed": "unsigned",
+         "copy": false
+        },
+        {
+         "claim": "b4390ed6b672:004",
+         "type": "participant",
+         "value": {
+          "name": "Rowan Mercer",
+          "presence": "present",
+          "role": "patient"
+         },
+         "label": null,
+         "line": 11,
+         "quote": "Template attendance text: Patient attended the full session and participated in the skills discussion.",
+         "kind": "draft_note",
+         "signed": "unsigned",
+         "copy": false
+        },
+        {
+         "claim": "b4390ed6b672:005",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-27",
+          "speaker": "clinician",
+          "summary": "Continue skills group (template)",
+          "topic": "progress"
+         },
+         "label": null,
+         "line": 12,
+         "quote": "Template plan text: Continue outpatient skills group according to treatment plan.",
+         "kind": "draft_note",
+         "signed": "unsigned",
+         "copy": false
+        },
+        {
+         "claim": "b4390ed6b672:006",
+         "type": "charge",
+         "value": {
+          "charge_id": "CH-116",
+          "description": "Group psychotherapy",
+          "posted_date": "2026-01-27",
+          "posted_time": "18:06",
+          "quantity": 1,
+          "status_as_written": "Posted",
+          "unit_as_written": "group session"
+         },
+         "label": null,
+         "line": 19,
+         "quote": "Charge ID: CH-116 | Encounter: HG-E116",
+         "kind": "billing_extract",
+         "signed": "not_stated",
+         "copy": false
+        },
+        {
+         "claim": "b4390ed6b672:007",
+         "type": "statement",
+         "value": {
+          "says": "is_draft_or_unsigned"
+         },
+         "label": null,
+         "line": 9,
+         "quote": "Status: DRAFT — UNSIGNED — system populated from scheduled group template",
+         "kind": "draft_note",
+         "signed": "unsigned",
+         "copy": false
+        },
+        {
+         "claim": "b4390ed6b672:008",
+         "type": "statement",
+         "value": {
+          "says": "made_before_the_service"
+         },
+         "label": null,
+         "line": 16,
+         "quote": "It was generated from the appointment template before the scheduled group.",
+         "kind": "draft_note",
+         "signed": "unsigned",
+         "copy": false
+        },
+        {
+         "claim": "b4390ed6b672:009",
+         "type": "statement",
+         "value": {
+          "says": "is_draft_or_unsigned"
+         },
+         "label": null,
+         "line": 16,
+         "quote": "No clinician attestation or finalized patient-specific narrative appears in this draft.",
+         "kind": "draft_note",
+         "signed": "unsigned",
+         "copy": false
+        }
+       ]
+      }
+     ],
+     "conflicts": [
+      {
+       "conflict_id": "HG-M042/HG-E116:attendance",
+       "patient_key": "HG-M042",
+       "contact_id": "HG-M042/HG-E116",
+       "field": "attendance",
+       "alternatives": [
+        {
+         "claims": [
+          "b4390ed6b672:003",
+          "b4390ed6b672:004"
+         ],
+         "documents": [
+          "BH-D112"
+         ],
+         "kinds": [
+          "draft_note"
+         ],
+         "value": "attended"
+        },
+        {
+         "claims": [
+          "805b2c69c7fa:018",
+          "805b2c69c7fa:019",
+          "805b2c69c7fa:025",
+          "805b2c69c7fa:027"
+         ],
+         "documents": [
+          "BH-D108"
+         ],
+         "kinds": [
+          "attendance_record"
+         ],
+         "value": "did not attend"
+        }
+       ],
+       "status": "settled",
+       "rule": "10",
+       "outcome": "did not attend",
+       "would_settle": null
+      }
+     ],
+     "findings": [
+      {
+       "finding_id": "HG-M042/HG-E116:charge:CH-116",
+       "patient_key": "HG-M042",
+       "kind": "charge_without_attendance",
+       "contact_id": "HG-M042/HG-E116",
+       "detail": "A charge (CH-116, Group psychotherapy) is posted for a contact whose status is no show. This is an inconsistency between documentation and billing. The record does not show whether the charge was later reviewed or reversed. It is not a finding of improper billing.",
+       "claims": [
+        "b4390ed6b672:006",
+        "805b2c69c7fa:018",
+        "805b2c69c7fa:019",
+        "805b2c69c7fa:025",
+        "805b2c69c7fa:027"
+       ]
+      },
+      {
+       "finding_id": "HG-M042/HG-E116:draft:b4390ed6b672:008",
+       "patient_key": "HG-M042",
+       "kind": "draft_made_before_the_service",
+       "contact_id": "HG-M042/HG-E116",
+       "detail": "A draft note for this contact was made before the service it describes.",
+       "claims": [
+        "b4390ed6b672:008"
+       ]
+      }
+     ],
+     "record_kind": "encounter"
+    }
+   ],
+   "counts": {
+    "contacts": 1,
+    "therapy_contacts": 0,
+    "administrative_records": 1
+   },
+   "totals": [
+    {
+     "choices": {},
+     "sessions": 0,
+     "contacts": [],
+     "days": 0,
+     "dates": [],
+     "minutes": 0,
+     "hours": 0.0,
+     "minutes_unknown_for": [],
+     "by_class": {}
+    }
+   ],
+   "calculation": [
+    " = 0"
+   ],
+   "sources": [
+    {
+     "claim": "805b2c69c7fa:002",
+     "type": "contact",
+     "document": "BH-D108",
+     "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+     "line": 10,
+     "quote": "January 27 | HG-E116 | Skills group",
+     "verified": true
+    },
+    {
+     "claim": "805b2c69c7fa:005",
+     "type": "contact",
+     "document": "BH-D108",
+     "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+     "line": 16,
+     "quote": "An outreach message inviting the patient to contact scheduling was left after the group",
+     "verified": true
+    },
+    {
+     "claim": "805b2c69c7fa:018",
+     "type": "attendance",
+     "document": "BH-D108",
+     "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+     "line": 10,
+     "quote": "No show; patient did not attend",
+     "verified": true
+    },
+    {
+     "claim": "805b2c69c7fa:019",
+     "type": "attendance",
+     "document": "BH-D108",
+     "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+     "line": 16,
+     "quote": "Final roster confirms Rowan was absent for the entire group.",
+     "verified": true
+    },
+    {
+     "claim": "b4390ed6b672:001",
+     "type": "contact",
+     "document": "BH-D112",
+     "file": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+     "line": 10,
+     "quote": "Scheduled service: Skills group, 10:00–11:30",
+     "verified": true
+    },
+    {
+     "claim": "b4390ed6b672:003",
+     "type": "attendance",
+     "document": "BH-D112",
+     "file": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+     "line": 11,
+     "quote": "Template attendance text: Patient attended the full session and participated in the skills discussion.",
+     "verified": true
+    },
+    {
+     "claim": "b4390ed6b672:006",
+     "type": "charge",
+     "document": "BH-D112",
+     "file": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+     "line": 19,
+     "quote": "Charge ID: CH-116 | Encounter: HG-E116",
+     "verified": true
+    }
+   ],
+   "conflicts": [],
+   "not_read": []
+  },
+  {
+   "function": "conflicts_and_findings",
+   "arguments": {
+    "patient": "HG-M042",
+    "start": "2026-01-27",
+    "end": "2026-01-27"
+   },
+   "open": [],
+   "settled": [
+    {
+     "conflict_id": "HG-M042/HG-E116:attendance",
+     "patient_key": "HG-M042",
+     "contact_id": "HG-M042/HG-E116",
+     "field": "attendance",
+     "alternatives": [
+      {
+       "claims": [
+        "b4390ed6b672:003",
+        "b4390ed6b672:004"
+       ],
+       "documents": [
+        "BH-D112"
+       ],
+       "kinds": [
+        "draft_note"
+       ],
+       "value": "attended"
+      },
+      {
+       "claims": [
+        "805b2c69c7fa:018",
+        "805b2c69c7fa:019",
+        "805b2c69c7fa:025",
+        "805b2c69c7fa:027"
+       ],
+       "documents": [
+        "BH-D108"
+       ],
+       "kinds": [
+        "attendance_record"
+       ],
+       "value": "did not attend"
+      }
+     ],
+     "status": "settled",
+     "rule": "10",
+     "outcome": "did not attend",
+     "would_settle": null,
+     "encounter": "HG-E116",
+     "date": "2026-01-27",
+     "effect": null,
+     "weeks_affected": []
+    }
+   ],
+   "findings": [
+    {
+     "finding_id": "HG-M042/HG-E116:charge:CH-116",
+     "patient_key": "HG-M042",
+     "kind": "charge_without_attendance",
+     "contact_id": "HG-M042/HG-E116",
+     "detail": "A charge (CH-116, Group psychotherapy) is posted for a contact whose status is no show. This is an inconsistency between documentation and billing. The record does not show whether the charge was later reviewed or reversed. It is not a finding of improper billing.",
+     "claims": [
+      "b4390ed6b672:006",
+      "805b2c69c7fa:018",
+      "805b2c69c7fa:019",
+      "805b2c69c7fa:025",
+      "805b2c69c7fa:027"
+     ],
+     "encounter": "HG-E116",
+     "date": "2026-01-27"
+    },
+    {
+     "finding_id": "HG-M042/HG-E116:draft:b4390ed6b672:008",
+     "patient_key": "HG-M042",
+     "kind": "draft_made_before_the_service",
+     "contact_id": "HG-M042/HG-E116",
+     "detail": "A draft note for this contact was made before the service it describes.",
+     "claims": [
+      "b4390ed6b672:008"
+     ],
+     "encounter": "HG-E116",
+     "date": "2026-01-27"
+    }
+   ],
+   "calculation": [
+    "0 open, 1 settled, 2 findings"
+   ],
+   "sources": [
+    {
+     "claim": "805b2c69c7fa:018",
+     "type": "attendance",
+     "document": "BH-D108",
+     "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+     "line": 10,
+     "quote": "No show; patient did not attend",
+     "verified": true
+    },
+    {
+     "claim": "805b2c69c7fa:019",
+     "type": "attendance",
+     "document": "BH-D108",
+     "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+     "line": 16,
+     "quote": "Final roster confirms Rowan was absent for the entire group.",
+     "verified": true
+    },
+    {
+     "claim": "805b2c69c7fa:025",
+     "type": "participant",
+     "document": "BH-D108",
+     "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+     "line": 16,
+     "quote": "Final roster confirms Rowan was absent for the entire group.",
+     "verified": true
+    },
+    {
+     "claim": "805b2c69c7fa:027",
+     "type": "statement",
+     "document": "BH-D108",
+     "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+     "line": 16,
+     "quote": "No patient treatment contact occurred.",
+     "verified": true
+    },
+    {
+     "claim": "b4390ed6b672:003",
+     "type": "attendance",
+     "document": "BH-D112",
+     "file": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+     "line": 11,
+     "quote": "Template attendance text: Patient attended the full session and participated in the skills discussion.",
+     "verified": true
+    },
+    {
+     "claim": "b4390ed6b672:004",
+     "type": "participant",
+     "document": "BH-D112",
+     "file": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+     "line": 11,
+     "quote": "Template attendance text: Patient attended the full session and participated in the skills discussion.",
+     "verified": true
+    },
+    {
+     "claim": "b4390ed6b672:006",
+     "type": "charge",
+     "document": "BH-D112",
+     "file": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+     "line": 19,
+     "quote": "Charge ID: CH-116 | Encounter: HG-E116",
+     "verified": true
+    },
+    {
+     "claim": "b4390ed6b672:008",
+     "type": "statement",
+     "document": "BH-D112",
+     "file": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+     "line": 16,
+     "quote": "It was generated from the appointment template before the scheduled group.",
+     "verified": true
+    }
+   ],
+   "conflicts": [],
+   "not_read": []
+  }
+ ],
+ "parts": {
+  "1. the question as understood": [
+   "Patient: Rowan Mercer (HG-M042).",
+   "Period: 2026-01-27 to 2026-01-27 (as asked).",
+   "Reading: The question assumes there was a group contact on 2026-01-27 and asks for its minutes. The date detail shows whether a group session was documented that day, its status, and the minutes each document gives.",
+   "Another reading: Minutes attended by the patient versus minutes scheduled or billed, if the documents differ",
+   "Note: The question gives only the first name \"Rowan\", which matches Rowan Mercer (HG-M042). If the record has no group contact on Jan 27, say so. Don't supply a number."
+  ],
+  "2. the answer": [
+   "Jan 27: 0 therapy contacts of 1 encounter; patient therapy minutes 0.",
+   "- HG-E116, Jan 27, group therapy: not held: no-show; present no clock times; no minutes; described by 2 documents (BH-D108, BH-D112), counted once. Not counted: no-show. Charge without attendance. Draft made before the service.",
+   "  - The attendance record BH-D108 gives the scheduled contact 10:00–11:30; marks it \"No show; patient did not attend\"; marks it \"absent for the entire group\"; has the patient absent; says there was no contact with the patient.",
+   "  - The draft note BH-D112 gives the scheduled contact 10:00–11:30; marks it \"Patient attended the full session\"; has the patient present; posts charge CH-116 for Group psychotherapy; is a draft, unsigned; was made before the service. It cannot establish attendance, so it adds nothing to the minutes."
+  ],
+  "3. figures": [
+   "- 0 open, 1 settled, 2 findings, on the contacts behind these figures"
+  ],
+  "4. what contributed": [
+   "Nothing."
+  ],
+  "5. what was excluded": [
+   "- Jan 27, scheduling contact: an administrative record (message). Not counted: an administrative record, not an encounter.",
+   "  - BH-D108 (attendance record): line 16: \"An outreach message inviting the patient to contact scheduling was left after the group\"; line 16: \"An outreach message inviting the patient to contact scheduling was left after the group\"; line 16: \"no clinical discussion occurred\"",
+   "- HG-E116, Jan 27, group therapy: not held: no-show; present no clock times; no minutes; described by 2 documents (BH-D108, BH-D112), counted once. Not counted: no-show.",
+   "  - BH-D108 (attendance record): line 10: \"January 27 | HG-E116 | Skills group\"; line 10: \"10:00–11:30\"; line 10: \"No show; patient did not attend\"; line 16: \"Final roster confirms Rowan was absent for the entire group.\"; line 16: \"Final roster confirms Rowan was absent for the entire group.\"; line 16: \"No patient treatment contact occurred.\"",
+   "  - BH-D112 (draft note): line 10: \"Scheduled service: Skills group, 10:00–11:30\"; line 10: \"Scheduled service: Skills group, 10:00–11:30\"; line 11: \"Template attendance text: Patient attended the full session and participated in the skills discussion.\"; line 11: \"Template attendance text: Patient attended the full session and participated in the skills discussion.\"; line 12: \"Template plan text: Continue outpatient skills group according to treatment plan.\"; line 19: \"Charge ID: CH-116 | Encounter: HG-E116\"",
+   "  - HG-E116, attendance: attended (BH-D112); did not attend (BH-D108). Settled by rule 10: did not attend.",
+   "  - Finding: A charge (CH-116, Group psychotherapy) is posted for a contact whose status is no show. This is an inconsistency between documentation and billing. The record does not show whether the charge was later reviewed or reversed. It is not a finding of improper billing.",
+   "  - Finding: A draft note for this contact was made before the service it describes.",
+   "- HG-E116, attendance: attended (BH-D112); did not attend (BH-D108). Settled by rule 10: did not attend. The other value is not used.",
+   "  - BH-D108 line 10: \"No show; patient did not attend\"",
+   "  - BH-D108 line 16: \"Final roster confirms Rowan was absent for the entire group.\"",
+   "  - BH-D108 line 16: \"No patient treatment contact occurred.\"",
+   "  - BH-D112 line 11: \"Template attendance text: Patient attended the full session and participated in the skills discussion.\"",
+   "- Finding, HG-E116, Jan 27: A charge (CH-116, Group psychotherapy) is posted for a contact whose status is no show. This is an inconsistency between documentation and billing. The record does not show whether the charge was later reviewed or reversed. It is not a finding of improper billing.",
+   "  - BH-D108 line 10: \"No show; patient did not attend\"",
+   "  - BH-D108 line 16: \"Final roster confirms Rowan was absent for the entire group.\"",
+   "  - BH-D108 line 16: \"No patient treatment contact occurred.\"",
+   "  - BH-D112 line 19: \"Charge ID: CH-116 | Encounter: HG-E116\"",
+   "- Finding, HG-E116, Jan 27: A draft note for this contact was made before the service it describes.",
+   "  - BH-D112 line 16: \"It was generated from the appointment template before the scheduled group.\""
+  ],
+  "6. not settled": [
+   "Nothing."
+  ],
+  "7. assumptions": [
+   "The figures cover the documented record. A date with no document is counted as a date with no contact, and is named where it falls in the period.",
+   "\"Not documented\" is kept apart from \"did not happen\". The second is said only when a document says so.",
+   "Two records of equal standing that disagree stay open, as alternatives. A signed correction, a copy, or a record that cannot establish attendance is settled by rule."
+  ],
+  "8. documents not read": [
+   "None."
+  ],
+  "in short": [
+   "Jan 27: 0 therapy contacts of 1 encounter; patient therapy minutes 0.",
+   "Not counted: HG-E116 on Jan 27, group therapy, not held: no-show; a charge is posted for it and a draft note says attended, and neither can establish attendance."
+  ],
+  "9. version": [
+   "Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.",
+   "Reading: model opus, effort low, prompt version 3.",
+   "Plan: model opus, plan prompt version 2, made 2026-09-30T07:18:58.806+00:00 (saved plan reused).",
+   "Answered: 2026-09-30T17:41:45+00:00."
+  ]
+ },
+ "patient": {
+  "status": "found",
+  "patient": "HG-M042",
+  "name": "Rowan Mercer",
+  "dob": "1991-04-12",
+  "documents": 31,
+  "episodes": [
+   {
+    "start": "2026-01-05",
+    "end": "2026-01-30",
+    "plan": "BH-D003"
+   }
+  ]
+ },
+ "text": "# P-3\n\n> How many minutes was Rowan in the Jan 27 group?\n\n**In short.** Jan 27: 0 therapy contacts of 1 encounter; patient therapy minutes 0. Not counted: HG-E116 on Jan 27, group therapy, not held: no-show; a charge is posted for it and a draft note says attended, and neither can establish attendance.\n\n## 1. The question as understood\n\nPatient: Rowan Mercer (HG-M042).\nPeriod: 2026-01-27 to 2026-01-27 (as asked).\nReading: The question assumes there was a group contact on 2026-01-27 and asks for its minutes. The date detail shows whether a group session was documented that day, its status, and the minutes each document gives.\nAnother reading: Minutes attended by the patient versus minutes scheduled or billed, if the documents differ\nNote: The question gives only the first name \"Rowan\", which matches Rowan Mercer (HG-M042). If the record has no group contact on Jan 27, say so. Don't supply a number.\n\n## 2. The answer\n\nJan 27: 0 therapy contacts of 1 encounter; patient therapy minutes 0.\n- HG-E116, Jan 27, group therapy: not held: no-show; present no clock times; no minutes; described by 2 documents (BH-D108, BH-D112), counted once. Not counted: no-show. Charge without attendance. Draft made before the service.\n  - The attendance record BH-D108 gives the scheduled contact 10:00–11:30; marks it \"No show; patient did not attend\"; marks it \"absent for the entire group\"; has the patient absent; says there was no contact with the patient.\n  - The draft note BH-D112 gives the scheduled contact 10:00–11:30; marks it \"Patient attended the full session\"; has the patient present; posts charge CH-116 for Group psychotherapy; is a draft, unsigned; was made before the service. It cannot establish attendance, so it adds nothing to the minutes.\n\n## 3. Figures\n\n- 0 open, 1 settled, 2 findings, on the contacts behind these figures\n\n## 4. What contributed\n\nNothing.\n\n## 5. What was excluded\n\n- Jan 27, scheduling contact: an administrative record (message). Not counted: an administrative record, not an encounter.\n  - BH-D108 (attendance record): line 16: \"An outreach message inviting the patient to contact scheduling was left after the group\"; line 16: \"An outreach message inviting the patient to contact scheduling was left after the group\"; line 16: \"no clinical discussion occurred\"\n- HG-E116, Jan 27, group therapy: not held: no-show; present no clock times; no minutes; described by 2 documents (BH-D108, BH-D112), counted once. Not counted: no-show.\n  - BH-D108 (attendance record): line 10: \"January 27 | HG-E116 | Skills group\"; line 10: \"10:00–11:30\"; line 10: \"No show; patient did not attend\"; line 16: \"Final roster confirms Rowan was absent for the entire group.\"; line 16: \"Final roster confirms Rowan was absent for the entire group.\"; line 16: \"No patient treatment contact occurred.\"\n  - BH-D112 (draft note): line 10: \"Scheduled service: Skills group, 10:00–11:30\"; line 10: \"Scheduled service: Skills group, 10:00–11:30\"; line 11: \"Template attendance text: Patient attended the full session and participated in the skills discussion.\"; line 11: \"Template attendance text: Patient attended the full session and participated in the skills discussion.\"; line 12: \"Template plan text: Continue outpatient skills group according to treatment plan.\"; line 19: \"Charge ID: CH-116 | Encounter: HG-E116\"\n  - HG-E116, attendance: attended (BH-D112); did not attend (BH-D108). Settled by rule 10: did not attend.\n  - Finding: A charge (CH-116, Group psychotherapy) is posted for a contact whose status is no show. This is an inconsistency between documentation and billing. The record does not show whether the charge was later reviewed or reversed. It is not a finding of improper billing.\n  - Finding: A draft note for this contact was made before the service it describes.\n- HG-E116, attendance: attended (BH-D112); did not attend (BH-D108). Settled by rule 10: did not attend. The other value is not used.\n  - BH-D108 line 10: \"No show; patient did not attend\"\n  - BH-D108 line 16: \"Final roster confirms Rowan was absent for the entire group.\"\n  - BH-D108 line 16: \"No patient treatment contact occurred.\"\n  - BH-D112 line 11: \"Template attendance text: Patient attended the full session and participated in the skills discussion.\"\n- Finding, HG-E116, Jan 27: A charge (CH-116, Group psychotherapy) is posted for a contact whose status is no show. This is an inconsistency between documentation and billing. The record does not show whether the charge was later reviewed or reversed. It is not a finding of improper billing.\n  - BH-D108 line 10: \"No show; patient did not attend\"\n  - BH-D108 line 16: \"Final roster confirms Rowan was absent for the entire group.\"\n  - BH-D108 line 16: \"No patient treatment contact occurred.\"\n  - BH-D112 line 19: \"Charge ID: CH-116 | Encounter: HG-E116\"\n- Finding, HG-E116, Jan 27: A draft note for this contact was made before the service it describes.\n  - BH-D112 line 16: \"It was generated from the appointment template before the scheduled group.\"\n\n## 6. Not settled\n\nNothing.\n\n## 7. Assumptions\n\nThe figures cover the documented record. A date with no document is counted as a date with no contact, and is named where it falls in the period.\n\"Not documented\" is kept apart from \"did not happen\". The second is said only when a document says so.\nTwo records of equal standing that disagree stay open, as alternatives. A signed correction, a copy, or a record that cannot establish attendance is settled by rule.\n\n## 8. Documents not read\n\nNone.\n\n## 9. Version\n\nAbstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.\nReading: model opus, effort low, prompt version 3.\nPlan: model opus, plan prompt version 2, made 2026-09-30T07:18:58.806+00:00 (saved plan reused).\nAnswered: 2026-09-30T17:41:45+00:00.\n"
+}

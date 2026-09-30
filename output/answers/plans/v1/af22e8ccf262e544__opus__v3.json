@@ -1,0 +1,64 @@
+{
+ "question": "How many sessions did Jordan Blake attend?",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:13:22.732+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:13:15.594+00:00",
+   "usage": {
+    "wall_seconds": 7.114,
+    "api_seconds": 4.928,
+    "input_tokens": 2,
+    "output_tokens": 509,
+    "cache_creation_input_tokens": 1341,
+    "cache_read_input_tokens": 2883,
+    "cost_usd": 0.0214926,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 509,
+      "cacheReadInputTokens": 2883,
+      "cacheCreationInputTokens": 1341,
+      "webSearchRequests": 0,
+      "costUSD": 0.0214926,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Jordan Blake",
+  "period": {
+   "start": null,
+   "end": null,
+   "basis": "the episode"
+  },
+  "reading": "\"Sessions attended\" means contacts of the classes the plan counts where the patient was present, over the whole episode. No period was given, and Jordan Blake has no plan period in the collection.",
+  "other_readings": [
+   "All contacts held, of any class, with the patient present",
+   "All encounters on record, whether or not the patient was present"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Jordan Blake"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "Jordan Blake is not in the patient list. The only patient in the collection is HG-M042, Rowan Mercer. The answer should say that there is no record for Jordan Blake, and should not swap in another patient."
+ }
+}

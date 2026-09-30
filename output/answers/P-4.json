@@ -1,0 +1,1015 @@
+{
+ "question_id": "P-4",
+ "question": "What was Rowan's PHQ-9 score on Jan 26?",
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-26",
+   "end": "2026-01-26",
+   "basis": "as asked"
+  },
+  "reading": "The question asks for a PHQ-9 score on 2026-01-26. It assumes a PHQ-9 was given that day, which may not be true. No contact class is involved.",
+  "other_readings": [],
+  "calls": [
+   {
+    "function": "assessments",
+    "arguments": {
+     "patient": "Rowan",
+     "instrument": "PHQ-9",
+     "on": "2026-01-26"
+    }
+   },
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "Rowan",
+     "date": "2026-01-26"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "If no PHQ-9 result is dated 2026-01-26, say so and do not guess a value. Report the nearest distinct PHQ-9 scores instead, and don't count copies or mentions as scores."
+ },
+ "plan_source": "saved",
+ "plan_attempts": 1,
+ "results": [
+  {
+   "function": "assessments",
+   "arguments": {
+    "patient": "HG-M042",
+    "instrument": "PHQ-9",
+    "start": null,
+    "end": null,
+    "on": "2026-01-26"
+   },
+   "rows": [],
+   "distinct": 0,
+   "held_classes": [
+    "family_therapy",
+    "group_therapy",
+    "individual_therapy",
+    "medication_management"
+   ],
+   "attendance": {
+    "held": 14,
+    "no_show": 2,
+    "cancelled_by_clinic": 1,
+    "held_without_patient": 2,
+    "cancelled_by_patient": 1
+   },
+   "absent_from": 1,
+   "changes": [
+    {
+     "from": "2026-01-05",
+     "to": "2026-01-16",
+     "change": -4
+    },
+    {
+     "from": "2026-01-16",
+     "to": "2026-01-30",
+     "change": -4
+    }
+   ],
+   "overall_change": -8,
+   "received_on": [
+    {
+     "document": "BH-D014",
+     "of": {
+      "instrument": "PHQ-9",
+      "completed_date": "2026-01-16",
+      "score": [
+       14
+      ]
+     },
+     "dates": [
+      {
+       "kind": "received",
+       "date": "2026-01-26"
+      },
+      {
+       "kind": "reviewed",
+       "date": "2026-01-16"
+      },
+      {
+       "kind": "completed",
+       "date": "2026-01-16"
+      }
+     ]
+    }
+   ],
+   "instruments": [
+    "PHQ-9"
+   ],
+   "calculation": [
+    "2026-01-05 to 2026-01-16: -4",
+    "2026-01-16 to 2026-01-30: -4",
+    "overall -8"
+   ],
+   "sources": [],
+   "conflicts": [],
+   "not_read": []
+  },
+  {
+   "function": "date_detail",
+   "arguments": {
+    "patient": "HG-M042",
+    "date": "2026-01-26"
+   },
+   "date": "2026-01-26",
+   "coverage": "documented",
+   "covered_by_schedule": [],
+   "documents_dated": [
+    {
+     "document": "BH-D014",
+     "kind": "received",
+     "quote": "Received into chart: 2026-01-26, 07:44 local",
+     "line": 6
+    },
+    {
+     "document": "BH-D104",
+     "kind": "received",
+     "quote": "Received: January 26, 2026, 16:22",
+     "line": 4
+    },
+    {
+     "document": "BH-D104",
+     "kind": "entered",
+     "quote": "indexed by Ana Reed, records assistant, January 26, 2026, 16:31",
+     "line": 20
+    },
+    {
+     "document": "BH-D110",
+     "kind": "signed",
+     "quote": "Electronically signed: Mira Patel, LCSW | January 26, 2026, 11:16",
+     "line": 15
+    },
+    {
+     "document": "BH-D111",
+     "kind": "signed",
+     "quote": "Electronically signed: Nora Ellis, LCSW | January 26, 2026, 12:03",
+     "line": 16
+    }
+   ],
+   "contacts": [
+    {
+     "sources": [
+      "4b64c46a13b8:001",
+      "4b64c46a13b8:003",
+      "4b64c46a13b8:007",
+      "d03451942797:001",
+      "d03451942797:003",
+      "d03451942797:004",
+      "d03451942797:010"
+     ],
+     "copies": [],
+     "removed_rows": [],
+     "contact_id": "HG-M042/HG-E115",
+     "encounter": "HG-E115",
+     "date": "2026-01-26",
+     "class": "individual_therapy",
+     "status": "held",
+     "partial": false,
+     "present": [
+      [
+       "09:00",
+       "09:50"
+      ],
+      [
+       "09:10",
+       "09:50"
+      ]
+     ],
+     "removed": [],
+     "minutes": [
+      40,
+      50
+     ],
+     "minutes_without_patient": null,
+     "clinicians": [
+      "Mira Patel",
+      "Nora Ellis"
+     ],
+     "modality": "in_person",
+     "counts": true,
+     "why_not": "",
+     "notes": [],
+     "documents": [
+      "BH-D110",
+      "BH-D111"
+     ],
+     "documents_say": [
+      {
+       "document": "BH-D110",
+       "claims": [
+        {
+         "claim": "4b64c46a13b8:001",
+         "type": "contact",
+         "value": {
+          "ref": "c1"
+         },
+         "label": null,
+         "line": 3,
+         "quote": "Individual psychotherapy | Encounter HG-E115 | Appointment HG-A115",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:002",
+         "type": "modality",
+         "value": {
+          "modality": "in_person"
+         },
+         "label": null,
+         "line": 5,
+         "quote": "January 26, 2026 | In person",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:003",
+         "type": "time",
+         "value": {
+          "end": "09:50",
+          "label": "actual",
+          "position": "header",
+          "start": "09:00",
+          "what": "patient_present"
+         },
+         "label": "actual",
+         "line": 7,
+         "quote": "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:004",
+         "type": "participant",
+         "value": {
+          "name": "Mira Patel",
+          "presence": "not_stated",
+          "role": "clinician",
+          "role_as_written": "LCSW"
+         },
+         "label": null,
+         "line": 6,
+         "quote": "Clinicians: Mira Patel, LCSW; Nora Ellis, LCSW",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:005",
+         "type": "participant",
+         "value": {
+          "name": "Nora Ellis",
+          "presence": "present",
+          "role": "clinician",
+          "role_as_written": "LCSW"
+         },
+         "label": null,
+         "line": 11,
+         "quote": "Nora Ellis participated directly in the clinical work",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:006",
+         "type": "participant",
+         "value": {
+          "name": "Rowan Mercer",
+          "presence": "not_stated",
+          "role": "patient"
+         },
+         "label": null,
+         "line": 4,
+         "quote": "Rowan Mercer | DOB: 1991-04-12 | MRN: HG-M042",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:007",
+         "type": "stated_minutes",
+         "value": {
+          "minutes": 50,
+          "of": "patient_present"
+         },
+         "label": null,
+         "line": 7,
+         "quote": "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:008",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "patient",
+          "summary": "Sent message to supervisor",
+          "topic": "functioning"
+         },
+         "label": null,
+         "line": 9,
+         "quote": "Rowan described sending a short message to the supervisor and receiving a request to discuss possible next steps.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:009",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Worry about commitments",
+          "topic": "anxiety"
+         },
+         "label": null,
+         "line": 9,
+         "quote": "The reply reduced one uncertainty but also brought up worry about being asked for commitments the patient might not be able to meet.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:010",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Continued postponing conversation",
+          "topic": "functioning"
+         },
+         "label": null,
+         "line": 9,
+         "quote": "Rowan continued to postpone choosing a time for the conversation.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:011",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Sleep uneven",
+          "topic": "sleep"
+         },
+         "label": null,
+         "line": 9,
+         "quote": "Sleep remained uneven, with difficulty settling on nights when work-related thoughts became repetitive.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:012",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Returned to request with prompting",
+          "topic": "functioning"
+         },
+         "label": null,
+         "line": 11,
+         "quote": "Rowan was able to return to the main request with prompting.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:013",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Attentive, hesitant",
+          "topic": "other"
+         },
+         "label": null,
+         "line": 13,
+         "quote": "The patient remained attentive and collaborative, although hesitant about completing the task outside the office.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:014",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "No suicidal ideation",
+          "topic": "safety"
+         },
+         "label": null,
+         "line": 13,
+         "quote": "No current suicidal ideation was reported.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "4b64c46a13b8:015",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Continue treatment focus",
+          "topic": "progress"
+         },
+         "label": null,
+         "line": 13,
+         "quote": "Continue work on avoidance and the bedtime routine.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        }
+       ]
+      },
+      {
+       "document": "BH-D111",
+       "claims": [
+        {
+         "claim": "d03451942797:001",
+         "type": "contact",
+         "value": {
+          "ref": "c1"
+         },
+         "label": null,
+         "line": 6,
+         "quote": "Service: Individual psychotherapy, in person",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:002",
+         "type": "modality",
+         "value": {
+          "modality": "in_person"
+         },
+         "label": null,
+         "line": 6,
+         "quote": "Service: Individual psychotherapy, in person",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:003",
+         "type": "time",
+         "value": {
+          "end": "09:50",
+          "label": "actual",
+          "position": "header",
+          "start": "09:10",
+          "what": "patient_present"
+         },
+         "label": "actual",
+         "line": 7,
+         "quote": "Actual patient psychotherapy contact: 09:10–09:50, 40 minutes.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:004",
+         "type": "time",
+         "value": {
+          "end": null,
+          "label": "actual",
+          "position": "body",
+          "start": "09:10",
+          "what": "patient_arrival"
+         },
+         "label": "actual",
+         "line": 10,
+         "quote": "Rowan entered the treatment room at 09:10, when we began the session.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:005",
+         "type": "time",
+         "value": {
+          "end": "09:50",
+          "label": "not_labelled",
+          "position": "body",
+          "start": "09:10",
+          "what": "patient_present"
+         },
+         "label": "not_labelled",
+         "line": 10,
+         "quote": "The full patient-contact interval for the encounter was 09:10–09:50.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:006",
+         "type": "time",
+         "value": {
+          "detail": "session concluded",
+          "end": "09:50",
+          "label": "actual",
+          "position": "body",
+          "start": null,
+          "what": "other"
+         },
+         "label": "actual",
+         "line": 14,
+         "quote": "The session concluded with Rowan at 09:50.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:007",
+         "type": "participant",
+         "value": {
+          "name": "Nora Ellis",
+          "presence": "present",
+          "role": "clinician",
+          "role_as_written": "LCSW"
+         },
+         "label": null,
+         "line": 10,
+         "quote": "I participated directly in this individual encounter.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:008",
+         "type": "participant",
+         "value": {
+          "name": "Mira Patel",
+          "presence": "not_stated",
+          "role": "clinician",
+          "role_as_written": "LCSW"
+         },
+         "label": null,
+         "line": 8,
+         "quote": "Clinician: Nora Ellis, LCSW, participating with Mira Patel, LCSW",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:009",
+         "type": "participant",
+         "value": {
+          "name": "Rowan Mercer",
+          "presence": "not_stated",
+          "role": "patient"
+         },
+         "label": null,
+         "line": 10,
+         "quote": "Rowan entered the treatment room at 09:10, when we began the session.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:010",
+         "type": "stated_minutes",
+         "value": {
+          "minutes": 40,
+          "of": "patient_present"
+         },
+         "label": null,
+         "line": 7,
+         "quote": "Actual patient psychotherapy contact: 09:10–09:50, 40 minutes.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:011",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "patient",
+          "summary": "Difficulty arranging next conversation with supervisor",
+          "topic": "functioning"
+         },
+         "label": null,
+         "line": 10,
+         "quote": "Rowan discussed difficulty moving from a supervisor's reply to arranging the next conversation.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:012",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "patient",
+          "summary": "Anticipates being overwhelmed by several work issues",
+          "topic": "anxiety"
+         },
+         "label": null,
+         "line": 10,
+         "quote": "The patient anticipated becoming overwhelmed if several work issues were raised at once.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:013",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "patient",
+          "summary": "Tendency to over-edit messages",
+          "topic": "anxiety"
+         },
+         "label": null,
+         "line": 12,
+         "quote": "Rowan recognized a tendency to keep editing a message after the essential point was already clear.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:014",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Could use cue but uncertain independently when anxious",
+          "topic": "anxiety"
+         },
+         "label": null,
+         "line": 12,
+         "quote": "The patient could use the cue during the rehearsal but remained uncertain about using it independently when anxious.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:015",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Night-time repetitive planning affects sleep",
+          "topic": "sleep"
+         },
+         "label": null,
+         "line": 12,
+         "quote": "The discussion also addressed how repetitive planning at night affected settling for sleep.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:016",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Ongoing anxiety",
+          "topic": "anxiety"
+         },
+         "label": null,
+         "line": 14,
+         "quote": "Clinical presentation remained consistent with ongoing anxiety, low mood, and functional difficulty around work demands.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:017",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Low mood",
+          "topic": "mood"
+         },
+         "label": null,
+         "line": 14,
+         "quote": "Clinical presentation remained consistent with ongoing anxiety, low mood, and functional difficulty around work demands.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:018",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "patient",
+          "summary": "Wishes to resume steadier routine",
+          "topic": "functioning"
+         },
+         "label": null,
+         "line": 14,
+         "quote": "Rowan was engaged with the treatment team and described a wish to resume a steadier routine.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        },
+        {
+         "claim": "d03451942797:019",
+         "type": "observation",
+         "value": {
+          "date": "2026-01-26",
+          "speaker": "clinician",
+          "summary": "Continue individual and group work",
+          "topic": "progress"
+         },
+         "label": null,
+         "line": 14,
+         "quote": "Plan is to continue individual and group work under the existing outpatient plan.",
+         "kind": "clinical_note",
+         "signed": "signed",
+         "copy": false
+        }
+       ]
+      }
+     ],
+     "conflicts": [
+      {
+       "conflict_id": "HG-M042/HG-E115:start",
+       "patient_key": "HG-M042",
+       "contact_id": "HG-M042/HG-E115",
+       "field": "start",
+       "alternatives": [
+        {
+         "claims": [
+          "4b64c46a13b8:003"
+         ],
+         "copies": [],
+         "documents": [
+          "BH-D110"
+         ],
+         "note": null,
+         "value": "09:00"
+        },
+        {
+         "claims": [
+          "d03451942797:003",
+          "d03451942797:004"
+         ],
+         "copies": [],
+         "documents": [
+          "BH-D111"
+         ],
+         "note": null,
+         "value": "09:10"
+        }
+       ],
+       "status": "open",
+       "rule": "11",
+       "outcome": null,
+       "would_settle": "An arrival or check-in record, or a correction by the author of the record being changed."
+      }
+     ],
+     "findings": [],
+     "record_kind": "encounter"
+    }
+   ],
+   "counts": {
+    "contacts": 1,
+    "therapy_contacts": 1,
+    "administrative_records": 0
+   },
+   "totals": [
+    {
+     "choices": {
+      "HG-M042/HG-E115:start": "09:10"
+     },
+     "sessions": 1,
+     "contacts": [
+      "HG-M042/HG-E115"
+     ],
+     "days": 1,
+     "dates": [
+      "2026-01-26"
+     ],
+     "minutes": 40,
+     "hours": 0.67,
+     "minutes_unknown_for": [],
+     "by_class": {
+      "individual_therapy": {
+       "sessions": 1,
+       "minutes": 40
+      }
+     }
+    },
+    {
+     "choices": {
+      "HG-M042/HG-E115:start": "09:00"
+     },
+     "sessions": 1,
+     "contacts": [
+      "HG-M042/HG-E115"
+     ],
+     "days": 1,
+     "dates": [
+      "2026-01-26"
+     ],
+     "minutes": 50,
+     "hours": 0.83,
+     "minutes_unknown_for": [],
+     "by_class": {
+      "individual_therapy": {
+       "sessions": 1,
+       "minutes": 50
+      }
+     }
+    }
+   ],
+   "calculation": [
+    "40 = 40",
+    "50 = 50"
+   ],
+   "sources": [
+    {
+     "claim": "4b64c46a13b8:001",
+     "type": "contact",
+     "document": "BH-D110",
+     "file": "BH-D110_individual_primary_record_2026-01-26.txt",
+     "line": 3,
+     "quote": "Individual psychotherapy | Encounter HG-E115 | Appointment HG-A115",
+     "verified": true
+    },
+    {
+     "claim": "4b64c46a13b8:003",
+     "type": "time",
+     "document": "BH-D110",
+     "file": "BH-D110_individual_primary_record_2026-01-26.txt",
+     "line": 7,
+     "quote": "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes.",
+     "verified": true
+    },
+    {
+     "claim": "4b64c46a13b8:007",
+     "type": "stated_minutes",
+     "document": "BH-D110",
+     "file": "BH-D110_individual_primary_record_2026-01-26.txt",
+     "line": 7,
+     "quote": "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes.",
+     "verified": true
+    },
+    {
+     "claim": "d03451942797:001",
+     "type": "contact",
+     "document": "BH-D111",
+     "file": "BH-D111_individual_second_record_2026-01-26.txt",
+     "line": 6,
+     "quote": "Service: Individual psychotherapy, in person",
+     "verified": true
+    },
+    {
+     "claim": "d03451942797:003",
+     "type": "time",
+     "document": "BH-D111",
+     "file": "BH-D111_individual_second_record_2026-01-26.txt",
+     "line": 7,
+     "quote": "Actual patient psychotherapy contact: 09:10–09:50, 40 minutes.",
+     "verified": true
+    },
+    {
+     "claim": "d03451942797:004",
+     "type": "time",
+     "document": "BH-D111",
+     "file": "BH-D111_individual_second_record_2026-01-26.txt",
+     "line": 10,
+     "quote": "Rowan entered the treatment room at 09:10, when we began the session.",
+     "verified": true
+    },
+    {
+     "claim": "d03451942797:010",
+     "type": "stated_minutes",
+     "document": "BH-D111",
+     "file": "BH-D111_individual_second_record_2026-01-26.txt",
+     "line": 7,
+     "quote": "Actual patient psychotherapy contact: 09:10–09:50, 40 minutes.",
+     "verified": true
+    }
+   ],
+   "conflicts": [
+    {
+     "conflict_id": "HG-M042/HG-E115:start",
+     "patient_key": "HG-M042",
+     "contact_id": "HG-M042/HG-E115",
+     "field": "start",
+     "alternatives": [
+      {
+       "claims": [
+        "4b64c46a13b8:003"
+       ],
+       "copies": [],
+       "documents": [
+        "BH-D110"
+       ],
+       "note": null,
+       "value": "09:00"
+      },
+      {
+       "claims": [
+        "d03451942797:003",
+        "d03451942797:004"
+       ],
+       "copies": [],
+       "documents": [
+        "BH-D111"
+       ],
+       "note": null,
+       "value": "09:10"
+      }
+     ],
+     "status": "open",
+     "rule": "11",
+     "outcome": null,
+     "would_settle": "An arrival or check-in record, or a correction by the author of the record being changed."
+    }
+   ],
+   "not_read": []
+  }
+ ],
+ "parts": {
+  "1. the question as understood": [
+   "Patient: Rowan Mercer (HG-M042).",
+   "Period: 2026-01-26 to 2026-01-26 (as asked).",
+   "Reading: The question asks for a PHQ-9 score on 2026-01-26. It assumes a PHQ-9 was given that day, which may not be true. No contact class is involved.",
+   "Note: If no PHQ-9 result is dated 2026-01-26, say so and do not guess a value. Report the nearest distinct PHQ-9 scores instead, and don't count copies or mentions as scores."
+  ],
+  "2. the answer": [
+   "No questionnaire was completed on Jan 26.",
+   "A result received that day, in BH-D014, is a copy of the PHQ-9 of Jan 16, score 14. It is not a new assessment.",
+   "Jan 26: 1 therapy contact of 1 encounter; patient therapy minutes 40 or 50.",
+   "- HG-E115, Jan 26, individual therapy: held; present 09:00–09:50 or 09:10–09:50; 40 or 50 minutes; with Mira Patel and Nora Ellis; described by 2 documents (BH-D110, BH-D111), counted once.",
+   "  - The clinical note, signed, BH-D110 gives the patient present 09:00–09:50; states 50 minutes with the patient. Its start 09:00 is one of two open alternatives.",
+   "  - The clinical note, signed, BH-D111 gives the patient present 09:10–09:50; arrival 09:10; a time 09:50 (session concluded); states 40 minutes with the patient. Its start 09:10 is one of two open alternatives."
+  ],
+  "3. figures": [
+   "- Jan 5 to Jan 16: -4",
+   "- Jan 16 to Jan 30: -4",
+   "- overall -8",
+   "- 40 = 40",
+   "- 50 = 50"
+  ],
+  "4. what contributed": [
+   "- HG-E115, Jan 26, individual therapy: held; present 09:00–09:50 or 09:10–09:50; 40 or 50 minutes; with Mira Patel and Nora Ellis; described by 2 documents (BH-D110, BH-D111), counted once",
+   "  - BH-D110 (clinical note, signed): line 3: \"Individual psychotherapy | Encounter HG-E115 | Appointment HG-A115\"; line 5: \"January 26, 2026 | In person\"; line 7: \"Actual patient psychotherapy contact: 09:00–09:50, 50 minutes.\"; line 6: \"Clinicians: Mira Patel, LCSW; Nora Ellis, LCSW\"; line 11: \"Nora Ellis participated directly in the clinical work\"; line 4: \"Rowan Mercer | DOB: 1991-04-12 | MRN: HG-M042\"",
+   "  - BH-D111 (clinical note, signed): line 6: \"Service: Individual psychotherapy, in person\"; line 6: \"Service: Individual psychotherapy, in person\"; line 7: \"Actual patient psychotherapy contact: 09:10–09:50, 40 minutes.\"; line 10: \"Rowan entered the treatment room at 09:10, when we began the session.\"; line 10: \"The full patient-contact interval for the encounter was 09:10–09:50.\"; line 14: \"The session concluded with Rowan at 09:50.\""
+  ],
+  "5. what was excluded": [
+   "Nothing."
+  ],
+  "6. not settled": [
+   "- HG-E115, start: 09:00 (BH-D110); 09:10 (BH-D111). What would settle it: An arrival or check-in record, or a correction by the author of the record being changed."
+  ],
+  "7. assumptions": [
+   "The figures cover the documented record. A date with no document is counted as a date with no contact, and is named where it falls in the period.",
+   "An assessment is identified by instrument and completion date, plus the form number where printed. Copies and mentions add none.",
+   "Severity bands, and thresholds for response or remission, are outside knowledge and are not in the record.",
+   "\"Not documented\" is kept apart from \"did not happen\". The second is said only when a document says so."
+  ],
+  "8. documents not read": [
+   "None."
+  ],
+  "in short": [
+   "No questionnaire was completed on Jan 26.",
+   "Jan 26: 1 therapy contact of 1 encounter; patient therapy minutes 40 or 50.",
+   "One point is open: the start of HG-E115 on Jan 26, 09:00 (BH-D110) or 09:10 (BH-D111), which makes its minutes 40 or 50."
+  ],
+  "9. version": [
+   "Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.",
+   "Reading: model opus, effort low, prompt version 3.",
+   "Plan: model opus, plan prompt version 2, made 2026-09-30T07:19:05.284+00:00 (saved plan reused).",
+   "Answered: 2026-09-30T17:41:45+00:00."
+  ]
+ },
+ "patient": {
+  "status": "found",
+  "patient": "HG-M042",
+  "name": "Rowan Mercer",
+  "dob": "1991-04-12",
+  "documents": 31,
+  "episodes": [
+   {
+    "start": "2026-01-05",
+    "end": "2026-01-30",
+    "plan": "BH-D003"
+   }
+  ]
+ },
+ "text": "# P-4\n\n> What was Rowan's PHQ-9 score on Jan 26?\n\n**In short.** No questionnaire was completed on Jan 26. Jan 26: 1 therapy contact of 1 encounter; patient therapy minutes 40 or 50. One point is open: the start of HG-E115 on Jan 26, 09:00 (BH-D110) or 09:10 (BH-D111), which makes its minutes 40 or 50.\n\n## 1. The question as understood\n\nPatient: Rowan Mercer (HG-M042).\nPeriod: 2026-01-26 to 2026-01-26 (as asked).\nReading: The question asks for a PHQ-9 score on 2026-01-26. It assumes a PHQ-9 was given that day, which may not be true. No contact class is involved.\nNote: If no PHQ-9 result is dated 2026-01-26, say so and do not guess a value. Report the nearest distinct PHQ-9 scores instead, and don't count copies or mentions as scores.\n\n## 2. The answer\n\nNo questionnaire was completed on Jan 26.\nA result received that day, in BH-D014, is a copy of the PHQ-9 of Jan 16, score 14. It is not a new assessment.\nJan 26: 1 therapy contact of 1 encounter; patient therapy minutes 40 or 50.\n- HG-E115, Jan 26, individual therapy: held; present 09:00–09:50 or 09:10–09:50; 40 or 50 minutes; with Mira Patel and Nora Ellis; described by 2 documents (BH-D110, BH-D111), counted once.\n  - The clinical note, signed, BH-D110 gives the patient present 09:00–09:50; states 50 minutes with the patient. Its start 09:00 is one of two open alternatives.\n  - The clinical note, signed, BH-D111 gives the patient present 09:10–09:50; arrival 09:10; a time 09:50 (session concluded); states 40 minutes with the patient. Its start 09:10 is one of two open alternatives.\n\n## 3. Figures\n\n- Jan 5 to Jan 16: -4\n- Jan 16 to Jan 30: -4\n- overall -8\n- 40 = 40\n- 50 = 50\n\n## 4. What contributed\n\n- HG-E115, Jan 26, individual therapy: held; present 09:00–09:50 or 09:10–09:50; 40 or 50 minutes; with Mira Patel and Nora Ellis; described by 2 documents (BH-D110, BH-D111), counted once\n  - BH-D110 (clinical note, signed): line 3: \"Individual psychotherapy | Encounter HG-E115 | Appointment HG-A115\"; line 5: \"January 26, 2026 | In person\"; line 7: \"Actual patient psychotherapy contact: 09:00–09:50, 50 minutes.\"; line 6: \"Clinicians: Mira Patel, LCSW; Nora Ellis, LCSW\"; line 11: \"Nora Ellis participated directly in the clinical work\"; line 4: \"Rowan Mercer | DOB: 1991-04-12 | MRN: HG-M042\"\n  - BH-D111 (clinical note, signed): line 6: \"Service: Individual psychotherapy, in person\"; line 6: \"Service: Individual psychotherapy, in person\"; line 7: \"Actual patient psychotherapy contact: 09:10–09:50, 40 minutes.\"; line 10: \"Rowan entered the treatment room at 09:10, when we began the session.\"; line 10: \"The full patient-contact interval for the encounter was 09:10–09:50.\"; line 14: \"The session concluded with Rowan at 09:50.\"\n\n## 5. What was excluded\n\nNothing.\n\n## 6. Not settled\n\n- HG-E115, start: 09:00 (BH-D110); 09:10 (BH-D111). What would settle it: An arrival or check-in record, or a correction by the author of the record being changed.\n\n## 7. Assumptions\n\nThe figures cover the documented record. A date with no document is counted as a date with no contact, and is named where it falls in the period.\nAn assessment is identified by instrument and completion date, plus the form number where printed. Copies and mentions add none.\nSeverity bands, and thresholds for response or remission, are outside knowledge and are not in the record.\n\"Not documented\" is kept apart from \"did not happen\". The second is said only when a document says so.\n\n## 8. Documents not read\n\nNone.\n\n## 9. Version\n\nAbstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.\nReading: model opus, effort low, prompt version 3.\nPlan: model opus, plan prompt version 2, made 2026-09-30T07:19:05.284+00:00 (saved plan reused).\nAnswered: 2026-09-30T17:41:45+00:00.\n"
+}
