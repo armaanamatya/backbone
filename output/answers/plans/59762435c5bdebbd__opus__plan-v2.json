@@ -1,0 +1,56 @@
+{
+ "question": "How many group authorization units does Rowan have left?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T07:19:45.339+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:19:38.515+00:00",
+   "usage": {
+    "wall_seconds": 6.778,
+    "api_seconds": 4.981,
+    "input_tokens": 2,
+    "output_tokens": 468,
+    "cache_creation_input_tokens": 1387,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.0210548,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 468,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1387,
+      "webSearchRequests": 0,
+      "costUSD": 0.0210548,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "the episode"
+  },
+  "reading": "The question asks how many group therapy units are still left on an authorization. That means the authorized total minus the units used. No function returns authorized unit totals or balances.",
+  "other_readings": [
+   "It could be read as the number of group-class sessions delivered in the episode (care_delivered grouped by class). That count still doesn't give the units remaining without the authorization's total."
+  ],
+  "calls": [],
+  "no_function_fits": true,
+  "document_kind": "authorization",
+  "notes": "The question gives only the first name \"Rowan\". It most likely means Rowan Mercer (HG-M042). An authorization document would be needed to find the units authorized and the units still left."
+ }
+}

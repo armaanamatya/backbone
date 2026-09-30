@@ -1,0 +1,88 @@
+{
+ "question": "How many therapy minutes and hours did Rowan actually receive during the review period, overall and for each Monday–Sunday week? Show calculations or supporting detail, and report any conclusion the available documents do not settle.",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:12:48.727+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:12:41.150+00:00",
+   "usage": {
+    "wall_seconds": 7.539,
+    "api_seconds": 5.873,
+    "input_tokens": 2,
+    "output_tokens": 645,
+    "cache_creation_input_tokens": 1394,
+    "cache_read_input_tokens": 2883,
+    "cost_usd": 0.024636599999999998,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 645,
+      "cacheReadInputTokens": 2883,
+      "cacheCreationInputTokens": 1394,
+      "webSearchRequests": 0,
+      "costUSD": 0.024636599999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "the episode"
+  },
+  "reading": "\"Therapy minutes actually received\" means minutes of held contacts, with the patient present, in the classes the plan counts. Hours are those minutes divided by 60. Weeks run Monday to Sunday.",
+  "other_readings": [
+   "Include all held encounters, including classes the plan excludes or contacts without the patient present, to show the total minutes of all contact."
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "week"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "Rowan"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question gives only the first name \"Rowan\". The only match in the list is HG-M042, Rowan Mercer. The plan period ends on Friday 2026-01-30, so the last Monday–Sunday week is cut short. The answer should give the minutes for each week and the hours worked out from them, and say which conflicts are still open and would change the totals."
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "question": "Reconstruct the care on January 19 and January 21. How many therapy contacts and patient therapy minutes occurred on each date, and how do the attendance records, clinical notes, later documents, and telehealth records affect your answer?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T07:18:27.327+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:18:18.880+00:00",
+   "usage": {
+    "wall_seconds": 8.401,
+    "api_seconds": 6.41,
+    "input_tokens": 2,
+    "output_tokens": 764,
+    "cache_creation_input_tokens": 1445,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.0274388,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 764,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1445,
+      "webSearchRequests": 0,
+      "costUSD": 0.0274388,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": null,
+  "period": {
+   "start": "2026-01-19",
+   "end": "2026-01-21",
+   "basis": "as asked"
+  },
+  "reading": "The question names no patient. The only patient in the collection is HG-M042 (Rowan Mercer), so the dates are read against that plan's year, 2026. A therapy contact is taken to mean a contact of a class the plan counts, held with the patient present. Patient therapy minutes are the counted minutes on that date.",
+  "other_readings": [
+   "Contact could mean any scheduled or documented encounter, including no-shows, cancellations and contacts without the patient.",
+   "Telehealth contacts might count only when the platform export confirms the patient connected, not just when a note or schedule entry exists."
+  ],
+  "calls": [
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "HG-M042",
+     "date": "2026-01-19"
+    }
+   },
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "HG-M042",
+     "date": "2026-01-21"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "HG-M042",
+     "start": "2026-01-19",
+     "end": "2026-01-21",
+     "group_by": "day"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "HG-M042",
+     "start": "2026-01-19",
+     "end": "2026-01-21"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "HG-M042",
+     "start": "2026-01-19",
+     "end": "2026-01-21"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question names no patient. The calls use HG-M042 because that is the only patient in the collection, and the answer should say so. The care_delivered range also covers January 20; report only January 19 and January 21. The answer should explain how the attendance records, clinical notes, later documents (corrections and drafts) and telehealth platform exports each change the counts."
+ }
+}

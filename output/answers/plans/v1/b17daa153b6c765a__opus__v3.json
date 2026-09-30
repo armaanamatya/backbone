@@ -1,0 +1,90 @@
+{
+ "question": "For January 5–30, 2026, how many therapy sessions did Rowan attend, by service type and in total, and on how many distinct days? Provide a reviewable abstraction with source support and explain records that could lead to duplicate or ineligible counts.",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:11:16.561+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:11:07.613+00:00",
+   "usage": {
+    "wall_seconds": 8.923,
+    "api_seconds": 6.304,
+    "input_tokens": 2,
+    "output_tokens": 627,
+    "cache_creation_input_tokens": 4287,
+    "cache_read_input_tokens": 0,
+    "cost_usd": 0.046844,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 627,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 4287,
+      "webSearchRequests": 0,
+      "costUSD": 0.046844,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "as asked"
+  },
+  "reading": "\"Therapy sessions attended\" means contacts in the classes the plan counts, held with the patient present, grouped by service type (class), with the total and the number of distinct days.",
+  "other_readings": [
+   "All contacts held, including those without the patient present",
+   "All encounters of any class, including classes the plan excludes"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "class"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "day"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "Rowan"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question gives only the first name \"Rowan\", which matches Rowan Mercer (HG-M042). Show the source document for each counted contact. Name any duplicates (such as copies from imports or exports, or corrections) and any records that could not count (no-shows, cancellations, drafts, contacts without the patient, excluded classes)."
+ }
+}

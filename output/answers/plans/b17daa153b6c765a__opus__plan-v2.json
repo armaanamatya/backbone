@@ -1,0 +1,92 @@
+{
+ "question": "For January 5–30, 2026, how many therapy sessions did Rowan attend, by service type and in total, and on how many distinct days? Provide a reviewable abstraction with source support and explain records that could lead to duplicate or ineligible counts.",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T07:18:03.264+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:17:53.680+00:00",
+   "usage": {
+    "wall_seconds": 9.562,
+    "api_seconds": 6.266,
+    "input_tokens": 2,
+    "output_tokens": 683,
+    "cache_creation_input_tokens": 2885,
+    "cache_read_input_tokens": 1521,
+    "cost_usd": 0.0370522,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 683,
+      "cacheReadInputTokens": 1521,
+      "cacheCreationInputTokens": 2885,
+      "webSearchRequests": 0,
+      "costUSD": 0.0370522,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-05",
+   "end": "2026-01-30",
+   "basis": "as asked"
+  },
+  "reading": "\"Therapy sessions attended\" means contacts in the classes the plan counts that were held with the patient present. Service type is the contact class. Distinct days are the calendar days with at least one counted session.",
+  "other_readings": [
+   "Count all encounters held, including contacts without the patient present or in excluded classes",
+   "Count every contact the patient was present for, whatever its class"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "class"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30",
+     "group_by": "day"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "Rowan",
+     "start": "2026-01-05",
+     "end": "2026-01-30"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question gives only \"Rowan\", which matches HG-M042 Rowan Mercer. The answer should name the source document for each counted session. It should also explain possible duplicates, such as the same contact in several documents or a draft note alongside the final note, and ineligible contacts, such as no-shows, cancellations, contacts without the patient or excluded classes, along with any open conflicts."
+ }
+}

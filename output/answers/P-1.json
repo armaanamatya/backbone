@@ -1,0 +1,74 @@
+{
+ "question_id": "P-1",
+ "question": "How many sessions did Jordan Blake attend?",
+ "plan": {
+  "patient_named": "Jordan Blake",
+  "period": {
+   "start": null,
+   "end": null,
+   "basis": "the episode"
+  },
+  "reading": "Sessions means the attended contacts the plan counts, with the patient present, over the whole episode.",
+  "other_readings": [
+   "Sessions as all contacts held, including those without the patient present"
+  ],
+  "calls": [
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "Jordan Blake"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "Jordan Blake is not among the patients in the collection. The only patient is HG-M042, Rowan Mercer. The answer should say there is no record for Jordan Blake and should not swap in another patient. No plan period is known, so no dates are given."
+ },
+ "plan_source": "saved",
+ "plan_attempts": 1,
+ "results": [],
+ "parts": {
+  "1. the question as understood": [
+   "Patient as asked: Jordan Blake.",
+   "Period: the episode, with no dates given.",
+   "Reading: Sessions means the attended contacts the plan counts, with the patient present, over the whole episode.",
+   "Another reading: Sessions as all contacts held, including those without the patient present",
+   "Note: Jordan Blake is not among the patients in the collection. The only patient is HG-M042, Rowan Mercer. The answer should say there is no record for Jordan Blake and should not swap in another patient. No plan period is known, so no dates are given."
+  ],
+  "2. the answer": [
+   "No patient named Jordan Blake is in the collection. No figures are given for any other patient."
+  ],
+  "3. figures": [
+   "None."
+  ],
+  "4. what contributed": [
+   "Nothing."
+  ],
+  "5. what was excluded": [
+   "Nothing."
+  ],
+  "6. not settled": [
+   "Nothing."
+  ],
+  "7. assumptions": [
+   "A patient is matched by name or record number as written. No near match is used."
+  ],
+  "8. documents not read": [
+   "Not checked, because no figure was worked out."
+  ],
+  "in short": [
+   "No patient named Jordan Blake is in the collection. No figures are given for any other patient."
+  ],
+  "9. version": [
+   "Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.",
+   "Reading: model opus, effort low, prompt version 3.",
+   "Plan: model opus, plan prompt version 2, made 2026-09-30T07:18:43.435+00:00 (saved plan reused).",
+   "Answered: 2026-09-30T17:41:45+00:00."
+  ]
+ },
+ "patient": {
+  "status": "not_found",
+  "name": "Jordan Blake"
+ },
+ "text": "# P-1\n\n> How many sessions did Jordan Blake attend?\n\n**In short.** No patient named Jordan Blake is in the collection. No figures are given for any other patient.\n\n## 1. The question as understood\n\nPatient as asked: Jordan Blake.\nPeriod: the episode, with no dates given.\nReading: Sessions means the attended contacts the plan counts, with the patient present, over the whole episode.\nAnother reading: Sessions as all contacts held, including those without the patient present\nNote: Jordan Blake is not among the patients in the collection. The only patient is HG-M042, Rowan Mercer. The answer should say there is no record for Jordan Blake and should not swap in another patient. No plan period is known, so no dates are given.\n\n## 2. The answer\n\nNo patient named Jordan Blake is in the collection. No figures are given for any other patient.\n\n## 3. Figures\n\nNone.\n\n## 4. What contributed\n\nNothing.\n\n## 5. What was excluded\n\nNothing.\n\n## 6. Not settled\n\nNothing.\n\n## 7. Assumptions\n\nA patient is matched by name or record number as written. No near match is used.\n\n## 8. Documents not read\n\nNot checked, because no figure was worked out.\n\n## 9. Version\n\nAbstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.\nReading: model opus, effort low, prompt version 3.\nPlan: model opus, plan prompt version 2, made 2026-09-30T07:18:43.435+00:00 (saved plan reused).\nAnswered: 2026-09-30T17:41:45+00:00.\n"
+}

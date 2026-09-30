@@ -1,0 +1,70 @@
+{
+ "question": "What was Rowan's PHQ-9 score on Jan 26?",
+ "model": "opus",
+ "effort": "low",
+ "plan_prompt_version": 2,
+ "made_at": "2026-09-30T07:19:05.284+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:18:58.849+00:00",
+   "usage": {
+    "wall_seconds": 6.393,
+    "api_seconds": 4.237,
+    "input_tokens": 2,
+    "output_tokens": 453,
+    "cache_creation_input_tokens": 1394,
+    "cache_read_input_tokens": 2954,
+    "cost_usd": 0.0208108,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 453,
+      "cacheReadInputTokens": 2954,
+      "cacheCreationInputTokens": 1394,
+      "webSearchRequests": 0,
+      "costUSD": 0.0208108,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-26",
+   "end": "2026-01-26",
+   "basis": "as asked"
+  },
+  "reading": "The question asks for a PHQ-9 score on 2026-01-26. It assumes a PHQ-9 was given that day, which may not be true. No contact class is involved.",
+  "other_readings": [],
+  "calls": [
+   {
+    "function": "assessments",
+    "arguments": {
+     "patient": "Rowan",
+     "instrument": "PHQ-9",
+     "on": "2026-01-26"
+    }
+   },
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "Rowan",
+     "date": "2026-01-26"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "If no PHQ-9 result is dated 2026-01-26, say so and do not guess a value. Report the nearest distinct PHQ-9 scores instead, and don't count copies or mentions as scores."
+ }
+}

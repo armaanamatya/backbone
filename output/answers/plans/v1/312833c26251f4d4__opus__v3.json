@@ -1,0 +1,95 @@
+{
+ "question": "Reconstruct the care on January 19 and January 21. How many therapy contacts and patient therapy minutes occurred on each date, and how do the attendance records, clinical notes, later documents, and telehealth records affect your answer?",
+ "model": "opus",
+ "effort": "low",
+ "prompt_version": 3,
+ "made_at": "2026-09-30T07:13:06.007+00:00",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T07:12:56.416+00:00",
+   "usage": {
+    "wall_seconds": 9.516,
+    "api_seconds": 7.483,
+    "input_tokens": 2,
+    "output_tokens": 743,
+    "cache_creation_input_tokens": 1399,
+    "cache_read_input_tokens": 2883,
+    "cost_usd": 0.026636599999999996,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 743,
+      "cacheReadInputTokens": 2883,
+      "cacheCreationInputTokens": 1399,
+      "webSearchRequests": 0,
+      "costUSD": 0.026636599999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "errors": []
+  }
+ ],
+ "plan": {
+  "patient_named": null,
+  "period": {
+   "start": "2026-01-19",
+   "end": "2026-01-21",
+   "basis": "as asked"
+  },
+  "reading": "The question names no patient. The only patient in the collection is HG-M042 Rowan Mercer, and the year 2026 comes from that patient's plan period. A therapy contact is a contact of a class the plan counts that actually took place with the patient present. Patient therapy minutes are the minutes counted for those contacts.",
+  "other_readings": [
+   "Contact could mean every scheduled or documented encounter, whether or not it was held or the patient was there.",
+   "Minutes could be the documented session length rather than the counted minutes when a later correction or the telehealth platform record changes the time."
+  ],
+  "calls": [
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "HG-M042",
+     "date": "2026-01-19"
+    }
+   },
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "HG-M042",
+     "date": "2026-01-21"
+    }
+   },
+   {
+    "function": "care_delivered",
+    "arguments": {
+     "patient": "HG-M042",
+     "start": "2026-01-19",
+     "end": "2026-01-21",
+     "group_by": "day"
+    }
+   },
+   {
+    "function": "not_counted",
+    "arguments": {
+     "patient": "HG-M042",
+     "start": "2026-01-19",
+     "end": "2026-01-21"
+    }
+   },
+   {
+    "function": "conflicts_and_findings",
+    "arguments": {
+     "patient": "HG-M042"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The question names no patient. The calls use HG-M042 (Rowan Mercer) because that is the only patient in the collection, and the answer should say so. The day-grouped totals will include January 20, so the answer should report only January 19 and January 21. It should also explain how the attendance records, clinical notes, corrections and telehealth platform exports change the counts."
+ }
+}

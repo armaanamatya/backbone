@@ -1,0 +1,123 @@
+{
+ "question_id": "P-6",
+ "question": "What care did Rowan receive on Jan 24?",
+ "plan": {
+  "patient_named": "Rowan",
+  "period": {
+   "start": "2026-01-24",
+   "end": "2026-01-24",
+   "basis": "as asked"
+  },
+  "reading": "Care on Jan 24 means every contact documented on 2026-01-24 (year from the plan period), whatever its class, with its status and minutes.",
+  "other_readings": [
+   "Only counted therapy contacts on that date"
+  ],
+  "calls": [
+   {
+    "function": "date_detail",
+    "arguments": {
+     "patient": "Rowan",
+     "date": "2026-01-24"
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "2026-01-24 is a Saturday. If no contact is documented, the answer should say that plainly. The question names only 'Rowan', which matches Rowan Mercer (HG-M042)."
+ },
+ "plan_source": "saved",
+ "plan_attempts": 1,
+ "results": [
+  {
+   "function": "date_detail",
+   "arguments": {
+    "patient": "HG-M042",
+    "date": "2026-01-24"
+   },
+   "date": "2026-01-24",
+   "coverage": "not_documented",
+   "covered_by_schedule": [],
+   "documents_dated": [],
+   "contacts": [],
+   "counts": {
+    "contacts": 0,
+    "therapy_contacts": 0,
+    "administrative_records": 0
+   },
+   "totals": [
+    {
+     "choices": {},
+     "sessions": 0,
+     "contacts": [],
+     "days": 0,
+     "dates": [],
+     "minutes": 0,
+     "hours": 0.0,
+     "minutes_unknown_for": [],
+     "by_class": {}
+    }
+   ],
+   "calculation": [
+    " = 0"
+   ],
+   "sources": [],
+   "conflicts": [],
+   "not_read": []
+  }
+ ],
+ "parts": {
+  "1. the question as understood": [
+   "Patient: Rowan Mercer (HG-M042).",
+   "Period: 2026-01-24 to 2026-01-24 (as asked).",
+   "Reading: Care on Jan 24 means every contact documented on 2026-01-24 (year from the plan period), whatever its class, with its status and minutes.",
+   "Another reading: Only counted therapy contacts on that date",
+   "Note: 2026-01-24 is a Saturday. If no contact is documented, the answer should say that plainly. The question names only 'Rowan', which matches Rowan Mercer (HG-M042)."
+  ],
+  "2. the answer": [
+   "Jan 24: not documented. No document records a contact on this date, and none is dated on it. This does not say that no care took place."
+  ],
+  "3. figures": [
+   "None."
+  ],
+  "4. what contributed": [
+   "Nothing."
+  ],
+  "5. what was excluded": [
+   "Nothing."
+  ],
+  "6. not settled": [
+   "Nothing."
+  ],
+  "7. assumptions": [
+   "The figures cover the documented record. A date with no document is counted as a date with no contact, and is named where it falls in the period.",
+   "\"Not documented\" is kept apart from \"did not happen\". The second is said only when a document says so."
+  ],
+  "8. documents not read": [
+   "None."
+  ],
+  "in short": [
+   "Jan 24: not documented. No document records a contact on this date, and none is dated on it. This does not say that no care took place."
+  ],
+  "9. version": [
+   "Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.",
+   "Reading: model opus, effort low, prompt version 3.",
+   "Plan: model opus, plan prompt version 2, made 2026-09-30T07:19:24.774+00:00 (saved plan reused).",
+   "Answered: 2026-09-30T17:41:45+00:00."
+  ]
+ },
+ "patient": {
+  "status": "found",
+  "patient": "HG-M042",
+  "name": "Rowan Mercer",
+  "dob": "1991-04-12",
+  "documents": 31,
+  "episodes": [
+   {
+    "start": "2026-01-05",
+    "end": "2026-01-30",
+    "plan": "BH-D003"
+   }
+  ]
+ },
+ "text": "# P-6\n\n> What care did Rowan receive on Jan 24?\n\n**In short.** Jan 24: not documented. No document records a contact on this date, and none is dated on it. This does not say that no care took place.\n\n## 1. The question as understood\n\nPatient: Rowan Mercer (HG-M042).\nPeriod: 2026-01-24 to 2026-01-24 (as asked).\nReading: Care on Jan 24 means every contact documented on 2026-01-24 (year from the plan period), whatever its class, with its status and minutes.\nAnother reading: Only counted therapy contacts on that date\nNote: 2026-01-24 is a Saturday. If no contact is documented, the answer should say that plainly. The question names only 'Rowan', which matches Rowan Mercer (HG-M042).\n\n## 2. The answer\n\nJan 24: not documented. No document records a contact on this date, and none is dated on it. This does not say that no care took place.\n\n## 3. Figures\n\nNone.\n\n## 4. What contributed\n\nNothing.\n\n## 5. What was excluded\n\nNothing.\n\n## 6. Not settled\n\nNothing.\n\n## 7. Assumptions\n\nThe figures cover the documented record. A date with no document is counted as a date with no contact, and is named where it falls in the period.\n\"Not documented\" is kept apart from \"did not happen\". The second is said only when a document says so.\n\n## 8. Documents not read\n\nNone.\n\n## 9. Version\n\nAbstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.\nReading: model opus, effort low, prompt version 3.\nPlan: model opus, plan prompt version 2, made 2026-09-30T07:19:24.774+00:00 (saved plan reused).\nAnswered: 2026-09-30T17:41:45+00:00.\n"
+}
