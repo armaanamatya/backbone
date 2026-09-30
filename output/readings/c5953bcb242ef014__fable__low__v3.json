@@ -1,0 +1,328 @@
+{
+ "doc_hash": "c5953bcb242ef0143301019cf06964a4b759d432e26dc0e34f0ad1c2b819df70",
+ "file_name": "BH-D107_group_activity_records_2026-01-22_and_29.txt",
+ "model": "fable",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:18:35.041+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:18:01.715+00:00",
+   "usage": {
+    "wall_seconds": 32.914,
+    "api_seconds": 28.638,
+    "input_tokens": 2,
+    "output_tokens": 3092,
+    "cache_creation_input_tokens": 1198,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.18103425,
+    "turns": 2,
+    "models": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 3092,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1198,
+      "webSearchRequests": 0,
+      "costUSD": 0.18103425,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 418,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "8f7fa487-3648-48c9-bfa5-c855be6a198a",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D107",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Skills group activity record extract",
+    "heading": "January 22, 2026 | Encounter HG-E113",
+    "author_name": "Leah Chen, LCSW",
+    "author_role": "Facilitator",
+    "first_line": 1,
+    "last_line": 10,
+    "signature": "signed",
+    "signed_by": "Leah Chen, LCSW",
+    "signed_date": "2026-01-22",
+    "signed_time": "12:06",
+    "signature_line": 10,
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-22",
+      "quote": "January 22, 2026 | Encounter HG-E113",
+      "line": 7
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-22",
+      "time": "12:06",
+      "quote": "Signed: Leah Chen, LCSW | January 22, 2026, 12:06",
+      "line": 10
+     }
+    ]
+   },
+   {
+    "id": 2,
+    "kind": "clinical_note",
+    "kind_as_written": "Skills group activity record extract",
+    "heading": "January 29, 2026 | Encounter HG-E118",
+    "author_name": "Leah Chen, LCSW",
+    "author_role": "Facilitator",
+    "first_line": 12,
+    "last_line": 17,
+    "signature": "signed",
+    "signed_by": "Leah Chen, LCSW",
+    "signed_date": "2026-01-29",
+    "signed_time": "12:11",
+    "signature_line": 15,
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-29",
+      "quote": "January 29, 2026 | Encounter HG-E118",
+      "line": 12
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-29",
+      "time": "12:11",
+      "quote": "Signed: Leah Chen, LCSW | January 29, 2026, 12:11",
+      "line": 15
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E113",
+    "appointment_id": null,
+    "service_date": "2026-01-22",
+    "service_as_written": "Skills group",
+    "service_class": "group_therapy",
+    "quote": "January 22, 2026 | Encounter HG-E113",
+    "line": 7
+   },
+   {
+    "section": 2,
+    "ref": "c2",
+    "encounter_id": "HG-E118",
+    "appointment_id": null,
+    "service_date": "2026-01-29",
+    "service_as_written": "Skills group",
+    "service_class": "group_therapy",
+    "quote": "January 29, 2026 | Encounter HG-E118",
+    "line": 12
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "header",
+    "quote": "Scheduled group 10:00–11:30.",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "no_therapy_interval",
+    "start": "10:45",
+    "end": "11:00",
+    "label": "not_labelled",
+    "position": "header",
+    "detail": "Nontherapeutic break",
+    "quote": "Nontherapeutic break 10:45–11:00.",
+    "line": 8
+   },
+   {
+    "section": 2,
+    "contact": "c2",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "header",
+    "quote": "Scheduled group 10:00–11:30.",
+    "line": 13
+   },
+   {
+    "section": 2,
+    "contact": "c2",
+    "what": "no_therapy_interval",
+    "start": "10:45",
+    "end": "11:00",
+    "label": "not_labelled",
+    "position": "header",
+    "detail": "Nontherapeutic break",
+    "quote": "Nontherapeutic break 10:45–11:00.",
+    "line": 13
+   }
+  ],
+  "attendance": [],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present_part",
+    "quote": "Rowan joined the discussion after it had begun;",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Leah Chen, LCSW",
+    "role": "clinician",
+    "role_as_written": "Facilitator",
+    "presence": "not_stated",
+    "quote": "Facilitator encouraged a limited, planned review period and a stopping point.",
+    "line": 9
+   },
+   {
+    "section": 2,
+    "contact": "c2",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "not_stated",
+    "quote": "Rowan participated in the paired rehearsal and accepted feedback about keeping the request brief.",
+    "line": 14
+   },
+   {
+    "section": 2,
+    "contact": "c2",
+    "name": "Leah Chen, LCSW",
+    "role": "clinician",
+    "role_as_written": "Facilitator",
+    "presence": "not_stated",
+    "quote": "The facilitator helped identify a specific question to ask rather than trying to anticipate every possible concern.",
+    "line": 14
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-22",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Patient joined discussion late",
+    "quote": "Rowan joined the discussion after it had begun;",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-22",
+    "speaker": "patient",
+    "topic": "anxiety",
+    "summary": "Concern that seeing outstanding calendar items would be overwhelming",
+    "quote": "described concern that seeing outstanding items would become overwhelming.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-22",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Facilitator encouraged planned review period with stopping point",
+    "quote": "Facilitator encouraged a limited, planned review period and a stopping point.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-22",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Patient contributed example after the break",
+    "quote": "The patient contributed an example to the discussion after the break.",
+    "line": 9
+   },
+   {
+    "section": 2,
+    "contact": "c2",
+    "date": "2026-01-29",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Opened work calendar but delayed follow-up conversation",
+    "quote": "Rowan reported opening the work calendar but delaying a follow-up conversation.",
+    "line": 14
+   },
+   {
+    "section": 2,
+    "contact": "c2",
+    "date": "2026-01-29",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Participated in paired rehearsal and accepted feedback",
+    "quote": "Rowan participated in the paired rehearsal and accepted feedback about keeping the request brief.",
+    "line": 14
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "not_an_attendance_record",
+    "quote": "the arrival field is maintained in the attendance register.",
+    "line": 9
+   },
+   {
+    "section": 2,
+    "contact": "c1",
+    "says": "no_therapy_provided",
+    "quote": "For both dates, the break was unstructured time without therapeutic activity or facilitator treatment.",
+    "line": 17
+   },
+   {
+    "section": 2,
+    "contact": "c2",
+    "says": "no_therapy_provided",
+    "quote": "For both dates, the break was unstructured time without therapeutic activity or facilitator treatment.",
+    "line": 17
+   },
+   {
+    "section": 2,
+    "contact": null,
+    "says": "not_an_attendance_record",
+    "quote": "Patient arrival, departure, and attendance status are entered in the separate attendance register.",
+    "line": 17
+   }
+  ]
+ },
+ "reused": false
+}

@@ -1,0 +1,202 @@
+{
+ "doc_hash": "d2240979a2de7d7782a34a6ca26e289ee829d01eea9932e4d61b3588c724ceb1",
+ "file_name": "group_authorization_letter.txt",
+ "model": "fable",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:19:57.933+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:19:38.357+00:00",
+   "usage": {
+    "wall_seconds": 19.327,
+    "api_seconds": 16.686,
+    "input_tokens": 2,
+    "output_tokens": 1799,
+    "cache_creation_input_tokens": 1019,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.11280425000000001,
+    "turns": 2,
+    "models": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 1799,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1019,
+      "webSearchRequests": 0,
+      "costUSD": 0.11280425000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 333,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "5c91280d-114a-4ded-865f-2ec2f9ea33b5",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D001",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "authorization",
+    "kind_as_written": "Administrative correspondence",
+    "first_line": 1,
+    "last_line": 12,
+    "signature": "not_stated",
+    "is_copy": false,
+    "author_name": null,
+    "author_role": null,
+    "dates": [
+     {
+      "kind": "received",
+      "date": "2026-01-04",
+      "time": "15:26",
+      "quote": "Administrative correspondence received 2026-01-04, 15:26 local",
+      "line": 5
+     },
+     {
+      "kind": "period_start",
+      "date": "2026-01-05",
+      "quote": "approved for the period January 5, 2026 through January 30, 2026",
+      "line": 10
+     },
+     {
+      "kind": "period_end",
+      "date": "2026-01-30",
+      "quote": "approved for the period January 5, 2026 through January 30, 2026",
+      "line": 10
+     }
+    ]
+   },
+   {
+    "id": 2,
+    "kind": "other",
+    "kind_as_written": "Administrative entry",
+    "first_line": 14,
+    "last_line": 15,
+    "signature": "not_stated",
+    "is_copy": false,
+    "author_name": "N. Ellis",
+    "author_role": null,
+    "dates": [
+     {
+      "kind": "entered",
+      "date": "2026-01-05",
+      "time": "08:05",
+      "quote": "Administrative entry, N. Ellis, 2026-01-05, 08:05 local:",
+      "line": 14
+     }
+    ]
+   }
+  ],
+  "contacts": [],
+  "modalities": [],
+  "times": [],
+  "attendance": [],
+  "participants": [],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 2,
+    "date": "2026-01-05",
+    "speaker": "staff",
+    "speaker_name": "N. Ellis",
+    "topic": "other",
+    "summary": "Patient informed office would send weekly appointment list",
+    "quote": "Rowan was informed that the office would send a weekly appointment list.",
+    "line": 15
+   }
+  ],
+  "plan_rules": [
+   {
+    "section": 1,
+    "rule": "episode_period",
+    "start_date": "2026-01-05",
+    "end_date": "2026-01-30",
+    "quote": "approved for the period January 5, 2026 through January 30, 2026",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "rule": "requirement",
+    "measure": "sessions",
+    "minimum": 8,
+    "period": "episode",
+    "text": "Authorized quantity: 8 group sessions",
+    "quote": "Authorized quantity: 8 group sessions.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "rule": "other",
+    "text": "One authorization unit represents one scheduled group session",
+    "quote": "One authorization unit represents one scheduled group session.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "rule": "counted_service",
+    "service_classes": [
+     "group_therapy"
+    ],
+    "text": "outpatient therapeutic group work",
+    "quote": "The service description is outpatient therapeutic group work supporting the submitted behavioral health treatment plan.",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "rule": "excluded_service",
+    "service_classes": [
+     "individual_therapy",
+     "family_therapy",
+     "medication_management"
+    ],
+    "quote": "This letter does not authorize individual therapy, family therapy, or medication appointments under the group service quantity.",
+    "line": 10
+   }
+  ],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "The approved period permits the practice to arrange group appointments within the indicated dates.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "Changes in appointment dates within the approved period may be made by the scheduling desk.",
+    "line": 12
+   },
+   {
+    "section": 2,
+    "says": "not_an_attendance_record",
+    "quote": "No service attendance record accompanies this letter.",
+    "line": 15
+   },
+   {
+    "section": 2,
+    "says": "other",
+    "quote": "Letter attached to the program account.",
+    "line": 15
+   }
+  ]
+ },
+ "reused": false
+}

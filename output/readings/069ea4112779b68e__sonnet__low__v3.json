@@ -1,0 +1,207 @@
+{
+ "doc_hash": "069ea4112779b68e7ba7bc9d06a73a6ad6dbb8110d7a1e7dfd3307769c6305be",
+ "file_name": "BH-D109_care_coordination_2026-01-23.txt",
+ "model": "sonnet",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:10:43.137+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:10:29.755+00:00",
+   "usage": {
+    "wall_seconds": 12.528,
+    "api_seconds": 8.392,
+    "input_tokens": 2,
+    "output_tokens": 1605,
+    "cache_creation_input_tokens": 1061,
+    "cache_read_input_tokens": 9724,
+    "cost_usd": 0.022242800000000004,
+    "turns": 2,
+    "models": {
+     "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1605,
+      "cacheReadInputTokens": 9724,
+      "cacheCreationInputTokens": 1061,
+      "webSearchRequests": 0,
+      "costUSD": 0.022242800000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "703e4940-ef1d-47c3-910f-d4a41bf9e201",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D109",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Care coordination",
+    "first_line": 1,
+    "last_line": 15,
+    "signature": "signed",
+    "signed_by": "Mira Patel, LCSW",
+    "signed_date": "2026-01-23",
+    "signed_time": "10:02",
+    "signature_line": 15,
+    "author_name": "Mira Patel",
+    "author_role": "LCSW",
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-23",
+      "quote": "January 23, 2026 | 09:00–09:20",
+      "line": 5
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-23",
+      "time": "10:02",
+      "quote": "Electronically signed: Mira Patel, LCSW | January 23, 2026, 10:02",
+      "line": 15
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E114",
+    "appointment_id": null,
+    "service_date": "2026-01-23",
+    "service_as_written": "Care coordination",
+    "service_class": "care_coordination",
+    "quote": "Care coordination | Encounter HG-E114",
+    "line": 3
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "09:00",
+    "end": "09:20",
+    "label": "not_labelled",
+    "position": "header",
+    "quote": "January 23, 2026 | 09:00–09:20",
+    "line": 5
+   }
+  ],
+  "attendance": [],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Mira Patel",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "not_stated",
+    "quote": "Participants: Mira Patel, LCSW, and Daniel Shaw, outside social worker",
+    "line": 6
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Daniel Shaw",
+    "role": "outside_professional",
+    "role_as_written": "outside social worker",
+    "presence": "not_stated",
+    "quote": "Participants: Mira Patel, LCSW, and Daniel Shaw, outside social worker",
+    "line": 6
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "absent",
+    "quote": "Patient participation: None. No patient contact occurred.",
+    "line": 7
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-23",
+    "speaker": "outside_professional",
+    "speaker_name": "Daniel Shaw",
+    "topic": "reason_for_contact",
+    "summary": "Patient asked for help on whom to contact about gradual return schedule",
+    "quote": "The outside social worker reported that Rowan had asked for help understanding whom to contact about a gradual return schedule.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-23",
+    "speaker": "clinician",
+    "speaker_name": null,
+    "topic": "functioning",
+    "summary": "Approach of breaking difficult task into manageable first step",
+    "quote": "Reviewed the current approach of helping Rowan break a difficult task into a manageable first step.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-23",
+    "speaker": "clinician",
+    "speaker_name": null,
+    "topic": "medication",
+    "summary": "No change to medication or therapy frequency",
+    "quote": "No change to medication or psychotherapy frequency was made during the coordination call.",
+    "line": 11
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_patient_contact",
+    "quote": "Patient participation: None. No patient contact occurred.",
+    "line": 7
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_therapy_provided",
+    "quote": "no psychotherapy was delivered to the patient during the call",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "This contact was between professionals only.",
+    "line": 13
+   }
+  ]
+ },
+ "reused": false
+}

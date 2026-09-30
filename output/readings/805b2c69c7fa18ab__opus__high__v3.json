@@ -1,0 +1,407 @@
+{
+ "doc_hash": "805b2c69c7fa18ab31b618b4a313c39dcdbde570cc0890de2dfd52d77ca547e1",
+ "file_name": "BH-D108_final_attendance_and_cancellation_register.txt",
+ "model": "opus",
+ "effort": "high",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:14:12.043+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:13:31.091+00:00",
+   "usage": {
+    "wall_seconds": 40.375,
+    "api_seconds": 36.029,
+    "input_tokens": 2,
+    "output_tokens": 4429,
+    "cache_creation_input_tokens": 1277,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.1007674,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4429,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1277,
+      "webSearchRequests": 0,
+      "costUSD": 0.1007674,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1023,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "4007277e-74d4-47b2-b520-8ad9be2a98b8",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D108",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "attendance_record",
+    "kind_as_written": "Outpatient attendance and appointment disposition extract",
+    "first_line": 1,
+    "last_line": 22,
+    "signature": "not_stated",
+    "is_copy": false,
+    "status_as_written": "Final",
+    "dates": [
+     {
+      "kind": "exported_or_prepared",
+      "date": "2026-01-30",
+      "time": "17:10",
+      "quote": "Extract prepared January 30, 2026, 17:10",
+      "line": 5
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E113",
+    "appointment_id": null,
+    "service_date": "2026-01-22",
+    "service_as_written": "Skills group",
+    "service_class": "group_therapy",
+    "quote": "January 22 | HG-E113 | Skills group | 10:00–11:30 | 10:30 | 11:30 | Attended, late arrival",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "ref": "c2",
+    "encounter_id": "HG-E116",
+    "appointment_id": null,
+    "service_date": "2026-01-27",
+    "service_as_written": "Skills group",
+    "service_class": "group_therapy",
+    "quote": "January 27 | HG-E116 | Skills group | 10:00–11:30 | — | — | No show; patient did not attend",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "ref": "c3",
+    "encounter_id": "HG-E117",
+    "appointment_id": null,
+    "service_date": "2026-01-28",
+    "service_as_written": "Individual",
+    "service_class": "individual_therapy",
+    "quote": "January 28 | HG-E117 | Individual | 14:00–14:45 | — | — | Patient cancelled before appointment",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "ref": "c4",
+    "encounter_id": "HG-E118",
+    "appointment_id": null,
+    "service_date": "2026-01-29",
+    "service_as_written": "Skills group",
+    "service_class": "group_therapy",
+    "quote": "January 29 | HG-E118 | Skills group | 10:00–11:30 | 10:00 | 11:30 | Attended",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "ref": "c5",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-27",
+    "service_as_written": "outreach message",
+    "service_class": "scheduling_contact",
+    "quote": "An outreach message inviting the patient to contact scheduling was left after the group",
+    "line": 16
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c5",
+    "modality": "message",
+    "quote": "An outreach message inviting the patient to contact scheduling was left after the group",
+    "line": 16
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "January 22 | HG-E113 | Skills group | 10:00–11:30 | 10:30 | 11:30 | Attended, late arrival",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_arrival",
+    "start": "10:30",
+    "end": null,
+    "label": "actual",
+    "position": "table",
+    "quote": "January 22 | HG-E113 | Skills group | 10:00–11:30 | 10:30 | 11:30 | Attended, late arrival",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_departure",
+    "start": null,
+    "end": "11:30",
+    "label": "actual",
+    "position": "table",
+    "quote": "January 22 | HG-E113 | Skills group | 10:00–11:30 | 10:30 | 11:30 | Attended, late arrival",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "January 27 | HG-E116 | Skills group | 10:00–11:30 | — | — | No show; patient did not attend",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "what": "contact_interval",
+    "start": "14:00",
+    "end": "14:45",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "January 28 | HG-E117 | Individual | 14:00–14:45 | — | — | Patient cancelled before appointment",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "January 29 | HG-E118 | Skills group | 10:00–11:30 | 10:00 | 11:30 | Attended",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "what": "patient_arrival",
+    "start": "10:00",
+    "end": null,
+    "label": "actual",
+    "position": "table",
+    "quote": "January 29 | HG-E118 | Skills group | 10:00–11:30 | 10:00 | 11:30 | Attended",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "what": "patient_departure",
+    "start": null,
+    "end": "11:30",
+    "label": "actual",
+    "position": "table",
+    "quote": "January 29 | HG-E118 | Skills group | 10:00–11:30 | 10:00 | 11:30 | Attended",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_arrival",
+    "start": "10:30",
+    "end": null,
+    "label": "actual",
+    "position": "body",
+    "quote": "Rowan arrived at 10:30 and remained until the group closed.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "what": "other",
+    "start": "08:12",
+    "end": null,
+    "label": "actual",
+    "position": "body",
+    "detail": "Cancellation received from patient",
+    "quote": "Cancellation received from patient January 28, 08:12.",
+    "line": 18
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "attended_part",
+    "status_as_written": "Attended, late arrival",
+    "quote": "Attended, late arrival",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "status": "no_show",
+    "status_as_written": "No show; patient did not attend",
+    "quote": "No show; patient did not attend",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "status": "cancelled_by_patient",
+    "status_as_written": "Patient cancelled before appointment",
+    "quote": "Patient cancelled before appointment",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "status": "attended",
+    "status_as_written": "Attended",
+    "quote": "January 29 | HG-E118 | Skills group | 10:00–11:30 | 10:00 | 11:30 | Attended",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "attended",
+    "status_as_written": "arrived at 10:30 and remained until the group closed",
+    "quote": "Rowan arrived at 10:30 and remained until the group closed.",
+    "line": 14,
+    "entry_signed_by": "Leah Chen, LCSW",
+    "entry_signed_date": "2026-01-22",
+    "entry_signed_time": "12:09"
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "status": "absent",
+    "status_as_written": "absent for the entire group",
+    "quote": "Final roster confirms Rowan was absent for the entire group.",
+    "line": 16,
+    "entry_signed_by": "Leah Chen, LCSW",
+    "entry_signed_date": "2026-01-27",
+    "entry_signed_time": "11:54"
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "status": "cancelled_by_patient",
+    "status_as_written": "Cancellation received from patient",
+    "reason": "personal scheduling conflict",
+    "quote": "Cancellation received from patient January 28, 08:12.",
+    "line": 18,
+    "entry_entered_by": "Ana Reed",
+    "entry_entered_date": "2026-01-28",
+    "entry_entered_time": "08:18"
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "status": "attended",
+    "status_as_written": "present from opening through closing",
+    "quote": "Rowan was present from opening through closing.",
+    "line": 20,
+    "entry_signed_by": "Leah Chen, LCSW",
+    "entry_signed_date": "2026-01-29",
+    "entry_signed_time": "12:15"
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present_part",
+    "quote": "Attended, late arrival",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "absent",
+    "quote": "Final roster confirms Rowan was absent for the entire group.",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Rowan was present from opening through closing.",
+    "line": 20
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c5",
+    "date": "2026-01-27",
+    "speaker": "clinician",
+    "topic": "reason_for_contact",
+    "summary": "Outreach inviting patient to contact scheduling after missed group",
+    "quote": "An outreach message inviting the patient to contact scheduling was left after the group",
+    "line": 16
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c2",
+    "says": "no_patient_contact",
+    "quote": "No patient treatment contact occurred.",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "contact": "c5",
+    "says": "no_clinical_service",
+    "quote": "no clinical discussion occurred",
+    "line": 16
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "says": "other",
+    "quote": "no replacement appointment was booked within January 2026",
+    "line": 18
+   },
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "Break details remain in the corresponding group activity records.",
+    "line": 22
+   }
+  ]
+ },
+ "reused": false
+}

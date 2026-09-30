@@ -1,0 +1,289 @@
+{
+ "doc_hash": "924dee06b05c0a841c3f86d0c394c7af39447db6c9ea7b643cc6eb3a3c40df6b",
+ "file_name": "family_primary_jan09.txt",
+ "model": "haiku",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:28:10.528+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:26:26.816+00:00",
+   "usage": {
+    "wall_seconds": 103.561,
+    "api_seconds": 100.481,
+    "input_tokens": 10,
+    "output_tokens": 11133,
+    "cache_creation_input_tokens": 1351,
+    "cache_read_input_tokens": 7461,
+    "cost_usd": 0.05912310000000001,
+    "turns": 2,
+    "models": {
+     "claude-haiku-4-5-20251001": {
+      "inputTokens": 10,
+      "outputTokens": 11133,
+      "cacheReadInputTokens": 7461,
+      "cacheCreationInputTokens": 1351,
+      "webSearchRequests": 0,
+      "costUSD": 0.05912310000000001,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 8638,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "55a3fb6a-a9c7-4b14-890c-c61de8212c66",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D007",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Family psychotherapy",
+    "first_line": 1,
+    "last_line": 18,
+    "signature": "signed",
+    "signed_by": "Mara Voss",
+    "signed_date": "2026-01-09",
+    "signed_time": "16:24",
+    "signature_line": 10,
+    "is_copy": false,
+    "author_name": "Mara Voss",
+    "author_role": "LCSW",
+    "status_as_written": null,
+    "original_signed_by": null,
+    "original_signed_date": null,
+    "original_signed_time": null,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-09",
+      "time": null,
+      "line": 6,
+      "quote": "2026-01-09, 14:00–14:45 local"
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-09",
+      "time": "16:24",
+      "line": 10,
+      "quote": "Mara Voss signed 2026-01-09, 16:24 local"
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E104",
+    "appointment_id": null,
+    "service_date": "2026-01-09",
+    "service_as_written": "Family psychotherapy",
+    "service_class": "family_therapy",
+    "line": 6,
+    "quote": "Encounter HG-E104 | 2026-01-09, 14:00–14:45 local"
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "14:00",
+    "end": "14:45",
+    "label": "not_labelled",
+    "position": "header",
+    "detail": null,
+    "line": 6,
+    "quote": "14:00–14:45"
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "attended",
+    "status_as_written": "remained present and engaged throughout the visit",
+    "reason": null,
+    "entry_signed_by": null,
+    "entry_signed_date": null,
+    "entry_signed_time": null,
+    "entry_entered_by": null,
+    "entry_entered_date": null,
+    "entry_entered_time": null,
+    "line": 16,
+    "quote": "Rowan remained present and engaged throughout the visit."
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan",
+    "role": "patient",
+    "role_as_written": null,
+    "presence": "present",
+    "line": 7,
+    "quote": "Present: Rowan and partner, Casey Mercer"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Casey Mercer",
+    "role": "family_or_partner",
+    "role_as_written": "partner",
+    "presence": "present",
+    "line": 7,
+    "quote": "Present: Rowan and partner, Casey Mercer"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Mara Voss",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "present",
+    "line": 8,
+    "quote": "Clinicians: Mara Voss, LCSW; cofacilitator Leena Park, LPC"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Leena Park",
+    "role": "clinician",
+    "role_as_written": "cofacilitator Leena Park, LPC",
+    "presence": "present",
+    "line": 8,
+    "quote": "cofacilitator Leena Park, LPC"
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "minutes": 45,
+    "of": "patient_present",
+    "line": 9,
+    "quote": "Patient-present family therapy duration: 45 minutes"
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "speaker_name": null,
+    "topic": "reason_for_contact",
+    "summary": "Appointment addressed patterns of support as patient rebuilds routine",
+    "line": 12,
+    "quote": "The appointment focused on patterns of support at home as Rowan attempts to rebuild a routine."
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "patient",
+    "speaker_name": null,
+    "topic": "other",
+    "summary": "Felt watched when asked repeatedly about work contact",
+    "line": 12,
+    "quote": "Rowan described feeling watched when asked repeatedly whether they had contacted work."
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "family_or_partner",
+    "speaker_name": "Casey",
+    "topic": "functioning",
+    "summary": "Worry that space might leave patient isolated",
+    "line": 12,
+    "quote": "Casey described worry that giving Rowan space might leave them isolated."
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "speaker_name": null,
+    "topic": "progress",
+    "summary": "Both acknowledged intentions differed from how other experienced exchange",
+    "line": 12,
+    "quote": "Both were able to acknowledge that their intentions differed from how the other person experienced the exchange."
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "speaker_name": null,
+    "topic": "mood",
+    "summary": "More animated when describing shared evening walk",
+    "line": 16,
+    "quote": "They became more animated when describing a shared evening walk"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "speaker_name": null,
+    "topic": "functioning",
+    "summary": "Identified shared activity as support without pressure",
+    "line": 16,
+    "quote": "identified this as support that did not feel like pressure"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "speaker_name": null,
+    "topic": "functioning",
+    "summary": "Partner agreed to single planned check-in instead of repeated reminders",
+    "line": 16,
+    "quote": "Casey agreed to use a single planned check-in about work preparation instead of repeated reminders."
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-09",
+    "speaker": "clinician",
+    "speaker_name": null,
+    "topic": "functioning",
+    "summary": "Agreed to communicate when wanting practical assistance versus quiet company",
+    "line": 16,
+    "quote": "Rowan agreed to say when they wanted practical assistance versus quiet company."
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "says": "other",
+    "line": 2,
+    "quote": "SYNTHETIC TRAINING RECORD — Entirely fictional patient and organization."
+   }
+  ]
+ },
+ "reused": false
+}

@@ -1,0 +1,361 @@
+{
+ "doc_hash": "805b2c69c7fa18ab31b618b4a313c39dcdbde570cc0890de2dfd52d77ca547e1",
+ "file_name": "BH-D108_final_attendance_and_cancellation_register.txt",
+ "model": "haiku",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:05:36.490+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:02:10.789+00:00",
+   "usage": {
+    "wall_seconds": 205.633,
+    "api_seconds": 203.006,
+    "input_tokens": 10,
+    "output_tokens": 21246,
+    "cache_creation_input_tokens": 1471,
+    "cache_read_input_tokens": 7461,
+    "cost_usd": 0.1099281,
+    "turns": 2,
+    "models": {
+     "claude-haiku-4-5-20251001": {
+      "inputTokens": 10,
+      "outputTokens": 21246,
+      "cacheReadInputTokens": 7461,
+      "cacheCreationInputTokens": 1471,
+      "webSearchRequests": 0,
+      "costUSD": 0.1099281,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 18232,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "885df22d-c646-465f-b1e0-5e0c402af471",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D108",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "schedule_export",
+    "kind_as_written": "Outpatient attendance and appointment disposition extract",
+    "first_line": 1,
+    "last_line": 23,
+    "signature": "not_stated",
+    "is_copy": false,
+    "author_name": null,
+    "author_role": null,
+    "status_as_written": "Final",
+    "dates": [
+     {
+      "kind": "exported_or_prepared",
+      "date": "2026-01-30",
+      "time": "17:10",
+      "line": 5,
+      "quote": "Extract prepared January 30, 2026, 17:10"
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E113",
+    "appointment_id": null,
+    "service_date": "2026-01-22",
+    "service_as_written": "Skills group",
+    "service_class": "group_therapy",
+    "line": 9,
+    "quote": "January 22 | HG-E113 | Skills group"
+   },
+   {
+    "section": 1,
+    "ref": "c2",
+    "encounter_id": "HG-E116",
+    "appointment_id": null,
+    "service_date": "2026-01-27",
+    "service_as_written": "Skills group",
+    "service_class": "group_therapy",
+    "line": 10,
+    "quote": "January 27 | HG-E116 | Skills group"
+   },
+   {
+    "section": 1,
+    "ref": "c3",
+    "encounter_id": "HG-E117",
+    "appointment_id": null,
+    "service_date": "2026-01-28",
+    "service_as_written": "Individual",
+    "service_class": "individual_therapy",
+    "line": 11,
+    "quote": "January 28 | HG-E117 | Individual"
+   },
+   {
+    "section": 1,
+    "ref": "c4",
+    "encounter_id": "HG-E118",
+    "appointment_id": null,
+    "service_date": "2026-01-29",
+    "service_as_written": "Skills group",
+    "service_class": "group_therapy",
+    "line": 12,
+    "quote": "January 29 | HG-E118 | Skills group"
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "line": 9,
+    "quote": "10:00–11:30"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_arrival",
+    "start": "10:30",
+    "end": null,
+    "label": "actual",
+    "position": "table",
+    "line": 9,
+    "quote": "10:30"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_departure",
+    "start": null,
+    "end": "11:30",
+    "label": "actual",
+    "position": "table",
+    "line": 9,
+    "quote": "11:30"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_arrival",
+    "start": "10:30",
+    "end": null,
+    "label": "actual",
+    "position": "body",
+    "line": 14,
+    "quote": "Rowan arrived at 10:30 and remained until the group closed"
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "line": 10,
+    "quote": "10:00–11:30"
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "what": "contact_interval",
+    "start": "14:00",
+    "end": "14:45",
+    "label": "scheduled",
+    "position": "table",
+    "line": 11,
+    "quote": "14:00–14:45"
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "line": 12,
+    "quote": "10:00–11:30"
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "what": "patient_arrival",
+    "start": "10:00",
+    "end": null,
+    "label": "actual",
+    "position": "table",
+    "line": 12,
+    "quote": "10:00"
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "what": "patient_departure",
+    "start": null,
+    "end": "11:30",
+    "label": "actual",
+    "position": "table",
+    "line": 12,
+    "quote": "11:30"
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "attended_part",
+    "status_as_written": "Attended, late arrival",
+    "line": 9,
+    "quote": "Attended, late arrival",
+    "reason": null,
+    "entry_signed_by": "Leah Chen, LCSW",
+    "entry_signed_date": "2026-01-22",
+    "entry_signed_time": "12:09"
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "status": "no_show",
+    "status_as_written": "No show; patient did not attend",
+    "line": 10,
+    "quote": "No show; patient did not attend",
+    "reason": null,
+    "entry_signed_by": "Leah Chen, LCSW",
+    "entry_signed_date": "2026-01-27",
+    "entry_signed_time": "11:54"
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "status": "cancelled_by_patient",
+    "status_as_written": "Patient cancelled before appointment",
+    "line": 11,
+    "quote": "Patient cancelled before appointment",
+    "reason": "personal scheduling conflict",
+    "entry_entered_by": "Ana Reed",
+    "entry_entered_date": "2026-01-28",
+    "entry_entered_time": "08:18"
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "status": "attended",
+    "status_as_written": "Attended",
+    "line": 12,
+    "quote": "Attended",
+    "reason": null,
+    "entry_signed_by": "Leah Chen, LCSW",
+    "entry_signed_date": "2026-01-29",
+    "entry_signed_time": "12:15"
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan",
+    "role": "patient",
+    "role_as_written": null,
+    "presence": "present_part",
+    "line": 9,
+    "quote": "Attended, late arrival"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Leah Chen",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "not_stated",
+    "line": 14,
+    "quote": "Signed: Leah Chen, LCSW"
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "name": "Rowan",
+    "role": "patient",
+    "role_as_written": null,
+    "presence": "absent",
+    "line": 16,
+    "quote": "Rowan was absent for the entire group"
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "name": "Leah Chen",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "not_stated",
+    "line": 16,
+    "quote": "Signed: Leah Chen, LCSW"
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "name": "Rowan",
+    "role": "patient",
+    "role_as_written": null,
+    "presence": "not_stated",
+    "line": 11,
+    "quote": "Patient cancelled before appointment"
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "name": "Rowan",
+    "role": "patient",
+    "role_as_written": null,
+    "presence": "present",
+    "line": 20,
+    "quote": "Rowan was present from opening through closing"
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "name": "Leah Chen",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "not_stated",
+    "line": 20,
+    "quote": "Signed: Leah Chen, LCSW"
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c2",
+    "line": 16,
+    "says": "no_patient_contact",
+    "quote": "No patient treatment contact occurred"
+   }
+  ]
+ },
+ "reused": false
+}

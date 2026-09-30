@@ -1,0 +1,230 @@
+{
+ "doc_hash": "d30d18d0335d5d428acea2e5ee0334fbbafc10665133a462061a01c94baa09b7",
+ "file_name": "group_facilitator_jan12.txt",
+ "model": "opus",
+ "effort": "high",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:15:43.009+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:15:20.524+00:00",
+   "usage": {
+    "wall_seconds": 22.145,
+    "api_seconds": 19.048,
+    "input_tokens": 2,
+    "output_tokens": 2530,
+    "cache_creation_input_tokens": 1109,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.0614434,
+    "turns": 2,
+    "models": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2530,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1109,
+      "webSearchRequests": 0,
+      "costUSD": 0.0614434,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 753,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "ab3b4df7-b501-4612-b773-4159b662031b",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D009",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Coping skills group",
+    "heading": "Harbor Grove Behavioral Health | Coping skills group",
+    "first_line": 1,
+    "last_line": 16,
+    "author_name": "Leena Park",
+    "author_role": "Facilitator, LPC",
+    "signature": "signed",
+    "signed_by": "Leena Park",
+    "signed_date": "2026-01-12",
+    "signed_time": "12:20",
+    "signature_line": 8,
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-12",
+      "quote": "Service date 2026-01-12",
+      "line": 6
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-12",
+      "time": "12:20",
+      "quote": "Signed 2026-01-12, 12:20 local",
+      "line": 8
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E105",
+    "appointment_id": null,
+    "service_date": "2026-01-12",
+    "service_as_written": "Coping skills group",
+    "service_class": "group_therapy",
+    "quote": "Rowan Mercer | DOB 1991-04-12 | MRN HG-M042 | Encounter HG-E105",
+    "line": 5
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "header",
+    "quote": "Scheduled group 10:00–11:30 local",
+    "line": 6
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "no_therapy_interval",
+    "start": "10:40",
+    "end": "10:55",
+    "label": "not_labelled",
+    "position": "body",
+    "detail": "Group break",
+    "quote": "Group break: 10:40–10:55; no therapeutic activity occurred during the break.",
+    "line": 12
+   }
+  ],
+  "attendance": [],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "not_stated",
+    "quote": "Rowan contributed an example about leaving work messages unopened.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Leena Park",
+    "role": "clinician",
+    "role_as_written": "Facilitator",
+    "presence": "not_stated",
+    "quote": "Facilitator: Leena Park, LPC",
+    "line": 7
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-12",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Leaves work messages unopened",
+    "quote": "Rowan contributed an example about leaving work messages unopened.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-12",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Identified smaller step of looking at one message",
+    "quote": "They identified looking at one message as a lower step than replying to every outstanding message.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-12",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Took a walk with Casey over weekend",
+    "quote": "They also described taking a walk with Casey over the weekend",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-12",
+    "speaker": "patient",
+    "topic": "anxiety",
+    "summary": "Walk made evening less dominated by worry",
+    "quote": "noted that it helped the evening feel less dominated by worry",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-12",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Planned action after breakfast",
+    "quote": "Rowan wrote down an action to try after breakfast and asked how to respond if the morning went poorly.",
+    "line": 14
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-12",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Listened to peers, offered supportive comment",
+    "quote": "Rowan listened to peers and offered a supportive comment to another member.",
+    "line": 16
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_therapy_provided",
+    "quote": "Group break: 10:40–10:55; no therapeutic activity occurred during the break.",
+    "line": 12
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "not_an_attendance_record",
+    "quote": "Attendance is recorded on the group desk roster.",
+    "line": 16
+   }
+  ]
+ },
+ "reused": false
+}

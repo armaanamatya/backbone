@@ -1,0 +1,280 @@
+{
+ "doc_hash": "36764827bcb39caf2e9304c881f55e4acba9744a9792228bf36981f19a0feaf9",
+ "file_name": "BH-D113_family_therapy_2026-01-30.txt",
+ "model": "haiku",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:24:27.020+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:22:19.484+00:00",
+   "usage": {
+    "wall_seconds": 127.492,
+    "api_seconds": 123.658,
+    "input_tokens": 18,
+    "output_tokens": 13230,
+    "cache_creation_input_tokens": 12145,
+    "cache_read_input_tokens": 16263,
+    "cost_usd": 0.09208430000000001,
+    "turns": 3,
+    "models": {
+     "claude-haiku-4-5-20251001": {
+      "inputTokens": 18,
+      "outputTokens": 13230,
+      "cacheReadInputTokens": 16263,
+      "cacheCreationInputTokens": 12145,
+      "webSearchRequests": 0,
+      "costUSD": 0.09208430000000001,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 8958,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "41777a46-1ab6-418a-81b1-ca6200b33deb",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D113",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Family psychotherapy",
+    "first_line": 1,
+    "last_line": 16,
+    "signature": "signed",
+    "is_copy": false,
+    "author_name": "Mira Patel, LCSW",
+    "author_role": "Clinician",
+    "signed_by": "Mira Patel, LCSW",
+    "signed_date": "2026-01-30",
+    "signed_time": "14:18",
+    "signature_line": 15,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-30",
+      "quote": "January 30, 2026",
+      "line": 5
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-30",
+      "time": "14:18",
+      "quote": "January 30, 2026, 14:18",
+      "line": 15
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E119",
+    "appointment_id": null,
+    "service_date": "2026-01-30",
+    "service_as_written": "Family psychotherapy",
+    "service_class": "family_therapy",
+    "quote": "Family psychotherapy | Encounter HG-E119",
+    "line": 3
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "modality": "in_person",
+    "quote": "In person",
+    "line": 5,
+    "contact": "c1"
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "what": "contact_interval",
+    "start": "13:00",
+    "end": "13:45",
+    "label": "actual",
+    "position": "header",
+    "quote": "Therapist session interval: 13:00–13:45, 45 minutes.",
+    "line": 6,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "what": "patient_absent_interval",
+    "start": "13:00",
+    "end": "13:15",
+    "label": "actual",
+    "position": "header",
+    "detail": "Partner only",
+    "quote": "Partner only: 13:00–13:15.",
+    "line": 7,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "what": "patient_present",
+    "start": "13:15",
+    "end": "13:45",
+    "label": "actual",
+    "position": "header",
+    "detail": "with partner",
+    "quote": "Rowan present with partner: 13:15–13:45, 30 minutes.",
+    "line": 7,
+    "contact": "c1"
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "status": "attended_part",
+    "status_as_written": "Rowan joined at 13:15 and participated through the end of the session",
+    "reason": null,
+    "quote": "Rowan was not present for that portion",
+    "line": 9,
+    "contact": "c1"
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present_part",
+    "quote": "Rowan joined at 13:15 and participated through the end of the session",
+    "line": 11,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "name": "Casey Mercer",
+    "role": "family_or_partner",
+    "presence": "present",
+    "quote": "Casey Mercer, arrived first",
+    "line": 9,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "name": "Mira Patel, LCSW",
+    "role": "clinician",
+    "presence": "not_stated",
+    "quote": "Clinician: Mira Patel, LCSW",
+    "line": 5,
+    "contact": "c1"
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "minutes": 45,
+    "of": "contact_total",
+    "quote": "Therapist session interval: 13:00–13:45, 45 minutes.",
+    "line": 6,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "minutes": 30,
+    "of": "patient_present",
+    "quote": "Rowan present with partner: 13:15–13:45, 30 minutes.",
+    "line": 7,
+    "contact": "c1"
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "family_or_partner",
+    "speaker_name": "Casey Mercer",
+    "topic": "anxiety",
+    "summary": "Described uncertainty about when reminders helped versus when they increased patient's sense of pressure",
+    "quote": "Casey described uncertainty about when reminders helped and when they seemed to increase Rowan's sense of pressure.",
+    "line": 9,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "A reminder about work led to lengthy discussion followed by patient withdrawing from the task",
+    "quote": "a reminder about contacting work led to a lengthy discussion, followed by Rowan withdrawing from the task.",
+    "line": 11,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Patient practiced requesting specific kind of help and naming when reminder felt overwhelming",
+    "quote": "Rowan practiced requesting a specific kind of help and naming when a reminder felt overwhelming.",
+    "line": 11,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Both participants agreed to try one brief check-in at planned time rather than repeated questions",
+    "quote": "Both participants agreed to try one brief check-in at a planned time rather than repeated questions across the evening.",
+    "line": 13,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "Patient remained anxious about work conversation",
+    "quote": "Rowan remained anxious about the work conversation",
+    "line": 13,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Patient could explain the intended first step",
+    "quote": "could explain the intended first step.",
+    "line": 13,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Patient reported that having a limited plan felt more manageable",
+    "quote": "The patient reported that having a limited plan felt more manageable.",
+    "line": 13,
+    "contact": "c1"
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": []
+ },
+ "reused": false
+}

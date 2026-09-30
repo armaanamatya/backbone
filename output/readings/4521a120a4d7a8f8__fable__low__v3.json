@@ -1,0 +1,378 @@
+{
+ "doc_hash": "4521a120a4d7a8f896d5fe9137a44f72719adc5cadbd839ef1b9d9646316b7c4",
+ "file_name": "missed_visit_outreach_jan08.txt",
+ "model": "fable",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:20:55.270+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:20:19.125+00:00",
+   "usage": {
+    "wall_seconds": 35.45,
+    "api_seconds": 31.808,
+    "input_tokens": 2,
+    "output_tokens": 3572,
+    "cache_creation_input_tokens": 1045,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.20197425,
+    "turns": 2,
+    "models": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 3572,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1045,
+      "webSearchRequests": 0,
+      "costUSD": 0.20197425,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 479,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "ce256185-5147-4579-a5d4-18dc3fb0dd7d",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D015",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "scheduling_log",
+    "kind_as_written": "Scheduling support log",
+    "first_line": 1,
+    "last_line": 18,
+    "author_name": "N. Ellis",
+    "author_role": null,
+    "signature": "not_stated",
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "entered",
+      "date": "2026-01-08",
+      "time": "15:52",
+      "quote": "Entered by N. Ellis, 2026-01-08, 15:52 local",
+      "line": 7
+     },
+     {
+      "kind": "service",
+      "date": "2026-01-08",
+      "quote": "Related appointment: HG-E103, 2026-01-08, 11:00–11:45 local",
+      "line": 6
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E103",
+    "appointment_id": null,
+    "service_date": "2026-01-08",
+    "service_as_written": "scheduled individual visit",
+    "service_class": "individual_therapy",
+    "quote": "Related appointment: HG-E103, 2026-01-08, 11:00–11:45 local",
+    "line": 6
+   },
+   {
+    "section": 1,
+    "ref": "c2",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-08",
+    "service_as_written": "Outbound call placed to the patient's recorded number",
+    "service_class": "scheduling_contact",
+    "quote": "13:20: Outbound call placed to the patient's recorded number.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "ref": "c3",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-08",
+    "service_as_written": "callback",
+    "service_class": "scheduling_contact",
+    "quote": "15:36: Rowan returned the call.",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "ref": "c4",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-09",
+    "service_as_written": "family visit",
+    "service_class": "family_therapy",
+    "quote": "The next scheduled appointment remained the family visit on January 9.",
+    "line": 13
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c2",
+    "modality": "telephone",
+    "quote": "Outbound call placed to the patient's recorded number.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "modality": "telephone",
+    "quote": "Rowan returned the call.",
+    "line": 15
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "11:00",
+    "end": "11:45",
+    "label": "scheduled",
+    "position": "header",
+    "quote": "Related appointment: HG-E103, 2026-01-08, 11:00–11:45 local",
+    "line": 6
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "other",
+    "start": "11:12",
+    "end": null,
+    "label": "actual",
+    "position": "body",
+    "detail": "Reception notified the clinician that Rowan had not checked in",
+    "quote": "11:12: Reception notified the clinician that Rowan had not checked in.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "other",
+    "start": "11:45",
+    "end": null,
+    "label": "actual",
+    "position": "body",
+    "detail": "Appointment marked no show",
+    "quote": "11:45: Appointment marked no show.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "what": "other",
+    "start": "13:20",
+    "end": null,
+    "label": "actual",
+    "position": "body",
+    "detail": "Outbound call placed",
+    "quote": "13:20: Outbound call placed to the patient's recorded number.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "what": "other",
+    "start": "15:36",
+    "end": null,
+    "label": "actual",
+    "position": "body",
+    "detail": "Rowan returned the call",
+    "quote": "15:36: Rowan returned the call.",
+    "line": 15
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "no_show",
+    "status_as_written": "no show",
+    "quote": "11:45: Appointment marked no show.",
+    "line": 11,
+    "entry_entered_by": "N. Ellis",
+    "entry_entered_date": "2026-01-08",
+    "entry_entered_time": "15:52"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "absent",
+    "status_as_written": "not seen",
+    "quote": "Rowan was not seen for the scheduled individual visit.",
+    "line": 11,
+    "reason": null
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "absent",
+    "status_as_written": "had not checked in",
+    "quote": "Reception notified the clinician that Rowan had not checked in.",
+    "line": 9,
+    "reason": null
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "absent",
+    "quote": "Rowan was not seen for the scheduled individual visit.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": null,
+    "role": "staff",
+    "role_as_written": "Reception",
+    "presence": "not_stated",
+    "quote": "Reception notified the clinician that Rowan had not checked in.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "15:36: Rowan returned the call.",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "name": null,
+    "role": "staff",
+    "role_as_written": "Staff",
+    "presence": "present",
+    "quote": "Staff verified the appointment time and location and offered to resend the existing appointment list.",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c4",
+    "name": "Casey",
+    "role": "family_or_partner",
+    "presence": "not_stated",
+    "quote": "confirmed that they still intended to attend the next day's visit with Casey",
+    "line": 15
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c3",
+    "date": "2026-01-08",
+    "speaker": "patient",
+    "topic": "sleep",
+    "summary": "Poor night of sleep",
+    "quote": "They said the morning had gotten away from them after a poor night of sleep",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "date": "2026-01-08",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Intends to attend next day's family visit",
+    "quote": "confirmed that they still intended to attend the next day's visit with Casey",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "date": "2026-01-08",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Patient requested appointment list through portal",
+    "quote": "Rowan requested the list through the portal.",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "date": "2026-01-08",
+    "speaker": "clinician",
+    "topic": "reason_for_contact",
+    "summary": "Callback was about scheduling and contact information",
+    "quote": "The callback addressed scheduling and contact information.",
+    "line": 17
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-08",
+    "speaker": "clinician",
+    "topic": "other",
+    "summary": "Clinician notified of missed appointment; barriers to be discussed next visit",
+    "quote": "The individual clinician was notified of the missed appointment so that barriers to attendance could be discussed at the next visit.",
+    "line": 17
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c3",
+    "says": "no_therapy_provided",
+    "quote": "No therapy intervention was conducted.",
+    "line": 17
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "says": "no_patient_contact",
+    "quote": "No answer; a brief callback request was left without clinical detail.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_patient_contact",
+    "quote": "Rowan was not seen for the scheduled individual visit.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c3",
+    "says": "other",
+    "quote": "The callback addressed scheduling and contact information.",
+    "line": 17
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "There was no arrival call or cancellation message on the scheduling line.",
+    "line": 9
+   }
+  ]
+ },
+ "reused": false
+}

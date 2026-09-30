@@ -1,0 +1,259 @@
+{
+ "doc_hash": "8c2fbaf5bb4545cc4590b288d768ab893a4d727f6946bcc88339669d0629eb8a",
+ "file_name": "individual_therapy_jan14.txt",
+ "model": "sonnet",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:12:09.499+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:11:54.683+00:00",
+   "usage": {
+    "wall_seconds": 14.718,
+    "api_seconds": 10.816,
+    "input_tokens": 2,
+    "output_tokens": 2115,
+    "cache_creation_input_tokens": 1183,
+    "cache_read_input_tokens": 9724,
+    "cost_usd": 0.027830800000000003,
+    "turns": 2,
+    "models": {
+     "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2115,
+      "cacheReadInputTokens": 9724,
+      "cacheCreationInputTokens": 1183,
+      "webSearchRequests": 0,
+      "costUSD": 0.027830800000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "85fa6336-6e0f-41d3-abfa-d1b01950e533",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D011",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042",
+   "organization": "Harbor Grove Behavioral Health"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "first_line": 4,
+    "last_line": 17,
+    "signature": "signed",
+    "is_copy": false,
+    "author_name": "Mara Voss",
+    "author_role": "LCSW",
+    "signed_by": "Mara Voss",
+    "signed_date": "2026-01-14",
+    "signed_time": "13:16",
+    "signature_line": 9,
+    "kind_as_written": "Individual psychotherapy",
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-14",
+      "quote": "Encounter HG-E107 | Date 2026-01-14",
+      "line": 6
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-14",
+      "time": "13:16",
+      "quote": "Signed 2026-01-14, 13:16 local",
+      "line": 9
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E107",
+    "appointment_id": null,
+    "service_date": "2026-01-14",
+    "service_as_written": "Individual psychotherapy",
+    "service_class": "individual_therapy",
+    "quote": "Harbor Grove Behavioral Health | Individual psychotherapy",
+    "line": 4
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "what": "patient_present",
+    "start": "11:00",
+    "end": "11:45",
+    "label": "not_labelled",
+    "position": "header",
+    "quote": "Patient-present session 11:00–11:45 local; completed, 45 minutes",
+    "line": 7,
+    "contact": "c1"
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "status": "completed",
+    "status_as_written": "completed",
+    "quote": "Patient-present session 11:00–11:45 local; completed, 45 minutes",
+    "line": 7,
+    "contact": "c1"
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "not_stated",
+    "quote": "Rowan Mercer | DOB 1991-04-12 | MRN HG-M042",
+    "line": 5,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "name": "Mara Voss",
+    "role": "clinician",
+    "presence": "not_stated",
+    "quote": "Clinician: Mara Voss, LCSW",
+    "line": 8,
+    "contact": "c1"
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "minutes": 45,
+    "of": "patient_present",
+    "quote": "Patient-present session 11:00–11:45 local; completed, 45 minutes",
+    "line": 7,
+    "contact": "c1"
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "date": "2026-01-14",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "completed small activities: opened work message, two walks",
+    "quote": "Rowan reported completing several small activities since the prior individual appointment, including opening a work message and taking two short walks.",
+    "line": 11,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-14",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "continues to imagine being asked unanswerable questions",
+    "quote": "continue to imagine being asked questions they cannot answer",
+    "line": 11,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-14",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "sleep interrupted",
+    "quote": "Sleep remains interrupted",
+    "line": 11,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-14",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "getting started in morning requires effort",
+    "quote": "getting started in the morning continues to require effort.",
+    "line": 11,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-14",
+    "speaker": "patient",
+    "topic": "progress",
+    "summary": "family appointment helpful",
+    "quote": "Rowan described the family appointment as helpful because the planned check-in with Casey reduced repeated reminders.",
+    "line": 11,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-14",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "noticed physical tension but remained with task",
+    "quote": "Rowan noticed physical tension during the rehearsal but was able to remain with the task.",
+    "line": 13,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-14",
+    "speaker": "patient",
+    "topic": "anxiety",
+    "summary": "message less overwhelming when not solving whole question",
+    "quote": "They said the message seemed less overwhelming when it did not need to solve the entire return-to-work question.",
+    "line": 13,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-14",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "identified preparing appointment info evening before",
+    "quote": "Rowan identified setting out appointment information the evening before as a helpful preparation step.",
+    "line": 15,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-14",
+    "speaker": "clinician",
+    "topic": "mood",
+    "summary": "affect more varied than intake; worry about employment",
+    "quote": "Affect was more varied than at intake, although worry was evident when discussing employment.",
+    "line": 15,
+    "contact": "c1"
+   },
+   {
+    "section": 1,
+    "date": "2026-01-14",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "plan to attempt drafted acknowledgment, track activity, practice breathing",
+    "quote": "Plan: attempt the drafted acknowledgment, continue morning activity tracking, and practice the breathing skill before an avoided task.",
+    "line": 17,
+    "contact": "c1"
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": []
+ },
+ "reused": false
+}

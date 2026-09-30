@@ -1,0 +1,285 @@
+{
+ "doc_hash": "6f205f89f8d3dbd05094e647925bb3c5955f11e9fb44f255f8cdedc3edb49616",
+ "file_name": "early_group_attendance_roster.txt",
+ "model": "haiku",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:27:10.966+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:24:27.161+00:00",
+   "usage": {
+    "wall_seconds": 163.228,
+    "api_seconds": 157.668,
+    "input_tokens": 10,
+    "output_tokens": 16230,
+    "cache_creation_input_tokens": 1317,
+    "cache_read_input_tokens": 7461,
+    "cost_usd": 0.08454009999999999,
+    "turns": 2,
+    "models": {
+     "claude-haiku-4-5-20251001": {
+      "inputTokens": 10,
+      "outputTokens": 16230,
+      "cacheReadInputTokens": 7461,
+      "cacheCreationInputTokens": 1317,
+      "webSearchRequests": 0,
+      "costUSD": 0.08454009999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 13992,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "515d7f01-7835-4430-9a2b-d5c1ca02eaf3",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D005",
+   "organization": "Harbor Grove Behavioral Health",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "attendance_record",
+    "kind_as_written": "Group desk attendance extract",
+    "first_line": 1,
+    "last_line": 18,
+    "author_name": "N. Ellis",
+    "author_role": null,
+    "signature": "not_stated",
+    "is_copy": true,
+    "dates": [
+     {
+      "kind": "exported_or_prepared",
+      "date": "2026-01-12",
+      "time": "15:10",
+      "quote": "Extract prepared 2026-01-12, 15:10 local by N. Ellis",
+      "line": 6
+     },
+     {
+      "kind": "service",
+      "date": "2026-01-06",
+      "quote": "2026-01-06",
+      "line": 10
+     },
+     {
+      "kind": "service",
+      "date": "2026-01-12",
+      "quote": "2026-01-12",
+      "line": 11
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E102",
+    "appointment_id": null,
+    "service_date": "2026-01-06",
+    "service_as_written": null,
+    "service_class": "group_therapy",
+    "quote": "HG-E102",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "ref": "c2",
+    "encounter_id": "HG-E105",
+    "appointment_id": null,
+    "service_date": "2026-01-12",
+    "service_as_written": null,
+    "service_class": "group_therapy",
+    "quote": "HG-E105",
+    "line": 11
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "modality": "in_person",
+    "quote": "group room",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "modality": "in_person",
+    "quote": "group began",
+    "line": 15
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "10:00–11:30",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_arrival",
+    "start": "10:15",
+    "end": null,
+    "label": "actual",
+    "position": "table",
+    "quote": "10:15",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_departure",
+    "start": null,
+    "end": "11:15",
+    "label": "actual",
+    "position": "table",
+    "quote": "11:15",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "table",
+    "quote": "10:00–11:30",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "what": "patient_arrival",
+    "start": "10:00",
+    "end": null,
+    "label": "actual",
+    "position": "table",
+    "quote": "10:00",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "what": "patient_departure",
+    "start": null,
+    "end": "11:30",
+    "label": "actual",
+    "position": "table",
+    "quote": "11:30",
+    "line": 11
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "attended_part",
+    "status_as_written": "Attended part",
+    "reason": "Late arrival after difficulty finding parking; early departure for previously arranged ride",
+    "quote": "Attended part",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "status": "attended",
+    "status_as_written": "Attended full",
+    "quote": "Attended full",
+    "line": 11
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan",
+    "role": "patient",
+    "presence": "present_part",
+    "quote": "Attended part",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "name": "Rowan",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Attended full",
+    "line": 11
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-06",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Called from building entrance saying running behind after difficulty finding parking",
+    "quote": "Rowan called from the building entrance to say they were running behind after difficulty finding parking.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-06",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Advised needing to leave early for previously arranged ride",
+    "quote": "Rowan advised the facilitator that they would need to leave early for a previously arranged ride.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "date": "2026-01-12",
+    "speaker": "staff",
+    "topic": "functioning",
+    "summary": "No transport concern reported",
+    "quote": "No transport concern was reported at that time.",
+    "line": 15
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "says": "is_copy_or_resend",
+    "quote": "Prepared from the signed reception attendance sheet for the two dates listed.",
+    "line": 17
+   },
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "The desk records arrival and departure when members enter or leave the scheduled group. Session activities and room breaks are documented in the facilitator's record.",
+    "line": 17
+   }
+  ]
+ },
+ "reused": false
+}

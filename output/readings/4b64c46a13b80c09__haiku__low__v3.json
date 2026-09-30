@@ -1,0 +1,240 @@
+{
+ "doc_hash": "4b64c46a13b80c09ec46d1cbb7b577dbfe8027cb62366631c15efa8ec1a1f58b",
+ "file_name": "BH-D110_individual_primary_record_2026-01-26.txt",
+ "model": "haiku",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:05:09.049+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:02:57.123+00:00",
+   "usage": {
+    "wall_seconds": 131.868,
+    "api_seconds": 129.072,
+    "input_tokens": 10,
+    "output_tokens": 14150,
+    "cache_creation_input_tokens": 1338,
+    "cache_read_input_tokens": 7461,
+    "cost_usd": 0.07418209999999999,
+    "turns": 2,
+    "models": {
+     "claude-haiku-4-5-20251001": {
+      "inputTokens": 10,
+      "outputTokens": 14150,
+      "cacheReadInputTokens": 7461,
+      "cacheCreationInputTokens": 1338,
+      "webSearchRequests": 0,
+      "costUSD": 0.07418209999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 10356,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "778a466e-7bd7-4444-b82d-7d06d2bfa8a5",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D110",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": null,
+    "first_line": 1,
+    "last_line": 17,
+    "is_copy": false,
+    "signature": "signed",
+    "signed_by": "Mira Patel, LCSW",
+    "signed_date": "2026-01-26",
+    "signed_time": "11:16",
+    "signature_line": 15,
+    "author_name": "Mira Patel, LCSW",
+    "author_role": "LCSW",
+    "status_as_written": "Final",
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-26",
+      "line": 5,
+      "quote": "January 26, 2026"
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-26",
+      "time": "11:16",
+      "line": 15,
+      "quote": "Electronically signed: Mira Patel, LCSW | January 26, 2026, 11:16"
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E115",
+    "appointment_id": "HG-A115",
+    "service_date": "2026-01-26",
+    "service_as_written": "Individual psychotherapy",
+    "service_class": "individual_therapy",
+    "quote": "Individual psychotherapy | Encounter HG-E115 | Appointment HG-A115",
+    "line": 3
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "modality": "in_person",
+    "quote": "In person",
+    "line": 5
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_present",
+    "start": "09:00",
+    "end": "09:50",
+    "label": "actual",
+    "position": "body",
+    "quote": "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes.",
+    "line": 7
+   }
+  ],
+  "attendance": [],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Actual patient psychotherapy contact: 09:00–09:50",
+    "line": 7
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Mira Patel",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "not_stated",
+    "quote": "Mira Patel, LCSW",
+    "line": 6
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Nora Ellis",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "present",
+    "quote": "Nora Ellis participated directly in the clinical work",
+    "line": 11
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "minutes": 50,
+    "of": "patient_present",
+    "quote": "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes.",
+    "line": 7
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "patient worried about being asked for commitments they might not be able to meet",
+    "quote": "brought up worry about being asked for commitments the patient might not be able to meet",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "patient continued to postpone choosing time for conversation",
+    "quote": "Rowan continued to postpone choosing a time for the conversation",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "sleep uneven with difficulty settling when work-related thoughts repetitive",
+    "quote": "Sleep remained uneven, with difficulty settling on nights when work-related thoughts became repetitive",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "patient able to return to main request with prompting",
+    "quote": "Rowan was able to return to the main request with prompting",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "patient remained attentive and collaborative",
+    "quote": "The patient remained attentive and collaborative",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "patient hesitant about completing task outside office",
+    "quote": "although hesitant about completing the task outside the office",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "safety",
+    "summary": "no current suicidal ideation",
+    "quote": "No current suicidal ideation was reported",
+    "line": 13
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": []
+ },
+ "reused": false
+}

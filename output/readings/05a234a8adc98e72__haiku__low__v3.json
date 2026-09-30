@@ -1,0 +1,192 @@
+{
+ "doc_hash": "05a234a8adc98e72a51ba9e82c13e5975ee5026f03bb03e66575015b22562fb6",
+ "file_name": "BH-D101_group_content_2026-01-19.txt",
+ "model": "haiku",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:00:31.927+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T08:58:19.300+00:00",
+   "usage": {
+    "wall_seconds": 132.557,
+    "api_seconds": 122.603,
+    "input_tokens": 10,
+    "output_tokens": 12914,
+    "cache_creation_input_tokens": 1311,
+    "cache_read_input_tokens": 7461,
+    "cost_usd": 0.0679481,
+    "turns": 2,
+    "models": {
+     "claude-haiku-4-5-20251001": {
+      "inputTokens": 10,
+      "outputTokens": 12914,
+      "cacheReadInputTokens": 7461,
+      "cacheCreationInputTokens": 1311,
+      "webSearchRequests": 0,
+      "costUSD": 0.0679481,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 11370,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "8990fb09-ff34-4def-8518-4f563dbcada4",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D101",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Skills group clinical record",
+    "first_line": 1,
+    "last_line": 14,
+    "signature": "signed",
+    "signed_by": "Leah Chen, LCSW",
+    "signed_date": "2026-01-19",
+    "signed_time": "12:08",
+    "signature_line": 14,
+    "is_copy": false,
+    "author_name": "Leah Chen",
+    "author_role": "LCSW",
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-19",
+      "line": 3,
+      "quote": "Service date: January 19, 2026"
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-19",
+      "time": "12:08",
+      "line": 14,
+      "quote": "Electronically signed: Leah Chen, LCSW | January 19, 2026, 12:08"
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E110",
+    "appointment_id": null,
+    "service_date": "2026-01-19",
+    "service_as_written": "Skills group",
+    "service_class": "group_therapy",
+    "line": 4,
+    "quote": "Group encounter: HG-E110"
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "modality": "in_person",
+    "line": 6,
+    "quote": "Scheduled group: 10:00–11:30. Nontherapeutic break: 10:45–11:00."
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "10:00",
+    "end": "11:30",
+    "label": "scheduled",
+    "position": "header",
+    "line": 6,
+    "quote": "Scheduled group: 10:00–11:30"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "no_therapy_interval",
+    "start": "10:45",
+    "end": "11:00",
+    "label": "not_labelled",
+    "position": "header",
+    "detail": "Restroom use and refreshments",
+    "line": 6,
+    "quote": "Nontherapeutic break: 10:45–11:00"
+   }
+  ],
+  "attendance": [],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "not_stated",
+    "line": 10,
+    "quote": "Rowan initially followed the exercise"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Leah Chen, LCSW",
+    "role": "clinician",
+    "role_as_written": "Facilitator",
+    "presence": "not_stated",
+    "line": 4,
+    "quote": "Facilitator: Leah Chen, LCSW"
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Identified postponing message to supervisor as familiar pattern",
+    "line": 10,
+    "quote": "identified postponing a message to a supervisor as a familiar pattern"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "Became visibly tense when discussion turned to workplace matters",
+    "line": 10,
+    "quote": "became visibly tense"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "patient",
+    "topic": "anxiety",
+    "summary": "Found the amount of discussion difficult to manage",
+    "line": 10,
+    "quote": "said the amount of discussion felt difficult to manage"
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": []
+ },
+ "reused": false
+}

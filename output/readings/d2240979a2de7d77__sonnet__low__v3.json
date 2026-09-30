@@ -1,0 +1,119 @@
+{
+ "doc_hash": "d2240979a2de7d7782a34a6ca26e289ee829d01eea9932e4d61b3588c724ceb1",
+ "file_name": "group_authorization_letter.txt",
+ "model": "sonnet",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:11:41.607+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:11:25.759+00:00",
+   "usage": {
+    "wall_seconds": 15.523,
+    "api_seconds": 7.597,
+    "input_tokens": 2,
+    "output_tokens": 850,
+    "cache_creation_input_tokens": 1023,
+    "cache_read_input_tokens": 9724,
+    "cost_usd": 0.0145408,
+    "turns": 2,
+    "models": {
+     "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 850,
+      "cacheReadInputTokens": 9724,
+      "cacheCreationInputTokens": 1023,
+      "webSearchRequests": 0,
+      "costUSD": 0.0145408,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "28000310-6a3d-42a0-9936-aa01f66a08e5",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D001",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042",
+   "organization": "Harbor Grove Behavioral Health"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "authorization",
+    "first_line": 1,
+    "last_line": 15,
+    "signature": "not_stated",
+    "is_copy": false,
+    "kind_as_written": "Administrative correspondence",
+    "author_name": "N. Ellis",
+    "author_role": "Administrative entry",
+    "dates": [
+     {
+      "kind": "received",
+      "date": "2026-01-04",
+      "time": "15:26",
+      "quote": "Administrative correspondence received 2026-01-04, 15:26 local",
+      "line": 5
+     },
+     {
+      "kind": "entered",
+      "date": "2026-01-05",
+      "time": "08:05",
+      "quote": "Administrative entry, N. Ellis, 2026-01-05, 08:05 local:",
+      "line": 14
+     },
+     {
+      "kind": "period_start",
+      "date": "2026-01-05",
+      "quote": "approved for the period January 5, 2026 through January 30, 2026",
+      "line": 10
+     },
+     {
+      "kind": "period_end",
+      "date": "2026-01-30",
+      "quote": "approved for the period January 5, 2026 through January 30, 2026",
+      "line": 10
+     }
+    ]
+   }
+  ],
+  "contacts": [],
+  "modalities": [],
+  "times": [],
+  "attendance": [],
+  "participants": [],
+  "stated_minutes": [],
+  "corrections": [],
+  "scores": [],
+  "observations": [],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "says": "not_an_attendance_record",
+    "quote": "No service attendance record accompanies this letter.",
+    "line": 15
+   },
+   {
+    "section": 1,
+    "says": "not_a_visit",
+    "quote": "Scheduling remains the responsibility of Harbor Grove Behavioral Health and the member.",
+    "line": 12
+   }
+  ]
+ },
+ "reused": false
+}

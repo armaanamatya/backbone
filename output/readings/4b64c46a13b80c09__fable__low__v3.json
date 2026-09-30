@@ -1,0 +1,269 @@
+{
+ "doc_hash": "4b64c46a13b80c09ec46d1cbb7b577dbfe8027cb62366631c15efa8ec1a1f58b",
+ "file_name": "BH-D110_individual_primary_record_2026-01-26.txt",
+ "model": "fable",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:18:35.657+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:18:10.364+00:00",
+   "usage": {
+    "wall_seconds": 24.741,
+    "api_seconds": 20.301,
+    "input_tokens": 2,
+    "output_tokens": 2272,
+    "cache_creation_input_tokens": 1137,
+    "cache_read_input_tokens": 9817,
+    "cost_usd": 0.13881425000000003,
+    "turns": 2,
+    "models": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 2272,
+      "cacheReadInputTokens": 9817,
+      "cacheCreationInputTokens": 1137,
+      "webSearchRequests": 0,
+      "costUSD": 0.13881425000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "37be2e07-c897-4013-abe0-519867cd869d",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D110",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Individual psychotherapy",
+    "first_line": 1,
+    "last_line": 17,
+    "author_name": "Mira Patel, LCSW",
+    "author_role": "LCSW",
+    "signature": "signed",
+    "signed_by": "Mira Patel, LCSW",
+    "signed_date": "2026-01-26",
+    "signed_time": "11:16",
+    "signature_line": 15,
+    "status_as_written": "Final",
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-26",
+      "quote": "January 26, 2026 | In person",
+      "line": 5
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-26",
+      "time": "11:16",
+      "quote": "Electronically signed: Mira Patel, LCSW | January 26, 2026, 11:16",
+      "line": 15
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E115",
+    "appointment_id": "HG-A115",
+    "service_date": "2026-01-26",
+    "service_as_written": "Individual psychotherapy",
+    "service_class": "individual_therapy",
+    "quote": "Individual psychotherapy | Encounter HG-E115 | Appointment HG-A115",
+    "line": 3
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "modality": "in_person",
+    "quote": "January 26, 2026 | In person",
+    "line": 5
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_present",
+    "start": "09:00",
+    "end": "09:50",
+    "label": "actual",
+    "position": "header",
+    "quote": "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes.",
+    "line": 7,
+    "detail": "patient psychotherapy contact"
+   }
+  ],
+  "attendance": [],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Mira Patel",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "not_stated",
+    "quote": "Clinicians: Mira Patel, LCSW; Nora Ellis, LCSW",
+    "line": 6
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Nora Ellis",
+    "role": "clinician",
+    "role_as_written": "LCSW",
+    "presence": "present",
+    "quote": "Nora Ellis participated directly in the clinical work and helped rehearse a grounding cue to use before sending the response.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "The patient remained attentive and collaborative, although hesitant about completing the task outside the office.",
+    "line": 13
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "minutes": 50,
+    "of": "patient_present",
+    "quote": "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes.",
+    "line": 7
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Sent message to supervisor; asked to discuss next steps",
+    "quote": "Rowan described sending a short message to the supervisor and receiving a request to discuss possible next steps.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "Reply reduced uncertainty but raised worry about commitments",
+    "quote": "The reply reduced one uncertainty but also brought up worry about being asked for commitments the patient might not be able to meet.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Continued postponing choosing a time for the conversation",
+    "quote": "Rowan continued to postpone choosing a time for the conversation.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "Sleep uneven, difficulty settling with repetitive work thoughts",
+    "quote": "Sleep remained uneven, with difficulty settling on nights when work-related thoughts became repetitive.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "Able to return to main request with prompting",
+    "quote": "Rowan was able to return to the main request with prompting.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "other",
+    "summary": "Attentive and collaborative, hesitant about task outside office",
+    "quote": "The patient remained attentive and collaborative, although hesitant about completing the task outside the office.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "safety",
+    "summary": "No current suicidal ideation reported",
+    "quote": "No current suicidal ideation was reported.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "Continue work on avoidance and bedtime routine",
+    "quote": "Continue work on avoidance and the bedtime routine.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-26",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Maintain scheduled treatment contact; bring draft to next visit if stuck",
+    "quote": "Discussed maintaining scheduled treatment contact during the return-to-work planning period and bringing the response draft to the next visit if the patient remained stuck.",
+    "line": 13
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "Nora Ellis participated directly in the clinical work and helped rehearse a grounding cue to use before sending the response.",
+    "line": 11
+   }
+  ]
+ },
+ "reused": false
+}

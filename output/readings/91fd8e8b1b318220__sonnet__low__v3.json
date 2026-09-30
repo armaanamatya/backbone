@@ -1,0 +1,266 @@
+{
+ "doc_hash": "91fd8e8b1b3182207971dbecd77e3d2bd13e5f49608f4083e4a9245b8a2d8935",
+ "file_name": "BH-D105_individual_2026-01-19.txt",
+ "model": "sonnet",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:10:29.712+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:10:08.148+00:00",
+   "usage": {
+    "wall_seconds": 20.924,
+    "api_seconds": 11.246,
+    "input_tokens": 2,
+    "output_tokens": 2015,
+    "cache_creation_input_tokens": 1122,
+    "cache_read_input_tokens": 9724,
+    "cost_usd": 0.026586799999999997,
+    "turns": 2,
+    "models": {
+     "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2015,
+      "cacheReadInputTokens": 9724,
+      "cacheCreationInputTokens": 1122,
+      "webSearchRequests": 0,
+      "costUSD": 0.026586799999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "424d47e3-772f-40e8-9159-bf82ba716dd7",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D105",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "first_line": 1,
+    "last_line": 15,
+    "signature": "signed",
+    "is_copy": false,
+    "author_name": "Mira Patel",
+    "author_role": "LCSW",
+    "signed_by": "Mira Patel, LCSW",
+    "signed_date": "2026-01-19",
+    "signed_time": "12:32",
+    "signature_line": 15,
+    "kind_as_written": "Individual psychotherapy",
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-19",
+      "quote": "January 19, 2026 | In person",
+      "line": 5
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-19",
+      "time": "12:32",
+      "quote": "Electronically signed: Mira Patel, LCSW | January 19, 2026, 12:32",
+      "line": 15
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E111",
+    "appointment_id": null,
+    "service_date": "2026-01-19",
+    "service_as_written": "Individual psychotherapy",
+    "service_class": "individual_therapy",
+    "quote": "Individual psychotherapy | Encounter HG-E111",
+    "line": 3
+   }
+  ],
+  "modalities": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "modality": "in_person",
+    "quote": "January 19, 2026 | In person",
+    "line": 5
+   }
+  ],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_present",
+    "start": "11:15",
+    "end": "11:45",
+    "label": "not_labelled",
+    "position": "header",
+    "quote": "Patient contact: 11:15–11:45",
+    "line": 6
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "completed",
+    "status_as_written": "Completed: 30 minutes",
+    "quote": "Completed: 30 minutes",
+    "line": 6
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Rowan participated throughout the individual contact",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Mira Patel",
+    "role": "clinician",
+    "presence": "not_stated",
+    "role_as_written": "LCSW",
+    "quote": "Clinician: Mira Patel, LCSW",
+    "line": 7
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "minutes": 30,
+    "of": "patient_present",
+    "quote": "Completed: 30 minutes",
+    "line": 6
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "clinician",
+    "topic": "reason_for_contact",
+    "summary": "added because anxious in group",
+    "quote": "This visit was added because Rowan became anxious during group and needed individual grounding and review of coping strategies.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "patient",
+    "topic": "anxiety",
+    "summary": "felt overwhelmed by workplace talk",
+    "quote": "The patient described feeling overwhelmed when other members discussed workplace demands",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "identified early activation signs",
+    "quote": "Rowan was able to identify muscle tension, rapid breathing, and an urge to leave as early signs of activation.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "patient",
+    "topic": "anxiety",
+    "summary": "anxiety intensity eased",
+    "quote": "reported that the immediate intensity of anxiety eased enough to discuss a next step",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "agreed task: draft two sentences to supervisor",
+    "quote": "We narrowed the work-related task to drafting two sentences to a supervisor, without requiring that the message be sent today.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "patient",
+    "topic": "safety",
+    "summary": "denied suicidal thoughts",
+    "quote": "Rowan denied current suicidal thoughts",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "clinician",
+    "topic": "safety",
+    "summary": "no acute safety concern",
+    "quote": "No acute safety concern was identified during this contact.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "disrupted sleep interferes with work",
+    "quote": "Persistent avoidance and disrupted sleep continue to interfere with resuming a usual work routine.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-19",
+    "speaker": "clinician",
+    "topic": "progress",
+    "summary": "continue established plan",
+    "quote": "Continue the established outpatient plan",
+    "line": 13
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "separate_contact",
+    "quote": "This visit was added because Rowan became anxious during group",
+    "line": 9
+   }
+  ]
+ },
+ "reused": false
+}

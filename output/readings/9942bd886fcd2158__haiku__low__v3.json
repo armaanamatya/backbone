@@ -1,0 +1,269 @@
+{
+ "doc_hash": "9942bd886fcd2158bbd56914551519397d70eef7103b6d33ba2fa90cc424093c",
+ "file_name": "BH-D114_medication_management_2026-01-30.txt",
+ "model": "haiku",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T09:26:26.227+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T09:24:27.072+00:00",
+   "usage": {
+    "wall_seconds": 118.749,
+    "api_seconds": 114.71,
+    "input_tokens": 10,
+    "output_tokens": 11857,
+    "cache_creation_input_tokens": 1301,
+    "cache_read_input_tokens": 7461,
+    "cost_usd": 0.06264310000000001,
+    "turns": 2,
+    "models": {
+     "claude-haiku-4-5-20251001": {
+      "inputTokens": 10,
+      "outputTokens": 11857,
+      "cacheReadInputTokens": 7461,
+      "cacheCreationInputTokens": 1301,
+      "webSearchRequests": 0,
+      "costUSD": 0.06264310000000001,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 9698,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "5180ecde-85f6-4b81-bdb7-fb77b4cdc5a1",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D114",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "clinical_note",
+    "kind_as_written": "Medication management",
+    "first_line": 1,
+    "last_line": 16,
+    "signature": "signed",
+    "signed_by": "Elena Ortiz, PMHNP",
+    "signed_date": "2026-01-30",
+    "signed_time": "16:02",
+    "signature_line": 14,
+    "author_name": "Elena Ortiz, PMHNP",
+    "author_role": "Prescriber",
+    "status_as_written": "Final",
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "service",
+      "date": "2026-01-30",
+      "line": 5,
+      "quote": "January 30, 2026"
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-30",
+      "time": "16:02",
+      "line": 14,
+      "quote": "January 30, 2026, 16:02"
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E120",
+    "appointment_id": null,
+    "service_date": "2026-01-30",
+    "service_as_written": "Medication management",
+    "service_class": "medication_management",
+    "quote": "Medication management | Encounter HG-E120",
+    "line": 3
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "contact_interval",
+    "start": "15:00",
+    "end": "15:20",
+    "label": "scheduled",
+    "position": "header",
+    "quote": "15:00–15:20",
+    "line": 5
+   }
+  ],
+  "attendance": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "status": "completed",
+    "status_as_written": "Completed, 20 minutes",
+    "quote": "Completed, 20 minutes",
+    "line": 5
+   }
+  ],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "present",
+    "quote": "Rowan reported taking the medication as prescribed",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Elena Ortiz",
+    "role": "clinician",
+    "role_as_written": "Prescriber",
+    "presence": "not_stated",
+    "quote": "Prescriber: Elena Ortiz, PMHNP",
+    "line": 6
+   }
+  ],
+  "stated_minutes": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "minutes": 20,
+    "of": "contact_total",
+    "quote": "20 minutes",
+    "line": 5
+   }
+  ],
+  "corrections": [],
+  "scores": [],
+  "observations": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "medication",
+    "summary": "Taking medication as prescribed",
+    "quote": "Rowan reported taking the medication as prescribed",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "medication",
+    "summary": "Did not describe new adverse effects",
+    "quote": "did not describe a new adverse effect",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "mood",
+    "summary": "Mood less persistently low than earlier in month",
+    "quote": "Mood felt less persistently low than earlier in the month",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "anxiety",
+    "summary": "Anxiety remains noticeable when anticipating work contact",
+    "quote": "anxiety remained noticeable when anticipating contact with work",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "sleep",
+    "summary": "Sleep still variable",
+    "quote": "Sleep was still variable",
+    "line": 8
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Alert and organized in conversation",
+    "quote": "Rowan was alert, organized in conversation",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "functioning",
+    "summary": "Able to describe the follow-up plan",
+    "quote": "able to describe the follow-up plan",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "safety",
+    "summary": "Denied current suicidal thoughts",
+    "quote": "The patient denied current suicidal thoughts",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "clinician",
+    "topic": "safety",
+    "summary": "No new acute safety issues",
+    "quote": "No new acute safety issue emerged in this visit",
+    "line": 10
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "date": "2026-01-30",
+    "speaker": "patient",
+    "topic": "functioning",
+    "summary": "Agreed to continue outpatient follow-up and bring medication questions",
+    "quote": "Rowan agreed to continue attending scheduled outpatient follow-up and to bring questions about the medication regimen to the next medication appointment",
+    "line": 12
+   }
+  ],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "no_therapy_provided",
+    "quote": "No separately documented psychotherapy was provided",
+    "line": 12
+   }
+  ]
+ },
+ "reused": false
+}

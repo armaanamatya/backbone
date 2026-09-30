@@ -1,0 +1,261 @@
+{
+ "doc_hash": "674440968b5d6d38d68b8b513cc7ac3b3516ddd97285bde1e4af69cb9f128bd9",
+ "file_name": "BH-D103_attendance_correction_2026-01-20.txt",
+ "model": "fable",
+ "effort": "low",
+ "prompt_version": 3,
+ "read_at": "2026-09-30T08:57:50.932+00:00",
+ "status": "read",
+ "attempts": [
+  {
+   "attempt": 1,
+   "started_at": "2026-09-30T08:57:29.106+00:00",
+   "usage": {
+    "wall_seconds": 21.775,
+    "api_seconds": 18.447,
+    "input_tokens": 2,
+    "output_tokens": 2117,
+    "cache_creation_input_tokens": 10856,
+    "cache_read_input_tokens": 0,
+    "cost_usd": 0.32299,
+    "turns": 2,
+    "models": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 2117,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 10856,
+      "webSearchRequests": 0,
+      "costUSD": 0.32299,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    }
+   },
+   "session_id": "553a0b62-0dae-4e4b-8542-474d83398332",
+   "errors": []
+  }
+ ],
+ "reading": {
+  "document": {
+   "declared_id": "BH-D103",
+   "organization": "HARBOR GROVE BEHAVIORAL HEALTH",
+   "patient_name": "Rowan Mercer",
+   "patient_dob": "1991-04-12",
+   "patient_record_number": "HG-M042"
+  },
+  "sections": [
+   {
+    "id": 1,
+    "kind": "correction",
+    "kind_as_written": "Attendance correction",
+    "first_line": 1,
+    "last_line": 17,
+    "author_name": "Leah Chen",
+    "author_role": "LCSW",
+    "signature": "signed",
+    "signed_by": "Leah Chen, LCSW",
+    "signed_date": "2026-01-20",
+    "signed_time": "08:42",
+    "signature_line": 15,
+    "status_as_written": "Final",
+    "is_copy": false,
+    "dates": [
+     {
+      "kind": "entered",
+      "date": "2026-01-20",
+      "quote": "Entered January 20, 2026",
+      "line": 3
+     },
+     {
+      "kind": "service",
+      "date": "2026-01-19",
+      "quote": "service date January 19, 2026",
+      "line": 5
+     },
+     {
+      "kind": "signed",
+      "date": "2026-01-20",
+      "time": "08:42",
+      "quote": "Electronically signed: Leah Chen, LCSW | January 20, 2026, 08:42",
+      "line": 15
+     }
+    ]
+   }
+  ],
+  "contacts": [
+   {
+    "section": 1,
+    "ref": "c1",
+    "encounter_id": "HG-E110",
+    "appointment_id": null,
+    "service_date": "2026-01-19",
+    "service_as_written": "group encounter",
+    "service_class": "group_therapy",
+    "quote": "Applies to group encounter HG-E110, service date January 19, 2026",
+    "line": 5
+   },
+   {
+    "section": 1,
+    "ref": "c2",
+    "encounter_id": null,
+    "appointment_id": null,
+    "service_date": "2026-01-19",
+    "service_as_written": "individual appointment",
+    "service_class": "individual_therapy",
+    "quote": "or the separate individual appointment",
+    "line": 11
+   }
+  ],
+  "modalities": [],
+  "times": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_departure",
+    "start": null,
+    "end": "11:15",
+    "label": "actual",
+    "position": "body",
+    "quote": "Patient departure for HG-E110 is 11:15, replacing the original roster value of 11:30.",
+    "line": 7,
+    "detail": "corrected departure"
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_arrival",
+    "start": "10:00",
+    "end": null,
+    "label": "not_labelled",
+    "position": "body",
+    "quote": "Patient arrival remains 10:00.",
+    "line": 7
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "what": "patient_departure",
+    "start": null,
+    "end": "11:15",
+    "label": "actual",
+    "position": "body",
+    "quote": "The room-transfer record shows Rowan leaving skills room B at 11:15 and being received by the individual clinician at 11:15.",
+    "line": 9,
+    "detail": "leaving skills room B"
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "what": "patient_arrival",
+    "start": "11:15",
+    "end": null,
+    "label": "actual",
+    "position": "body",
+    "quote": "being received by the individual clinician at 11:15",
+    "line": 9,
+    "detail": "received by the individual clinician"
+   }
+  ],
+  "attendance": [],
+  "participants": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "name": "Rowan Mercer",
+    "role": "patient",
+    "presence": "not_stated",
+    "quote": "The room-transfer record shows Rowan leaving skills room B at 11:15",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "name": null,
+    "role": "clinician",
+    "role_as_written": "individual clinician",
+    "presence": "not_stated",
+    "quote": "being received by the individual clinician at 11:15",
+    "line": 9
+   }
+  ],
+  "stated_minutes": [],
+  "corrections": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "field": "departure",
+    "field_as_written": "Patient departure",
+    "old_value": "11:30",
+    "new_value": "11:15",
+    "reason": "original group roster was found to retain the scheduled group closing time in Rowan's departure field",
+    "quote": "Patient departure for HG-E110 is 11:15, replacing the original roster value of 11:30.",
+    "line": 7
+   }
+  ],
+  "scores": [],
+  "observations": [],
+  "plan_rules": [],
+  "charges": [],
+  "statements": [
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "the original group roster was found to retain the scheduled group closing time in Rowan's departure field",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "The group continued for other members until its scheduled close.",
+    "line": 9
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "This correction applies only to Rowan Mercer's departure field on the January 19 group attendance roster.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c1",
+    "says": "other",
+    "quote": "It does not change the group service date, scheduled opening or closing, the break recorded in the group clinical note, or the separate individual appointment.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "contact": "c2",
+    "says": "separate_contact",
+    "quote": "or the separate individual appointment",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "The original signed roster is retained in the chart with this correction attached to its attendance entry.",
+    "line": 11
+   },
+   {
+    "section": 1,
+    "says": "no_clinical_service",
+    "quote": "No additional clinical service was provided in making this correction.",
+    "line": 13
+   },
+   {
+    "section": 1,
+    "says": "other",
+    "quote": "The group discussion and the individual clinician's assessment remain documented in their respective service records.",
+    "line": 13
+   }
+  ]
+ },
+ "reused": false
+}
