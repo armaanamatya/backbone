@@ -1,0 +1,7 @@
+[
+  {"id": "Q-1", "key": "6 sessions on 5 days: group 3 (Jan 12, 19, 22), individual 3 (Jan 14, 19, 21)", "question": "How many sessions did Rowan attend from January 12 to January 25, 2026, by type, and on how many days?"},
+  {"id": "Q-2", "key": "3, 2, 4, 3", "question": "How many therapy sessions did Rowan attend in each week of the episode?"},
+  {"id": "Q-7", "key": "Jan 9 (Mara Voss, Leena Park) and Jan 26 (Mira Patel, Nora Ellis)", "question": "Which of Rowan's therapy sessions had more than one clinician?"},
+  {"id": "Q-9", "key": "Met. 3 days and 180 minutes, 30 over", "question": "Was Rowan's treatment plan goal met in the week of January 19, 2026, and by how much?"},
+  {"id": "Q-13", "key": "Rowan, on weeks 1 and 2. This does not depend on the open conflict", "question": "Which patients had two consecutive weeks below their treatment plan goal, and does any of them depend on unresolved documentation?"}
+]

@@ -1,0 +1,114 @@
+{
+ "question_id": "Q-13",
+ "question": "Which patients had two consecutive weeks below their treatment plan goal, and does any of them depend on unresolved documentation?",
+ "plan": {
+  "patient_named": null,
+  "period": {
+   "start": null,
+   "end": null,
+   "basis": "the episode"
+  },
+  "reading": "A search across the whole collection for patients with 2 consecutive plan weeks below the goal, using the contact classes the plan counts. 'Unresolved documentation' means an open conflict between documents that the below-goal verdict depends on.",
+  "other_readings": [],
+  "calls": [
+   {
+    "function": "patients_below_goal",
+    "arguments": {
+     "weeks": 2
+    }
+   }
+  ],
+  "no_function_fits": false,
+  "document_kind": null,
+  "notes": "The collection holds one patient, HG-M042 Rowan Mercer (2026-01-05 to 2026-01-30). Each week at risk should be reported with the open conflict it depends on."
+ },
+ "plan_source": "saved",
+ "plan_attempts": 1,
+ "results": [
+  {
+   "function": "patients_below_goal",
+   "arguments": {
+    "weeks": 2
+   },
+   "rows": [
+    {
+     "patient": "HG-M042",
+     "name": "Rowan Mercer",
+     "weeks": [
+      "2026-01-05 to 2026-01-11",
+      "2026-01-12 to 2026-01-18"
+     ],
+     "verdicts": [
+      "not_met",
+      "not_met"
+     ],
+     "depends_on_open_conflict": false,
+     "conflicts": []
+    }
+   ],
+   "patients_checked": 1,
+   "calculation": [
+    "1 of 1 patients with 2 consecutive weeks below the goal"
+   ],
+   "sources": [],
+   "conflicts": [],
+   "not_read": []
+  }
+ ],
+ "parts": {
+  "1. the question as understood": [
+   "Patient: Rowan Mercer (HG-M042), the only patient in the collection; the question names none.",
+   "Period: the episode, with no dates given.",
+   "Reading: A search across the whole collection for patients with 2 consecutive plan weeks below the goal, using the contact classes the plan counts. 'Unresolved documentation' means an open conflict between documents that the below-goal verdict depends on.",
+   "Note: The collection holds one patient, HG-M042 Rowan Mercer (2026-01-05 to 2026-01-30). Each week at risk should be reported with the open conflict it depends on."
+  ],
+  "2. the answer": [
+   "1 of 1 patient with 2 consecutive weeks below the goal.",
+   "- Rowan Mercer (HG-M042): Jan 5 to Jan 11, Jan 12 to Jan 18; verdicts not met, not met; does not depend on an open conflict."
+  ],
+  "3. figures": [
+   "- 1 of 1 patients with 2 consecutive weeks below the goal"
+  ],
+  "4. what contributed": [
+   "- The weekly status of each patient, worked out from that patient's plan and contacts."
+  ],
+  "5. what was excluded": [
+   "Nothing."
+  ],
+  "6. not settled": [
+   "Nothing."
+  ],
+  "7. assumptions": [
+   "The figures cover the documented record. A date with no document is counted as a date with no contact, and is named where it falls in the period.",
+   "\"Below the goal\" means a week whose verdict is \"not met\". A week that cannot be determined is counted only where the run depends on it, and that is said."
+  ],
+  "8. documents not read": [
+   "None."
+  ],
+  "in short": [
+   "1 of 1 patient with 2 consecutive weeks below the goal."
+  ],
+  "9. version": [
+   "Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.",
+   "Reading: model opus, effort low, prompt version 3.",
+   "Plan: model opus, plan prompt version 2, made 2026-09-30T17:40:36.488+00:00 (saved plan reused).",
+   "Answered: 2026-09-30T18:00:17+00:00."
+  ]
+ },
+ "patient": {
+  "status": "found",
+  "patient": "HG-M042",
+  "name": "Rowan Mercer",
+  "dob": "1991-04-12",
+  "documents": 31,
+  "episodes": [
+   {
+    "start": "2026-01-05",
+    "end": "2026-01-30",
+    "plan": "BH-D003"
+   }
+  ],
+  "assumed": true
+ },
+ "text": "# Q-13\n\n> Which patients had two consecutive weeks below their treatment plan goal, and does any of them depend on unresolved documentation?\n\n**In short.** 1 of 1 patient with 2 consecutive weeks below the goal.\n\n## 1. The question as understood\n\nPatient: Rowan Mercer (HG-M042), the only patient in the collection; the question names none.\nPeriod: the episode, with no dates given.\nReading: A search across the whole collection for patients with 2 consecutive plan weeks below the goal, using the contact classes the plan counts. 'Unresolved documentation' means an open conflict between documents that the below-goal verdict depends on.\nNote: The collection holds one patient, HG-M042 Rowan Mercer (2026-01-05 to 2026-01-30). Each week at risk should be reported with the open conflict it depends on.\n\n## 2. The answer\n\n1 of 1 patient with 2 consecutive weeks below the goal.\n- Rowan Mercer (HG-M042): Jan 5 to Jan 11, Jan 12 to Jan 18; verdicts not met, not met; does not depend on an open conflict.\n\n## 3. Figures\n\n- 1 of 1 patients with 2 consecutive weeks below the goal\n\n## 4. What contributed\n\n- The weekly status of each patient, worked out from that patient's plan and contacts.\n\n## 5. What was excluded\n\nNothing.\n\n## 6. Not settled\n\nNothing.\n\n## 7. Assumptions\n\nThe figures cover the documented record. A date with no document is counted as a date with no contact, and is named where it falls in the period.\n\"Below the goal\" means a week whose verdict is \"not met\". A week that cannot be determined is counted only where the run depends on it, and that is said.\n\n## 8. Documents not read\n\nNone.\n\n## 9. Version\n\nAbstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.\nReading: model opus, effort low, prompt version 3.\nPlan: model opus, plan prompt version 2, made 2026-09-30T17:40:36.488+00:00 (saved plan reused).\nAnswered: 2026-09-30T18:00:17+00:00.\n"
+}
