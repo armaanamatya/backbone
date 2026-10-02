@@ -16,3 +16,9 @@ __pycache__/
 .venv/
 venv/
 .pytest_cache/
+
+# Working notes, kept locally
+discussions.md
+review-notes.md
+verification.md
+build-plan.md

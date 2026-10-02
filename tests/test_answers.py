@@ -102,6 +102,7 @@ def test_dev_04_two_dates(answers):
         "says the second part continued the same contact",
     ):
         assert sentence in text, sentence
+    # The plan asked for the disagreements of Jan 19 to Jan 21, and none there is open.
     assert text_of(answers["DEV-04"], "6. not settled") == "Nothing."
     excluded = text_of(answers["DEV-04"], "5. what was excluded")
     assert "11:30 (BH-D102, BH-D104)" in excluded and "Settled by rule 8, then 9: 11:15" in excluded
@@ -119,7 +120,8 @@ def test_dev_05_assessments_and_course(answers):
     for topic in ("on mood", "on anxiety", "on sleep", "on safety", "on functioning", "on progress"):
         assert topic in text, topic
     assert "This visit was added because Rowan became anxious during group" in text
-    assert text_of(answers["DEV-05"], "6. not settled") == "Nothing."
+    # Nothing these figures depend on is open. What is open elsewhere in the record is labelled.
+    assert all("not behind these figures" in line for line in answers["DEV-05"]["parts"]["6. not settled"])
     excluded = text_of(answers["DEV-05"], "5. what was excluded")
     assert "BH-D014: a copy of the PHQ-9 of Jan 16" in excluded
     assert "BH-D013: a mention of the PHQ-9 of Jan 5" in excluded

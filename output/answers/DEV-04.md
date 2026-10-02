@@ -40,7 +40,7 @@ Jan 21: 1 therapy contact of 1 encounter; patient therapy minutes 45.
 - individual therapy: 2 sessions, 75 minutes
 - Counts in the same period: 3 encounters in the record, 3 held, 3 with the patient present, 3 therapy sessions, 0 administrative records (calls, messages, questionnaire reviews).
 - 0 encounters did not count; 0 administrative records
-- 0 open, 1 settled, 0 findings, on the contacts behind these figures
+- 0 open, 1 settled, 0 findings in Jan 19 to Jan 21, all on the contacts behind these figures
 
 ## 4. What contributed
 
@@ -93,4 +93,4 @@ None.
 Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.
 Reading: model opus, effort low, prompt version 3.
 Plan: model opus, plan prompt version 2, made 2026-09-30T07:18:27.327+00:00 (saved plan reused).
-Answered: 2026-09-30T17:41:45+00:00.
+Answered: 2026-10-01T02:46:24+00:00.

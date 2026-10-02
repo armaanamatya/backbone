@@ -39,7 +39,7 @@ Under other readings of the question: 16 contacts held, 14 with the patient pres
 - cancelled by the patient: HG-E117
 - held with the patient absent: HG-E109, HG-E114
 - no-show: HG-E103, HG-E116
-- 1 open, 2 settled, 3 findings, on the contacts behind these figures
+- 1 open, 2 settled, 3 findings in Jan 5 to Jan 30, all on the contacts behind these figures
 
 ## 4. What contributed
 
@@ -237,4 +237,4 @@ None.
 Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.
 Reading: model opus, effort low, prompt version 3.
 Plan: model opus, plan prompt version 2, made 2026-09-30T07:18:11.121+00:00 (saved plan reused).
-Answered: 2026-09-30T17:41:45+00:00.
+Answered: 2026-10-01T02:46:24+00:00.

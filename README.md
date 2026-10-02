@@ -2,7 +2,7 @@
 
 A prototype that reads the 31 documents in `documents/`, builds a saved abstraction of one patient's course of care, and answers the five questions in `questions.json` from that abstraction, with every figure calculated in code and every citation checked against its source line.
 
-Everything below is measured unless it says "estimate". The full record of how it was designed and built, with every decision and its status, is in `decisions.md`, `discussions.md` and `build-plan.md`.
+Everything below is measured unless it says "estimate". Every decision about how the record is read and counted, with its status, is in `decisions.md`.
 
 ## 1. What is built
 
@@ -33,7 +33,7 @@ python -m backbone call goal_status --patient HG-M042         # run one function
 python -m backbone trace contact HG-E110                      # follow a figure to its claims and source lines; no model
 python -m backbone trace week 2026-01-26
 python -m backbone export                                     # write output/abstraction.md; no model
-python -m backbone check                                      # the checks on the store and answers, then the 155 tests
+python -m backbone check                                      # the checks on the store and answers, then the 157 tests
 python -m backbone benchmark                                  # times, sizes, tokens and cost; no model unless --live
 python -m backbone compare settings.toml output/comparison/settings-sonnet-low.toml   # compare two reads
 ```
@@ -58,7 +58,7 @@ python -m backbone compare settings.toml output/comparison/settings-sonnet-low.t
 | `benchmarks/benchmark.md` | The measured figures. `estimates.md` beside it holds the estimates, and nothing else |
 | `comparison/` | Six reads of the 31 documents by different models and efforts, each in its own store, and the report comparing them |
 
-**Reading an answer.** Each answer opens with "In short": the figure, the one open point if any, and the one exclusion that matters most. Then nine parts: the question as understood, the answer, the figures and how they were worked out, what contributed with a source line for each, what was excluded and why, what is not settled, the assumptions, the documents not read, and the version. A citation is the document ID, the line number and the quote, and code confirms the quote is at that line before it is shown.
+**Reading an answer.** Each answer opens with "In short": the figure, the one open point if any, and the one exclusion that matters most. Then nine parts: the question as understood, the answer, the figures and how they were worked out, what contributed with a source line for each, what was excluded and why, what is not settled, the assumptions, the documents not read, and the version. A citation is the document ID, the line number and the quote, and code confirms the quote is at that line before it is shown. Where the plan asks for the record's disagreements, one on a contact the figures do not use is still stated: an open one in part 6, marked "not behind these figures", and the settled ones and findings in one line of part 5.
 
 **Following a conclusion back.** `trace week 2026-01-26` prints the week's verdict, the contacts behind it, each contact's presence intervals and the claims they rest on, and each claim's document, line and quote. `trace conflict HG-M042/HG-E115:start` prints the two alternatives and what would settle them.
 
@@ -76,7 +76,7 @@ The problem questions behave as intended: no figure is given for a patient not i
 
 ## 5. Checks
 
-`python -m backbone check` runs the store and answer checks, then the 155 tests in `tests/`. None calls a model: the tests replay the saved reading results and the saved plans into an empty store. The 16 checks in the build plan, and where each lives:
+`python -m backbone check` runs the store and answer checks, then the 157 tests in `tests/`. None calls a model: the tests replay the saved reading results and the saved plans into an empty store. The 16 checks, and where each lives:
 
 | # | Check | Where |
 |---|---|---|
@@ -90,14 +90,14 @@ The problem questions behave as intended: no figure is given for a patient not i
 | 8 | No patient is in two contacts at once | `test_checks.py`, `check`. Replaying without the correction BH-D103 shows the overlap it would catch |
 | 9 | Weeks sum to the total, classes sum to the total | `test_key.py` |
 | 10 | Every document gives at least one claim | `test_saved_readings.py` |
-| 11 | Every number in an answer comes from a function result | `test_checks.py`, `check` |
+| 11 | Every number in an answer comes from a function result. It catches a figure from nowhere, such as a wrong total. It cannot catch a wrong small count: in DEV-01, 39 of the 61 whole numbers from 0 to 60 occur somewhere in the results, as a day, a clock time or a line number, against 47 of the 939 from 61 to 999. Small counts are held by checks 12 to 15 | `test_checks.py`, `check` |
 | 12 | The 20 contacts match the key | `test_key.py` |
 | 13 | The four weeks match the key | `test_key.py` |
 | 14 | The five answers match the key by figure and source | `test_key_answers.py` |
 | 15 | The nine problem questions behave as the key says | `test_answers.py` |
 | 16 | Every time, date and record number in a document is in a claim or listed as not captured | `coverage.py`, shown in `abstraction.md` |
 
-Checks 1 to 11 do not use the answer key. The key, `answer-key.md`, was worked by hand and verified against the documents before the build (Discussion 19), and it is copied into `tests/answer_key.json` for checks 12 to 15. The 16 rules are also each tried on made-up records that exercise one rule at a time (`test_rules.py`), and two made-up patients share a store in `test_patients.py` to show that one patient's rows never reach the other's answer.
+Checks 1 to 11 do not use the answer key. The key, `answer-key.md`, was worked by hand and verified against the documents before the build, and it is copied into `tests/answer_key.json` for checks 12 to 15. The 16 rules are also each tried on made-up records that exercise one rule at a time (`test_rules.py`), and two made-up patients share a store in `test_patients.py` to show that one patient's rows never reach the other's answer.
 
 ## 6. Measurements
 
@@ -162,7 +162,7 @@ Three smaller ones were found and fixed by the same measurement: the copies chec
 
 | Item | Treatment |
 |---|---|
-| A second patient, and a plan change | The rules and the store carry the patient on every row and carry the plan's dates, and both are tested on made-up records (`test_patients.py`, `test_rules.py`). No supplied document holds a second patient or a plan change, and no test document was written for them (on hold, O-1 and O-13). The collection-wide question therefore runs on one patient. Which plan governs a week that contains a change is not decided |
+| A second patient, and a plan change | The rules and the store carry the patient on every row and carry the plan's dates, and both are tested on made-up records (`test_patients.py`, `test_rules.py`). No supplied document holds a second patient or a plan change, and no test document was written for them. The collection-wide question therefore runs on one patient. Which plan governs a week that contains a change is not decided |
 | A question whose second step depends on the first result | Not handled. One plan call, no tool loop. The answer says which part it could not do |
 | Near matches on patient identity | A patient is matched by record number or by name as written, and a first name that matches exactly one patient. Nothing fuzzier |
 | Reviewer rulings on an open conflict | Not built. Each open conflict says what would settle it; a ruling would be one more claim of a new kind, with the same standing as a signed correction |
@@ -181,6 +181,6 @@ Three smaller ones were found and fixed by the same measurement: the copies chec
 | Reading | The `claude` command-line tool, one call per document, no tools given to the model, our own system prompt (`prompts/reading.md`, version 3), output constrained to a JSON schema, `--effort low`, a $0.50 cap per call, four calls at a time. Model alias `opus`, served as `claude-opus-5-5` |
 | Planning a question | The same tool and model, `prompts/plan.md` version 2, one call per new question |
 | Comparison reads | `sonnet` (`claude-sonnet-5-5`), `haiku` (`claude-haiku-4-5-20251001`), `fable` (`claude-fable-5-1`), and `opus` at medium and high effort. Settings files in `output/comparison/` |
-| Coding assistance | Claude Code (Anthropic), model Claude Fable 5.1, in several sessions. The design was discussed and decided before any code was written; the discussions, the decisions and every review point are in `discussions.md` and `decisions.md`. The code, the tests and this README were written in those sessions and checked by the tests and by a second session reading the answers against the key |
+| Coding assistance | Claude Code (Anthropic), model Claude Fable 5.1, in several sessions. The design was discussed and decided before any code was written; the decisions are in `decisions.md`. The code, the tests and this README were written in those sessions and checked by the tests and by a second session reading the answers against the key |
 | Runtime | Reading all 31 documents: 2 min 18 s. The whole test suite: about 15 s. Answering the fourteen saved questions: under 2 s |
 | Model cost | $16.96 over the build, of which $1.62 is the read used, $10.70 the model comparison, and $0.69 the 28 plan calls |

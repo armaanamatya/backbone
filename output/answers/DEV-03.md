@@ -42,7 +42,7 @@ The record holds 1 plan and 0 changes to it.
 - individual therapy: 5 sessions, 210 or 220 minutes
 - Counts in the same period: 20 encounters in the record, 16 held, 14 with the patient present, 12 therapy sessions, 6 administrative records (calls, messages, questionnaire reviews).
 - Dates in the period with no document: Jan 17 to Jan 18, Jan 24 to Jan 25.
-- 1 open, 2 settled, 3 findings, on the contacts behind these figures
+- 1 open, 2 settled, 3 findings in Jan 5 to Jan 30, all on the contacts behind these figures
 - 8 encounters did not count; 6 administrative records
 - a class of service the plan excludes: HG-E106, HG-E120
 - an administrative record, not an encounter: Jan 8, Jan 8, Jan 15, Jan 16, Jan 27, Jan 30
@@ -261,4 +261,4 @@ None.
 Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.
 Reading: model opus, effort low, prompt version 3.
 Plan: model opus, plan prompt version 2, made 2026-09-30T07:18:18.723+00:00 (saved plan reused).
-Answered: 2026-09-30T17:41:45+00:00.
+Answered: 2026-10-01T02:46:24+00:00.
