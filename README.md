@@ -33,7 +33,7 @@ python -m backbone call goal_status --patient HG-M042         # run one function
 python -m backbone trace contact HG-E110                      # follow a figure to its claims and source lines; no model
 python -m backbone trace week 2026-01-26
 python -m backbone export                                     # write output/abstraction.md; no model
-python -m backbone check                                      # the checks on the store and answers, then the 155 tests
+python -m backbone check                                      # the checks on the store and answers, then the 157 tests
 python -m backbone benchmark                                  # times, sizes, tokens and cost; no model unless --live
 python -m backbone compare settings.toml output/comparison/settings-sonnet-low.toml   # compare two reads
 ```
@@ -58,7 +58,7 @@ python -m backbone compare settings.toml output/comparison/settings-sonnet-low.t
 | `benchmarks/benchmark.md` | The measured figures. `estimates.md` beside it holds the estimates, and nothing else |
 | `comparison/` | Six reads of the 31 documents by different models and efforts, each in its own store, and the report comparing them |
 
-**Reading an answer.** Each answer opens with "In short": the figure, the one open point if any, and the one exclusion that matters most. Then nine parts: the question as understood, the answer, the figures and how they were worked out, what contributed with a source line for each, what was excluded and why, what is not settled, the assumptions, the documents not read, and the version. A citation is the document ID, the line number and the quote, and code confirms the quote is at that line before it is shown.
+**Reading an answer.** Each answer opens with "In short": the figure, the one open point if any, and the one exclusion that matters most. Then nine parts: the question as understood, the answer, the figures and how they were worked out, what contributed with a source line for each, what was excluded and why, what is not settled, the assumptions, the documents not read, and the version. A citation is the document ID, the line number and the quote, and code confirms the quote is at that line before it is shown. Where the plan asks for the record's disagreements, one on a contact the figures do not use is still stated: an open one in part 6, marked "not behind these figures", and the settled ones and findings in one line of part 5.
 
 **Following a conclusion back.** `trace week 2026-01-26` prints the week's verdict, the contacts behind it, each contact's presence intervals and the claims they rest on, and each claim's document, line and quote. `trace conflict HG-M042/HG-E115:start` prints the two alternatives and what would settle them.
 
@@ -76,7 +76,7 @@ The problem questions behave as intended: no figure is given for a patient not i
 
 ## 5. Checks
 
-`python -m backbone check` runs the store and answer checks, then the 155 tests in `tests/`. None calls a model: the tests replay the saved reading results and the saved plans into an empty store. The 16 checks in the build plan, and where each lives:
+`python -m backbone check` runs the store and answer checks, then the 157 tests in `tests/`. None calls a model: the tests replay the saved reading results and the saved plans into an empty store. The 16 checks in the build plan, and where each lives:
 
 | # | Check | Where |
 |---|---|---|
@@ -90,7 +90,7 @@ The problem questions behave as intended: no figure is given for a patient not i
 | 8 | No patient is in two contacts at once | `test_checks.py`, `check`. Replaying without the correction BH-D103 shows the overlap it would catch |
 | 9 | Weeks sum to the total, classes sum to the total | `test_key.py` |
 | 10 | Every document gives at least one claim | `test_saved_readings.py` |
-| 11 | Every number in an answer comes from a function result | `test_checks.py`, `check` |
+| 11 | Every number in an answer comes from a function result. It catches a figure from nowhere, such as a wrong total. It cannot catch a wrong small count: in DEV-01, 39 of the 61 whole numbers from 0 to 60 occur somewhere in the results, as a day, a clock time or a line number, against 47 of the 939 from 61 to 999. Small counts are held by checks 12 to 15 | `test_checks.py`, `check` |
 | 12 | The 20 contacts match the key | `test_key.py` |
 | 13 | The four weeks match the key | `test_key.py` |
 | 14 | The five answers match the key by figure and source | `test_key_answers.py` |

@@ -9,7 +9,7 @@ none reads the answer key.
     stated_minutes_disagree   check 7: stated minutes equal the clock times, or a conflict is open
     quotes_not_at_line        check 6: every quote is at its cited line
     numbers_not_in_results    check 11: every number in an answer comes from a result
-    part_5_contradicts_part_6 a conflict part 6 lists is not called "not behind these figures" in part 5
+    depended_conflict_called_elsewhere  a conflict the figures depend on is not called "not behind these figures"
     long_dates                dates in parts 2 to 6 are written as "Jan 19", not "2026-01-19"
     repeated_contacts         no contact is listed twice in part 5
 """
@@ -178,16 +178,24 @@ def numbers_not_in_results(built: dict) -> list[dict]:
     return found
 
 
-def part_5_contradicts_part_6(built: dict) -> list[dict]:
-    """A conflict that part 6 lists as not settled is not also called "not
-    behind these figures" in part 5 (Discussion 32)."""
-    unsettled = "\n".join(built["parts"].get("6. not settled", []))
+def depended_conflict_called_elsewhere(built: dict) -> list[dict]:
+    """A conflict called "not behind these figures", in part 5 or part 6, is
+    not one a result's figures depend on, and is not also listed in part 6
+    without that label (Discussions 32 and 35)."""
+    depended = {
+        f"{c['conflict_id'].split('/')[-1].split(':')[0]}, {c['field']}"
+        for result in built.get("results", [])
+        if result.get("function") != "conflicts_and_findings"
+        for c in result.get("conflicts", [])
+    }
+    unsettled = built["parts"].get("6. not settled", [])
+    plain = [line for line in unsettled if "not behind these figures" not in line]
     found = []
-    for line in built["parts"].get("5. what was excluded", []):
+    for line in built["parts"].get("5. what was excluded", []) + unsettled:
         if "not behind these figures" not in line:
             continue
-        name = line.split("figures: ", 1)[-1].split(",")[0].strip()
-        if name and name in unsettled:
+        name = line.split("figures: ", 1)[-1].split(":")[0].strip()
+        if name and (name in depended or any(other.startswith(f"- {name}:") for other in plain)):
             found.append({"question": built.get("question_id"), "conflict": name, "line": line[:160]})
     return found
 
@@ -222,7 +230,7 @@ def repeated_contacts(built: dict) -> list[dict]:
 
 ANSWER_CHECKS = {
     "numbers in the text come from the results (check 11)": numbers_not_in_results,
-    "part 5 does not contradict part 6": part_5_contradicts_part_6,
+    "a conflict the figures depend on is not called elsewhere": depended_conflict_called_elsewhere,
     "dates are in the short form": long_dates,
     "no contact is listed twice in part 5": repeated_contacts,
 }

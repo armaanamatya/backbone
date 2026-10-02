@@ -82,6 +82,7 @@ STATEMENT_WORDS = {
     "prepared_from_signed_record": "was prepared from a signed record",
 }
 CANNOT_ESTABLISH = {"draft_note", "billing_extract", "schedule_export", "scheduling_log", "cancellation_notice"}
+OPEN_ELSEWHERE = "Open elsewhere in the record, not behind these figures"
 TOPIC_ORDER = ["mood", "anxiety", "sleep", "safety", "functioning", "progress", "reason_for_contact", "medication", "other"]
 
 
@@ -231,8 +232,8 @@ def _block(**parts) -> dict:
         # with the reason a document gives, when it is in the plan.
         "excluded_contacts": [],
         "unsettled": [],
-        # The open conflicts of `conflicts_and_findings`, by id, so that one the
-        # figures depend on goes to part 6 and the rest are marked as elsewhere.
+        # The open conflicts of `conflicts_and_findings`, by id. All go to part 6:
+        # one the figures depend on as it is, the rest marked as elsewhere.
         "unsettled_by_id": {},
         "assumptions": [],
     }
@@ -590,13 +591,37 @@ def write_not_counted(result, plan) -> dict:
     return _block(headline=headline, figures=figures, excluded=excluded, assumptions=["A contact held without the patient is recorded as held with the patient absent, not as a missed appointment."])
 
 
+def open_line(c) -> str:
+    return f"- {conflict_words(c)}. Effect: {c['effect']}." + (f" Weeks affected: {', '.join(day(w) for w in c['weeks_affected'])}." if c["weeks_affected"] else "") + f" What would settle it: {c['would_settle']}"
+
+
+def elsewhere_line(elsewhere) -> str | None:
+    """One line for the settled disagreements and findings on contacts the
+    figures do not use. They are named, not listed with their sources."""
+    pieces = []
+    if elsewhere.get("settled"):
+        names = "; ".join(conflict_words(c).split(":")[0] for c in elsewhere["settled"])
+        pieces.append(f"{plural(len(elsewhere['settled']), 'disagreement')} settled by a rule ({names})")
+    if elsewhere.get("findings"):
+        names = "; ".join(f"{f['encounter'] or f['contact_id']} on {day(f['date'])}, {words(f['kind'])}" for f in elsewhere["findings"])
+        pieces.append(f"{plural(len(elsewhere['findings']), 'finding')} ({names})")
+    if not pieces:
+        return None
+    return "- Elsewhere in the record, on contacts these figures do not use: " + " and ".join(pieces) + ". No figure in this answer changes with them."
+
+
 def write_conflicts(result, plan) -> dict:
     headline, unsettled, excluded, contributed = [], [], [], []
     by_id = {}
+    # What `narrowed` set aside: on contacts the figures do not use. It is
+    # stated in a line each and never dropped.
+    elsewhere = result.get("elsewhere") or {}
+    for c in elsewhere.get("open", []):
+        by_id[c["conflict_id"]] = open_line(c)
     if result["open"]:
         headline.append(f"{plural(len(result['open']), 'open disagreement')}.")
         for c in result["open"]:
-            unsettled.append(f"- {conflict_words(c)}. Effect: {c['effect']}." + (f" Weeks affected: {', '.join(day(w) for w in c['weeks_affected'])}." if c["weeks_affected"] else "") + f" What would settle it: {c['would_settle']}")
+            unsettled.append(open_line(c))
             by_id[c["conflict_id"]] = unsettled[-1]
             contributed.append(f"- {c['encounter'] or c['conflict_id']}, {c['field']}:")
             contributed += [f"  - {cite(s)}" for s in result["sources"] if any(s["claim"] in a.get("claims", []) for a in c["alternatives"])]
@@ -610,6 +635,9 @@ def write_conflicts(result, plan) -> dict:
     for f in result["findings"]:
         excluded.append(f"- Finding, {f['encounter'] or f['contact_id']}, {day(f['date'])}: {short_dates(f['detail'])}")
         excluded += [f"  - {cite(s)}" for s in result["sources"] if s["claim"] in f["claims"]]
+    left_out = elsewhere_line(elsewhere)
+    if left_out:
+        excluded.append(left_out)
     return _block(
         headline=headline, figures=[f"- {line}" for line in result["calculation"]], contributed=contributed, excluded=excluded, unsettled=unsettled, unsettled_by_id=by_id,
         assumptions=["Two records of equal standing that disagree stay open, as alternatives. A signed correction, a copy, or a record that cannot establish attendance is settled by rule."],
@@ -838,13 +866,21 @@ def contacts_used(results) -> set[str]:
 
 
 def narrowed(result, used: set[str]) -> dict:
-    """A supporting `conflicts_and_findings` result cut to the contacts the
-    other results used. A question about scores and statements uses none, so
-    it gets none (Discussion 32, defect 5)."""
+    """A supporting `conflicts_and_findings` result split by the contacts the
+    other results used. What is on those contacts is written in full, with its
+    sources. The rest is kept under `elsewhere` and written in a line each, so
+    that a disagreement in the record is never missing from an answer
+    (Discussion 32, defect 5; Discussion 35)."""
     keep = lambda row: row.get("contact_id") in used  # noqa: E731
-    return {**result, "open": [r for r in result["open"] if keep(r)], "settled": [r for r in result["settled"] if keep(r)], "findings": [f for f in result["findings"] if keep(f)],
-            "conflicts": [r for r in result["conflicts"] if keep(r)],
-            "calculation": [f"{len([r for r in result['open'] if keep(r)])} open, {len([r for r in result['settled'] if keep(r)])} settled, {len([f for f in result['findings'] if keep(f)])} findings, on the contacts behind these figures"]}
+    names = ("open", "settled", "findings")
+    inside = {name: [r for r in result[name] if keep(r)] for name in names}
+    elsewhere = {name: [r for r in result[name] if not keep(r)] for name in names}
+    count = lambda rows: f"{len(rows['open'])} open, {len(rows['settled'])} settled, {len(rows['findings'])} findings"  # noqa: E731
+    # The call covers the dates the plan gave it, which may be less than the record.
+    start, end = result["arguments"].get("start"), result["arguments"].get("end")
+    where = "in the record" if not (start and end) else (f"on {day(start)}" if start == end else f"in {span(start, end)}")
+    calculation = f"{count(result)} {where}; {count(inside)} on the contacts behind these figures" if any(elsewhere.values()) else f"{count(result)} {where}, all on the contacts behind these figures"
+    return {**result, **inside, "conflicts": [r for r in result["conflicts"] if keep(r)], "elsewhere": elsewhere, "calculation": [calculation]}
 
 
 def parts_from_results(understood, plan, results, not_read_lines) -> dict:
@@ -856,7 +892,7 @@ def parts_from_results(understood, plan, results, not_read_lines) -> dict:
     used = contacts_used(results)
     has_not_counted = any(r["function"] == "not_counted" and "error" not in r for r in results)
     depended = {c["conflict_id"] for r in results if r["function"] != "conflicts_and_findings" for c in r.get("conflicts", [])}
-    from_conflicts = {}
+    from_conflicts, open_elsewhere = {}, []
     for result, role in zip(results, assigned):
         if "error" in result:
             answer.append(f"{result['function']}: {result['error']}")
@@ -882,8 +918,9 @@ def parts_from_results(understood, plan, results, not_read_lines) -> dict:
                 if conflict_id in depended or role == "primary":
                     from_conflicts[conflict_id] = line
                 else:
-                    # Open elsewhere in the record. Part 6 holds only what these figures depend on.
-                    excluded.append(line.replace("- ", "- Open elsewhere in the record, not behind these figures: ", 1))
+                    # Open elsewhere in the record. It is not settled, so it is in
+                    # part 6, after what these figures depend on, and labelled.
+                    open_elsewhere.append(line.replace("- ", f"- {OPEN_ELSEWHERE}: ", 1))
         else:
             unsettled += block["unsettled"]
         assumptions += block["assumptions"]
@@ -894,6 +931,7 @@ def parts_from_results(understood, plan, results, not_read_lines) -> dict:
     for conflict_id, line in from_conflicts.items():
         if conflict_id not in depended:
             unsettled.append(line)
+    unsettled += open_elsewhere
     answer += progress_block(good)
     seen = set()
     parts["2. the answer"] = dedupe(answer) or ["No result."]

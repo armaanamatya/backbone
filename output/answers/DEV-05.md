@@ -175,7 +175,7 @@ What the record does not settle:
 - Jan 5 to Jan 16: -4
 - Jan 16 to Jan 30: -4
 - overall -8
-- 0 open, 1 settled, 0 findings, on the contacts behind these figures
+- 1 open, 2 settled, 3 findings in Jan 5 to Jan 30; 0 open, 1 settled, 0 findings on the contacts behind these figures
 
 ## 4. What contributed
 
@@ -330,10 +330,11 @@ What the record does not settle:
   - BH-D103 line 7: "Correction: Patient departure for HG-E110 is 11:15, replacing the original roster value of 11:30."
   - BH-D103 line 9: "The room-transfer record shows Rowan leaving skills room B at 11:15"
   - BH-D104 line 14: "Patient departure: 11:30"
+- Elsewhere in the record, on contacts these figures do not use: 1 disagreement settled by a rule (HG-E116, attendance) and 3 findings (HG-E104 on Jan 9, note signed after the service date; HG-E116 on Jan 27, charge without attendance; HG-E116 on Jan 27, draft made before the service). No figure in this answer changes with them.
 
 ## 6. Not settled
 
-Nothing.
+- Open elsewhere in the record, not behind these figures: HG-E115, start: 09:00 (BH-D110); 09:10 (BH-D111). Effect: minutes 40 or 50. Weeks affected: Jan 26. What would settle it: An arrival or check-in record, or a correction by the author of the record being changed.
 
 ## 7. Assumptions
 
@@ -354,4 +355,4 @@ None.
 Abstraction: abstraction.sqlite, 31 documents read, last read at 2026-09-29T13:16:48.217+00:00.
 Reading: model opus, effort low, prompt version 3.
 Plan: model opus, plan prompt version 2, made 2026-09-30T07:18:36.716+00:00 (saved plan reused).
-Answered: 2026-09-30T17:41:45+00:00.
+Answered: 2026-10-01T02:46:24+00:00.

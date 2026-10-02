@@ -40,8 +40,11 @@ A record of what we have discussed on the Backbone take-home, what came out of e
 | O-51 | Are the 16 build choices of stages 6 and 7 accepted? Twelve are listed in Discussion 29 and four in Discussion 31 | Discussion 29, 31 | You         |
 | O-52 | Should each answer open with a short lead of two to four sentences built by code from the figures, and should part 2 drop the counts the question did not ask for? This reverses choice 7 of O-51 (Discussion 30) | Discussion 30    | You         |
 | O-53 | DEV-05: how are the conclusions the question asks for, what the record supports and does not support, to be written? Code has no rule for them, and the model's summary paragraph (R-47) was not built (Discussion 30) | Discussion 30    | You         |
-| O-55 | Are the 12 build choices of stages 8 to 10 accepted? They are listed in Discussion 34 | Discussion 34    | You         |
+| O-55 | Are the 12 build choices of stages 8 to 10 accepted? They are listed in Discussion 34. Choice 5 was changed on your word in Discussion 35; choices 2 and 12 were looked at again there and stand | Discussion 34, 35 | You         |
 | O-56 | Is D-43 confirmed: a contact between professionals is not counted as one the patient missed? One sentence of DEV-05 (Discussion 34) | Discussion 34    | You         |
+| O-57 | Should an answer name every open conflict of the record, even one outside the dates asked about, or one the plan did not ask for? Today it names those the plan's `conflicts_and_findings` call returns (Discussion 35) | Discussion 35    | You         |
+| O-58 | README section 10 says batch processing and a different database are "described in section 9", and section 9 describes neither. Add a short paragraph and the batch and Sonnet lines to `estimates.md`, or change the row? (Discussion 36) | Discussion 36    | You         |
+| O-59 | `ingest.waiting` loads the text of every document in the store on every run, and the scale run does not time it. Fix it (a small query change), name it in the README, or leave it? (Discussion 36) | Discussion 36    | You         |
 
 
 
@@ -2595,6 +2598,65 @@ The five related questions Q-1, Q-2, Q-7, Q-9 and Q-13 of the key's section 8 we
 
 ---
 
+## Discussion 36: System design for 500,000 documents, and what of it needs building
+
+**Numbering.** Another session wrote Discussion 35 and O-57 at the end of this file while this one was being written, so this entry is 36 and its items are O-58 and O-59.
+
+**What prompted it:** You asked whether any system design work needs implementing given the scale the problem statement names, and asked me to look at how it has been done elsewhere. No code was changed and no model was called.
+
+**What the problem statement asks for at scale:** measurements, where it becomes slow or expensive and which code causes it, what you would change, and the first bottleneck at a million documents. It does not ask for the scaled system to be built. A 30-minute system design call follows.
+
+**How it is done elsewhere** (web search, 2026-09-30)
+
+| Source | What it shows |
+|---|---|
+| "Operationalizing Document AI" (arXiv 2605.18818, May 2026) | Gateway, message queue, workers, object storage for documents, a relational database for status. Thousands of multi-page documents an hour. Cost went from $0.01 to $0.001 a page. OCR, not the model call, was the bottleneck |
+| Anthropic Message Batches API | Half price, up to 100,000 requests or 256 MB a batch, results within 24 hours, stacks with prompt caching. Cache hits inside a batch are best effort; the 1-hour cache is the one to use |
+| Flatiron Health, VALID framework (JCO CCI, 2026) | Three pillars for model-extracted clinical data: accuracy per variable against human abstraction on a sample, automated checks for inconsistent and implausible values, and replication of known results |
+| UCSD SEP-1 abstraction (NEJM AI, 2024) | 90 of 100 abstractions agreed with human abstractors; 4 of the 10 disagreements were the humans' mistakes |
+| Patient matching (Perspectives in HIM; RAND) | 8 to 12 percent duplicate patient records in a typical system. Standard method: exact identifiers first, then probabilistic matching with blocking (Splink links a million records on a laptop), with a band sent to a person |
+
+**What the design already has that these systems rely on**
+
+- A document is known by the hash of its bytes, and a reading by hash, model, effort and prompt version. That is the idempotency key a queue needs.
+- One document per call, no shared state between calls. That is what a batch service needs.
+- Conclusions rebuilt per patient from all claims. That is the unit of recomputation when a late document arrives.
+- Quote checks, the minutes check and the overlap check are VALID's second pillar.
+
+**What would change at 500,000, by part** (all estimates)
+
+| Part | Now | At scale |
+|---|---|---|
+| Reading calls | `claude` tool, one process per call, four at a time | Direct API through the batch service, 1-hour cache. Five batches of 100,000 |
+| Reading cost | $0.052 a document on Opus, about 75 percent of it output tokens | Sonnet in batch, about $0.015 a document, about $7,500. Opus in batch about $13,000 |
+| Second opinion | None (README section 8) | Sonnet reads everything; a second model reads only where a check fails or the document kind is one the rules depend on |
+| Work distribution | A folder scan and a thread pool | A queue keyed by document hash, workers, retries with a dead-letter list |
+| Storage | One SQLite file with the text inside; one file per reading in one folder | Postgres partitioned by patient; text and readings in object storage under the hash. The reason is several writers, not size |
+| Patient identity | Record number, else name and date of birth, exact | A link table from document to patient: exact first, probabilistic second, a review band, links reversible. Patient on the claim, not the document, for rosters |
+| Prompt change | Raise the version, everything is read again | Read a sample under both versions, run `compare`, backfill by batch only if conclusions change, swap per patient |
+| Late documents | Conclusions are rebuilt; an answer already given is not flagged | Stamp each answer with the patient's claim set; flag answers whose verdict the rebuild changed |
+| Review | Open conflicts listed per patient | A queue: about 16,000 open conflicts at this record's rate, plus a sample per document kind for accuracy against a human |
+| Privacy | A personal account | An agreement covering health data, access logs, encryption |
+
+**Two gaps found in what is already written**
+
+1. README section 10 says batch processing and a different database are "described in section 9". Section 9 describes neither (O-58).
+2. `ingest.waiting` selects every document's text on every run. At 500,000 documents that is the whole 8 GB store read into memory to find the day's 1,000. The scale run times `known_hashes` and not this (O-59).
+
+**My view**
+
+- Nothing architectural needs building. The submission is asked to measure, name and propose.
+- O-58 is a correction to the README and worth making. O-59 is small either way.
+- The table above is material for the call.
+
+**Outcome**
+
+- Nothing is decided. Two open items added: O-58, O-59.
+
+**Still open from this discussion:** O-58, O-59.
+
+---
+
 ## Suggested order for the next discussions
 
 Each constrains the next.
@@ -2606,3 +2668,57 @@ Each constrains the next.
 5. How questions are answered (O-20, O-28, O-34).
 6. The README items and re-reading after a prompt change (O-23, O-31).
 
+---
+
+## Discussion 35: Choices 5, 2 and 12 of O-55 looked at again
+
+**What prompted it:** You asked what the 12 build choices of O-55 are. I listed them and named three as worth a second look. Of choice 5 you said "change this", and of all three "ultrathink these as you see fit". No model was called.
+
+**Choice 5, changed.** As built in Discussion 34, a supporting `conflicts_and_findings` call was cut to the contacts the other results used, and the rest was dropped without a word. DEV-05 said "Nothing" in part 6 while the record held an open conflict. Now nothing is dropped:
+
+| What the call returned | On a contact the figures use | On a contact they do not use |
+|---|---|---|
+| An open conflict | Part 6, in full, as before | Part 6, one line, opening "Open elsewhere in the record, not behind these figures", with the alternatives, the effect and what would settle it |
+| A settled conflict, a finding | Part 5, in full with its sources, as before | Part 5, one line naming each, ending "No figure in this answer changes with them". No sources are listed |
+
+- The lead is unchanged: its open point is still only one the figures depend on.
+- This keeps the two fixes of Discussion 32. Defect 1 was a conflict behind the figures called "not behind" them; the label is still given only to a conflict no result depends on, and the check now reads both parts and the results. Defect 5 was the Jan 26 conflict and three findings listed in full under DEV-05, sources and all; they are now short mentions, and none is in the lead.
+- The count line in part 3 now gives both: "1 open, 2 settled, 3 findings in Jan 5 to Jan 30; 0 open, 1 settled, 0 findings on the contacts behind these figures".
+
+**What changed in the answers.** Every answer was rebuilt from its saved plan with the model call blocked. Eight of the 19 differ, and only DEV-05 in more than the count line.
+
+| Answer | Change |
+|---|---|
+| DEV-05 | Part 6 was "Nothing". It is now the Jan 26 start of HG-E115, 09:00 or 09:10, marked as not behind these figures. Part 5 gains one line: 1 disagreement settled by a rule (HG-E116, attendance) and 3 findings (HG-E104 on Jan 9; HG-E116 on Jan 27, twice) |
+| DEV-01, DEV-02, DEV-03, Q-7 | The count line reads "in Jan 5 to Jan 30, all on the contacts behind these figures" |
+| DEV-04, P-3, Q-9 | The count line names the dates the plan asked about |
+
+**A limit this does not remove.** The call covers the dates the plan gives it. DEV-04 asks about Jan 19 and Jan 21, the plan asked for the disagreements of Jan 19 to Jan 21, and so its part 6 is still "Nothing": the Jan 26 conflict is outside what was asked. An answer whose plan does not call `conflicts_and_findings` at all names no conflict but the ones its own figures depend on. Both are the plan's doing and not choice 5. Whether an answer should name every open conflict of the record whatever the question is yours to say (O-57).
+
+**Choice 2, kept, on a measurement.** Choice 2 lets the length of a list in a result count as a sourced number in check 11. I measured what it adds, on all 19 answers:
+
+| Measure | Result |
+|---|---|
+| Numbers in the 19 answers that pass only because of a list length | 0 |
+| Numbers the list lengths add to what is allowed | 0 to 4 an answer |
+| Whole numbers 0 to 60 allowed in DEV-01 | 39 of 61 |
+| Whole numbers 61 to 999 allowed in DEV-01 | 47 of 939 |
+
+- The looseness I named is real but is not choice 2. Most small numbers occur somewhere in a result as a day, a clock time or a line number, so check 11 cannot catch a wrong small count with or without the list lengths. It does catch a wrong large figure: a total, a week's minutes, the hours.
+- Taking the list lengths out would close almost nothing and would make a true count fail whenever its number did not happen to occur elsewhere. So it stays.
+- Small counts are held by other checks: 12 and 13 on the contacts and weeks, 14 on each answer's figures against the key, and the stage 7 tests on exact sentences. The README's row for check 11 now says this limit, with the two measured figures.
+- A stronger check 11 would compare only the figures of a sentence, with its dates, times and citations set aside, against only the numeric values of the results. Not built: it is a rewrite of the check at the last review point.
+
+**Choice 12, kept.** The README names Opus at low because `settings.toml` does, and gives the comparison beside it. Nothing in Discussion 33 argues against it: Opus at low reaches the same figures as medium, high and Fable, holds 40 of the key's 42 rows against Sonnet's 37, and costs $1.62 a read against $0.93 for Sonnet and $5.06 for Fable. My recommendation is unchanged: close O-36 and O-44 as Opus at low. They stay open, because they are yours to close; the README needs no edit if you close them that way.
+
+**Checks.** 157 pass: 155 before, one rewritten and two added. The answer check "part 5 does not contradict part 6" is now "a conflict the figures depend on is not called elsewhere", and a test plants the label on the conflict behind DEV-02 and sees it caught.
+
+**Files changed.** `backbone/writing.py`, `backbone/checks.py`, `tests/test_checks.py`, `tests/test_answers.py`, eight answers under `output/answers/`, `README.md` (the test count, the row for check 11, one sentence on reading an answer), `build-plan.md` (the count). `decisions.md` is unchanged: no figure and no rule of counting changed.
+
+**Outcome**
+
+- Choice 5 is changed and built. Choices 2 and 12 stand.
+- O-55 stays open: you have spoken on three of the twelve. One open item added: O-57.
+- Nothing was committed.
+
+**Still open from this discussion:** O-55 (the other nine choices, and your word on 5 as rebuilt), O-57, and the ones open before: O-36, O-44, O-51, O-52, O-53, O-56, O-1, O-13, O-31, and whether to send it.

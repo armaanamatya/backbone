@@ -2,7 +2,7 @@
 
 How the system gets built, in what order, and how each stage is checked. Written 2026-09-29, while `answer-key.md` was being verified.
 
-**Status:** built. You gave the go-ahead on 2026-09-29, and for stages 8 to 10 on 2026-09-30. All ten stages are built, and stage 11, the model comparison, was run early. All 31 documents are read at prompt version 3, the contacts and weekly verdicts match the key, the five answers and nine problem questions are answered, 155 checks pass, the benchmark is measured, and the README is written. The build is stopped at the last review point, after stage 10: whether to send it. What was built and measured is in Discussions 22, 24 to 26, 29, 31, 33 and 34 of `discussions.md`.
+**Status:** built. You gave the go-ahead on 2026-09-29, and for stages 8 to 10 on 2026-09-30. All ten stages are built, and stage 11, the model comparison, was run early. All 31 documents are read at prompt version 3, the contacts and weekly verdicts match the key, the five answers and nine problem questions are answered, 157 checks pass, the benchmark is measured, and the README is written. The build is stopped at the last review point, after stage 10: whether to send it. What was built and measured is in Discussions 22, 24 to 26, 29, 31, 33, 34 and 35 of `discussions.md`.
 
 **What this plan rests on**
 
@@ -142,7 +142,7 @@ Each stage ends with something that can be checked.
 | 5 | Count | Intervals, minutes, days, weekly status | Matches section 6 of the key: 140, 120, 180, 145 or 155, and the four verdicts | 0 |
 | 6 | Functions | The nine functions and the `call` command | Each function returns rows, the calculation, the sources and the conflicts it depends on | 0 |
 | 7 | Questions | The plan call, the saved plans, the nine-part answer written by code, the five answers | The five answers match section 7 of the key. The nine problem questions behave as in section 8 | About 14 to 25 |
-| 8 | Checks | The checks in section 9 of this plan | All pass, or each failure is understood and written down. Built: 155 pass (Discussion 34) | 0 |
+| 8 | Checks | The checks in section 9 of this plan | All pass, or each failure is understood and written down. Built: 157 pass (Discussions 34, 35) | 0 |
 | 9 | Measure | The benchmark script, which replays saved results and logs | The measured figures in section 10 exist, with estimates kept in a separate file. Built: 5 calls (Discussion 34) | About 5 |
 | 10 | Write up | The README, the readable export | Every item the problem statement asks for is present. Built (Discussion 34) | 0 |
 | 11 | After the build | The model comparison (O-36) | On your go-ahead only. Run early, on your ask: 153 calls (Discussion 33) | About 31 per model |

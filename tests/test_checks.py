@@ -97,16 +97,23 @@ def test_a_number_from_nowhere_is_caught(answers):
     assert [p["number"] for p in checks.numbers_not_in_results(built)] == ["999"]
 
 
-def test_part_5_never_contradicts_part_6(answers):
+def test_no_conflict_the_figures_depend_on_is_called_elsewhere(answers):
     for question_id, built in answers.items():
-        assert checks.part_5_contradicts_part_6(built) == [], question_id
+        assert checks.depended_conflict_called_elsewhere(built) == [], question_id
 
 
 def test_the_open_conflict_behind_the_minutes_is_in_part_6_and_not_called_elsewhere(answers):
     for question_id in ("DEV-01", "DEV-02", "DEV-03"):
         parts = answers[question_id]["parts"]
-        assert any("HG-E115, start" in line for line in parts["6. not settled"]), question_id
-        assert not any("not behind these figures" in line for line in parts["5. what was excluded"]), question_id
+        assert any(line.startswith("- HG-E115, start") for line in parts["6. not settled"]), question_id
+        assert not any("not behind these figures" in line for line in parts["5. what was excluded"] + parts["6. not settled"]), question_id
+
+
+def test_calling_a_conflict_behind_the_figures_elsewhere_is_caught(answers):
+    built = dict(answers["DEV-02"])
+    label = "- Open elsewhere in the record, not behind these figures: HG-E115, start: 09:00 (BH-D110); 09:10 (BH-D111)."
+    built["parts"] = {**built["parts"], "6. not settled": [label]}
+    assert [p["conflict"] for p in checks.depended_conflict_called_elsewhere(built)] == ["HG-E115, start"]
 
 
 def test_dates_in_answers_are_in_the_short_form(answers):
@@ -125,13 +132,38 @@ def test_the_six_administrative_records_are_each_listed(answers):
     assert sum(1 for line in lines if line.startswith("- Jan 8 at ")) == 2
 
 
-def test_a_conflict_on_no_contact_behind_the_figures_is_left_out(answers):
+def test_a_conflict_on_no_contact_behind_the_figures_is_named_and_not_listed_in_full(answers):
     """DEV-05 is about scores and statements. The Jan 26 start and the Jan 27
-    charge concern contacts that are behind none of its figures."""
-    text = answers["DEV-05"]["text"]
-    assert "HG-E115" not in text
-    assert "charge" not in text.lower()
-    assert answers["DEV-05"]["parts"]["6. not settled"] == ["Nothing."]
+    charge concern contacts behind none of its figures. Each is stated in one
+    line, labelled, with no sources under it, and is not in the lead
+    (Discussion 35)."""
+    for question_id in ("DEV-05",):
+        parts = answers[question_id]["parts"]
+        assert "- 1 open, 2 settled, 3 findings in Jan 5 to Jan 30; 0 open, 1 settled, 0 findings on the contacts behind these figures" in parts["3. figures"]
+        assert len(parts["6. not settled"]) == 1, question_id
+        assert parts["6. not settled"][0].startswith("- Open elsewhere in the record, not behind these figures: HG-E115, start: 09:00 (BH-D110); 09:10 (BH-D111)."), question_id
+        named = [line for line in parts["5. what was excluded"] if line.startswith("- Elsewhere in the record, on contacts these figures do not use: ")]
+        assert len(named) == 1, question_id
+        assert "1 disagreement settled by a rule (HG-E116, attendance) and 3 findings (" in named[0], question_id
+        assert "HG-E116 on Jan 27, charge without attendance" in named[0], question_id
+        assert parts["5. what was excluded"][-1] == named[0], question_id
+        assert not any("HG-E115" in line or "HG-E116" in line for line in parts["in short"]), question_id
+        assert not any("CH-116" in line for name, lines in parts.items() for line in lines), question_id
+
+
+def test_a_conflict_in_the_record_is_in_every_answer_that_asks_for_them(answers):
+    """Whatever the figures use, an answer whose plan calls
+    `conflicts_and_findings` names every open conflict that call returned."""
+    seen = 0
+    for question_id, built in answers.items():
+        for result in built["results"]:
+            if result["function"] != "conflicts_and_findings" or "error" in result:
+                continue
+            for conflict in result["open"]:
+                seen += 1
+                name = f"{conflict['encounter']}, {conflict['field']}"
+                assert any(name in line for line in built["parts"]["6. not settled"]), (question_id, name)
+    assert seen
 
 
 def test_the_group_note_says_no_therapy_during_the_break_not_in_the_group(answers):
